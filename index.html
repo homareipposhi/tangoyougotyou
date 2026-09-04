@@ -8,11 +8,31 @@
   <meta name="theme-color" content="#F2F4F6" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#14181C" media="(prefers-color-scheme: dark)">
   <title>学習問題集</title>
-  <link rel="stylesheet" href="style.css">
+
+  <script>
+    const VERSION = Date.now();
+
+    const css = document.createElement("link");
+    css.rel = "stylesheet";
+    css.href = "style.css?v=" + VERSION;
+    document.head.appendChild(css);
+  </script>
 </head>
+
 <body>
   <main class="stage" id="app"></main>
-  <script src="questions-main.js"></script>
-  <script src="app.js"></script>
+
+  <script>
+    const questions = document.createElement("script");
+    questions.src = "questions-main.js?v=" + VERSION;
+
+    questions.onload = () => {
+      const appScript = document.createElement("script");
+      appScript.src = "app.js?v=" + VERSION;
+      document.body.appendChild(appScript);
+    };
+
+    document.body.appendChild(questions);
+  </script>
 </body>
 </html>
