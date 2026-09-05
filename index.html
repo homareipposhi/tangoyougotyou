@@ -22,17 +22,6 @@
 <body>
   <main class="stage" id="app"></main>
 
-  <script>
-    const questions = document.createElement("script");
-    questions.src = "questions-main.js?v=" + VERSION;
-
-    questions.onload = () => {
-      const appScript = document.createElement("script");
-      appScript.src = "app.js?v=" + VERSION;
-      document.body.appendChild(appScript);
-    };
-
-    document.body.appendChild(questions);
-  </script>
+  <script src="js/loader.js"></script>
 </body>
 </html>
