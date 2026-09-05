@@ -1,0 +1,28 @@
+name: Generate subject manifest
+
+on:
+  push:
+    paths:
+      - 'subjects/**/*.js'
+      - 'scripts/generate-manifest.mjs'
+      - '.github/workflows/generate-manifest.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  manifest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: node scripts/generate-manifest.mjs
+      - name: Commit generated manifest
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add js/generated-manifest.js
+          git diff --cached --quiet || git commit -m 'chore: regenerate subject manifest'
+          git push
