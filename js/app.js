@@ -8,7 +8,7 @@ let filters = {chapters:[], diffs:[], types:[], only:"all"};
 let size = 10;
 let order = "mix";
 let sess = [], idx = 0, hit = 0, miss = [], cleared = [], picked = null, picks = [], marks = [];
-let inputValue = "";
+let questionStartedAt = 0, lastTiming = null;
 
 function load(){
   try { return JSON.parse(localStorage.getItem(KEY)) || {}; } catch(e){ return {}; }
@@ -24,7 +24,7 @@ function h(s){
 }
 function qid(q){ return q.id || `${q.subject}-${q.c}-${q.n}`; }
 function rec(q){ return S[qid(q)]; }
-function todo(q){ const r=rec(q); return !!(r && r.last===0); }
+function todo(q){ const r=rec(q); return !!(r && (r.last===0 || r.needsReview)); }
 function currentSubject(){ return SUBJECTS[subjectId]; }
 function subjectQuestions(id=subjectId){ return Q_ALL.filter(q=>q.subject===id); }
 
@@ -37,7 +37,15 @@ function tally(list){
   const total=list.length;
   return {total,seen,todo:todoN,fresh:total-seen,wrong,tries,rate:tries?Math.round((tries-wrong)/tries*100):0};
 }
-function typeLabel(t){ return t==="tf"?"○×":t==="choice"?"選択":"短答"; }
+function typeLabel(t){ return t==="tf"?"○×":"選択"; }
+function isRta(q){ return q.subject === "physics" && Boolean(q.rta); }
+function timingLabel(ms, ok){
+  if (!ok) return "未定着（不正解）";
+  if (ms <= 2000) return "反射（0〜2秒）";
+  if (ms <= 5000) return "定着（2〜5秒）";
+  if (ms <= 10000) return "遅い（5〜10秒）";
+  return "要復習（10秒以上）";
+}
 
 function home(){
   app.appendChild(h(`<header class="top"><h1>学習問題集</h1><span class="subtle">${Q_ALL.length}問</span></header>`));
@@ -111,7 +119,7 @@ function subjectView(){
   panel.appendChild(dg);
 
   const tg=h(`<div class="grp"><span>形式</span><div class="opts"></div></div>`);
-  ["tf","choice","input"].forEach(tp=>{
+  ["tf","choice"].forEach(tp=>{
     const count=all.filter(q=>q.type===tp).length;
     tg.querySelector(".opts").appendChild(filterButton(`${typeLabel(tp)} ${count}`,filters.types.includes(tp),()=>{toggle(filters.types,tp);render();},!count));
   });
@@ -161,19 +169,7 @@ function start(){
     for(const arr of [B,A.slice(cap),C,D]) if(pick.length<n) pick=pick.concat(arr.slice(0,n-pick.length));
     sess=shuffle(pick);
   }
-  idx=0;hit=0;miss=[];cleared=[];picked=null;picks=[];marks=[];inputValue="";view="quiz";render();
-}
-function normalizeText(s,caseSensitive=false){
-  let x=String(s??"").normalize("NFKC").trim().replace(/\s+/g," ");
-  return caseSensitive?x:x.toLocaleLowerCase("de");
-}
-function checkInput(q,v){
-  if(typeof q.number==="number"){
-    const n=Number(String(v).replace(/,/g,""));
-    return Number.isFinite(n) && Math.abs(n-q.number)<=Number(q.tolerance??0);
-  }
-  const ans=q.answers||[];
-  return ans.some(a=>normalizeText(a,q.caseSensitive)===normalizeText(v,q.caseSensitive));
+  idx=0;hit=0;miss=[];cleared=[];picked=null;picks=[];marks=[];lastTiming=null;questionStartedAt=performance.now();view="quiz";render();
 }
 function isCorrect(q,v){
   if(q.type==="tf") return Boolean(v)===Boolean(q.a);
@@ -181,7 +177,7 @@ function isCorrect(q,v){
     const x=[...v].sort((a,b)=>a-b), a=[...q.a].sort((a,b)=>a-b);
     return x.length===a.length && x.every((n,i)=>n===a[i]);
   }
-  return checkInput(q,v);
+  return false;
 }
 function answer(v){
   if(picked!==null) return;
@@ -190,12 +186,23 @@ function answer(v){
   if(ok){hit++; if(was) cleared.push(q);} else miss.push(q);
   const k=qid(q), r=S[k]||{seen:0,wrong:0,last:1};
   r.seen++; r.last=ok?1:0; if(!ok) r.wrong++;
+  if(isRta(q)){
+    const ms=Math.max(0, Math.round(performance.now()-questionStartedAt));
+    lastTiming={ms, label:timingLabel(ms,ok)};
+    r.lastMs=ms; r.bestMs=Math.min(r.bestMs ?? Infinity, ms); r.totalMs=(r.totalMs||0)+ms;
+    if(!ok){ r.review=(r.review||0)+1; r.needsReview=true; }
+    else if(ms<=2000){ r.reflex=(r.reflex||0)+1; r.needsReview=false; }
+    else if(ms<=5000){ r.settled=(r.settled||0)+1; r.needsReview=false; }
+    else if(ms<=10000){ r.slow=(r.slow||0)+1; r.needsReview=true; }
+    else { r.review=(r.review||0)+1; r.needsReview=true; }
+    r.last=ok && ms<5000 ? 1 : 0;
+  }
   S[k]=r; save(); render();
 }
 function answerText(q){
   if(q.type==="tf") return q.a?"○":"×";
   if(q.type==="choice") return q.a.map(n=>`${n}. ${q.o[n-1]}`).join(" / ");
-  return q.aText || (q.answers? q.answers[0] : String(q.number));
+  return "";
 }
 function yourText(q){
   if(q.type==="tf") return picked?"○":"×";
@@ -203,7 +210,7 @@ function yourText(q){
   return String(picked);
 }
 function next(){
-  picked=null;picks=[];inputValue="";idx++;
+  picked=null;picks=[];lastTiming=null;idx++;questionStartedAt=performance.now();
   if(idx>=sess.length) view="done";
   render();
 }
@@ -222,6 +229,7 @@ function quiz(){
   tags.appendChild(h(`<span class="tg">${esc(sub.chapters[q.c]||"")}・${esc(q.s)}</span>`));
   tags.appendChild(h(`<span class="tg">難易度 ${esc(q.d)}</span>`));
   tags.appendChild(h(`<span class="tg good">${typeLabel(q.type)}</span>`));
+  if(isRta(q)) tags.appendChild(h(`<span class="tg">RTA・${esc(q.rta)}</span>`));
   if(todo(q)) tags.appendChild(h(`<span class="tg hot">要復習</span>`));
   app.appendChild(tags);
 
@@ -237,12 +245,6 @@ function quiz(){
       });
       body.appendChild(list);
       body.appendChild(h(`<div class="pickinfo"><span>${q.a.length}つ選択</span><span>選択中 ${picks.length}</span></div>`));
-    } else if(q.type==="input"){
-      const row=h(`<div class="answerbox"><input id="ans" type="text" autocomplete="off" placeholder="答えを入力"><span class="unit">${esc(q.unit||"")}</span></div>`);
-      const inp=row.querySelector("input"); inp.value=inputValue;
-      inp.addEventListener("input",e=>{inputValue=e.target.value;const b=document.getElementById("input-submit");if(b)b.disabled=!inputValue.trim();});
-      inp.addEventListener("keydown",e=>{if(e.key==="Enter"&&inputValue.trim()) answer(inputValue);});
-      body.appendChild(row);
     }
   }
   app.appendChild(body);
@@ -261,27 +263,24 @@ function quiz(){
       const b=h(`<button class="cta" type="button" ${ready?"":"disabled"}>${ready?"決定":`あと${q.a.length-picks.length}つ選ぶ`}</button>`);
       if(ready)b.addEventListener("click",()=>answer([...picks]));
       dock.appendChild(b);
-    } else {
-      const b=h(`<button id="input-submit" class="cta" type="button" ${inputValue.trim()?"":"disabled"}>決定</button>`);
-      if(inputValue.trim())b.addEventListener("click",()=>answer(inputValue));
-      dock.appendChild(b);
     }
   } else {
     const ok=isCorrect(q,picked);
     const fb=h(`<div class="fb ${ok?"ok":"ng"}"><strong>${ok?"正解":"不正解"}</strong>
       <div>${ok?"":`あなたの答え：${esc(yourText(q))}<br>`}正解：${esc(answerText(q))}</div>
-      <div>${esc(q.e)}</div></div>`);
+      <div>${esc(q.e)}</div>${isRta(q)&&lastTiming?`<div class="timing">回答時間 ${formatMs(lastTiming.ms)}秒：${esc(lastTiming.label)}</div>`:""}</div>`);
     dock.appendChild(fb);
     const b=h(`<button class="cta" type="button">${idx+1<sess.length?"つづける":"結果を見る"}</button>`);
     b.addEventListener("click",next);dock.appendChild(b);
   }
   app.appendChild(dock);
-  if(q.type==="input" && picked===null) setTimeout(()=>document.getElementById("ans")?.focus(),0);
 }
+function formatMs(ms){ return (ms/1000).toFixed(ms < 10000 ? 1 : 0); }
 
 function card(q){
   const r=rec(q);
-  return h(`<div class="item"><div class="qt">${esc(q.q)}</div><div class="an"><b>正解:</b> ${esc(answerText(q))}<br>${esc(q.e)}${r?`<br>解答 ${r.seen}回 / 不正解 ${r.wrong}回`:""}</div></div>`);
+  const time=r?.lastMs!==undefined ? ` / 最速 ${formatMs(r.bestMs)}秒` : "";
+  return h(`<div class="item"><div class="qt">${esc(q.q)}</div><div class="an"><b>正解:</b> ${esc(answerText(q))}<br>${esc(q.e)}${r?`<br>解答 ${r.seen}回 / 不正解 ${r.wrong}回${time}`:""}</div></div>`);
 }
 function logView(){
   const sub=currentSubject(), qs=subjectQuestions();

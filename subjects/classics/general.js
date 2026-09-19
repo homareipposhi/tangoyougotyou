@@ -1,16 +1,14 @@
 /* Generated from the legacy question bank during migration. */
-window.__TANGO_SUBJECTS = window.__TANGO_SUBJECTS || {};
-window.__TANGO_SUBJECTS["classics"] = [/* ---------- 古典 ---------- */
+const CLASSICS_Q = [/* ---------- 古典 ---------- */
 
   {id:"cla-1",subject:"classics",c:1,s:"古文単語",n:1,d:"A",type:"choice",
    q:"古文単語『をかし』の代表的な意味として最も適切なものを選びなさい。",
    o:["趣がある・すばらしい","恐ろしい","腹立たしい","眠い"],a:[1],
    e:"『をかし』は、趣がある・すばらしい・おもしろいなどの意味。"},
 
-  {id:"cla-2",subject:"classics",c:1,s:"古文単語",n:2,d:"A",type:"input",
-   q:"古文単語『いみじ』の代表的な意味を1つ答えなさい。",
-   answers:["とても","たいそう","はなはだしい","すばらしい","ひどい"],
-   aText:"とても／たいそう など",
+  {id:"cla-2",subject:"classics",c:1,s:"古文単語",n:2,d:"A",type:"choice",
+   q:"古文単語『いみじ』の代表的な意味として最も適切なものを選びなさい。",
+   o:["とても・たいそう","静かだ","若い","ためらう"],a:[1],
    e:"『いみじ』は程度が甚だしいことを表し、文脈により『とてもすばらしい』『ひどい』などになる。"},
 
   {id:"cla-3",subject:"classics",c:2,s:"助動詞",n:3,d:"A",type:"choice",
@@ -33,9 +31,9 @@ window.__TANGO_SUBJECTS["classics"] = [/* ---------- 古典 ---------- */
    o:["連体形","已然形","終止形","命令形"],a:[1],
    e:"ぞ・なむ・や・か → 連体形。こそ → 已然形。"},
 
-  {id:"cla-7",subject:"classics",c:2,s:"係り結び",n:7,d:"A",type:"input",
-   q:"係助詞『こそ』の結びの活用形を答えなさい。",
-   answers:["已然形"],aText:"已然形",
+  {id:"cla-7",subject:"classics",c:2,s:"係り結び",n:7,d:"A",type:"choice",
+   q:"係助詞『こそ』の結びの活用形として正しいものを選びなさい。",
+   o:["連体形","已然形","終止形","命令形"],a:[2],
    e:"『こそ』の結びは已然形。"},
 
   {id:"cla-8",subject:"classics",c:3,s:"敬語",n:8,d:"B",type:"choice",
@@ -71,8 +69,9 @@ window.__TANGO_SUBJECTS["classics"] = [/* ---------- 古典 ---------- */
    o:["いまだ〜ず","まさに〜べし","すべからく〜べし","あへて〜ず"],a:[1],
    e:"未は『いまだ〜ず』と再読する。"},
 
-  {id:"cla-15",subject:"classics",c:5,s:"否定",n:15,d:"A",type:"input",
-   q:"漢文の否定形『不〜』を、ひらがなで基本的にどう読むか答えなさい。",
-   answers:["〜ず","ず","～ず"],aText:"〜ず",
+  {id:"cla-15",subject:"classics",c:5,s:"否定",n:15,d:"A",type:"choice",
+   q:"漢文の否定形『不〜』の基本的な読みとして正しいものを選びなさい。",
+   o:["〜ず","〜べし","〜なり","〜たり"],a:[1],
    e:"不は基本的に『〜ず』と訓読して否定を表す。"}
 ];
+registerQuestionPack({subject:"classics",name:"古典",chapters:{1:"古文単語",2:"文法",3:"敬語",4:"古文読解",5:"漢文"},questions:CLASSICS_Q});

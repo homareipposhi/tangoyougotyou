@@ -11,9 +11,9 @@
 *{box-sizing:border-box}
 html,body{margin:0}
 body{background:var(--bg);color:var(--tx);font-family:var(--jp);-webkit-text-size-adjust:100%}
-button,input{font:inherit}
+button{font:inherit}
 button{border:0;color:inherit;cursor:pointer}
-button:focus-visible,input:focus-visible{outline:2px solid var(--acc);outline-offset:3px}
+button:focus-visible{outline:2px solid var(--acc);outline-offset:3px}
 .stage{max-width:42rem;min-height:100vh;margin:0 auto;padding:0 1rem 1.5rem}
 .top{display:flex;align-items:center;justify-content:space-between;gap:.8rem;padding:1.2rem 0 .4rem}
 .top h1{margin:0;font-size:1.15rem}
@@ -61,9 +61,8 @@ button:focus-visible,input:focus-visible{outline:2px solid var(--acc);outline-of
 .btns{display:grid;grid-template-columns:1fr 1fr;gap:.7rem}
 .b{background:var(--card);border-radius:var(--r2);padding:1.15rem;box-shadow:var(--sh);font-weight:700}
 .b .g{display:block;font-size:1.7rem}.b .l{display:block;font-size:.72rem;color:var(--tx3);margin-top:.2rem}
-.answerbox{display:flex;gap:.55rem}
-.answerbox input{width:100%;border:0;background:var(--card);color:var(--tx);border-radius:14px;padding:1rem;box-shadow:var(--sh)}
-.unit{align-self:center;font-size:.82rem;color:var(--tx2);white-space:nowrap}
+.timing{margin-top:.45rem;font-size:.82rem;font-weight:700}
+.load-error{margin:3rem 1rem;padding:1.2rem;border-radius:15px;background:var(--badS);color:var(--bad);line-height:1.8}
 .fb{padding:1.1rem;line-height:1.85}
 .fb.ok{background:var(--accS)}.fb.ng{background:var(--badS)}
 .fb strong{display:block;font-size:1.05rem;margin-bottom:.35rem}

@@ -1,6 +1,5 @@
 /* Generated from the legacy question bank during migration. */
-window.__TANGO_SUBJECTS = window.__TANGO_SUBJECTS || {};
-window.__TANGO_SUBJECTS["physics"] = [/* ---------- 物理 ---------- */
+const PHYSICS_Q = [/* ---------- 物理 ---------- */
 
   {id:"phy-1",subject:"physics",c:1,s:"運動方程式",n:1,d:"A",type:"tf",
    q:"物体に働く合力が0なら、その物体の加速度は0である。",a:true,
@@ -16,9 +15,9 @@ window.__TANGO_SUBJECTS["physics"] = [/* ---------- 物理 ---------- */
    o:["速度","加速度","力","運動量"],a:[1],
    e:"v=dx/dt。位置の時間変化率が速度。"},
 
-  {id:"phy-4",subject:"physics",c:1,s:"速度・加速度",n:4,d:"B",type:"input",
-   q:"速度vを時間tで微分した量を、漢字2文字で答えなさい。",
-   answers:["加速度"],aText:"加速度",
+  {id:"phy-4",subject:"physics",c:1,s:"速度・加速度",n:4,d:"B",type:"choice",
+   q:"速度vを時間tで微分した量として正しいものを選びなさい。",
+   o:["加速度","速度","変位","仕事"],a:[1],
    e:"a=dv/dt なので、速度の時間変化率は加速度。"},
 
   {id:"phy-5",subject:"physics",c:1,s:"仕事とエネルギー",n:5,d:"B",type:"tf",
@@ -48,17 +47,23 @@ window.__TANGO_SUBJECTS["physics"] = [/* ---------- 物理 ---------- */
    q:"正の試験電荷が受ける力の向きが、その点での電場の向きである。",a:true,
    e:"電場の向きは、正の試験電荷に働く力の向きで定義される。"},
 
-  {id:"phy-11",subject:"physics",c:4,s:"コンデンサー",n:11,d:"B",type:"input",
-   q:"電気容量C、電圧V、電気量Qの関係を Q= の形で答えなさい。",
-   answers:["CV","C V","C×V","C*V"],aText:"CV",
+  {id:"phy-11",subject:"physics",c:4,s:"コンデンサー",n:11,d:"B",type:"choice",
+   q:"電気容量C、電圧V、電気量Qの関係として正しいものを選びなさい。",
+   o:["Q=CV","Q=C/V","Q=V/C","Q=C+V"],a:[1],
    e:"コンデンサーでは Q=CV。"},
 
   {id:"phy-12",subject:"physics",c:5,s:"光電効果",n:12,d:"C",type:"tf",
    q:"光電効果では、入射光の振動数がしきい振動数より低ければ、光を強くしても光電子は放出されない。",
-   a:true,
-   e:"1個の光子のエネルギーhfが仕事関数を超える必要がある。強度を上げても光子1個あたりのエネルギーは増えない。"},{id:"phy-13",subject:"physics",c:1,s:"運動方程式",n:13,d:"A",type:"input",
-   q:"質量2.0 kgの物体に6.0 Nの合力が働く。加速度の数値だけを答えなさい。",
-   number:3,tolerance:0.001,unit:"m/s²",aText:"3",
+  a:true,
+   e:"1個の光子のエネルギーhfが仕事関数を超える必要がある。強度を上げても光子1個あたりのエネルギーは増えない。"},{id:"phy-13",subject:"physics",c:1,s:"運動方程式",n:13,d:"A",type:"choice",
+   q:"質量2.0 kgの物体に6.0 Nの合力が働く。加速度として正しいものを選びなさい。",
+   o:["1.0 m/s²","2.0 m/s²","3.0 m/s²","12 m/s²"],a:[3],
    e:"a=F/m=6.0/2.0=3.0 m/s²。"},
 
   ];
+
+registerQuestionPack({
+  subject:"physics", name:"物理",
+  chapters:{1:"力学",2:"熱力学",3:"波動",4:"電磁気",5:"原子"},
+  questions:PHYSICS_Q
+});

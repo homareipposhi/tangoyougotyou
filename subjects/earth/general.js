@@ -1,6 +1,5 @@
 /* Generated from the legacy question bank during migration. */
-window.__TANGO_SUBJECTS = window.__TANGO_SUBJECTS || {};
-window.__TANGO_SUBJECTS["earth"] = [/* ---------- 地学 ---------- */
+const EARTH_Q = [/* ---------- 地学 ---------- */
 
   {id:"ear-1",subject:"earth",c:1,s:"地球内部",n:1,d:"A",type:"tf",
    q:"地球の外核は主に液体で、内核は主に固体である。",a:true,
@@ -45,7 +44,8 @@ window.__TANGO_SUBJECTS["earth"] = [/* ---------- 地学 ---------- */
    o:["赤","青白","緑","黒"],a:[2],
    e:"高温の恒星ほど青白く、低温の恒星ほど赤く見える。"},
 
-  {id:"ear-10",subject:"earth",c:4,s:"太陽系",n:10,d:"A",type:"input",
-   q:"太陽系で最も大きい惑星を日本語で答えなさい。",
-   answers:["木星"],aText:"木星",
+  {id:"ear-10",subject:"earth",c:4,s:"太陽系",n:10,d:"A",type:"choice",
+   q:"太陽系で最も大きい惑星を選びなさい。",
+   o:["地球","木星","土星","海王星"],a:[2],
    e:"太陽系最大の惑星は木星。"}];
+registerQuestionPack({subject:"earth",name:"地学",chapters:{1:"地球",2:"地質・地史",3:"大気・海洋",4:"宇宙"},questions:EARTH_Q});

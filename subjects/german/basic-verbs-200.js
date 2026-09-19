@@ -303,5 +303,4 @@ const GERMAN_Q = [
 ];
 
 
-window.__TANGO_SUBJECTS = window.__TANGO_SUBJECTS || {};
-window.__TANGO_SUBJECTS.german = [...GERMAN_Q];
+registerQuestionPack({subject:"german",name:"ドイツ語",chapters:{1:"基本動詞200"},questions:GERMAN_Q});
