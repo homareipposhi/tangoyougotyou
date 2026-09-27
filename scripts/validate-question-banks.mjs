@@ -24,4 +24,10 @@ if (jaToDe.some(question => question.q.includes(question.o[question.a[0] - 1])))
   throw new Error('日本語→ドイツ語問題の本文に正解語が含まれています。');
 }
 
+const rtaCategories = questions.filter(question => question.rta).map(question => question.rta).sort();
+const expectedRta = ['formula', 'recognition', 'term', 'unit'];
+if (rtaCategories.length !== expectedRta.length || rtaCategories.some((value, i) => value !== expectedRta[i])) {
+  throw new Error(`物理RTAカテゴリが不足または重複しています: ${rtaCategories.join(', ')}`);
+}
+
 console.log(`OK: ${packs.length}パック / ${questions.length}問 / ドイツ語${german.length}問 / input 0件`);

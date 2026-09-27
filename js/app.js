@@ -32,7 +32,7 @@ function tally(list){
   let seen=0,todoN=0,wrong=0,tries=0;
   list.forEach(q=>{
     const r=rec(q);
-    if(r){ seen++; tries += r.seen||0; wrong += r.wrong||0; if(r.last===0) todoN++; }
+    if(r){ seen++; tries += r.seen||0; wrong += r.wrong||0; if(todo(q)) todoN++; }
   });
   const total=list.length;
   return {total,seen,todo:todoN,fresh:total-seen,wrong,tries,rate:tries?Math.round((tries-wrong)/tries*100):0};
@@ -183,7 +183,7 @@ function answer(v){
   if(picked!==null) return;
   const q=sess[idx], was=todo(q), ok=isCorrect(q,v);
   picked=v; marks[idx]=ok?"ok":"ng";
-  if(ok){hit++; if(was) cleared.push(q);} else miss.push(q);
+  if(ok) hit++; else miss.push(q);
   const k=qid(q), r=S[k]||{seen:0,wrong:0,last:1};
   r.seen++; r.last=ok?1:0; if(!ok) r.wrong++;
   if(isRta(q)){
@@ -195,9 +195,11 @@ function answer(v){
     else if(ms<=5000){ r.settled=(r.settled||0)+1; r.needsReview=false; }
     else if(ms<=10000){ r.slow=(r.slow||0)+1; r.needsReview=true; }
     else { r.review=(r.review||0)+1; r.needsReview=true; }
-    r.last=ok && ms<5000 ? 1 : 0;
+    r.last=ok && ms<=5000 ? 1 : 0;
   }
-  S[k]=r; save(); render();
+  S[k]=r;
+  if(ok && was && !todo(q)) cleared.push(q);
+  save(); render();
 }
 function answerText(q){
   if(q.type==="tf") return q.a?"○":"×";
