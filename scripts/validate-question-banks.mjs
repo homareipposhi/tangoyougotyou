@@ -10,7 +10,7 @@ for (const file of files) vm.runInContext(await readFile(file, 'utf8'), context,
 
 const questions = packs.flatMap(pack => pack.questions);
 const examPacks = packs.filter(pack => pack.exam);
-if (examPacks.length < 2 || examPacks.some(pack => !pack.source?.startsWith('https://www.kyoto-u.ac.jp/'))) {
+if (examPacks.length < 4 || examPacks.some(pack => !/^https:\/\//.test(pack.source ?? '') || !pack.sourceLabel)) {
   throw new Error('二次試験由来の問題パックに出典がありません。');
 }
 const ids = new Set();

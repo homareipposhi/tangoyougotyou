@@ -14,7 +14,7 @@
 | 北海道大学 | 2022 | 問題掲載記事 | [開く](https://buturi0117.com/hokkaido-univercity-buturi-2022-1/) | 問題画像の見出しを確認、全設問は未照合。 |
 | 北海道大学 | 2023 | 問題掲載記事 | [開く](https://buturi0117.com/hokkaido-university-buturi2023-kaitoukaisetu/) | 問題画像の見出しを確認、全設問は未照合。 |
 | 北海道大学 | 2024 | 問題掲載記事 | [開く](https://buturi0117.com/hokkaido-university-buturi2024-kaitoukaisetu/) | 問題画像の見出しを確認、全設問は未照合。 |
-| 北海道大学 | 2025 | 問題掲載記事 | [開く](https://buturi0117.com/hokkaido-university-buturi2025/) | 年度別の問題画像記事。全設問は未照合。 |
+| 北海道大学 | 2025 | 公式問題PDF・抽出済 | [開く](https://www.hokudai.ac.jp/admission/R07_Aexam_Science.pdf) | 物理1～11頁の3大問を実見。設問別の判断は抽出ログに記録。 |
 | 北海道大学 | 2026 | 公式索引 | [開く](https://www.hokudai.ac.jp/admission/faculty/general/R8examanswer.html) | 年度ページから理科・物理を選択。 |
 | 東北大学 | 2017 | 問題記事・画像未照合 | [開く](https://ameblo.jp/yama-ryu-0413/entry-12820802110.html) | 年度別「問題」記事。問題画像の内容・完全性は未照合。 |
 | 東北大学 | 2018 | 問題記事・画像未照合 | [開く](https://ameblo.jp/yama-ryu-0413/entry-12822679769.html) | 年度別「問題」記事。問題画像の内容・完全性は未照合。 |
@@ -34,7 +34,7 @@
 | 東京大学 | 2022 | 問題記事・画像未照合 | [開く](https://ameblo.jp/yama-ryu-0413/entry-12756955929.html) | 年度別「問題」記事。問題画像の内容・完全性は未照合。 |
 | 東京大学 | 2023 | 問題記事・画像未照合 | [開く](https://ameblo.jp/yama-ryu-0413/entry-12817969484.html) | 年度別「問題」記事。問題画像の内容・完全性は未照合。 |
 | 東京大学 | 2024 | 問題記事・画像未照合 | [開く](https://ameblo.jp/yama-ryu-0413/entry-12865228071.html) | 年度別「問題」記事。問題画像の内容・完全性は未照合。 |
-| 東京大学 | 2025 | 問題掲載記事 | [開く](https://www.kgkrkgk.com/phys/tup25f.htm) | 問題本文を確認。 |
+| 東京大学 | 2025 | 公式問題PDF・抽出済 | [開く](https://www.u-tokyo.ac.jp/content/400287590.pdf) | 物理3大問を実見。設問別の判断は抽出ログに記録。 |
 | 東京大学 | 2026 | 公式索引 | [開く](https://www.u-tokyo.ac.jp/ja/admissions/undergraduate/e01_04.html) | 年度ページから理科・物理を選択。 |
 | 名古屋大学 | 2017 | 問題記事・画像未照合 | [開く](https://ameblo.jp/yama-ryu-0413/entry-12837499880.html) | 年度別「問題」記事。問題画像の内容・完全性は未照合。 |
 | 名古屋大学 | 2018 | 問題記事・画像未照合 | [開く](https://ameblo.jp/yama-ryu-0413/entry-12838299065.html) | 年度別「問題」記事。問題画像の内容・完全性は未照合。 |
@@ -89,7 +89,7 @@
 | 神戸大学 | 2017 | 収録先確認・本文未閲覧 | [開く](https://passnavi.obunsha.co.jp/univ/0620/kakomon/?nendo=2017) | [個人ブログの年度別解説](https://date-physics.jimdofree.com/%E5%85%A5%E8%A9%A6%E8%A7%A3%E8%AA%AC/%E7%A5%9E%E6%88%B8%E5%A4%A7/)もあり。旺文社はID登録・一部有料で本文未閲覧。 |
 | 神戸大学 | 2018 | 収録先確認・本文未閲覧 | [開く](https://passnavi.obunsha.co.jp/univ/0620/kakomon/?nendo=2018) | [個人ブログの年度別解説](https://date-physics.jimdofree.com/%E5%85%A5%E8%A9%A6%E8%A7%A3%E8%AA%AC/%E7%A5%9E%E6%88%B8%E5%A4%A7/)もあり。旺文社はID登録・一部有料で本文未閲覧。 |
 | 神戸大学 | 2019 | 収録先確認・本文未閲覧 | [開く](https://passnavi.obunsha.co.jp/univ/0620/kakomon/?nendo=2019) | [個人ブログの年度別解説](https://date-physics.jimdofree.com/%E5%85%A5%E8%A9%A6%E8%A7%A3%E8%AA%AC/%E7%A5%9E%E6%88%B8%E5%A4%A7/)もあり。旺文社はID登録・一部有料で本文未閲覧。 |
-| 神戸大学 | 2020 | 公式問題PDF | [開く](https://www.office.kobe-u.ac.jp/stdnt-examinavi/wp-content/uploads/2020/08/04.rika_.pdf) | 理科冊子の1～6頁が物理。 |
+| 神戸大学 | 2020 | 公式問題PDF・抽出済 | [開く](https://www.office.kobe-u.ac.jp/stdnt-examinavi/wp-content/uploads/2020/08/04.rika_.pdf) | 物理1～6頁の3大問を実見。設問別の判断は抽出ログに記録。 |
 | 神戸大学 | 2021 | 収録先確認・本文未閲覧 | [開く](https://passnavi.obunsha.co.jp/univ/0620/kakomon/?nendo=2021) | [個人ブログの年度別解説](https://date-physics.jimdofree.com/%E5%85%A5%E8%A9%A6%E8%A7%A3%E8%AA%AC/%E7%A5%9E%E6%88%B8%E5%A4%A7/)もあり。旺文社はID登録・一部有料で本文未閲覧。 |
 | 神戸大学 | 2022 | 公式索引 | [開く](https://www.kobe-u.ac.jp/ja/admissions/undergraduate/examinations/) | 年度ページから理科・物理を選択。 |
 | 神戸大学 | 2023 | 公式索引 | [開く](https://www.kobe-u.ac.jp/ja/admissions/undergraduate/examinations/) | 年度ページから理科・物理を選択。 |
