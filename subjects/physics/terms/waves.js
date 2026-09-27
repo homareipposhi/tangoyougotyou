@@ -1,0 +1,13 @@
+registerQuestionPack({
+  subject:"physics",name:"物理",chapters:{3:"波動"},questions:[
+    {id:"phy-rta-term-waves-001",subject:"physics",c:3,s:"用語",n:1401,d:"A",type:"choice",rta:"term",
+     q:"定常波を見分ける特徴は？",o:["節と腹の位置が動かない","波形全体が一定速度で進む","媒質のすべての点が同じ振幅で振動する","節で変位が最大になる"],a:[1],
+     e:"定常波では節と腹が空間に固定される。"},
+    {id:"phy-rta-term-waves-002",subject:"physics",c:3,s:"用語",n:1402,d:"A",type:"choice",rta:"term",
+     q:"定常波で振幅が0になる位置を何という？",o:["節","腹","波面","波源"],a:[1],
+     e:"節は常に変位が0となる位置。腹は振幅が最大の位置。"},
+    {id:"phy-rta-term-waves-003",subject:"physics",c:3,s:"用語",n:1403,d:"B",type:"choice",rta:"term",
+     q:"波の位相が表すものは？",o:["振動周期の中での進み具合","波の伝わる速さだけ","振幅の最大値だけ","媒質の密度だけ"],a:[1],
+     e:"位相は振動が周期のどの段階にあるかを示し、同位相なら振動状態がそろう。"}
+  ]
+});

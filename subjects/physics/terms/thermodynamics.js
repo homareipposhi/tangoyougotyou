@@ -1,0 +1,13 @@
+registerQuestionPack({
+  subject:"physics",name:"物理",chapters:{2:"熱力学"},questions:[
+    {id:"phy-rta-term-thermo-001",subject:"physics",c:2,s:"用語",n:1201,d:"A",type:"choice",rta:"term",
+     q:"接触した2物体の温度が等しく、正味の熱移動がない状態は？",o:["熱平衡","断熱","定積変化","熱伝導"],a:[1],
+     e:"熱平衡では温度が等しく、正味の熱移動がない。"},
+    {id:"phy-rta-term-thermo-002",subject:"physics",c:2,s:"用語",n:1202,d:"A",type:"choice",rta:"term",
+     q:"断熱変化の「断熱」が示す条件は？",o:["外部との熱のやり取りがない","温度が一定","体積が一定","気体が仕事をしない"],a:[1],
+     e:"断熱では熱の出入りQ=0。温度や体積は変化し得る。"},
+    {id:"phy-rta-term-thermo-003",subject:"physics",c:2,s:"用語",n:1203,d:"B",type:"choice",rta:"term",
+     q:"理想気体の内部エネルギーは、状態量のうち何だけで決まるか？",o:["絶対温度","圧力","体積","密度"],a:[1],
+     e:"一定量の理想気体では内部エネルギーは絶対温度のみの関数。"}
+  ]
+});

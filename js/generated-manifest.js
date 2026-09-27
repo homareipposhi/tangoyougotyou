@@ -5,7 +5,15 @@ const MANIFEST = [
   "subjects/german/basic-verbs-200.js",
   "subjects/physics/formulas/mechanics.js",
   "subjects/physics/practice.js",
+  "subjects/physics/recognition/atomic.js",
+  "subjects/physics/recognition/electromagnetism.js",
   "subjects/physics/recognition/mechanics.js",
+  "subjects/physics/recognition/thermodynamics.js",
+  "subjects/physics/recognition/waves.js",
+  "subjects/physics/terms/atomic.js",
+  "subjects/physics/terms/electromagnetism.js",
   "subjects/physics/terms/mechanics.js",
+  "subjects/physics/terms/thermodynamics.js",
+  "subjects/physics/terms/waves.js",
   "subjects/physics/units/mechanics.js"
 ];

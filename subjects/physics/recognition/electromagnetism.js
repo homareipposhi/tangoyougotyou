@@ -1,0 +1,13 @@
+registerQuestionPack({
+  subject:"physics",name:"物理",chapters:{4:"電磁気"},questions:[
+    {id:"phy-rta-rec-em-001",subject:"physics",c:4,s:"条件判断",n:1701,d:"B",type:"choice",rta:"recognition",
+     q:"直流電源・抵抗・コンデンサーの直列回路で、接続後十分に時間が経った。回路電流Iは？",o:["I=0","I=V/R","Iは時間とともに増え続ける","I=CV"],a:[1],
+     e:"直流の定常状態ではコンデンサーに電荷がたまり、電流は流れない。"},
+    {id:"phy-rta-rec-em-002",subject:"physics",c:4,s:"条件判断",n:1702,d:"B",type:"choice",rta:"recognition",
+     q:"コイルを貫く磁束が時間変化する。誘導起電力を求める法則は？",o:["ファラデーの電磁誘導の法則","オームの法則","クーロンの法則","パスカルの原理"],a:[1],
+     e:"誘導起電力の大きさは磁束の時間変化率に比例する。向きはレンツの法則で判断する。"},
+    {id:"phy-rta-rec-em-003",subject:"physics",c:4,s:"条件判断",n:1703,d:"A",type:"choice",rta:"recognition",
+     q:"理想導線でつながった並列回路の各枝。各枝に共通する量は？",o:["両端の電圧","流れる電流","抵抗値","消費電力"],a:[1],
+     e:"並列の各枝は同じ2点に接続されるため、両端の電圧が等しい。"}
+  ]
+});

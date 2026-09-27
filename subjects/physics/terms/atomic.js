@@ -1,0 +1,13 @@
+registerQuestionPack({
+  subject:"physics",name:"物理",chapters:{5:"原子"},questions:[
+    {id:"phy-rta-term-atomic-001",subject:"physics",c:5,s:"用語",n:1801,d:"A",type:"choice",rta:"term",
+     q:"光電効果の「仕事関数」とは？",o:["電子を物質表面から取り出すのに必要な最小エネルギー","光子1個のエネルギー","放出電子の最大運動エネルギー","光の強さを表す量"],a:[1],
+     e:"仕事関数Wは電子を表面から取り出すために必要な最小エネルギー。"},
+    {id:"phy-rta-term-atomic-002",subject:"physics",c:5,s:"用語",n:1802,d:"A",type:"choice",rta:"term",
+     q:"多数の放射性原子核のうち、未崩壊の核数が半分になるまでの時間は？",o:["半減期","周期","平均自由行程","励起寿命"],a:[1],
+     e:"半減期は未崩壊数が半分になる時間。個々の原子核がその時間で必ず崩壊する意味ではない。"},
+    {id:"phy-rta-term-atomic-003",subject:"physics",c:5,s:"用語",n:1803,d:"A",type:"choice",rta:"term",
+     q:"同位体の原子核どうしで同じ数は？",o:["陽子数","中性子数","質量数","陽子数と中性子数の両方"],a:[1],
+     e:"同位体は陽子数（原子番号）が同じで、中性子数が異なる。"}
+  ]
+});

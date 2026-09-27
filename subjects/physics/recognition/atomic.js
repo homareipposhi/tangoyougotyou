@@ -1,0 +1,13 @@
+registerQuestionPack({
+  subject:"physics",name:"物理",chapters:{5:"原子"},questions:[
+    {id:"phy-rta-rec-atomic-001",subject:"physics",c:5,s:"条件判断",n:1901,d:"A",type:"choice",rta:"recognition",
+     q:"照射光の振動数がしきい振動数より低い。光を強くしたとき、光電子は？",o:["放出されない","必ず放出される","最大運動エネルギーが増える","放出数が必ず2倍になる"],a:[1],
+     e:"光子1個のエネルギーhfが仕事関数に足りないため、強度を上げても光電子は出ない。"},
+    {id:"phy-rta-rec-atomic-002",subject:"physics",c:5,s:"条件判断",n:1902,d:"B",type:"choice",rta:"recognition",
+     q:"光電効果で光電子が放出される。光子エネルギーhf、仕事関数Wのとき最大運動エネルギーは？",o:["hf−W","hf+W","W−hf","hf/W"],a:[1],
+     e:"エネルギー保存よりKₘₐₓ=hf−W。"},
+    {id:"phy-rta-rec-atomic-003",subject:"physics",c:5,s:"条件判断",n:1903,d:"B",type:"choice",rta:"recognition",
+     q:"原子核がα崩壊する。元の質量数Aと原子番号Zは、それぞれどう変わるか？",o:["A−4、Z−2","A−2、Z−4","A−1、Zは同じ","Aは同じ、Z＋1"],a:[1],
+     e:"α粒子はヘリウム原子核なので、質量数4・原子番号2を失う。"}
+  ]
+});

@@ -1,0 +1,13 @@
+registerQuestionPack({
+  subject:"physics",name:"物理",chapters:{3:"波動"},questions:[
+    {id:"phy-rta-rec-waves-001",subject:"physics",c:3,s:"条件判断",n:1501,d:"A",type:"choice",rta:"recognition",
+     q:"弦の波が固定端で反射する。反射波の変位は入射波に対して？",o:["符号が反転する","必ず同符号になる","振動数が2倍になる","波長が0になる"],a:[1],
+     e:"固定端反射では反射波の変位が反転する。"},
+    {id:"phy-rta-rec-waves-002",subject:"physics",c:3,s:"条件判断",n:1502,d:"B",type:"choice",rta:"recognition",
+     q:"端補正を無視した開管の開いた端で、空気の変位に注目する。定常波のどこに当たるか？",o:["腹","節","常に振動しない点","固定端"],a:[1],
+     e:"開口端は空気が動きやすいため変位の腹。圧力変動では逆に節となる。"},
+    {id:"phy-rta-rec-waves-003",subject:"physics",c:3,s:"条件判断",n:1503,d:"A",type:"choice",rta:"recognition",
+     q:"波が別の媒質へ進み、速さが変わった。境界を越えても変わらない量は？",o:["振動数","波長","波の速さ","屈折角"],a:[1],
+     e:"振動数は波源で決まる。媒質で速さが変わると、v=fλより波長が変わる。"}
+  ]
+});

@@ -17,7 +17,13 @@
   });
 
   load('js/generated-manifest.js')
-    .then(() => Promise.all(MANIFEST.map(file => load(file))))
+    .then(async () => {
+      for (const file of MANIFEST) {
+        const before = packs.length;
+        await load(file);
+        if (packs.length === before) throw new Error(`問題パックが登録されませんでした: ${file}`);
+      }
+    })
     .then(() => {
       const ids = new Set();
       const subjects = {};
@@ -38,7 +44,10 @@
       return load('js/app.js');
     })
     .catch(error => {
-      document.getElementById('app').innerHTML = `<p class="load-error">問題データを読み込めませんでした。<br>${String(error.message)}</p>`;
+      const message = document.createElement('p');
+      message.className = 'load-error';
+      message.textContent = `問題データを読み込めませんでした。 ${error.message}`;
+      document.getElementById('app').replaceChildren(message);
       console.error(error);
     });
 })();

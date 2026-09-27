@@ -4,7 +4,7 @@ const app = document.getElementById("app");
 let S = load();
 let view = "home";
 let subjectId = null;
-let filters = {chapters:[], diffs:[], types:[], only:"all"};
+let filters = {chapters:[], diffs:[], types:[], only:"all", track:"rta", rtaCategories:[]};
 let size = 10;
 let order = "mix";
 let sess = [], idx = 0, hit = 0, miss = [], cleared = [], picked = null, picks = [], marks = [];
@@ -58,7 +58,7 @@ function home(){
       <b>${esc(sub.name)}</b>
       <span>${qs.length}問<br>要復習 ${t.todo} ・ 未着手 ${t.fresh}</span>
     </button>`);
-    b.addEventListener("click",()=>{subjectId=id;filters={chapters:[],diffs:[],types:[],only:"all"};view="subject";render();});
+    b.addEventListener("click",()=>{subjectId=id;filters={chapters:[],diffs:[],types:[],only:"all",track:"rta",rtaCategories:[]};view="subject";render();});
     box.appendChild(b);
   });
   body.appendChild(h(`<p class="empty">科目を選ぶと、単元・難易度・問題形式を絞って演習できます。</p>`));
@@ -67,6 +67,10 @@ function home(){
 
 function scopedBase(){
   let p=subjectQuestions();
+  if(subjectId==="physics"){
+    p=p.filter(q=>filters.track==="rta" ? isRta(q) : !isRta(q));
+    if(filters.track==="rta" && filters.rtaCategories.length) p=p.filter(q=>filters.rtaCategories.includes(q.rta));
+  }
   if(filters.chapters.length) p=p.filter(q=>filters.chapters.includes(q.c));
   if(filters.diffs.length) p=p.filter(q=>filters.diffs.includes(q.d));
   if(filters.types.length) p=p.filter(q=>filters.types.includes(q.type));
@@ -90,6 +94,9 @@ function filterButton(txt,on,fn,disabled=false){
 
 function subjectView(){
   const sub=currentSubject(), all=subjectQuestions(), base=scopedBase(), t=tally(base), p=pool();
+  const trackQuestions=subjectId==="physics" ? all.filter(q=>filters.track==="rta" ? isRta(q) : !isRta(q)) : all;
+  const categoryQuestions=subjectId==="physics" && filters.track==="rta" && filters.rtaCategories.length
+    ? trackQuestions.filter(q=>filters.rtaCategories.includes(q.rta)) : trackQuestions;
   const head=h(`<header class="top"><button class="back" type="button">← 科目</button><h1>${esc(sub.name)}</h1><span class="subtle">${all.length}問</span></header>`);
   head.querySelector(".back").addEventListener("click",()=>{view="home";subjectId=null;render();});
   app.appendChild(head);
@@ -102,9 +109,29 @@ function subjectView(){
   </div>`));
 
   const panel=h(`<div class="panel"></div>`);
+  if(subjectId==="physics"){
+    const track=h(`<div class="grp"><span>学習内容</span><div class="opts"></div></div>`);
+    [["rta","RTA暗記"],["practice","従来の問題"]].forEach(([value,label])=>{
+      const count=all.filter(q=>Boolean(q.rta)===(value==="rta")).length;
+      track.querySelector(".opts").appendChild(filterButton(`${label} ${count}`,filters.track===value,()=>{
+        filters.track=value;filters.rtaCategories=[];filters.chapters=[];filters.only="all";render();
+      }));
+    });
+    panel.appendChild(track);
+    if(filters.track==="rta"){
+      const categories=h(`<div class="grp"><span>RTAカテゴリ</span><div class="opts"></div></div>`);
+      [["formula","公式"],["unit","単位"],["term","用語"],["recognition","条件判断"]].forEach(([value,label])=>{
+        const count=all.filter(q=>q.rta===value).length;
+        categories.querySelector(".opts").appendChild(filterButton(`${label} ${count}`,filters.rtaCategories.includes(value),()=>{
+          toggle(filters.rtaCategories,value);filters.only="all";render();
+        },!count));
+      });
+      panel.appendChild(categories);
+    }
+  }
   const ch=h(`<div class="grp"><span>単元</span><div class="opts"></div></div>`);
   Object.entries(sub.chapters).forEach(([c,name])=>{
-    const n=Number(c), count=all.filter(q=>q.c===n).length;
+    const n=Number(c), count=categoryQuestions.filter(q=>q.c===n).length;
     if(!count) return;
     ch.querySelector(".opts").appendChild(filterButton(`${name} ${count}`,filters.chapters.includes(n),()=>{toggle(filters.chapters,n);render();}));
   });
@@ -112,7 +139,7 @@ function subjectView(){
 
   const dg=h(`<div class="grp"><span>難易度</span><div class="opts"></div></div>`);
   ["A","B","C"].forEach(d=>{
-    const count=all.filter(q=>q.d===d).length;
+    const count=categoryQuestions.filter(q=>q.d===d).length;
     if(!count) return;
     dg.querySelector(".opts").appendChild(filterButton(`${d} ${count}`,filters.diffs.includes(d),()=>{toggle(filters.diffs,d);render();}));
   });
@@ -120,7 +147,7 @@ function subjectView(){
 
   const tg=h(`<div class="grp"><span>形式</span><div class="opts"></div></div>`);
   ["tf","choice"].forEach(tp=>{
-    const count=all.filter(q=>q.type===tp).length;
+    const count=categoryQuestions.filter(q=>q.type===tp).length;
     tg.querySelector(".opts").appendChild(filterButton(`${typeLabel(tp)} ${count}`,filters.types.includes(tp),()=>{toggle(filters.types,tp);render();},!count));
   });
   panel.appendChild(tg);
@@ -157,6 +184,11 @@ function shuffle(a){
   for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}
   return a;
 }
+function prepareQuestion(q){
+  if(q.type!=="choice") return q;
+  const indices=shuffle(q.o.map((_,i)=>i));
+  return {...q,o:indices.map(i=>q.o[i]),a:q.a.map(n=>indices.indexOf(n-1)+1)};
+}
 function start(){
   const p=pool(), n=Math.min(size,p.length);
   if(!n) return;
@@ -169,6 +201,7 @@ function start(){
     for(const arr of [B,A.slice(cap),C,D]) if(pick.length<n) pick=pick.concat(arr.slice(0,n-pick.length));
     sess=shuffle(pick);
   }
+  sess=sess.map(prepareQuestion);
   idx=0;hit=0;miss=[];cleared=[];picked=null;picks=[];marks=[];lastTiming=null;questionStartedAt=performance.now();view="quiz";render();
 }
 function isCorrect(q,v){
@@ -231,7 +264,7 @@ function quiz(){
   tags.appendChild(h(`<span class="tg">${esc(sub.chapters[q.c]||"")}・${esc(q.s)}</span>`));
   tags.appendChild(h(`<span class="tg">難易度 ${esc(q.d)}</span>`));
   tags.appendChild(h(`<span class="tg good">${typeLabel(q.type)}</span>`));
-  if(isRta(q)) tags.appendChild(h(`<span class="tg">RTA・${esc(q.rta)}</span>`));
+  if(isRta(q)) tags.appendChild(h(`<span class="tg">RTA・${esc({formula:"公式",unit:"単位",term:"用語",recognition:"条件判断"}[q.rta]||q.rta)}</span>`));
   if(todo(q)) tags.appendChild(h(`<span class="tg hot">要復習</span>`));
   app.appendChild(tags);
 

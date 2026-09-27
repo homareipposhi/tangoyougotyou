@@ -14,7 +14,12 @@ for (const question of questions) {
   if (!['choice', 'tf'].includes(question.type)) throw new Error(`未対応形式: ${question.id}`);
   if (ids.has(question.id)) throw new Error(`重複ID: ${question.id}`);
   ids.add(question.id);
-  if (question.type === 'choice' && question.o.length !== 4) throw new Error(`四択ではありません: ${question.id}`);
+  if (question.type === 'choice') {
+    if (question.o.length !== 4 || new Set(question.o).size !== 4) throw new Error(`選択肢に不足または重複があります: ${question.id}`);
+    if (!question.a.length || question.a.some(index => !Number.isInteger(index) || index < 1 || index > 4)) {
+      throw new Error(`正解番号が不正です: ${question.id}`);
+    }
+  }
 }
 
 const german = questions.filter(question => question.subject === 'german');
@@ -26,8 +31,15 @@ if (jaToDe.some(question => question.q.includes(question.o[question.a[0] - 1])))
 
 const rtaCategories = questions.filter(question => question.rta).map(question => question.rta).sort();
 const expectedRta = ['formula', 'recognition', 'term', 'unit'];
-if (rtaCategories.length !== expectedRta.length || rtaCategories.some((value, i) => value !== expectedRta[i])) {
-  throw new Error(`物理RTAカテゴリが不足または重複しています: ${rtaCategories.join(', ')}`);
+if (expectedRta.some(category => !rtaCategories.includes(category))) {
+  throw new Error(`物理RTAカテゴリが不足しています: ${rtaCategories.join(', ')}`);
+}
+for (const category of ['term', 'recognition']) {
+  for (const chapter of [1, 2, 3, 4, 5]) {
+    if (questions.filter(question => question.subject === 'physics' && question.rta === category && question.c === chapter).length < 3) {
+      throw new Error(`物理RTAの${category}・単元${chapter}の問題が不足しています。`);
+    }
+  }
 }
 
 console.log(`OK: ${packs.length}パック / ${questions.length}問 / ドイツ語${german.length}問 / input 0件`);

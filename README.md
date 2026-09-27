@@ -8,6 +8,8 @@ GitHub Actions が `subjects/**/*.js` を自動検出し、`js/generated-manifes
 
 問題形式は四択 (`choice`) と○× (`tf`) のみです。物理RTA問題では `rta` に
 `formula`、`unit`、`term`、`recognition` を指定できます。
+物理画面ではRTA暗記を初期表示し、用語・条件判断を各分野から選べます。
+従来の問題は同じ画面の「従来の問題」から利用できます。
 
 ローカルでの検証:
 
