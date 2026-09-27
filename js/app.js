@@ -120,7 +120,7 @@ function subjectView(){
     panel.appendChild(track);
     if(filters.track!=="practice"){
       const categories=h(`<div class="grp"><span>RTAカテゴリ</span><div class="opts"></div></div>`);
-      [["formula","公式"],["unit","単位"],["term","用語"],["recognition","条件判断"]].forEach(([value,label])=>{
+      [["formula","公式"],["unit","単位"],["symbol","微積物理の記号"],["term","用語の定義"],["recognition","条件判断"]].forEach(([value,label])=>{
         const count=trackQuestions.filter(q=>q.rta===value).length;
         categories.querySelector(".opts").appendChild(filterButton(`${label} ${count}`,filters.rtaCategories.includes(value),()=>{
           toggle(filters.rtaCategories,value);filters.only="all";render();
@@ -264,7 +264,7 @@ function quiz(){
   tags.appendChild(h(`<span class="tg">${esc(sub.chapters[q.c]||"")}・${esc(q.s)}</span>`));
   tags.appendChild(h(`<span class="tg">難易度 ${esc(q.d)}</span>`));
   tags.appendChild(h(`<span class="tg good">${typeLabel(q.type)}</span>`));
-  if(isRta(q)) tags.appendChild(h(`<span class="tg">RTA・${esc({formula:"公式",unit:"単位",term:"用語",recognition:"条件判断"}[q.rta]||q.rta)}</span>`));
+  if(isRta(q)) tags.appendChild(h(`<span class="tg">RTA・${esc({formula:"公式",unit:"単位",symbol:"微積物理の記号",term:"用語の定義",recognition:"条件判断"}[q.rta]||q.rta)}</span>`));
   if(todo(q)) tags.appendChild(h(`<span class="tg hot">要復習</span>`));
   app.appendChild(tags);
 

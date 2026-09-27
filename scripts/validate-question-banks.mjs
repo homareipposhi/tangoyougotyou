@@ -34,7 +34,7 @@ if (jaToDe.some(question => question.q.includes(question.o[question.a[0] - 1])))
 }
 
 const rtaCategories = questions.filter(question => question.rta).map(question => question.rta).sort();
-const expectedRta = ['formula', 'recognition', 'term', 'unit'];
+const expectedRta = ['formula', 'recognition', 'symbol', 'term', 'unit'];
 if (expectedRta.some(category => !rtaCategories.includes(category))) {
   throw new Error(`物理RTAカテゴリが不足しています: ${rtaCategories.join(', ')}`);
 }
@@ -45,5 +45,30 @@ for (const category of ['term', 'recognition']) {
     }
   }
 }
+for (const chapter of [1, 2, 3, 4, 5]) {
+  if (questions.filter(question => question.subject === 'physics' && question.rta === 'formula' && question.c === chapter).length < 4) {
+    throw new Error(`物理RTAの公式・単元${chapter}が不足しています。`);
+  }
+  if (questions.filter(question => question.subject === 'physics' && question.rta === 'symbol' && question.c === chapter).length < 2) {
+    throw new Error(`物理RTAの微積記号・単元${chapter}が不足しています。`);
+  }
+  if (questions.filter(question => question.subject === 'physics' && question.s === '用語の定義' && question.c === chapter).length < 3) {
+    throw new Error(`物理RTAの用語定義・単元${chapter}が不足しています。`);
+  }
+}
 
-console.log(`OK: ${packs.length}パック / ${questions.length}問 / ドイツ語${german.length}問 / input 0件`);
+const recognition = questions.filter(question => question.subject === 'physics' && question.rta === 'recognition');
+for (const question of recognition) {
+  const answer = question.o[question.a[0] - 1];
+  if (/[A-Za-z0-9=πλμθΔΦ²√]/.test([question.q, ...question.o].join(''))) {
+    throw new Error(`条件判断の問題文・選択肢は日本語の説明にする: ${question.id}`);
+  }
+  if (answer.length < 17) {
+    throw new Error(`条件判断の正解は単語や数値でなく、関係を説明する文章にする: ${question.id}`);
+  }
+}
+
+const formulas = questions.filter(question => question.subject === 'physics' && question.rta === 'formula');
+const symbols = questions.filter(question => question.subject === 'physics' && question.rta === 'symbol');
+const definitions = questions.filter(question => question.subject === 'physics' && question.s === '用語の定義');
+console.log(`OK: ${packs.length}パック / ${questions.length}問 / 物理・公式${formulas.length}問・微積記号${symbols.length}問・用語定義${definitions.length}問・条件判断${recognition.length}問 / ドイツ語${german.length}問 / input 0件`);
