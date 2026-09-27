@@ -9,6 +9,10 @@ const context = vm.createContext({ registerQuestionPack: pack => packs.push(pack
 for (const file of files) vm.runInContext(await readFile(file, 'utf8'), context, { filename: file });
 
 const questions = packs.flatMap(pack => pack.questions);
+const examPacks = packs.filter(pack => pack.exam);
+if (examPacks.length < 2 || examPacks.some(pack => !pack.source?.startsWith('https://www.kyoto-u.ac.jp/'))) {
+  throw new Error('二次試験由来の問題パックに出典がありません。');
+}
 const ids = new Set();
 for (const question of questions) {
   if (!['choice', 'tf'].includes(question.type)) throw new Error(`未対応形式: ${question.id}`);

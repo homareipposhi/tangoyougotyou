@@ -31,7 +31,8 @@
       packs.forEach(pack => {
         const subject = subjects[pack.subject] ||= { name: pack.name, chapters: {} };
         Object.assign(subject.chapters, pack.chapters || {});
-        pack.questions.forEach(question => {
+        pack.questions.forEach(raw => {
+          const question = pack.exam ? {...raw, exam:true, source:pack.source, sourceLabel:pack.sourceLabel} : raw;
           if (!question.id) throw new Error(`${pack.subject} にIDのない問題があります。`);
           if (ids.has(question.id)) throw new Error(`問題IDが重複しています: ${question.id}`);
           if (!['choice', 'tf'].includes(question.type)) throw new Error(`未対応の問題形式です: ${question.id}`);

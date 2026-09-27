@@ -8,8 +8,11 @@ GitHub Actions が `subjects/**/*.js` を自動検出し、`js/generated-manifes
 
 問題形式は四択 (`choice`) と○× (`tf`) のみです。物理RTA問題では `rta` に
 `formula`、`unit`、`term`、`recognition` を指定できます。
-物理画面ではRTA暗記を初期表示し、用語・条件判断を各分野から選べます。
-従来の問題は同じ画面の「従来の問題」から利用できます。
+物理画面では「二次試験の条件判断」を初期表示します。これは
+[京都大学2025年度](https://www.kyoto-u.ac.jp/ja/admissions/undergrad/past-eq/r7-eq)・
+[2026年度](https://www.kyoto-u.ac.jp/ja/admissions/undergrad/past-eq/r8-eq)の公開問題と出題意図を読み、
+そこで必要になる判断を独自の短問にしたものです。過去問そのものの転載ではありません。
+既存の用語・条件の一問一答は「基礎RTA」、旧問題は「従来の問題」から利用できます。
 
 ローカルでの検証:
 

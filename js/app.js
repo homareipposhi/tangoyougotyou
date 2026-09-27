@@ -4,7 +4,7 @@ const app = document.getElementById("app");
 let S = load();
 let view = "home";
 let subjectId = null;
-let filters = {chapters:[], diffs:[], types:[], only:"all", track:"rta", rtaCategories:[]};
+let filters = {chapters:[], diffs:[], types:[], only:"all", track:"exam", rtaCategories:[]};
 let size = 10;
 let order = "mix";
 let sess = [], idx = 0, hit = 0, miss = [], cleared = [], picked = null, picks = [], marks = [];
@@ -58,7 +58,7 @@ function home(){
       <b>${esc(sub.name)}</b>
       <span>${qs.length}問<br>要復習 ${t.todo} ・ 未着手 ${t.fresh}</span>
     </button>`);
-    b.addEventListener("click",()=>{subjectId=id;filters={chapters:[],diffs:[],types:[],only:"all",track:"rta",rtaCategories:[]};view="subject";render();});
+    b.addEventListener("click",()=>{subjectId=id;filters={chapters:[],diffs:[],types:[],only:"all",track:"exam",rtaCategories:[]};view="subject";render();});
     box.appendChild(b);
   });
   body.appendChild(h(`<p class="empty">科目を選ぶと、単元・難易度・問題形式を絞って演習できます。</p>`));
@@ -68,8 +68,8 @@ function home(){
 function scopedBase(){
   let p=subjectQuestions();
   if(subjectId==="physics"){
-    p=p.filter(q=>filters.track==="rta" ? isRta(q) : !isRta(q));
-    if(filters.track==="rta" && filters.rtaCategories.length) p=p.filter(q=>filters.rtaCategories.includes(q.rta));
+    p=p.filter(q=>filters.track==="exam" ? q.exam : filters.track==="rta" ? isRta(q)&&!q.exam : !isRta(q));
+    if(filters.track!=="practice" && filters.rtaCategories.length) p=p.filter(q=>filters.rtaCategories.includes(q.rta));
   }
   if(filters.chapters.length) p=p.filter(q=>filters.chapters.includes(q.c));
   if(filters.diffs.length) p=p.filter(q=>filters.diffs.includes(q.d));
@@ -94,8 +94,8 @@ function filterButton(txt,on,fn,disabled=false){
 
 function subjectView(){
   const sub=currentSubject(), all=subjectQuestions(), base=scopedBase(), t=tally(base), p=pool();
-  const trackQuestions=subjectId==="physics" ? all.filter(q=>filters.track==="rta" ? isRta(q) : !isRta(q)) : all;
-  const categoryQuestions=subjectId==="physics" && filters.track==="rta" && filters.rtaCategories.length
+  const trackQuestions=subjectId==="physics" ? all.filter(q=>filters.track==="exam" ? q.exam : filters.track==="rta" ? isRta(q)&&!q.exam : !isRta(q)) : all;
+  const categoryQuestions=subjectId==="physics" && filters.track!=="practice" && filters.rtaCategories.length
     ? trackQuestions.filter(q=>filters.rtaCategories.includes(q.rta)) : trackQuestions;
   const head=h(`<header class="top"><button class="back" type="button">← 科目</button><h1>${esc(sub.name)}</h1><span class="subtle">${all.length}問</span></header>`);
   head.querySelector(".back").addEventListener("click",()=>{view="home";subjectId=null;render();});
@@ -111,17 +111,17 @@ function subjectView(){
   const panel=h(`<div class="panel"></div>`);
   if(subjectId==="physics"){
     const track=h(`<div class="grp"><span>学習内容</span><div class="opts"></div></div>`);
-    [["rta","RTA暗記"],["practice","従来の問題"]].forEach(([value,label])=>{
-      const count=all.filter(q=>Boolean(q.rta)===(value==="rta")).length;
+    [["exam","二次試験の条件判断"],["rta","基礎RTA"],["practice","従来の問題"]].forEach(([value,label])=>{
+      const count=all.filter(q=>value==="exam" ? q.exam : value==="rta" ? isRta(q)&&!q.exam : !isRta(q)).length;
       track.querySelector(".opts").appendChild(filterButton(`${label} ${count}`,filters.track===value,()=>{
         filters.track=value;filters.rtaCategories=[];filters.chapters=[];filters.only="all";render();
       }));
     });
     panel.appendChild(track);
-    if(filters.track==="rta"){
+    if(filters.track!=="practice"){
       const categories=h(`<div class="grp"><span>RTAカテゴリ</span><div class="opts"></div></div>`);
       [["formula","公式"],["unit","単位"],["term","用語"],["recognition","条件判断"]].forEach(([value,label])=>{
-        const count=all.filter(q=>q.rta===value).length;
+        const count=trackQuestions.filter(q=>q.rta===value).length;
         categories.querySelector(".opts").appendChild(filterButton(`${label} ${count}`,filters.rtaCategories.includes(value),()=>{
           toggle(filters.rtaCategories,value);filters.only="all";render();
         },!count));
@@ -304,6 +304,13 @@ function quiz(){
     const fb=h(`<div class="fb ${ok?"ok":"ng"}"><strong>${ok?"正解":"不正解"}</strong>
       <div>${ok?"":`あなたの答え：${esc(yourText(q))}<br>`}正解：${esc(answerText(q))}</div>
       <div>${esc(q.e)}</div>${isRta(q)&&lastTiming?`<div class="timing">回答時間 ${formatMs(lastTiming.ms)}秒：${esc(lastTiming.label)}</div>`:""}</div>`);
+    if(q.source){
+      const url=new URL(q.source,location.href);
+      if(url.protocol==="https:"){
+        const link=h(`<a href="${esc(url.href)}" target="_blank" rel="noopener noreferrer">参考：${esc(q.sourceLabel||"公開入試問題・出題意図")}</a>`);
+        fb.appendChild(link);
+      }
+    }
     dock.appendChild(fb);
     const b=h(`<button class="cta" type="button">${idx+1<sess.length?"つづける":"結果を見る"}</button>`);
     b.addEventListener("click",next);dock.appendChild(b);

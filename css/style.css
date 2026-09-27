@@ -67,6 +67,7 @@ button:focus-visible{outline:2px solid var(--acc);outline-offset:3px}
 .fb.ok{background:var(--accS)}.fb.ng{background:var(--badS)}
 .fb strong{display:block;font-size:1.05rem;margin-bottom:.35rem}
 .fb.ok strong{color:var(--acc)}.fb.ng strong{color:var(--bad)}
+.fb a{display:inline-block;margin-top:.4rem;color:var(--acc);font-size:.85rem}
 .score{text-align:center;padding:1rem 0}.score b{display:block;font-size:3rem}.score span{font-size:.85rem;color:var(--tx2)}
 .list{display:flex;flex-direction:column;gap:.6rem}
 .list h2{margin:.4rem .1rem 0;font-size:.85rem;color:var(--tx2)}
