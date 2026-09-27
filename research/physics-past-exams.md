@@ -2,7 +2,7 @@
 
 指定9大学の2017～2026年度については[年度別90件の収集表](physics-past-exams-2017-2026.md)を参照。問題本文を確認できていない年度も明示している。
 
-本文を実際に読み、用語・条件判断へ分解した結果は[設問別の抽出ログ](physics-extraction-log.md)に記録する。2026-09-28現在は90校年度中20年度のみ抽出済み（2026年度は指定9大学すべて）。
+本文を実際に読み、用語・条件判断へ分解した結果は[設問別の抽出ログ](physics-extraction-log.md)に記録する。2026-09-28現在は90校年度中39年度のみ抽出済み（2023～2026年度は指定9大学すべて）。
 
 確認日: 2026-09-27。対象は学部一般選抜の**大学個別試験の物理**。共通テスト、大学院入試、総合型選抜は含めない。
 
@@ -14,10 +14,10 @@
 | 東北大学 | [試験問題・出題意図](https://admissions.tohoku.ac.jp/ja/materials/ito/) | 2025・2026年度の前期理科問題を実見。2026年度の物理出題意図も照合。公表物で問題を二次利用するときは大学の利用条件を要確認。 |
 | 東京大学 | [これまでの試験問題](https://www.u-tokyo.ac.jp/ja/admissions/undergraduate/e01_04.html) | 公式は2024～2026年度の第2次学力試験を掲載。理科冊子内に物理。 |
 | 京都大学 | [一般選抜の試験問題等](https://www.kyoto-u.ac.jp/ja/admissions/undergrad/past-eq) | 年度別の問題・出題意図。2025・2026年度は問題冊子まで確認済み。 |
-| 名古屋大学 | [試験問題・正解／解答例等](https://www.nagoya-u.ac.jp/admissions/exam/data/answer/index.html) | 公式索引は2024～2026年度の一般選抜。2026年度の物理3大問を画像で実見。 |
-| 大阪大学 | [過去の入試問題・解答例等](https://www.osaka-u.ac.jp/ja/admissions/faculty/general/pastexam-answer) / [2026年度](https://www.osaka-u.ac.jp/ja/admissions/faculty/general/pastexam-answer/copy_of_r6) | 2026年度の物理3大問を画像で実見。著作権処理中の部分はマスクされ得る。 |
-| 九州大学 | [試験問題・解答例等](https://www.kyushu-u.ac.jp/ja/admission/faculty/exam_question) | 一般選抜の理科「物理基礎・物理」を掲載。2026年度の3大問と解答例を実見。物理学科の総合型・編入試験の一覧とは区別する。 |
-| 東京工業大学／東京科学大学理工学系 | [過去の入試問題・出題の意図等](https://admissions.isct.ac.jp/ja/013/undergraduate/examination-questions) | 2026年度の理工学系前期・物理3大問と出題意図を実見。旧東工大の問題は下記の民間アーカイブにもある。 |
+| 名古屋大学 | [試験問題・正解／解答例等](https://www.nagoya-u.ac.jp/admissions/exam/data/answer/index.html) | 公式索引は2024～2026年度の一般選抜。2026年度は公式問題、2025年度は個人ブログの問題画像13頁で物理3大問を実見。 |
+| 大阪大学 | [過去の入試問題・解答例等](https://www.osaka-u.ac.jp/ja/admissions/faculty/general/pastexam-answer) / [2026年度](https://www.osaka-u.ac.jp/ja/admissions/faculty/general/pastexam-answer/copy_of_r6) | 2026年度は公式問題の3大問を画像で実見。2025年度は[非公式の問題本文](https://www.kgkrkgk.com/phys/gnp25os.htm)を実見。 |
+| 九州大学 | [試験問題・解答例等](https://www.kyushu-u.ac.jp/ja/admission/faculty/exam_question) | 一般選抜の理科「物理基礎・物理」を掲載。2025・2026年度の公式問題冊子で各3大問を実見。総合型・編入試験とは区別。 |
+| 東京工業大学／東京科学大学理工学系 | [過去の入試問題・出題の意図等](https://admissions.isct.ac.jp/ja/013/undergraduate/examination-questions) | 2026年度は公式問題と出題意図を実見。2025年度は[個人ブログの問題画像](https://buturi0117.com/tokyokagaku-university-buturi2025-1/)12頁で3大問を実見。 |
 | 神戸大学 | [入試問題・出題の意図など](https://www.kobe-u.ac.jp/ja/admissions/undergraduate/examinations/) | 索引にある2022～2026年度に加え、2021年度の理科問題PDFも公式サーバーで確認。著作権の関係で非掲載の問題あり。 |
 
 ## 東進以外の年度別アーカイブ
