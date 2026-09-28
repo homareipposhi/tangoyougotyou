@@ -136,6 +136,81 @@ test('all four existing subjects, German directions, and 87 included university-
   assert.ok(questions.every(q => q.type === 'choice' || q.type === 'tf'));
 });
 
+test('biology import contains all five supplied packs and all ten chapters', () => {
+  const expected = {'vegetation.js':28, 'production.js':32, 'succession.js':30, 'world-biomes.js':32, 'japan-biomes.js':29};
+  const biologyFiles = files.filter(file => file.startsWith('subjects/biology/'));
+  assert.deepEqual(biologyFiles.sort(), Object.keys(expected).map(file => `subjects/biology/${file}`).sort());
+  for (const [file, count] of Object.entries(expected)) {
+    const imported = [];
+    vm.runInNewContext(sources[`subjects/biology/${file}`], {registerQuestionPack:pack => imported.push(pack)});
+    assert.equal(imported.length, 1);
+    assert.equal(imported[0].subject, 'biology');
+    assert.equal(imported[0].name, '生物基礎');
+    assert.equal(imported[0].questions.length, count, file);
+  }
+  const biology = questions.filter(q => q.subject === 'biology');
+  assert.equal(biology.length, 151);
+  assert.equal(subjects.biology.name, '生物基礎');
+  assert.deepEqual(Object.keys(subjects.biology.chapters).map(Number), [1,2,3,4,5,6,7,8,9,10]);
+  assert.deepEqual([...new Set(biology.map(q => q.d))].sort(), ['A','B','C']);
+  for (const q of biology) {
+    assert.ok(q.id.startsWith('bio-'));
+    assert.equal(q.type, 'choice');
+    assert.equal(q.o.length, 4);
+    assert.equal(new Set(q.o).size, 4);
+    assert.equal(q.a.length, 1);
+    assert.ok(Number.isInteger(q.a[0]) && q.a[0] >= 1 && q.a[0] <= 4);
+    assert.ok(q.q && q.e && subjects.biology.chapters[q.c]);
+    assert.ok(!q.rta && !q.exam);
+  }
+});
+
+test('biology is available from home and supports chapter and difficulty filtering', () => {
+  const app = makeApp();
+  assert.ok(app.html().includes('<b>生物基礎</b>'));
+  assert.ok(app.html().includes('151問'));
+  app.run("subjectId='biology'; view='subject'; render();");
+  assert.equal(app.value('pool().length'), 151);
+  for (const [chapter, name] of Object.entries(subjects.biology.chapters)) {
+    const count = questions.filter(q => q.subject === 'biology' && q.c === Number(chapter)).length;
+    app.click(`${name} ${count}`);
+    assert.equal(app.value('pool().length'), count);
+    assert.ok(app.value('pool()').every(q => q.c === Number(chapter)));
+    app.click(`${name} ${count}`);
+    assert.equal(app.value('pool().length'), 151);
+  }
+  const hard = questions.filter(q => q.subject === 'biology' && q.d === 'C').length;
+  app.click(`C ${hard}`);
+  assert.equal(app.value('pool().length'), hard);
+  app.click('20問');
+  app.run('start();');
+  const session = app.value('sess');
+  assert.equal(session.length, Math.min(20, hard));
+  assert.equal(new Set(session.map(q => q.id)).size, session.length);
+  assert.ok(session.every(q => q.subject === 'biology' && q.d === 'C'));
+});
+
+test('every biology answer shows its explanation, preserves old history, and supports review', () => {
+  const initial = {'phy-1':{seen:3,wrong:1,last:0}, [rtaQuestion.id]:{seen:2,wrong:0,last:1,lastMs:1500}};
+  const app = makeApp(initial);
+  const biology = questions.filter(q => q.subject === 'biology');
+  for (const q of biology) {
+    app.begin(q);
+    app.answer(21000, true, q);
+    assert.deepEqual(app.saved()[q.id], {seen:1,wrong:0,last:1});
+    assert.ok(app.html().includes(q.e));
+    assert.ok(!app.html().includes('回答時間'));
+  }
+  const q = biology[0];
+  app.begin(q); app.answer(1000, false, q); app.run('next();');
+  assert.deepEqual(app.saved()[q.id], {seen:2,wrong:1,last:0});
+  for (const [id, record] of Object.entries(initial)) assert.deepEqual(app.saved()[id], record);
+  const reloaded = makeApp(app.saved());
+  reloaded.run("subjectId='biology'; view='subject'; render();");
+  reloaded.click('要復習 1');
+  assert.deepEqual(reloaded.value('pool().map(q=>q.id)'), [q.id]);
+});
+
 for (const [ms, counter, label, review] of [
   [0,'reflex','反射',false], [2000,'reflex','反射',false],
   [2001,'settled','定着',false], [5000,'settled','定着',false],
@@ -264,7 +339,7 @@ test('advanced settings are collapsed, keep their open state on rerender, and hi
 
 test('other subject controls remain available and non-collapsed', () => {
   const app=makeApp();
-  for(const subject of ['classics','earth','german']){
+  for(const subject of ['classics','earth','german','biology']){
     app.run(`subjectId=${JSON.stringify(subject)}; view='subject'; render();`);
     assert.ok(!app.nodes().some(el=>el.tag==='details'));
     assert.ok(app.nodes().some(el=>el.markup?.includes('<span>単元</span>')));
