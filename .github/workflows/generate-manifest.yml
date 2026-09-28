@@ -57,12 +57,32 @@ jobs:
     needs: manifest
     runs-on: ubuntu-latest
     permissions:
+      actions: read
       pages: write
       id-token: write
+    timeout-minutes: 15
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
+      - name: Wait for any branch-based Pages build
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const { data: pages } = await github.rest.repos.getPages(context.repo);
+            if (pages.build_type !== 'legacy') return;
+            // A legacy build can overwrite the generated manifest with the pre-build version.
+            // Keep existing Pages settings and publish our tested artifact after it finishes.
+            const deadline = Date.now() + 10 * 60 * 1000;
+            while (Date.now() < deadline) {
+              const { data } = await github.rest.actions.listWorkflowRunsForRepo({
+                ...context.repo, head_sha: context.sha, per_page: 100
+              });
+              const legacy = data.workflow_runs.filter(run => run.name === 'pages-build-deployment');
+              if (legacy.length && legacy.every(run => run.status === 'completed')) return;
+              await new Promise(resolve => setTimeout(resolve, 15000));
+            }
+            throw new Error('Timed out waiting for the existing Pages build.');
       - name: Publish tested app
         id: deployment
         uses: actions/deploy-pages@v4
