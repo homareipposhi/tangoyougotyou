@@ -46,16 +46,29 @@ function makeApp(initial = {}) {
   let now = 1000;
   let html = [];
   const storage = new Map([[key, typeof initial === 'string' ? initial : JSON.stringify(initial)]]);
+  const descendants = node => [node, ...[...node.children, ...node.queries.values()].flatMap(descendants)];
+  const connect = (node, connected) => descendants(node).forEach(el => {el.isConnected=connected;});
   class Element {
-    constructor(tag) { this.tag = tag; this.children = []; }
+    constructor(tag) { this.tag=tag; this.children=[]; this.queries=new Map(); this.listeners=new Map(); this.isConnected=tag==='app'; }
     set innerHTML(value) {
-      if (this.tag === 'app') html = [];
+      if (this.tag === 'app') {
+        this.children.forEach(child => connect(child,false));
+        this.children=[]; html=[];
+      }
       else html.push(value);
-      if (this.tag === 'template') this.content = {firstElementChild:new Element('fragment')};
+      if (this.tag === 'template') {
+        const node=new Element(value.match(/^\s*<([\w-]+)/)?.[1] || 'fragment');
+        node.markup=value; node.open=/^<details[^>]*\sopen(?:\s|>)/.test(value.trim());
+        node.disabled=/^<button[^>]*\sdisabled(?:\s|>)/.test(value.trim());
+        this.content={firstElementChild:node};
+      }
     }
-    appendChild(child) { this.children.push(child); return child; }
-    querySelector() { return new Element('child'); }
-    addEventListener() {}
+    appendChild(child) { this.children.push(child); connect(child,this.isConnected); return child; }
+    querySelector(selector) {
+      if(!this.queries.has(selector)) {const child=new Element('child'); child.isConnected=this.isConnected; this.queries.set(selector,child);}
+      return this.queries.get(selector);
+    }
+    addEventListener(type,callback) {this.listeners.set(type,callback);}
   }
   const root = new Element('app');
   const context = vm.createContext({
@@ -70,6 +83,17 @@ function makeApp(initial = {}) {
   return {
     run, value:code => copy(run(code)), saved:() => JSON.parse(storage.get(key)),
     html:() => html.join('\n'),
+    nodes:() => descendants(root),
+    click(label) {
+      const nodes=descendants(root).filter(el => el.tag==='button' && el.markup.replace(/<[^>]*>/g,'').trim()===label);
+      assert.equal(nodes.length,1,`unique button: ${label}`);
+      assert.ok(!nodes[0].disabled,`enabled button: ${label}`);
+      nodes[0].listeners.get('click')();
+    },
+    toggleDetails(open) {
+      const details=descendants(root).find(el=>el.tag==='details');
+      assert.ok(details); details.open=open; details.listeners.get('toggle')();
+    },
     begin(q = rtaQuestion) {
       run(`subjectId=${JSON.stringify(q.subject)}; sess=[${JSON.stringify(q)}]; idx=0; hit=0; miss=[]; cleared=[]; picked=null; picks=[]; marks=[]; lastTiming=null; questionStartedAt=performance.now(); view='quiz'; render();`);
     },
@@ -169,19 +193,99 @@ test('old storage survives, timing accumulates, and fast correct answers clear r
   assert.deepEqual(reloaded.value('S'), saved);
 });
 
-test('legacy physics questions and their track are removed; both RTA tracks remain usable', () => {
+test('legacy physics questions and the two-level selector are removed; all content remains usable', () => {
   assert.ok(!files.includes('subjects/physics/practice.js'));
   assert.ok(!questions.some(q => q.subject === 'physics' && /^phy-\d+$/.test(q.id)));
   const app = makeApp({'phy-1':{seen:3,wrong:1,last:0}});
-  for (const track of ['exam','rta']) {
-    app.run(`subjectId='physics'; filters.track=${JSON.stringify(track)}; view='subject'; render();`);
+  for (const content of ['exam','formula','unit','symbol','term','recognition','all']) {
+    app.run(`subjectId='physics'; filters.content=${JSON.stringify(content)}; view='subject'; render();`);
     assert.ok(!app.html().includes('従来の問題'));
-    assert.ok(app.html().includes('二次試験の条件判断'));
-    assert.ok(app.html().includes('基礎RTA'));
+    assert.ok(!app.html().includes('RTAカテゴリ'));
+    assert.ok(!app.html().includes('基礎RTA'));
+    assert.ok(app.html().includes('過去問の条件判断'));
+    assert.ok(app.html().includes('基礎の条件判断'));
     assert.ok(app.value('pool().length') > 0);
+    const expected=Math.min(10,app.value('pool().length'));
     app.run('start();');
-    assert.equal(app.value('sess.length'), 10);
+    assert.equal(app.value('sess.length'), expected);
   }
+});
+
+test('single-level content buttons preserve the existing exam/basic partition and exact counts', () => {
+  const app=makeApp();
+  app.run("subjectId='physics'; view='subject'; render();");
+  const groups=[['公式',21],['単位',1],['微積の記号',15],['用語・定義',31],['基礎の条件判断',17],['過去問の条件判断',666],['全内容',751]];
+  for(const [label,count] of groups){
+    app.click(label);
+    assert.equal(app.value('pool().length'),count,label);
+    const content=app.value('filters.content');
+    const qs=app.value('pool()');
+    if(content==='exam') assert.ok(qs.every(q=>q.exam));
+    else if(content!=='all') assert.ok(qs.every(q=>!q.exam && q.rta===content));
+  }
+});
+
+test('switching content clears old restrictions; selecting the same content keeps them', () => {
+  const app=makeApp();
+  app.run("subjectId='physics'; view='subject'; render();");
+  app.click('力学');
+  app.run("filters.diffs=['C']; filters.types=['choice']; filters.only='todo'; advancedOpen=true; render();");
+  app.click('公式');
+  assert.deepEqual(app.value('filters'),{chapters:[],diffs:[],types:[],only:'all',content:'formula'});
+  assert.equal(app.value('advancedOpen'),false);
+  app.click('力学');
+  app.click('公式');
+  assert.deepEqual(app.value('filters.chapters'),[1]);
+  app.click('全分野');
+  assert.deepEqual(app.value('filters.chapters'),[]);
+});
+
+test('advanced settings are collapsed, keep their open state on rerender, and hide single-format noise', () => {
+  const app=makeApp();
+  app.run("subjectId='physics'; view='subject'; render();");
+  assert.equal(app.nodes().find(el=>el.tag==='details').open,false);
+  assert.ok(!app.nodes().some(el=>el.markup?.includes('<span>形式</span>')));
+  app.toggleDetails(true);
+  app.click('B');
+  assert.deepEqual(app.value('filters.diffs'),['B']);
+  assert.equal(app.nodes().find(el=>el.tag==='details').open,true);
+  app.toggleDetails(false);
+  app.run('render();');
+  assert.equal(app.nodes().find(el=>el.tag==='details').open,false);
+  assert.ok(app.html().includes('詳細設定（設定中）'));
+  app.click('公式');
+  app.toggleDetails(true);
+  app.click('完全ランダム');
+  assert.equal(app.value('order'),'rand');
+  assert.equal(app.nodes().find(el=>el.tag==='details').open,true);
+});
+
+test('other subject controls remain available and non-collapsed', () => {
+  const app=makeApp();
+  for(const subject of ['classics','earth','german']){
+    app.run(`subjectId=${JSON.stringify(subject)}; view='subject'; render();`);
+    assert.ok(!app.nodes().some(el=>el.tag==='details'));
+    assert.ok(app.nodes().some(el=>el.markup?.includes('<span>単元</span>')));
+    assert.ok(app.nodes().some(el=>el.markup?.includes('<span>形式</span>')));
+    assert.ok(app.nodes().some(el=>el.markup?.includes('<span>出題順</span>')));
+  }
+});
+
+test('simplified review targets still distinguish wrong, slow, and unseen questions', () => {
+  const exam=questions.filter(q=>q.exam);
+  const app=makeApp({
+    [exam[0].id]:{seen:1,wrong:1,last:0,needsReview:true},
+    [exam[1].id]:{seen:1,wrong:0,last:0,needsReview:true,lastMs:6000},
+  });
+  app.run("subjectId='physics'; view='subject'; render();");
+  app.click('要復習');
+  assert.deepEqual(app.value('pool().map(q=>q.id)').sort(),[exam[0].id,exam[1].id].sort());
+  app.click('過去の誤答');
+  assert.deepEqual(app.value('pool().map(q=>q.id)'),[exam[0].id]);
+  app.click('未着手');
+  assert.equal(app.value('pool().length'),exam.length-2);
+  app.click('すべて');
+  assert.equal(app.value('pool().length'),exam.length);
 });
 
 test('non-RTA answers retain the original record format', () => {

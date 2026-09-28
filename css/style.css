@@ -36,6 +36,10 @@ button:focus-visible{outline:2px solid var(--acc);outline-offset:3px}
 .panel{padding:1rem;display:flex;flex-direction:column;gap:1rem}
 .grp{display:flex;flex-direction:column;gap:.5rem}
 .grp>span{font-size:.74rem;color:var(--tx3)}
+.advanced{border-top:1px solid var(--card2);padding-top:.8rem}
+.advanced>summary{cursor:pointer;color:var(--tx2);font-size:.82rem;padding:.25rem 0}
+.advanced>summary:focus-visible{outline:2px solid var(--acc);outline-offset:3px}
+.advanced-body{display:flex;flex-direction:column;gap:1rem;padding-top:1rem}
 .opts{display:flex;gap:.4rem;flex-wrap:wrap}
 .opt{background:var(--card2);color:var(--tx2);border-radius:99px;padding:.5rem .8rem;font-size:.82rem}
 .opt[aria-pressed="true"]{background:var(--acc);color:white;font-weight:700}
