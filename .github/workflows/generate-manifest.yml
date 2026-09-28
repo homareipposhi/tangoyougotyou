@@ -17,7 +17,7 @@ permissions:
 
 concurrency:
   group: study-app-${{ github.ref }}
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   manifest:
@@ -78,7 +78,7 @@ jobs:
               const { data } = await github.rest.actions.listWorkflowRunsForRepo({
                 ...context.repo, head_sha: context.sha, per_page: 100
               });
-              const legacy = data.workflow_runs.filter(run => run.name === 'pages-build-deployment');
+              const legacy = data.workflow_runs.filter(run => run.path === 'dynamic/pages/pages-build-deployment');
               if (legacy.length && legacy.every(run => run.status === 'completed')) return;
               await new Promise(resolve => setTimeout(resolve, 15000));
             }

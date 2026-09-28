@@ -9,6 +9,7 @@ const files = JSON.parse(manifestCode.match(/\[[\s\S]*\]/)[0]);
 const sources = Object.fromEntries(await Promise.all(files.map(async file => [file, await readFile(file, 'utf8')])));
 const loaderCode = await readFile('js/loader.js', 'utf8');
 const appCode = await readFile('js/app.js', 'utf8');
+const workflowCode = await readFile('.github/workflows/generate-manifest.yml', 'utf8');
 const packs = [];
 const bankContext = vm.createContext({registerQuestionPack: pack => packs.push(pack)});
 for (const file of files) vm.runInContext(sources[file], bankContext, {filename:file});
@@ -23,6 +24,23 @@ const rtaQuestion = questions.find(q => q.subject === 'physics' && q.rta === 're
 const legacyQuestion = questions.find(q => q.subject === 'classics');
 const key = 'multi-study-drill-v1';
 const copy = value => JSON.parse(JSON.stringify(value));
+
+test('deployment waits for the actual legacy Pages workflow path, not its CLI display name', async () => {
+  const script = workflowCode.match(/          script: \|\n([\s\S]*?)      - name: Publish tested app/)[1];
+  const times = [0, 1, 600001];
+  const context = vm.createContext({
+    context:{repo:{owner:'test',repo:'test'},sha:'test-sha'},
+    Date:{now:() => times.shift() ?? 600001}, setTimeout:callback => callback(),
+    github:{rest:{
+      repos:{getPages:async () => ({data:{build_type:'legacy'}})},
+      actions:{listWorkflowRunsForRepo:async () => ({data:{workflow_runs:[
+        {name:'pages build and deployment',path:'dynamic/pages/pages-build-deployment',status:'completed'},
+        {name:'Validate and publish study app',path:'.github/workflows/generate-manifest.yml',status:'in_progress'},
+      ]}})},
+    }},
+  });
+  await vm.runInContext(`(async () => {${script}})()`, context);
+});
 
 function makeApp(initial = {}) {
   let now = 1000;
