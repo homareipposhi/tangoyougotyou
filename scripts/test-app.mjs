@@ -139,8 +139,10 @@ test('all four existing subjects, German directions, and 87 included university-
 for (const [ms, counter, label, review] of [
   [0,'reflex','反射',false], [2000,'reflex','反射',false],
   [2001,'settled','定着',false], [5000,'settled','定着',false],
-  [5001,'slow','遅い',true], [9999,'slow','遅い',true],
-  [10000,'review','要復習',true], [10001,'review','要復習',true],
+  [5001,'slow','遅い（5〜20秒）',true], [9999,'slow','遅い（5〜20秒）',true],
+  [10000,'slow','遅い（5〜20秒）',true], [10001,'slow','遅い（5〜20秒）',true],
+  [19999,'slow','遅い（5〜20秒）',true],
+  [20000,'review','要復習（20秒以上）',true], [20001,'review','要復習（20秒以上）',true],
 ]) {
   test(`RTA boundary ${ms}ms: ${label}`, () => {
     const app = makeApp();

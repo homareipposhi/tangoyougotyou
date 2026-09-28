@@ -47,8 +47,8 @@ function timingLabel(ms, ok){
   if (!ok) return "未定着（不正解）";
   if (ms <= 2000) return "反射（0〜2秒）";
   if (ms <= 5000) return "定着（2〜5秒）";
-  if (ms < 10000) return "遅い（5〜10秒）";
-  return "要復習（10秒以上）";
+  if (ms < 20000) return "遅い（5〜20秒）";
+  return "要復習（20秒以上）";
 }
 
 function home(){
@@ -228,7 +228,7 @@ function answer(v){
     if(!ok){ r.review=(r.review||0)+1; r.needsReview=true; }
     else if(ms<=2000){ r.reflex=(r.reflex||0)+1; r.needsReview=false; }
     else if(ms<=5000){ r.settled=(r.settled||0)+1; r.needsReview=false; }
-    else if(ms<10000){ r.slow=(r.slow||0)+1; r.needsReview=true; }
+    else if(ms<20000){ r.slow=(r.slow||0)+1; r.needsReview=true; }
     else { r.review=(r.review||0)+1; r.needsReview=true; }
     r.last=ok && ms<=5000 ? 1 : 0;
   }
