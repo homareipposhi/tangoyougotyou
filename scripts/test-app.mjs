@@ -26,7 +26,7 @@ const key = 'multi-study-drill-v1';
 const copy = value => JSON.parse(JSON.stringify(value));
 
 test('deployment waits for the actual legacy Pages workflow path, not its CLI display name', async () => {
-  const script = workflowCode.match(/          script: \|\n([\s\S]*?)      - name: Publish tested app/)[1];
+  const script = workflowCode.match(/script: \|\r?\n([\s\S]*?)      - name: Publish tested app/)[1];
   const times = [0, 1, 600001];
   const context = vm.createContext({
     context:{repo:{owner:'test',repo:'test'},sha:'test-sha'},
