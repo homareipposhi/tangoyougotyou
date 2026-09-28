@@ -9,7 +9,6 @@ const MANIFEST = [
   "subjects/physics/formulas/mechanics.js",
   "subjects/physics/formulas/thermodynamics.js",
   "subjects/physics/formulas/waves.js",
-  "subjects/physics/practice.js",
   "subjects/physics/recognition/atomic.js",
   "subjects/physics/recognition/electromagnetism.js",
   "subjects/physics/recognition/hokkaido-2017.js",

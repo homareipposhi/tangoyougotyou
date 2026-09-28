@@ -91,7 +91,7 @@ test('manifest discovers every nested subjects/**/*.js file', async () => {
 });
 
 test('all four existing subjects, German directions, and 87 included university-years are present', () => {
-  for (const [subject, minimum] of Object.entries({classics:15, earth:10, german:400, physics:764})) {
+  for (const [subject, minimum] of Object.entries({classics:15, earth:10, german:400, physics:751})) {
     assert.ok(questions.filter(q => q.subject === subject).length >= minimum, subject);
   }
   const german = questions.filter(q => q.subject === 'german');
@@ -148,6 +148,7 @@ test('wrong RTA answers are unlearned even if fast; double answer does not save 
 
 test('old storage survives, timing accumulates, and fast correct answers clear review', () => {
   const initial = {
+    'phy-1':{seen:3, wrong:1, last:0},
     [legacyQuestion.id]:{seen:5, wrong:2, last:0},
     [rtaQuestion.id]:{seen:2, wrong:1, last:0, needsReview:true, lastMs:9000, bestMs:3000, totalMs:12000, slow:1},
     'unknown-retained-id':{seen:7, wrong:0, last:1, extra:'keep'},
@@ -155,6 +156,7 @@ test('old storage survives, timing accumulates, and fast correct answers clear r
   const app = makeApp(initial);
   app.begin(); app.answer(2000);
   const saved = app.saved();
+  assert.deepEqual(saved['phy-1'], initial['phy-1'], 'deleted question history must be retained');
   assert.deepEqual(saved[legacyQuestion.id], initial[legacyQuestion.id]);
   assert.deepEqual(saved['unknown-retained-id'], initial['unknown-retained-id']);
   assert.equal(saved[rtaQuestion.id].seen, 3);
@@ -165,6 +167,21 @@ test('old storage survives, timing accumulates, and fast correct answers clear r
   assert.equal(app.value('cleared.length'), 1);
   const reloaded = makeApp(saved);
   assert.deepEqual(reloaded.value('S'), saved);
+});
+
+test('legacy physics questions and their track are removed; both RTA tracks remain usable', () => {
+  assert.ok(!files.includes('subjects/physics/practice.js'));
+  assert.ok(!questions.some(q => q.subject === 'physics' && /^phy-\d+$/.test(q.id)));
+  const app = makeApp({'phy-1':{seen:3,wrong:1,last:0}});
+  for (const track of ['exam','rta']) {
+    app.run(`subjectId='physics'; filters.track=${JSON.stringify(track)}; view='subject'; render();`);
+    assert.ok(!app.html().includes('従来の問題'));
+    assert.ok(app.html().includes('二次試験の条件判断'));
+    assert.ok(app.html().includes('基礎RTA'));
+    assert.ok(app.value('pool().length') > 0);
+    app.run('start();');
+    assert.equal(app.value('sess.length'), 10);
+  }
 });
 
 test('non-RTA answers retain the original record format', () => {
