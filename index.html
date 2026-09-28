@@ -20,8 +20,15 @@
 </head>
 
 <body>
-  <main class="stage" id="app"></main>
+  <main class="stage" id="app"><p class="empty" id="load-status" role="status">問題データを読み込んでいます。</p></main>
 
-  <script src="js/loader.js"></script>
+  <script>
+    const loader = document.createElement("script");
+    loader.src = "js/loader.js?v=" + VERSION;
+    loader.onerror = () => {
+      document.getElementById("load-status").textContent = "アプリを読み込めませんでした。通信状態を確認して再読み込みしてください。";
+    };
+    document.body.appendChild(loader);
+  </script>
 </body>
 </html>

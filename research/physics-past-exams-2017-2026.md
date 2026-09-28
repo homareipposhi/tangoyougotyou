@@ -86,9 +86,9 @@
 | 東京工業大学／東京科学大学 | 2024 | 問題本文・抽出済 | [開く](https://www.kgkrkgk.com/phys/tip24f.htm) | 旧東工大前期物理3大問の本文を実見。式・図の一部は画像。 |
 | 東京工業大学／東京科学大学 | 2025 | 問題画像・抽出済 | [開く](https://buturi0117.com/tokyokagaku-university-buturi2025-1/) | 理工学系前期物理1～12頁の3大問を画像で実見。設問別の判断は抽出ログに記録。 |
 | 東京工業大学／東京科学大学 | 2026 | 公式問題PDF・抽出済 | [開く](https://admissions.isct.ac.jp/ja/013/undergraduate/examination-questions) | 理工学系の物理3大問を実見。公式の出題意図も照合。設問別の判断は抽出ログに記録。 |
-| 神戸大学 | 2017 | 収録先確認・本文未閲覧 | [開く](https://passnavi.obunsha.co.jp/univ/0620/kakomon/?nendo=2017) | 旺文社はID登録・一部有料で本文未閲覧。全3大問の本文は未確認。date-physicsには年度の題材一覧のみで、この年度の問題本文はない。 |
-| 神戸大学 | 2018 | 一部本文のみ・未抽出 | [開く](https://passnavi.obunsha.co.jp/univ/0620/kakomon/?nendo=2018) | 旺文社はID登録・一部有料で本文未閲覧。公式訂正資料に第1問の冒頭があるが全3大問は未確認。date-physicsには年度の題材一覧のみで、この年度の問題本文はない。 |
-| 神戸大学 | 2019 | 一部本文のみ・未抽出 | [開く](https://passnavi.obunsha.co.jp/univ/0620/kakomon/?nendo=2019) | 旺文社はID登録・一部有料で本文未閲覧。公開の第1問配布資料は一部確認したが全3大問は未確認。date-physicsには年度の題材一覧のみで、この年度の問題本文はない。 |
+| 神戸大学 | 2017 | 対象外（入手困難） | [開く](https://passnavi.obunsha.co.jp/univ/0620/kakomon/?nendo=2017) | 利用者の指示により除外。旺文社はID登録・一部有料で本文未閲覧。全3大問の本文は未確認。date-physicsには年度の題材一覧のみで、この年度の問題本文はない。 |
+| 神戸大学 | 2018 | 対象外（入手困難） | [開く](https://passnavi.obunsha.co.jp/univ/0620/kakomon/?nendo=2018) | 利用者の指示により除外。旺文社はID登録・一部有料で本文未閲覧。公式訂正資料に第1問の冒頭があるが全3大問は未確認。date-physicsには年度の題材一覧のみで、この年度の問題本文はない。 |
+| 神戸大学 | 2019 | 対象外（入手困難） | [開く](https://passnavi.obunsha.co.jp/univ/0620/kakomon/?nendo=2019) | 利用者の指示により除外。旺文社はID登録・一部有料で本文未閲覧。公開の第1問配布資料は一部確認したが全3大問は未確認。date-physicsには年度の題材一覧のみで、この年度の問題本文はない。 |
 | 神戸大学 | 2020 | 公式問題PDF・抽出済 | [開く](https://www.office.kobe-u.ac.jp/stdnt-examinavi/wp-content/uploads/2020/08/04.rika_.pdf) | 物理1～6頁の3大問を実見。設問別の判断は抽出ログに記録。 |
 | 神戸大学 | 2021 | 公式問題PDF・抽出済 | [開く](https://www.office.kobe-u.ac.jp/stdnt-examinavi/wp-content/uploads/2021/08/04_z_rika_R3.pdf) | 物理1～6頁の3大問を図も含め実見。[公式出題意図](https://www.office.kobe-u.ac.jp/stdnt-examinavi/wp-content/uploads/2021/08/04.z_butsuri_ito.pdf)も照合。 |
 | 神戸大学 | 2022 | 公式問題PDF・抽出済 | [開く](https://www.office.kobe-u.ac.jp/stdnt-examinavi/wp-content/uploads/2022/08/04_z_rika_R4.pdf) | 物理1～5頁の3大問を図も含め実見。[公式出題意図](https://www.office.kobe-u.ac.jp/stdnt-examinavi/wp-content/uploads/2022/08/04_z_butsuri_ito_R4.pdf)も照合。 |

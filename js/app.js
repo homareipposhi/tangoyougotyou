@@ -11,7 +11,10 @@ let sess = [], idx = 0, hit = 0, miss = [], cleared = [], picked = null, picks =
 let questionStartedAt = 0, lastTiming = null;
 
 function load(){
-  try { return JSON.parse(localStorage.getItem(KEY)) || {}; } catch(e){ return {}; }
+  try {
+    const data=JSON.parse(localStorage.getItem(KEY));
+    return data && typeof data==="object" && !Array.isArray(data) ? data : {};
+  } catch(e){ return {}; }
 }
 function save(){
   try { localStorage.setItem(KEY, JSON.stringify(S)); } catch(e){}
@@ -43,7 +46,7 @@ function timingLabel(ms, ok){
   if (!ok) return "未定着（不正解）";
   if (ms <= 2000) return "反射（0〜2秒）";
   if (ms <= 5000) return "定着（2〜5秒）";
-  if (ms <= 10000) return "遅い（5〜10秒）";
+  if (ms < 10000) return "遅い（5〜10秒）";
   return "要復習（10秒以上）";
 }
 
@@ -195,8 +198,8 @@ function start(){
   if(order==="rand") sess=shuffle(p.slice()).slice(0,n);
   else{
     const A=shuffle(p.filter(todo)), B=shuffle(p.filter(q=>!rec(q))),
-          C=shuffle(p.filter(q=>{const r=rec(q);return r&&r.last===1&&r.wrong>0;})),
-          D=shuffle(p.filter(q=>{const r=rec(q);return r&&r.wrong===0;}));
+          C=shuffle(p.filter(q=>{const r=rec(q);return r&&!todo(q)&&r.wrong>0;})),
+          D=shuffle(p.filter(q=>{const r=rec(q);return r&&!todo(q)&&!r.wrong;}));
     const cap=Math.max(1,Math.ceil(n*.6)); let pick=A.slice(0,cap);
     for(const arr of [B,A.slice(cap),C,D]) if(pick.length<n) pick=pick.concat(arr.slice(0,n-pick.length));
     sess=shuffle(pick);
@@ -226,7 +229,7 @@ function answer(v){
     if(!ok){ r.review=(r.review||0)+1; r.needsReview=true; }
     else if(ms<=2000){ r.reflex=(r.reflex||0)+1; r.needsReview=false; }
     else if(ms<=5000){ r.settled=(r.settled||0)+1; r.needsReview=false; }
-    else if(ms<=10000){ r.slow=(r.slow||0)+1; r.needsReview=true; }
+    else if(ms<10000){ r.slow=(r.slow||0)+1; r.needsReview=true; }
     else { r.review=(r.review||0)+1; r.needsReview=true; }
     r.last=ok && ms<=5000 ? 1 : 0;
   }
@@ -321,7 +324,7 @@ function formatMs(ms){ return (ms/1000).toFixed(ms < 10000 ? 1 : 0); }
 
 function card(q){
   const r=rec(q);
-  const time=r?.lastMs!==undefined ? ` / 最速 ${formatMs(r.bestMs)}秒` : "";
+  const time=r?.lastMs!==undefined ? ` / 前回 ${formatMs(r.lastMs)}秒 / 最速 ${formatMs(r.bestMs)}秒` : "";
   return h(`<div class="item"><div class="qt">${esc(q.q)}</div><div class="an"><b>正解:</b> ${esc(answerText(q))}<br>${esc(q.e)}${r?`<br>解答 ${r.seen}回 / 不正解 ${r.wrong}回${time}`:""}</div></div>`);
 }
 function logView(){
@@ -344,15 +347,16 @@ function logView(){
 
 function result(){
   const pct=sess.length?Math.round(hit/sess.length*100):0;
+  const reviewQs=sess.filter(todo);
   app.appendChild(h(`<header class="top"><h1>結果</h1><span class="subtle">${SUBJECTS[subjectId].name}</span></header>`));
   const body=h(`<div class="grow"><div class="score"><b>${hit} / ${sess.length}</b><span>正答率 ${pct}%</span></div></div>`);
   if(cleared.length){
     const l=h(`<div class="list"><h2>要復習から外れた ${cleared.length}問</h2></div>`);cleared.forEach(q=>l.appendChild(card(q)));body.appendChild(l);
   }
-  if(miss.length){
-    const l=h(`<div class="list"><h2>要復習に入った ${miss.length}問</h2></div>`);miss.forEach(q=>l.appendChild(card(q)));body.appendChild(l);
+  if(reviewQs.length){
+    const l=h(`<div class="list"><h2>要復習 ${reviewQs.length}問（不正解・遅答）</h2></div>`);reviewQs.forEach(q=>l.appendChild(card(q)));body.appendChild(l);
   }
-  if(!cleared.length&&!miss.length) body.appendChild(h(`<p class="empty">全問正解です。</p>`));
+  if(!cleared.length&&!reviewQs.length) body.appendChild(h(`<p class="empty">全問正解です。</p>`));
   app.appendChild(body);
   const dock=h(`<div class="dock"></div>`);
   const again=h(`<button class="cta" type="button">もう一度</button>`);again.addEventListener("click",start);
