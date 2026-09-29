@@ -8,11 +8,11 @@ GitHub Actions が `subjects/**/*.js` を自動検出し、`js/generated-manifes
 
 問題形式は四択 (`choice`) と○× (`tf`) のみです。物理RTA問題では `rta` に
 `formula`、`unit`、`symbol`、`term`、`recognition` を指定できます。
-生物基礎は提供された `biology_biomes_question_packs.zip` の5パックを
+理系生物は提供された `biology_biomes_question_packs.zip` の5パックを
 `subjects/biology/` に追加しました。植生・森林の構造・水辺の植生・物質生産・
 光合成速度・陽生植物と陰生植物・遷移・世界と日本のバイオームなど10単元、
 全151問の四択と解説を収録しています。提供データの問題文・選択肢・正解・解説・IDは変更していません。
-ホームの「生物基礎」から利用でき、単元・難易度A/B/Cで絞り込めます。
+ホームの「生物」から利用でき、単元・難易度A/B/Cで絞り込めます。生物基礎ではなく理系生物の科目として扱います。
 物理RTAの時間評価は適用せず、既存科目と同じ正誤・復習履歴を保存します。
 物理画面では「過去問の条件判断」を初期表示します。対象大学の公開問題から
 [設問別に抽出した判断](research/physics-extraction-log.md)を独自の短問にしたもので、

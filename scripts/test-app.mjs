@@ -145,12 +145,12 @@ test('biology import contains all five supplied packs and all ten chapters', () 
     vm.runInNewContext(sources[`subjects/biology/${file}`], {registerQuestionPack:pack => imported.push(pack)});
     assert.equal(imported.length, 1);
     assert.equal(imported[0].subject, 'biology');
-    assert.equal(imported[0].name, '生物基礎');
+    assert.equal(imported[0].name, '生物');
     assert.equal(imported[0].questions.length, count, file);
   }
   const biology = questions.filter(q => q.subject === 'biology');
   assert.equal(biology.length, 151);
-  assert.equal(subjects.biology.name, '生物基礎');
+  assert.equal(subjects.biology.name, '生物');
   assert.deepEqual(Object.keys(subjects.biology.chapters).map(Number), [1,2,3,4,5,6,7,8,9,10]);
   assert.deepEqual([...new Set(biology.map(q => q.d))].sort(), ['A','B','C']);
   for (const q of biology) {
@@ -167,7 +167,8 @@ test('biology import contains all five supplied packs and all ten chapters', () 
 
 test('biology is available from home and supports chapter and difficulty filtering', () => {
   const app = makeApp();
-  assert.ok(app.html().includes('<b>生物基礎</b>'));
+  assert.ok(app.html().includes('<b>生物</b>'));
+  assert.ok(!app.html().includes('生物基礎'));
   assert.ok(app.html().includes('151問'));
   app.run("subjectId='biology'; view='subject'; render();");
   assert.equal(app.value('pool().length'), 151);

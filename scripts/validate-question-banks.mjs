@@ -72,4 +72,4 @@ const formulas = questions.filter(question => question.subject === 'physics' && 
 const symbols = questions.filter(question => question.subject === 'physics' && question.rta === 'symbol');
 const definitions = questions.filter(question => question.subject === 'physics' && question.s === '用語の定義');
 const biology = questions.filter(question => question.subject === 'biology');
-console.log(`OK: ${packs.length}パック / ${questions.length}問 / 物理・公式${formulas.length}問・微積記号${symbols.length}問・用語定義${definitions.length}問・条件判断${recognition.length}問 / ドイツ語${german.length}問 / 生物基礎${biology.length}問 / input 0件`);
+console.log(`OK: ${packs.length}パック / ${questions.length}問 / 物理・公式${formulas.length}問・微積記号${symbols.length}問・用語定義${definitions.length}問・条件判断${recognition.length}問 / ドイツ語${german.length}問 / 生物${biology.length}問 / input 0件`);
