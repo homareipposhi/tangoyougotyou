@@ -1,7 +1,7 @@
 /* 生物：第10章 section2 バイオーム。オリジナルの短問と解説。 */
 registerQuestionPack({
   "subject": "biology",
-  "name": "生物基礎",
+  "name": "生物",
   "chapters": {
     "7": "一次遷移と湿性遷移",
     "8": "陰樹・極相・ギャップ・二次遷移"
