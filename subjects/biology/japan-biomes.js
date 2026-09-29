@@ -1,4 +1,4 @@
-/* 生物基礎：第10章 section2 バイオーム。オリジナルの短問と解説。 */
+/* 生物：第10章 section2 バイオーム。オリジナルの短問と解説。 */
 registerQuestionPack({
   "subject": "biology",
   "name": "生物基礎",
