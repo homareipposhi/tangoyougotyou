@@ -1,7 +1,7 @@
 /* 生物：第10章 section2 バイオーム。オリジナルの短問と解説。 */
 registerQuestionPack({
   "subject": "biology",
-  "name": "生物基礎",
+  "name": "生物",
   "chapters": {
     "4": "物質生産と生産構造",
     "5": "光合成速度と計算",
