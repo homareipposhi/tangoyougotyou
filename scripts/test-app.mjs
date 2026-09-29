@@ -169,6 +169,7 @@ test('biology is available from home and supports chapter and difficulty filteri
   const app = makeApp();
   assert.ok(app.html().includes('<b>生物</b>'));
   assert.ok(!app.html().includes('生物基礎'));
+  assert.ok(!app.html().includes('理系生物'));
   assert.ok(app.html().includes('151問'));
   app.run("subjectId='biology'; view='subject'; render();");
   assert.equal(app.value('pool().length'), 151);
