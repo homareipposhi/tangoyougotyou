@@ -136,8 +136,8 @@ test('all four existing subjects, German directions, and 87 included university-
   assert.ok(questions.every(q => q.type === 'choice' || q.type === 'tf'));
 });
 
-test('biology import contains all five supplied packs and all ten chapters', () => {
-  const expected = {'vegetation.js':28, 'production.js':32, 'succession.js':30, 'world-biomes.js':32, 'japan-biomes.js':29};
+test('biology import contains all six supplied packs and the hormone chapter', () => {
+  const expected = {'vegetation.js':28, 'production.js':32, 'succession.js':30, 'world-biomes.js':32, 'japan-biomes.js':29, 'hormones.js':42};
   const biologyFiles = files.filter(file => file.startsWith('subjects/biology/'));
   assert.deepEqual(biologyFiles.sort(), Object.keys(expected).map(file => `subjects/biology/${file}`).sort());
   for (const [file, count] of Object.entries(expected)) {
@@ -149,9 +149,15 @@ test('biology import contains all five supplied packs and all ten chapters', () 
     assert.equal(imported[0].questions.length, count, file);
   }
   const biology = questions.filter(q => q.subject === 'biology');
-  assert.equal(biology.length, 151);
+  assert.equal(biology.length, 193);
   assert.equal(subjects.biology.name, '生物');
-  assert.deepEqual(Object.keys(subjects.biology.chapters).map(Number), [1,2,3,4,5,6,7,8,9,10]);
+  assert.deepEqual(Object.keys(subjects.biology.chapters).map(Number), [1,2,3,4,5,6,7,8,9,10,18]);
+  assert.equal(subjects.biology.chapters[18], 'ヒトの主なホルモン');
+  const hormones = biology.filter(q => q.c === 18);
+  assert.deepEqual(hormones.map(q => q.id), Array.from({length:42}, (_, i) => `bio-hormones-${String(i+1).padStart(3, '0')}`));
+  for (const direction of ['内分泌腺を答える', 'ホルモンを答える', '主なはたらきを答える']) {
+    assert.equal(hormones.filter(q => q.s === direction).length, 14);
+  }
   assert.deepEqual([...new Set(biology.map(q => q.d))].sort(), ['A','B','C']);
   for (const q of biology) {
     assert.ok(q.id.startsWith('bio-'));
@@ -170,16 +176,16 @@ test('biology is available from home and supports chapter and difficulty filteri
   assert.ok(app.html().includes('<b>生物</b>'));
   assert.ok(!app.html().includes('生物基礎'));
   assert.ok(!app.html().includes('理系生物'));
-  assert.ok(app.html().includes('151問'));
+  assert.ok(app.html().includes('193問'));
   app.run("subjectId='biology'; view='subject'; render();");
-  assert.equal(app.value('pool().length'), 151);
+  assert.equal(app.value('pool().length'), 193);
   for (const [chapter, name] of Object.entries(subjects.biology.chapters)) {
     const count = questions.filter(q => q.subject === 'biology' && q.c === Number(chapter)).length;
     app.click(`${name} ${count}`);
     assert.equal(app.value('pool().length'), count);
     assert.ok(app.value('pool()').every(q => q.c === Number(chapter)));
     app.click(`${name} ${count}`);
-    assert.equal(app.value('pool().length'), 151);
+    assert.equal(app.value('pool().length'), 193);
   }
   const hard = questions.filter(q => q.subject === 'biology' && q.d === 'C').length;
   app.click(`C ${hard}`);
