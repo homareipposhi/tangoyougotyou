@@ -45,10 +45,10 @@ function typeLabel(t){ return t==="tf"?"○×":"選択"; }
 function isRta(q){ return q.subject === "physics" && Boolean(q.rta); }
 function timingLabel(ms, ok){
   if (!ok) return "未定着（不正解）";
-  if (ms <= 10000) return "反射（0〜10秒）";
-  if (ms <= 30000) return "定着（10秒超〜30秒）";
-  if (ms < 60000) return "遅い（30秒超〜60秒未満）";
-  return "要復習（60秒以上）";
+  if (ms <= 20000) return "反射（0〜20秒）";
+  if (ms <= 40000) return "定着（20秒超〜40秒）";
+  if (ms < 70000) return "遅い（40秒超〜70秒未満）";
+  return "要復習（70秒以上）";
 }
 
 function home(){
@@ -226,11 +226,11 @@ function answer(v){
     lastTiming={ms, label:timingLabel(ms,ok)};
     r.lastMs=ms; r.bestMs=Math.min(r.bestMs ?? Infinity, ms); r.totalMs=(r.totalMs||0)+ms;
     if(!ok){ r.review=(r.review||0)+1; r.needsReview=true; }
-    else if(ms<=10000){ r.reflex=(r.reflex||0)+1; r.needsReview=false; }
-    else if(ms<=30000){ r.settled=(r.settled||0)+1; r.needsReview=false; }
-    else if(ms<60000){ r.slow=(r.slow||0)+1; r.needsReview=true; }
+    else if(ms<=20000){ r.reflex=(r.reflex||0)+1; r.needsReview=false; }
+    else if(ms<=40000){ r.settled=(r.settled||0)+1; r.needsReview=false; }
+    else if(ms<70000){ r.slow=(r.slow||0)+1; r.needsReview=true; }
     else { r.review=(r.review||0)+1; r.needsReview=true; }
-    r.last=ok && ms<=30000 ? 1 : 0;
+    r.last=ok && ms<=40000 ? 1 : 0;
   }
   S[k]=r;
   if(ok && was && !todo(q)) cleared.push(q);

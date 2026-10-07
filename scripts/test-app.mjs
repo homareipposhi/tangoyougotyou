@@ -220,13 +220,13 @@ test('every biology answer shows its explanation, preserves old history, and sup
 });
 
 for (const [ms, counter, label, review] of [
-  [0,'reflex','反射（0〜10秒）',false], [5000,'reflex','反射（0〜10秒）',false],
-  [10000,'reflex','反射（0〜10秒）',false],
-  [10001,'settled','定着（10秒超〜30秒）',false], [15000,'settled','定着（10秒超〜30秒）',false],
-  [30000,'settled','定着（10秒超〜30秒）',false],
-  [30001,'slow','遅い（30秒超〜60秒未満）',true], [40000,'slow','遅い（30秒超〜60秒未満）',true],
-  [59999,'slow','遅い（30秒超〜60秒未満）',true],
-  [60000,'review','要復習（60秒以上）',true], [60001,'review','要復習（60秒以上）',true],
+  [0,'reflex','反射（0〜20秒）',false], [10000,'reflex','反射（0〜20秒）',false],
+  [20000,'reflex','反射（0〜20秒）',false],
+  [20001,'settled','定着（20秒超〜40秒）',false], [30000,'settled','定着（20秒超〜40秒）',false],
+  [40000,'settled','定着（20秒超〜40秒）',false],
+  [40001,'slow','遅い（40秒超〜70秒未満）',true], [60000,'slow','遅い（40秒超〜70秒未満）',true],
+  [69999,'slow','遅い（40秒超〜70秒未満）',true],
+  [70000,'review','要復習（70秒以上）',true], [70001,'review','要復習（70秒以上）',true],
 ]) {
   test(`RTA boundary ${ms}ms: ${label}`, () => {
     const app = makeApp();
@@ -363,7 +363,7 @@ test('simplified review targets still distinguish wrong, slow, and unseen questi
   const exam=questions.filter(q=>q.exam);
   const app=makeApp({
     [exam[0].id]:{seen:1,wrong:1,last:0,needsReview:true},
-    [exam[1].id]:{seen:1,wrong:0,last:0,needsReview:true,lastMs:40000},
+    [exam[1].id]:{seen:1,wrong:0,last:0,needsReview:true,lastMs:50000},
   });
   app.run("subjectId='physics'; view='subject'; render();");
   app.click('要復習');
@@ -385,10 +385,10 @@ test('non-RTA answers retain the original record format', () => {
 
 test('correct but slow answers appear on the results and review list', () => {
   const app = makeApp();
-  app.begin(); app.answer(40000); app.run('next();');
+  app.begin(); app.answer(50000); app.run('next();');
   assert.equal(app.value('hit'), 1);
   assert.ok(app.html().includes('要復習 1問（不正解・遅答）'));
-  assert.ok(app.html().includes('前回 40秒'));
+  assert.ok(app.html().includes('前回 50秒'));
   app.run("view='log'; render();");
   assert.ok(app.html().includes('要復習 1問'));
 });
