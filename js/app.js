@@ -22,7 +22,7 @@ function save(){
   driveHistory.changed();
 }
 // Google access tokens stay in memory. Only the public client ID is remembered.
-const DRIVE_CLIENT_ID = "";
+const DRIVE_CLIENT_ID = "95228930762-4pbom5l5sh2hij2d0grfqso7i34vgfkg.apps.googleusercontent.com";
 const DRIVE_CONFIG_KEY = "multi-study-drive-client-v1";
 function createDriveHistory({fetcher, authorize, readLocal, applyRemote, notify, readSyncState = () => ({}), writeSyncState = () => {}, clock = () => Date.now()}) {
   const scope = 'https://www.googleapis.com/auth/drive.appdata';
