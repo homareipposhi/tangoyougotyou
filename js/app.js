@@ -230,7 +230,7 @@ function answer(v){
     else if(ms<=30000){ r.settled=(r.settled||0)+1; r.needsReview=false; }
     else if(ms<60000){ r.slow=(r.slow||0)+1; r.needsReview=true; }
     else { r.review=(r.review||0)+1; r.needsReview=true; }
-    r.last=ok && ms<=5000 ? 1 : 0;
+    r.last=ok && ms<=30000 ? 1 : 0;
   }
   S[k]=r;
   if(ok && was && !todo(q)) cleared.push(q);
