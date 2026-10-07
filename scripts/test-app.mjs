@@ -510,3 +510,36 @@ for (const failure of ['missing','unregistered','duplicate','unsupported','timeo
     assert.ok(loader.errors.length > 0);
   });
 }
+
+test('November geography and earth knowledge is available, filterable, and preserves learning history', () => {
+  const imported = questions.filter(q => q.id.includes('-nov25-'));
+  assert.equal(imported.length, 224);
+  for (const [subject, count, chapters] of [['earth',107,[5,6,7,8,9,10]], ['geography',117,[1,2,3,4,5]]]) {
+    const qs = imported.filter(q => q.subject === subject);
+    assert.equal(qs.length, count);
+    assert.deepEqual([...new Set(qs.map(q=>q.c))].sort((a,b)=>a-b), chapters);
+    for (let main=1; main<=5; main++) assert.ok(qs.some(q=>q.basis.startsWith(`${subject==='earth'?'地学':'地理'}${main}`)), `main question ${main}`);
+    assert.ok(qs.some(q=>q.knowledge==='required') && qs.some(q=>q.knowledge==='related'));
+    const old = {[legacyQuestion.id]:{seen:3,wrong:1,last:0}};
+    const app = makeApp(old);
+    assert.ok(app.html().includes(`<b>${subjects[subject].name}</b>`));
+    app.run(`subjectId=${JSON.stringify(subject)}; view='subject'; render();`);
+    for (const chapter of chapters) {
+      const chapterQs=questions.filter(q=>q.subject===subject && q.c===chapter);
+      app.click(`${subjects[subject].chapters[chapter]} ${chapterQs.length}`);
+      assert.deepEqual(app.value('pool().map(q=>q.id)').sort(), chapterQs.map(q=>q.id).sort());
+      app.click(`${subjects[subject].chapters[chapter]} ${chapterQs.length}`);
+    }
+    for (const q of qs) {
+      app.begin(q); app.answer(90000,true,q);
+      assert.ok(app.html().includes(q.e));
+      assert.deepEqual(app.saved()[q.id],{seen:1,wrong:0,last:1});
+    }
+    const q=qs[0]; app.begin(q); app.answer(1000,false,q); app.run('next();');
+    assert.deepEqual(app.saved()[legacyQuestion.id],old[legacyQuestion.id]);
+    const reloaded=makeApp(app.saved());
+    reloaded.run(`subjectId=${JSON.stringify(subject)}; view='subject'; render();`);
+    reloaded.click('要復習 1');
+    assert.deepEqual(reloaded.value('pool().map(q=>q.id)'),[q.id]);
+  }
+});
