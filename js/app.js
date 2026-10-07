@@ -19,7 +19,199 @@ function load(){
 }
 function save(){
   try { localStorage.setItem(KEY, JSON.stringify(S)); } catch(e){}
+  driveHistory.changed();
 }
+// Google access tokens stay in memory. Only the public client ID is remembered.
+const DRIVE_CLIENT_ID = "";
+const DRIVE_CONFIG_KEY = "multi-study-drive-client-v1";
+function createDriveHistory({fetcher, authorize, readLocal, applyRemote, notify, readSyncState = () => ({}), writeSyncState = () => {}, clock = () => Date.now()}) {
+  const scope = 'https://www.googleapis.com/auth/drive.appdata';
+  const filename = 'study-history-v1.json';
+  const stored = readSyncState();
+  let token = '', expires = 0, fileId = stored.fileId || '', baseline = stored.baseline || '', ready = false;
+  let busy = false, dirty = Boolean(stored.pending), running = null, generation = 0;
+  const persist = () => writeSyncState({fileId,baseline,pending:dirty});
+  const report = message => notify({message, connected:ready, busy, pending:dirty});
+  const encode = records => JSON.stringify({format:'study-history',version:1,records});
+  function decode(text) {
+    if (text.length > 2000000) throw new Error('Driveの履歴ファイルが大きすぎます。');
+    const data = JSON.parse(text);
+    if (data?.format !== 'study-history' || data.version !== 1 || !data.records || typeof data.records !== 'object' || Array.isArray(data.records)) throw new Error('Driveの履歴形式を確認できません。上書きせず停止しました。');
+    for (const [id, record] of Object.entries(data.records)) {
+      if (['__proto__','constructor','prototype'].includes(id) || !record || typeof record !== 'object' || Array.isArray(record) || !Number.isFinite(record.seen) || record.seen < 0 || !Number.isFinite(record.wrong) || record.wrong < 0 || ![0,1].includes(record.last)) throw new Error('Driveの履歴に読み込めない記録があります。上書きせず停止しました。');
+    }
+    return data.records;
+  }
+  async function api(path, init = {}) {
+    if (!token || clock() >= expires) {
+      ready = false;
+      throw new Error('Googleへの再接続が必要です。未保存の履歴はこの端末に残っています。');
+    }
+    const controller = typeof AbortController==='undefined' ? null : new AbortController();
+    const timer = controller ? setTimeout(()=>controller.abort(),20000) : null;
+    let response;
+    try { response = await fetcher('https://www.googleapis.com/' + path, {...init, signal:controller?.signal, headers:{...init.headers, Authorization:'Bearer '+token}}); }
+    catch(error) { throw new Error('Driveと通信できません。未保存の履歴はこの端末に残っています。'); }
+    finally { if(timer) clearTimeout(timer); }
+    if (!response.ok) {
+      if (response.status === 401) { token=''; ready=false; }
+      throw new Error(response.status === 401 ? 'Googleへの再接続が必要です。' : `Driveと通信できませんでした（${response.status}）。端末の履歴は残っています。`);
+    }
+    return response;
+  }
+  async function findFile() {
+    const query = new URLSearchParams({spaces:'appDataFolder',q:`name = '${filename}' and trashed = false`,fields:'files(id),nextPageToken',pageSize:'100'});
+    const result = await (await api('drive/v3/files?'+query)).json();
+    if (result.nextPageToken || result.files.length > 1) throw new Error('同名の履歴が複数あります。上書きせず停止しました。');
+    return result.files[0]?.id || '';
+  }
+  async function download() { return (await api(`drive/v3/files/${encodeURIComponent(fileId)}?alt=media`)).text(); }
+  async function upload(text) {
+    if (fileId) {
+      await api(`upload/drive/v3/files/${encodeURIComponent(fileId)}?uploadType=media`, {method:'PATCH',headers:{'Content-Type':'application/json'},body:text});
+    } else {
+      // Check again before creation: another device may have created the first file.
+      if (await findFile()) throw new Error('Driveに新しい履歴があります。再接続して読み込んでください。');
+      const boundary = 'study_history_boundary';
+      const metadata = JSON.stringify({name:filename,parents:['appDataFolder'],mimeType:'application/json'});
+      const body = `--${boundary}\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n${metadata}\r\n--${boundary}\r\nContent-Type: application/json\r\n\r\n${text}\r\n--${boundary}--`;
+      const result = await (await api('upload/drive/v3/files?uploadType=multipart&fields=id', {method:'POST',headers:{'Content-Type':'multipart/related; boundary='+boundary},body})).json();
+      if (!result.id) throw new Error('Driveの保存結果を確認できませんでした。再接続してください。');
+      fileId = result.id;
+    }
+  }
+  async function connect(clientId, useDrive = false) {
+    if (busy) return;
+    busy = true; ready = false; report('Googleに接続しています。');
+    const startGeneration = generation, previousFileId = fileId;
+    try {
+      const result = await authorize(clientId, scope);
+      if (!result.access_token || !Number.isFinite(Number(result.expires_in)) || Number(result.expires_in)<=30 || !result.scope?.split(' ').includes(scope)) throw new Error('履歴保存へのアクセスが許可されませんでした。');
+      token = result.access_token; expires = clock() + Number(result.expires_in)*1000 - 30000;
+      fileId = await findFile();
+      if (fileId) {
+        const text = await download(); const records = decode(text);
+        if (startGeneration !== generation) throw new Error('接続中に回答が追加されました。端末の履歴を保持して読み込みを停止しました。');
+        if (dirty && !useDrive) {
+          if(previousFileId !== fileId || baseline !== text) throw new Error('端末とDriveの両方に変更があります。端末の履歴を保持して停止しました。');
+        } else { applyRemote(records); dirty=false; }
+        baseline = text; persist();
+      } else baseline = '';
+      ready = true; busy = false;
+      report(fileId ? 'Driveの履歴を読み込みました。回答後に自動保存します。' : 'Driveに接続しました。履歴を保存しています。');
+      if (!fileId || dirty) { dirty=true; persist(); await flush(); }
+    } catch (error) {
+      token = ''; ready = false; busy = false; report(error.message || 'Googleへの接続に失敗しました。');
+    }
+  }
+  function changed() {
+    generation++; dirty = true; persist();
+    if (ready) return flush();
+    report('この端末に保存しました。Driveへ保存するには接続してください。');
+    return Promise.resolve();
+  }
+  function flush() {
+    if (running) return running;
+    if (!ready || !dirty) return Promise.resolve();
+    busy = true; report('Driveに保存しています。');
+    let failure = '';
+    running = (async () => {
+      try {
+        while (dirty && ready) {
+          const currentGeneration = generation;
+          const text = encode(readLocal());
+          if (fileId && await download() !== baseline) {
+            ready = false;
+            throw new Error('Driveの履歴が別の端末で変更されています。この端末の履歴を保持して保存を停止しました。');
+          }
+          await upload(text); baseline = text;
+          if (generation === currentGeneration) dirty = false;
+          persist();
+        }
+        report('Driveに保存しました。');
+      } catch (error) { failure = error.message || 'Driveに保存できませんでした。'; }
+      finally { busy = false; running = null; }
+    })().finally(() => report(failure || (dirty ? 'Driveに未保存の履歴があります。再試行してください。' : 'Driveに保存しました。')));
+    return running;
+  }
+  function disconnect() {
+    if (busy) return;
+    token = ''; expires = 0; ready = false;
+    // Keep the local record, including unsaved changes.
+    report('Driveとの接続を終了しました。');
+  }
+  return {connect,changed,flush,disconnect,get state(){return {connected:ready,busy,pending:dirty};}};
+}
+let driveStatus = {message:'Google Driveは未接続です。',connected:false,busy:false,pending:false};
+let driveSdkPromise = null, driveSdkReady = false, driveSdkError = false;
+function loadDriveSdk() {
+  if (driveSdkPromise) return driveSdkPromise;
+  driveSdkPromise = new Promise((resolve,reject) => {
+    const script = document.createElement('script');
+    script.src = 'https://accounts.google.com/gsi/client'; script.async=true;
+    script.onload = () => {driveSdkReady=true;resolve(); if(view==='home') render();};
+    script.onerror = () => {driveSdkError=true; driveStatus.message='Googleの接続機能を読み込めません。通信状態を確認してください。'; if(view==='home') render(); reject(new Error(driveStatus.message));};
+    document.head.appendChild(script);
+  });
+  return driveSdkPromise;
+}
+const driveHistory = createDriveHistory({
+  fetcher:(...args)=>fetch(...args),
+  authorize:(clientId,scope)=>new Promise((resolve,reject)=>{
+    if (!driveSdkReady) {reject(new Error('Googleの接続機能を読み込み中です。少し待ってもう一度押してください。'));return;}
+    const client = google.accounts.oauth2.initTokenClient({client_id:clientId,scope,callback:resolve,error_callback:error=>reject(new Error(error.type==='popup_closed'?'Googleへの接続をキャンセルしました。':'Googleのログイン画面を開けませんでした。'))});
+    client.requestAccessToken({prompt:'select_account'});
+  }),
+  readSyncState:()=>{try{return JSON.parse(localStorage.getItem('multi-study-drive-sync-v1')) || {};}catch(e){return {};}},
+  writeSyncState:state=>{try{localStorage.setItem('multi-study-drive-sync-v1',JSON.stringify(state));}catch(e){}},
+  readLocal:()=>S,
+  applyRemote:records=>{S=records; try{localStorage.setItem(KEY,JSON.stringify(S));}catch(e){}},
+  notify:state=>{
+    driveStatus=state;
+    const element=document.getElementById('drive-status');
+    if(element) element.textContent=state.message;
+    if(view==='home') render();
+  },
+});
+Object.assign(driveStatus,driveHistory.state);
+if(driveStatus.pending) driveStatus.message='Driveに未保存の履歴がこの端末にあります。Googleに接続してください。';
+function driveClientId() {
+  try{return DRIVE_CLIENT_ID || localStorage.getItem(DRIVE_CONFIG_KEY) || '';}catch(e){return DRIVE_CLIENT_ID;}
+}
+function drivePanel() {
+  const panel=h(`<section class="panel"><h2>Google Driveに履歴を保存</h2><p id="drive-status" role="status">${esc(driveStatus.message)}</p><div class="opts"></div><p class="subtle">接続中は回答後に自動保存します。次回もGoogleに接続して履歴を読み込みます。</p></section>`);
+  const buttons=panel.querySelector('.opts');
+  const clientId=driveClientId();
+  if(!clientId) {
+    panel.appendChild(h(`<p>初回はGoogle側の接続設定が必要です。<a href="https://github.com/homareipposhi/tangoyougotyou/blob/main/research/google-drive-setup.md" target="_blank" rel="noopener">設定手順</a></p>`));
+    const input=h(`<input type="text" aria-label="Google OAuthクライアントID" placeholder="…apps.googleusercontent.com" autocomplete="off" style="width:100%;box-sizing:border-box">`);
+    panel.appendChild(input);
+    const set=filterButton('接続設定を保存',false,()=>{
+      const id=input.value.trim();
+      if(!/^[\w-]+\.apps\.googleusercontent\.com$/.test(id)){driveStatus.message='GoogleのOAuthクライアントIDを入力してください。';render();return;}
+      try{localStorage.setItem(DRIVE_CONFIG_KEY,id);driveStatus.message='接続設定を保存しました。Googleに接続してください。';}catch(e){driveStatus.message='接続設定を端末に保存できませんでした。';}
+      render();
+    });
+    buttons.appendChild(set);
+  } else {
+    if(typeof navigator!=='undefined' && !driveSdkPromise) loadDriveSdk().catch(()=>{});
+    if(driveSdkError) buttons.appendChild(filterButton('Google接続機能を再読み込み',false,()=>{driveSdkError=false;driveSdkPromise=null;loadDriveSdk().catch(()=>{});}));
+    buttons.appendChild(filterButton(driveStatus.connected?'再接続して読み込む':'Googleに接続',false,()=>driveHistory.connect(clientId),driveStatus.busy||!driveSdkReady||driveStatus.pending&&driveStatus.connected));
+    if(driveStatus.connected) {
+      buttons.appendChild(filterButton('今すぐ保存',false,()=>driveHistory.flush(),driveStatus.busy));
+      buttons.appendChild(filterButton('接続を終了',false,()=>driveHistory.disconnect(),driveStatus.busy||driveStatus.pending));
+    }
+    if(driveStatus.pending && !driveStatus.connected) buttons.appendChild(filterButton('Driveの履歴を使う',false,()=>{
+      if(window.confirm('この端末の未保存履歴に代えて、Driveの履歴を読み込みますか？')) {
+        try{localStorage.setItem('multi-study-before-drive-restore-v1',JSON.stringify(S));}catch(e){}
+        driveHistory.connect(clientId,true);
+      }
+    },driveStatus.busy||!driveSdkReady));
+    if(!DRIVE_CLIENT_ID && !driveStatus.connected) buttons.appendChild(filterButton('接続設定を変更',false,()=>{try{localStorage.removeItem(DRIVE_CONFIG_KEY);}catch(e){}render();},driveStatus.busy));
+  }
+  return panel;
+}
+
 function esc(v){
   return String(v).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
 }
@@ -66,6 +258,7 @@ function home(){
     box.appendChild(b);
   });
   body.appendChild(h(`<p class="empty">科目を選ぶと、単元・難易度・問題形式を絞って演習できます。</p>`));
+  body.appendChild(drivePanel());
   app.appendChild(body);
 }
 

@@ -74,7 +74,7 @@ function makeApp(initial = {}) {
   const context = vm.createContext({
     Q_ALL:questions, SUBJECTS:subjects,
     document:{getElementById:() => root, createElement:tag => new Element(tag)},
-    window:{scrollTo() {}}, location:{href:'http://localhost/'}, URL,
+    window:{scrollTo() {}}, location:{href:'http://localhost/'}, URL, URLSearchParams,
     localStorage:{getItem:k => storage.get(k) ?? null, setItem:(k,v) => storage.set(k,v)},
     performance:{now:() => now},
   });
@@ -542,4 +542,87 @@ test('November geography and earth knowledge is available, filterable, and prese
     reloaded.click('要復習 1');
     assert.deepEqual(reloaded.value('pool().map(q=>q.id)'),[q.id]);
   }
+});
+
+function driveHarness({records={},remote=null,stored={},authorizeError=null}={}) {
+  const scope='https://www.googleapis.com/auth/drive.appdata';
+  const app=makeApp(); const create=app.run('createDriveHistory');
+  let now=0, local=records, cloud=remote, syncState=stored, failure=0;
+  const requests=[], reports=[]; let beforePatch=null;
+  const authorize=async ()=>{if(authorizeError) throw new Error(authorizeError);return {access_token:'memory-only-token',expires_in:3600,scope};};
+  const response=(status,data)=>({ok:status>=200&&status<300,status,json:async()=>data,text:async()=>typeof data==='string'?data:JSON.stringify(data)});
+  const drive=create({authorize,clock:()=>now,readLocal:()=>local,applyRemote:data=>{local=copy(data);},notify:state=>reports.push(copy(state)),readSyncState:()=>syncState,writeSyncState:state=>{syncState=copy(state);},fetcher:async(url,options)=>{
+    requests.push({url,...options});
+    if(failure) {const status=failure;failure=0;return response(status,{});}
+    if(url.includes('alt=media')) return response(200,cloud);
+    if(options.method==='PATCH') {if(beforePatch) await beforePatch();cloud=options.body;return response(200,{id:'drive-file'});}
+    if(options.method==='POST') {const body=options.body;cloud=body.slice(body.indexOf('{"format":"study-history"'),body.lastIndexOf('\r\n--'));return response(200,{id:'drive-file'});}
+    return response(200,{files:cloud===null?[]:[{id:'drive-file'}]});
+  }});
+  return {drive,requests,reports,cloud:()=>cloud,local:()=>local,stored:()=>syncState,setLocal:data=>{local=data;},setRemote:data=>{cloud=data;},expire:()=>{now=4000000;},fail:status=>{failure=status;},delayPatch:fn=>{beforePatch=fn;}};
+}
+const drivePayload=records=>JSON.stringify({format:'study-history',version:1,records});
+
+test('Drive creates an app-data file, preserves full history, and persists no access token',async()=>{
+  const records={'test-1':{seen:1,wrong:0,last:1,lastMs:2000,bestMs:2000,reflex:1}};
+  const h=driveHarness({records}); await h.drive.connect('client-id');
+  assert.deepEqual(JSON.parse(h.cloud()).records,records);
+  assert.ok(h.requests.some(r=>r.body?.includes('"parents":["appDataFolder"]')));
+  assert.ok(h.requests.every(r=>r.headers.Authorization==='Bearer memory-only-token'));
+  assert.ok(!JSON.stringify(h.stored()).includes('memory-only-token'));
+  assert.equal(h.drive.state.pending,false);
+});
+
+test('Drive connection restores existing records without uploading over them',async()=>{
+  const records={'remote':{seen:3,wrong:1,last:0}};
+  const h=driveHarness({remote:drivePayload(records)});await h.drive.connect('client-id');
+  assert.deepEqual(h.local(),records);
+  assert.ok(!h.requests.some(r=>r.method==='PATCH'||r.method==='POST'));
+});
+
+test('Drive serializes answers arriving during upload and saves the newest snapshot',async()=>{
+  const h=driveHarness();await h.drive.connect('client-id');
+  let release;const gate=new Promise(resolve=>release=resolve);let entered;const started=new Promise(resolve=>entered=resolve);
+  let patches=0;h.delayPatch(async()=>{patches++;if(patches===1){entered();await gate;}});
+  h.setLocal({one:{seen:1,wrong:0,last:1}});const saving=h.drive.changed();await started;
+  h.setLocal({one:{seen:2,wrong:1,last:0}});h.drive.changed();release();await saving;
+  assert.equal(patches,2);assert.equal(JSON.parse(h.cloud()).records.one.seen,2);
+  assert.equal(h.drive.state.pending,false);
+});
+
+test('Drive failure keeps a pending local copy and retries without losing it',async()=>{
+  const h=driveHarness();await h.drive.connect('client-id');
+  h.setLocal({one:{seen:1,wrong:0,last:1}});h.fail(503);await h.drive.changed();
+  assert.equal(h.drive.state.pending,true);assert.equal(h.stored().pending,true);
+  assert.equal(h.local().one.seen,1);assert.ok(h.reports.at(-1).message.includes('503'));
+  await h.drive.flush();assert.equal(JSON.parse(h.cloud()).records.one.seen,1);
+  assert.equal(h.drive.state.pending,false);
+});
+
+test('expired Google authorization requires a gesture and resumes pending records after reconnect',async()=>{
+  const h=driveHarness();await h.drive.connect('client-id');h.expire();
+  h.setLocal({one:{seen:1,wrong:0,last:1}});await h.drive.changed();
+  assert.equal(h.drive.state.connected,false);assert.equal(h.drive.state.pending,true);
+  await h.drive.connect('client-id');assert.equal(JSON.parse(h.cloud()).records.one.seen,1);
+});
+
+test('modified remote data and malformed backups are never silently overwritten',async()=>{
+  const h=driveHarness();await h.drive.connect('client-id');
+  const changed=drivePayload({remote:{seen:1,wrong:0,last:1}});h.setRemote(changed);
+  h.setLocal({local:{seen:1,wrong:0,last:1}});await h.drive.changed();
+  assert.equal(h.cloud(),changed);assert.equal(h.drive.state.connected,false);
+  assert.ok(h.reports.at(-1).message.includes('別の端末'));
+  const invalid=driveHarness({remote:'{"format":"study-history","version":1,"records":{"bad":null}}'});
+  await invalid.drive.connect('client-id');assert.equal(invalid.drive.state.connected,false);
+  assert.ok(!invalid.requests.some(r=>r.method));
+});
+
+test('a reloaded pending copy reconnects only to its unchanged remote baseline',async()=>{
+  const baseline=drivePayload({});
+  const records={one:{seen:2,wrong:0,last:1}};
+  const h=driveHarness({records,remote:baseline,stored:{pending:true,fileId:'drive-file',baseline}});
+  await h.drive.connect('client-id');assert.deepEqual(JSON.parse(h.cloud()).records,records);
+  const conflict=driveHarness({records,remote:drivePayload({other:{seen:1,wrong:0,last:1}}),stored:{pending:true,fileId:'drive-file',baseline}});
+  await conflict.drive.connect('client-id');assert.deepEqual(conflict.local(),records);
+  assert.equal(conflict.drive.state.connected,false);
 });
