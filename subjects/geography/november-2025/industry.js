@@ -1,11 +1,11 @@
-/* 用語・原理・関連知識を確認する独自の短問。元の設問・図版の転載ではありません。 */
+/* 高校向け教材の解説を参照した独自短問。設問・図版の転載ではありません。 */
 registerQuestionPack({
   "subject": "geography",
   "name": "地理",
   "chapters": {
     "2": "産業・都市・地域の持続性"
   },
-  "knowledgeSource": "提供された2025年度高2・11月総合学力テストの出題分野をもとにした独自の知識確認問題",
+  "knowledgeSource": "提供模試の範囲に対応する独自短問。高校向け解説記事を問題ごとに参照。",
   "questions": [
     {
       "id": "geography-nov25-industry-001",
@@ -27,7 +27,11 @@ registerQuestionPack({
       ],
       "e": "臨海工業地区でも工場移転などにより土地利用が変わる。豊洲などの変化を読む視点となる。",
       "knowledge": "required",
-      "basis": "地理2問1・問2・問3"
+      "basis": "地理2問1",
+      "courses": [
+        "地理総合",
+        "地理探究"
+      ]
     },
     {
       "id": "geography-nov25-industry-002",
@@ -49,7 +53,11 @@ registerQuestionPack({
       ],
       "e": "限られた敷地で住宅、商業、業務などを上下に配置する。",
       "knowledge": "required",
-      "basis": "地理2問1・問2・問3"
+      "basis": "地理2問1",
+      "courses": [
+        "地理総合",
+        "地理探究"
+      ]
     },
     {
       "id": "geography-nov25-industry-003",
@@ -71,7 +79,11 @@ registerQuestionPack({
       ],
       "e": "道路沿いのロードサイド店舗は広い商圏と自動車利用に対応する。",
       "knowledge": "required",
-      "basis": "地理2問1・問2・問3"
+      "basis": "地理2問1",
+      "courses": [
+        "地理総合",
+        "地理探究"
+      ]
     },
     {
       "id": "geography-nov25-industry-004",
@@ -93,7 +105,11 @@ registerQuestionPack({
       ],
       "e": "観光収益とともに暮らし、混雑、建物の維持を考える。",
       "knowledge": "required",
-      "basis": "地理2問1・問2・問3"
+      "basis": "地理2問2",
+      "courses": [
+        "地理総合",
+        "地理探究"
+      ]
     },
     {
       "id": "geography-nov25-industry-005",
@@ -115,7 +131,11 @@ registerQuestionPack({
       ],
       "e": "第一次は自然から資源を得る活動、第二次は加工や建設、第三次はサービスなど。",
       "knowledge": "required",
-      "basis": "地理2問1・問2・問3"
+      "basis": "地理2問3",
+      "courses": [
+        "地理総合",
+        "地理探究"
+      ]
     },
     {
       "id": "geography-nov25-industry-006",
@@ -137,7 +157,11 @@ registerQuestionPack({
       ],
       "e": "頂点への近さは構成比を示す。構成比の変化だけで実数の増減は断定できない。",
       "knowledge": "required",
-      "basis": "地理2問1・問2・問3"
+      "basis": "地理2問3",
+      "courses": [
+        "地理総合",
+        "地理探究"
+      ]
     },
     {
       "id": "geography-nov25-industry-007",
@@ -159,7 +183,11 @@ registerQuestionPack({
       ],
       "e": "気候や沿岸の条件を地域の産業と結びつける。県内にも土地利用の差がある。",
       "knowledge": "required",
-      "basis": "地理2問1・問2・問3"
+      "basis": "地理2問3",
+      "courses": [
+        "地理総合",
+        "地理探究"
+      ]
     },
     {
       "id": "geography-nov25-industry-008",
@@ -181,7 +209,11 @@ registerQuestionPack({
       ],
       "e": "暖かい気候と景観は観光資源になり、さとうきびや果樹などの栽培にも関係する。",
       "knowledge": "required",
-      "basis": "地理2問1・問2・問3"
+      "basis": "地理2問3",
+      "courses": [
+        "地理総合",
+        "地理探究"
+      ]
     },
     {
       "id": "geography-nov25-industry-009",
@@ -203,7 +235,11 @@ registerQuestionPack({
       ],
       "e": "交通や企業間の関係を通じて中京の工業地域と結びつく。県全体を同じ産業だけで説明しない。",
       "knowledge": "required",
-      "basis": "地理2問1・問2・問3"
+      "basis": "地理2問3",
+      "courses": [
+        "地理総合",
+        "地理探究"
+      ]
     },
     {
       "id": "geography-nov25-industry-010",
@@ -225,7 +261,14 @@ registerQuestionPack({
       ],
       "e": "収支＝受取−支払。物の輸出入とサービス取引を区別する。",
       "knowledge": "required",
-      "basis": "地理2問4・問5"
+      "basis": "地理2問4",
+      "courses": [
+        "地理総合",
+        "地理探究"
+      ],
+      "source": "https://chitonitose.com/geo/geo_lessons_trade.html",
+      "sourceLabel": "ちとにとせ：世界の貿易",
+      "sourceChecked": "2026-10-07"
     },
     {
       "id": "geography-nov25-industry-011",
@@ -247,7 +290,11 @@ registerQuestionPack({
       ],
       "e": "技術やブランドなどの利用の対価はサービス取引の一部。生産拠点の所在地とは別の収益になる。",
       "knowledge": "required",
-      "basis": "地理2問4・問5"
+      "basis": "地理2問4",
+      "courses": [
+        "地理総合",
+        "地理探究"
+      ]
     },
     {
       "id": "geography-nov25-industry-012",
@@ -269,7 +316,11 @@ registerQuestionPack({
       ],
       "e": "銀行口座を持ちにくい人にも送金や支払いの手段を提供してきた。",
       "knowledge": "required",
-      "basis": "地理2問4・問5"
+      "basis": "地理2問5の関連",
+      "courses": [
+        "地理総合",
+        "地理探究"
+      ]
     },
     {
       "id": "geography-nov25-industry-013",
@@ -291,7 +342,11 @@ registerQuestionPack({
       ],
       "e": "代理店や通信網などが利用を支える。利便性と同時に手数料、通信環境などの条件もある。",
       "knowledge": "required",
-      "basis": "地理2問4・問5"
+      "basis": "地理2問5の関連",
+      "courses": [
+        "地理総合",
+        "地理探究"
+      ]
     },
     {
       "id": "geography-nov25-industry-014",
@@ -313,7 +368,11 @@ registerQuestionPack({
       ],
       "e": "GDPは国内の生産、GNIは居住者が得る所得に着目する。",
       "knowledge": "required",
-      "basis": "地理2問4・問5"
+      "basis": "地理2問5の関連",
+      "courses": [
+        "地理総合",
+        "地理探究"
+      ]
     },
     {
       "id": "geography-nov25-industry-015",
@@ -335,7 +394,11 @@ registerQuestionPack({
       ],
       "e": "設備へのアクセスだけでなく技能や費用、言語なども利用を左右する。",
       "knowledge": "required",
-      "basis": "地理2問4・問5"
+      "basis": "地理2問5の関連",
+      "courses": [
+        "地理総合",
+        "地理探究"
+      ]
     },
     {
       "id": "geography-nov25-industry-016",
@@ -357,7 +420,11 @@ registerQuestionPack({
       ],
       "e": "FAOは国連食糧農業機関。地域に受け継がれる農林水産業の仕組みや景観、生物多様性などに着目する。",
       "knowledge": "required",
-      "basis": "地理2問6・問7"
+      "basis": "地理2問6",
+      "courses": [
+        "地理総合",
+        "地理探究"
+      ]
     },
     {
       "id": "geography-nov25-industry-017",
@@ -379,7 +446,11 @@ registerQuestionPack({
       ],
       "e": "単一の建物ではなく、地域の知恵や生業と環境の関係を評価する。",
       "knowledge": "required",
-      "basis": "地理2問6・問7"
+      "basis": "地理2問6",
+      "courses": [
+        "地理総合",
+        "地理探究"
+      ]
     },
     {
       "id": "geography-nov25-industry-018",
@@ -401,7 +472,11 @@ registerQuestionPack({
       ],
       "e": "急な斜面で土を守る工夫。平らな水田を作る棚田とは区別する。",
       "knowledge": "required",
-      "basis": "地理2問6・問7"
+      "basis": "地理2問6",
+      "courses": [
+        "地理総合",
+        "地理探究"
+      ]
     },
     {
       "id": "geography-nov25-industry-019",
@@ -423,7 +498,11 @@ registerQuestionPack({
       ],
       "e": "冷害や洪水、渇水への対応には水路や共同管理、屋敷林などの工夫が関係する。",
       "knowledge": "required",
-      "basis": "地理2問6・問7"
+      "basis": "地理2問6",
+      "courses": [
+        "地理総合",
+        "地理探究"
+      ]
     },
     {
       "id": "geography-nov25-industry-020",
@@ -445,7 +524,11 @@ registerQuestionPack({
       ],
       "e": "梅林と森林、炭焼きなどの生業が結びつく。薪炭林などは生物の生息環境にもなる。",
       "knowledge": "required",
-      "basis": "地理2問6・問7"
+      "basis": "地理2問6",
+      "courses": [
+        "地理総合",
+        "地理探究"
+      ]
     },
     {
       "id": "geography-nov25-industry-021",
@@ -467,7 +550,11 @@ registerQuestionPack({
       ],
       "e": "担い手の減少が管理を難しくし、産業の弱まりが人口流出を促す場合がある。複数の関係を検討する。",
       "knowledge": "required",
-      "basis": "地理2問6・問7"
+      "basis": "地理2問7の関連",
+      "courses": [
+        "地理総合",
+        "地理探究"
+      ]
     },
     {
       "id": "geography-nov25-industry-022",
@@ -489,7 +576,11 @@ registerQuestionPack({
       ],
       "e": "経済、社会、環境の各面を考える。利益が地域に残るかも重要な判断材料。",
       "knowledge": "related",
-      "basis": "地理2の関連"
+      "basis": "地理2問7の関連",
+      "courses": [
+        "地理総合",
+        "地理探究"
+      ]
     },
     {
       "id": "geography-nov25-industry-023",
@@ -511,7 +602,69 @@ registerQuestionPack({
       ],
       "e": "統計の対象と時点が違えば直接比較できない。教材の年次と現在を区別する。",
       "knowledge": "related",
-      "basis": "地理2の関連"
+      "basis": "地理2問7の関連",
+      "courses": [
+        "地理総合",
+        "地理探究"
+      ]
+    },
+    {
+      "id": "geography-nov25-industry-024",
+      "subject": "geography",
+      "c": 2,
+      "s": "教材で深める関連知識",
+      "n": 24,
+      "d": "B",
+      "type": "choice",
+      "q": "一次産品と工業製品を主に交換する貿易の分類は？",
+      "o": [
+        "垂直貿易",
+        "水平貿易",
+        "中継貿易のみ",
+        "国内取引"
+      ],
+      "a": [
+        1
+      ],
+      "e": "水平貿易は工業製品やサービスを相互に取引する。国際分業の内容に着目して区別する。",
+      "knowledge": "related",
+      "basis": "地理2問4の関連",
+      "courses": [
+        "地理総合",
+        "地理探究"
+      ],
+      "source": "https://chitonitose.com/geo/geo_lessons_trade.html",
+      "sourceLabel": "ちとにとせ：世界の貿易",
+      "sourceChecked": "2026-10-07"
+    },
+    {
+      "id": "geography-nov25-industry-025",
+      "subject": "geography",
+      "c": 2,
+      "s": "教材で深める関連知識",
+      "n": 25,
+      "d": "B",
+      "type": "choice",
+      "q": "サービス貿易に当たる取引は？",
+      "o": [
+        "外国の企業に情報通信サービスを提供する",
+        "外国に鉄鉱石を輸出する",
+        "外国から小麦を輸入する",
+        "外国に完成車を輸出する"
+      ],
+      "a": [
+        1
+      ],
+      "e": "形のある商品の貿易とサービスの貿易を区別する。取引の対価を受け取る側では受取に計上する。",
+      "knowledge": "related",
+      "basis": "地理2問4の関連",
+      "courses": [
+        "地理総合",
+        "地理探究"
+      ],
+      "source": "https://chitonitose.com/geo/geo_lessons_trade.html",
+      "sourceLabel": "ちとにとせ：世界の貿易",
+      "sourceChecked": "2026-10-07"
     }
   ]
 });

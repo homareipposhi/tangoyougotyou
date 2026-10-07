@@ -4,7 +4,7 @@ const app = document.getElementById("app");
 let S = load();
 let view = "home";
 let subjectId = null;
-let filters = {chapters:[], diffs:[], types:[], only:"all", content:"exam"};
+let filters = {chapters:[], diffs:[], types:[], only:"all", content:"exam", course:"all"};
 let advancedOpen = false;
 let size = 10;
 let order = "mix";
@@ -254,7 +254,7 @@ function home(){
       <b>${esc(sub.name)}</b>
       <span>${qs.length}問<br>要復習 ${t.todo} ・ 未着手 ${t.fresh}</span>
     </button>`);
-    b.addEventListener("click",()=>{subjectId=id;filters={chapters:[],diffs:[],types:[],only:"all",content:"exam"};advancedOpen=false;view="subject";render();});
+    b.addEventListener("click",()=>{subjectId=id;filters={chapters:[],diffs:[],types:[],only:"all",content:"exam", course:"all"};advancedOpen=false;view="subject";render();});
     box.appendChild(b);
   });
   body.appendChild(h(`<p class="empty">科目を選ぶと、単元・難易度・問題形式を絞って演習できます。</p>`));
@@ -267,8 +267,13 @@ function physicsContentMatches(q, content=filters.content){
   if(content==="exam") return Boolean(q.exam);
   return !q.exam && q.rta===content;
 }
+function courseMatches(q, course=filters.course){
+  if(!course || course==="all") return true;
+  const courses=q.courses || (q.subject==="earth" ? ["地学基礎","地学"] : []);
+  return courses.includes(course);
+}
 function scopedBase(){
-  let p=subjectQuestions();
+  let p=subjectQuestions().filter(q=>courseMatches(q));
   if(subjectId==="physics") p=p.filter(q=>physicsContentMatches(q));
   if(filters.chapters.length) p=p.filter(q=>filters.chapters.includes(q.c));
   if(filters.diffs.length) p=p.filter(q=>filters.diffs.includes(q.d));
@@ -294,7 +299,7 @@ function filterButton(txt,on,fn,disabled=false){
 function subjectView(){
   const sub=currentSubject(), all=subjectQuestions(), base=scopedBase(), t=tally(base), p=pool();
   const physics=subjectId==="physics";
-  const categoryQuestions=physics ? all.filter(q=>physicsContentMatches(q)) : all;
+  const categoryQuestions=all.filter(q=>courseMatches(q) && (!physics || physicsContentMatches(q)));
   const head=h(`<header class="top"><button class="back" type="button">← 科目</button><h1>${esc(sub.name)}</h1><span class="subtle">${all.length}問</span></header>`);
   head.querySelector(".back").addEventListener("click",()=>{view="home";subjectId=null;render();});
   app.appendChild(head);
@@ -307,6 +312,18 @@ function subjectView(){
   </div>`));
 
   const panel=h(`<div class="panel"></div>`);
+  if(subjectId==="earth" || subjectId==="geography"){
+    const courses=subjectId==="earth" ? ["地学基礎","地学"] : ["地理総合","地理探究"];
+    const group=h(`<div class="grp"><span>学習範囲</span><div class="opts"></div></div>`);
+    ["all",...courses].forEach(value=>{
+      const label=value==="all" ? "全範囲" : value;
+      group.querySelector(".opts").appendChild(filterButton(label,filters.course===value,()=>{
+        filters.course=value;filters.chapters=[];filters.diffs=[];filters.types=[];filters.only="all";render();
+      }));
+    });
+    panel.appendChild(group);
+    panel.appendChild(h(`<p class="subtle">共通する内容は両方の科目に含まれます。</p>`));
+  }
   if(physics){
     const categories=h(`<div class="grp"><span>学習内容</span><div class="opts"></div></div>`);
     [["exam","過去問の条件判断"],["formula","公式"],["unit","単位"],["symbol","微積の記号"],["term","用語・定義"],["recognition","基礎の条件判断"],["all","全内容"]].forEach(([value,label])=>{
@@ -459,6 +476,7 @@ function quiz(){
   tags.appendChild(h(`<span class="tg">${esc(sub.chapters[q.c]||"")}・${esc(q.s)}</span>`));
   tags.appendChild(h(`<span class="tg">難易度 ${esc(q.d)}</span>`));
   tags.appendChild(h(`<span class="tg good">${typeLabel(q.type)}</span>`));
+  if(q.courses) tags.appendChild(h(`<span class="tg">${esc(q.courses.join("・"))}</span>`));
   if(isRta(q)) tags.appendChild(h(`<span class="tg">RTA・${esc({formula:"公式",unit:"単位",symbol:"微積物理の記号",term:"用語の定義",recognition:"条件判断"}[q.rta]||q.rta)}</span>`));
   if(todo(q)) tags.appendChild(h(`<span class="tg hot">要復習</span>`));
   app.appendChild(tags);
@@ -499,6 +517,7 @@ function quiz(){
     const fb=h(`<div class="fb ${ok?"ok":"ng"}"><strong>${ok?"正解":"不正解"}</strong>
       <div>${ok?"":`あなたの答え：${esc(yourText(q))}<br>`}正解：${esc(answerText(q))}</div>
       <div>${esc(q.e)}</div>${isRta(q)&&lastTiming?`<div class="timing">回答時間 ${formatMs(lastTiming.ms)}秒：${esc(lastTiming.label)}</div>`:""}</div>`);
+    if(q.basis) fb.appendChild(h(`<div class="subtle">対応する出題分野：${esc(q.basis)}</div>`));
     if(q.source){
       const url=new URL(q.source,location.href);
       if(url.protocol==="https:"){

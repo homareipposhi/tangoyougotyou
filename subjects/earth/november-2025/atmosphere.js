@@ -1,11 +1,11 @@
-/* 用語・原理・関連知識を確認する独自の短問。元の設問・図版の転載ではありません。 */
+/* 高校向け教材の解説を参照した独自短問。設問・図版の転載ではありません。 */
 registerQuestionPack({
   "subject": "earth",
   "name": "地学",
   "chapters": {
     "6": "大気の構造・雲と湿度"
   },
-  "knowledgeSource": "提供された2025年度高2・11月総合学力テストの出題分野をもとにした独自の知識確認問題",
+  "knowledgeSource": "提供模試の範囲に対応する独自短問。高校向け解説記事を問題ごとに参照。",
   "questions": [
     {
       "id": "earth-nov25-atmosphere-001",
@@ -27,7 +27,14 @@ registerQuestionPack({
       ],
       "e": "大気は高度による気温変化で四層に区分する。気温の減少・増加は交互に現れる。",
       "knowledge": "required",
-      "basis": "地学1問6・問7"
+      "basis": "地学1問6・問7",
+      "courses": [
+        "地学基礎",
+        "地学"
+      ],
+      "source": "https://tigakutasu.com/newtigakukisokyousitu-taikiken/",
+      "sourceLabel": "ちがくたす：大気圏",
+      "sourceChecked": "2026-10-07"
     },
     {
       "id": "earth-nov25-atmosphere-002",
@@ -49,7 +56,14 @@ registerQuestionPack({
       ],
       "e": "対流圏に水蒸気が多く、空気の上下運動によって雲や雨が生じる。",
       "knowledge": "required",
-      "basis": "地学1問6・問7"
+      "basis": "地学1問6・問7",
+      "courses": [
+        "地学基礎",
+        "地学"
+      ],
+      "source": "https://tigakutasu.com/newtigakukisokyousitu-taikiken/",
+      "sourceLabel": "ちがくたす：大気圏",
+      "sourceChecked": "2026-10-07"
     },
     {
       "id": "earth-nov25-atmosphere-003",
@@ -59,19 +73,26 @@ registerQuestionPack({
       "n": 3,
       "d": "A",
       "type": "choice",
-      "q": "成層圏で上空ほど気温が高くなる主な理由は？",
+      "q": "成層圏の気温が一般に上空ほど高くなる主な原因は？",
       "o": [
-        "高度とともに気圧が増すから",
-        "オゾンが太陽の紫外線を吸収するから",
-        "オゾンが地震波を吸収するから",
-        "窒素が太陽光をすべて反射するから"
+        "地表面の熱だけで上空ほど強く温まる",
+        "オゾンが太陽の紫外線を吸収する",
+        "酸素が地球の磁場を吸収する",
+        "雲の水滴がすべて蒸発して熱を放出する"
       ],
       "a": [
         2
       ],
-      "e": "オゾンによる紫外線吸収が成層圏を暖める。温室効果の赤外線吸収とは区別する。",
+      "e": "成層圏ではオゾンの紫外線吸収による加熱が重要。地表付近から温められる対流圏の気温分布と対比して覚える。",
       "knowledge": "required",
-      "basis": "地学1問6・問7"
+      "basis": "地学1問6・問7",
+      "courses": [
+        "地学基礎",
+        "地学"
+      ],
+      "source": "https://tigakutasu.com/newtigakukisokyousitu-taikiken/",
+      "sourceLabel": "ちがくたす：大気圏",
+      "sourceChecked": "2026-10-07"
     },
     {
       "id": "earth-nov25-atmosphere-004",
@@ -93,7 +114,14 @@ registerQuestionPack({
       ],
       "e": "一般に上空ほど暖かい層では対流が抑えられる。安定した成層が成層圏の特徴。",
       "knowledge": "required",
-      "basis": "地学1問6・問7"
+      "basis": "地学1問6・問7",
+      "courses": [
+        "地学基礎",
+        "地学"
+      ],
+      "source": "https://tigakutasu.com/newtigakukisokyousitu-taikiken/",
+      "sourceLabel": "ちがくたす：大気圏",
+      "sourceChecked": "2026-10-07"
     },
     {
       "id": "earth-nov25-atmosphere-005",
@@ -115,7 +143,14 @@ registerQuestionPack({
       ],
       "e": "中間圏では一般に気温が高度とともに低下し、中間圏界面付近は非常に低温となる。",
       "knowledge": "required",
-      "basis": "地学1問6・問7"
+      "basis": "地学1問6・問7",
+      "courses": [
+        "地学基礎",
+        "地学"
+      ],
+      "source": "https://tigakutasu.com/newtigakukisokyousitu-taikiken/",
+      "sourceLabel": "ちがくたす：大気圏",
+      "sourceChecked": "2026-10-07"
     },
     {
       "id": "earth-nov25-atmosphere-006",
@@ -137,7 +172,14 @@ registerQuestionPack({
       ],
       "e": "高層大気の原子や分子が荷電粒子との衝突で励起され、光を放つ。",
       "knowledge": "required",
-      "basis": "地学1問6・問7"
+      "basis": "地学1問6・問7",
+      "courses": [
+        "地学基礎",
+        "地学"
+      ],
+      "source": "https://tigakutasu.com/newtigakukisokyousitu-taikiken/",
+      "sourceLabel": "ちがくたす：大気圏",
+      "sourceChecked": "2026-10-07"
     },
     {
       "id": "earth-nov25-atmosphere-007",
@@ -159,7 +201,13 @@ registerQuestionPack({
       ],
       "e": "気温差39℃を高度差6 kmで割る。気温減率は温度差÷高度差で求める。",
       "knowledge": "required",
-      "basis": "地学1問6・問7"
+      "basis": "地学1問6・問7",
+      "courses": [
+        "地学"
+      ],
+      "source": "https://tigakutasu.com/newtigakukisokyousitu-taikiken/",
+      "sourceLabel": "ちがくたす：大気圏",
+      "sourceChecked": "2026-10-07"
     },
     {
       "id": "earth-nov25-atmosphere-008",
@@ -181,7 +229,14 @@ registerQuestionPack({
       ],
       "e": "気圧は上にある大気の重さによる圧力。高度が上がると上に残る空気が減り、気圧は低下する。",
       "knowledge": "required",
-      "basis": "地学1問8・問9"
+      "basis": "地学1問8・問9",
+      "courses": [
+        "地学基礎",
+        "地学"
+      ],
+      "source": "https://tigakutasu.com/newtigakukisokyousitu-taikiken/",
+      "sourceLabel": "ちがくたす：大気圏",
+      "sourceChecked": "2026-10-07"
     },
     {
       "id": "earth-nov25-atmosphere-009",
@@ -203,7 +258,14 @@ registerQuestionPack({
       ],
       "e": "水蒸気を除いた大気では窒素が約78％、酸素が約21％。残りの主成分はアルゴン。",
       "knowledge": "required",
-      "basis": "地学1問8・問9"
+      "basis": "地学1問8・問9",
+      "courses": [
+        "地学基礎",
+        "地学"
+      ],
+      "source": "https://tigakutasu.com/newtigakukisokyousitu-taikiken/",
+      "sourceLabel": "ちがくたす：大気圏",
+      "sourceChecked": "2026-10-07"
     },
     {
       "id": "earth-nov25-atmosphere-010",
@@ -225,7 +287,13 @@ registerQuestionPack({
       ],
       "e": "気圧比は上に残る空気の質量割合に対応する。下側の割合は1−上側の割合。",
       "knowledge": "required",
-      "basis": "地学1問8・問9"
+      "basis": "地学1問8・問9",
+      "courses": [
+        "地学"
+      ],
+      "source": "https://tigakutasu.com/newtigakukisokyousitu-taikiken/",
+      "sourceLabel": "ちがくたす：大気圏",
+      "sourceChecked": "2026-10-07"
     },
     {
       "id": "earth-nov25-atmosphere-011",
@@ -247,7 +315,13 @@ registerQuestionPack({
       ],
       "e": "上空に残る分は200/1000＝20％。地表からHまでには残りの80％がある。",
       "knowledge": "required",
-      "basis": "地学1問8・問9"
+      "basis": "地学1問8・問9",
+      "courses": [
+        "地学"
+      ],
+      "source": "https://tigakutasu.com/newtigakukisokyousitu-taikiken/",
+      "sourceLabel": "ちがくたす：大気圏",
+      "sourceChecked": "2026-10-07"
     },
     {
       "id": "earth-nov25-atmosphere-012",
@@ -269,7 +343,14 @@ registerQuestionPack({
       ],
       "e": "露点はその空気の水蒸気量に対応する飽和温度。露点まで冷えると凝結が始まりやすい。",
       "knowledge": "required",
-      "basis": "地学1問10"
+      "basis": "地学1問10",
+      "courses": [
+        "地学基礎",
+        "地学"
+      ],
+      "source": "https://tigakutasu.com/kisokyousitukumonodekikata/",
+      "sourceLabel": "ちがくたす：雲のでき方",
+      "sourceChecked": "2026-10-07"
     },
     {
       "id": "earth-nov25-atmosphere-013",
@@ -291,7 +372,14 @@ registerQuestionPack({
       ],
       "e": "高温ほど飽和水蒸気圧が高い。同じ水蒸気量なら、冷えると相対湿度が高くなる。",
       "knowledge": "required",
-      "basis": "地学1問10"
+      "basis": "地学1問10",
+      "courses": [
+        "地学基礎",
+        "地学"
+      ],
+      "source": "https://tigakutasu.com/kisokyousitukumonodekikata/",
+      "sourceLabel": "ちがくたす：雲のでき方",
+      "sourceChecked": "2026-10-07"
     },
     {
       "id": "earth-nov25-atmosphere-014",
@@ -313,7 +401,11 @@ registerQuestionPack({
       ],
       "e": "相対湿度＝実際の水蒸気圧÷飽和水蒸気圧×100。分母は現在の気温での値を使う。",
       "knowledge": "required",
-      "basis": "地学1問10"
+      "basis": "地学1問10",
+      "courses": [
+        "地学基礎",
+        "地学"
+      ]
     },
     {
       "id": "earth-nov25-atmosphere-015",
@@ -335,7 +427,14 @@ registerQuestionPack({
       ],
       "e": "冷却で飽和水蒸気圧が低下し、その分だけ相対湿度が上がる。",
       "knowledge": "required",
-      "basis": "地学1問10"
+      "basis": "地学1問10",
+      "courses": [
+        "地学基礎",
+        "地学"
+      ],
+      "source": "https://tigakutasu.com/kisokyousitukumonodekikata/",
+      "sourceLabel": "ちがくたす：雲のでき方",
+      "sourceChecked": "2026-10-07"
     },
     {
       "id": "earth-nov25-atmosphere-016",
@@ -357,7 +456,14 @@ registerQuestionPack({
       ],
       "e": "上昇する空気は膨張して冷える。飽和に達すると水蒸気が雲粒へ凝結する。",
       "knowledge": "required",
-      "basis": "地学1問10"
+      "basis": "地学1問10",
+      "courses": [
+        "地学基礎",
+        "地学"
+      ],
+      "source": "https://tigakutasu.com/kisokyousitukumonodekikata/",
+      "sourceLabel": "ちがくたす：雲のでき方",
+      "sourceChecked": "2026-10-07"
     },
     {
       "id": "earth-nov25-atmosphere-017",
@@ -379,7 +485,10 @@ registerQuestionPack({
       ],
       "e": "未飽和の空気が断熱的に上昇すると、およそ100 mにつき1℃冷える。",
       "knowledge": "related",
-      "basis": "地学1問10の関連"
+      "basis": "地学1問10の関連",
+      "courses": [
+        "地学"
+      ]
     },
     {
       "id": "earth-nov25-atmosphere-018",
@@ -401,7 +510,10 @@ registerQuestionPack({
       ],
       "e": "凝結の潜熱が冷却を一部打ち消す。湿潤断熱減率は温度や水蒸気量によって変わる。",
       "knowledge": "related",
-      "basis": "地学1問10の関連"
+      "basis": "地学1問10の関連",
+      "courses": [
+        "地学"
+      ]
     },
     {
       "id": "earth-nov25-atmosphere-019",
@@ -411,19 +523,84 @@ registerQuestionPack({
       "n": 19,
       "d": "B",
       "type": "choice",
-      "q": "雲は主に何でできている？",
+      "q": "雲として目に見える粒子の主な正体は？",
       "o": [
-        "乾いた窒素だけ",
-        "微小な水滴や氷晶",
-        "目に見える気体の水蒸気だけ",
-        "酸素の粒"
+        "気体の水蒸気だけ",
+        "細かな水滴や氷晶",
+        "窒素の液滴だけ",
+        "酸素の結晶だけ"
       ],
       "a": [
         2
       ],
-      "e": "水蒸気そのものは見えない。雲の白さは液体の水滴や氷晶が光を散乱するため。",
+      "e": "水蒸気そのものは見えない。上昇・膨張・冷却の結果、水蒸気が凝結した水滴や氷晶が雲をつくる。",
       "knowledge": "related",
-      "basis": "地学1問10の関連"
+      "basis": "地学1問10の関連",
+      "courses": [
+        "地学基礎",
+        "地学"
+      ],
+      "source": "https://tigakutasu.com/kisokyousitukumonodekikata/",
+      "sourceLabel": "ちがくたす：雲のでき方",
+      "sourceChecked": "2026-10-07"
+    },
+    {
+      "id": "earth-nov25-atmosphere-020",
+      "subject": "earth",
+      "c": 6,
+      "s": "教材で深める関連知識",
+      "n": 20,
+      "d": "B",
+      "type": "choice",
+      "q": "空気塊が上昇して未飽和のまま冷えるときの主な流れは？",
+      "o": [
+        "周囲の気圧低下→膨張→温度低下",
+        "周囲の気圧上昇→膨張→温度上昇",
+        "周囲の気圧低下→圧縮→温度上昇",
+        "周囲の気圧上昇→圧縮→温度低下"
+      ],
+      "a": [
+        1
+      ],
+      "e": "上空では周囲の気圧が低く、空気塊が膨張する。水蒸気が増えなくても冷却で飽和に近づける。",
+      "knowledge": "related",
+      "basis": "地学1問10の関連",
+      "courses": [
+        "地学基礎",
+        "地学"
+      ],
+      "source": "https://tigakutasu.com/kisokyousitukumonodekikata/",
+      "sourceLabel": "ちがくたす：雲のでき方",
+      "sourceChecked": "2026-10-07"
+    },
+    {
+      "id": "earth-nov25-atmosphere-021",
+      "subject": "earth",
+      "c": 6,
+      "s": "教材で深める関連知識",
+      "n": 21,
+      "d": "B",
+      "type": "choice",
+      "q": "大気の四層を分ける主な基準は？",
+      "o": [
+        "高度に伴う気温変化",
+        "窒素の有無だけ",
+        "雲の色だけ",
+        "経度の違い"
+      ],
+      "a": [
+        1
+      ],
+      "e": "対流圏・成層圏・中間圏・熱圏は気温の高度分布で区分する。電離の程度で分ける電離圏とは区分の基準が違う。",
+      "knowledge": "related",
+      "basis": "地学1問6・問7の関連",
+      "courses": [
+        "地学基礎",
+        "地学"
+      ],
+      "source": "https://tigakutasu.com/newtigakukisokyousitu-taikiken/",
+      "sourceLabel": "ちがくたす：大気圏",
+      "sourceChecked": "2026-10-07"
     }
   ]
 });

@@ -1,11 +1,11 @@
-/* 用語・原理・関連知識を確認する独自の短問。元の設問・図版の転載ではありません。 */
+/* 高校向け教材の解説を参照した独自短問。設問・図版の転載ではありません。 */
 registerQuestionPack({
   "subject": "geography",
   "name": "地理",
   "chapters": {
     "1": "地図・GISと図表の読み方"
   },
-  "knowledgeSource": "提供された2025年度高2・11月総合学力テストの出題分野をもとにした独自の知識確認問題",
+  "knowledgeSource": "提供模試の範囲に対応する独自短問。高校向け解説記事を問題ごとに参照。",
   "questions": [
     {
       "id": "geography-nov25-maps-001",
@@ -15,19 +15,26 @@ registerQuestionPack({
       "n": 1,
       "d": "A",
       "type": "choice",
-      "q": "地形図で土地の高さを読む主な手がかりは？",
+      "q": "地形図で、同じ標高の地点をつないで地形の起伏を示す線は？",
       "o": [
-        "駅名の文字数",
-        "道路の色だけ",
-        "方言の分布",
+        "等温線",
+        "等圧線",
+        "等深線",
         "等高線"
       ],
       "a": [
         4
       ],
-      "e": "等高線は同じ標高の地点を結ぶ。間隔が狭いほど一般に斜面が急になる。",
+      "e": "地上の高さは等高線で読む。等温線は気温、等圧線は気圧、等深線は水深を表す。",
       "knowledge": "required",
-      "basis": "地理1問1・問2"
+      "basis": "地理1問1",
+      "courses": [
+        "地理総合",
+        "地理探究"
+      ],
+      "source": "https://geo-hs.com/thematic_map/",
+      "sourceLabel": "高校地理の部屋：主題図と一般図",
+      "sourceChecked": "2026-10-07"
     },
     {
       "id": "geography-nov25-maps-002",
@@ -49,7 +56,11 @@ registerQuestionPack({
       ],
       "e": "目的に合わせて形や配置を簡略化するため、実距離の測定には適さない場合がある。",
       "knowledge": "required",
-      "basis": "地理1問1・問2"
+      "basis": "地理1問1",
+      "courses": [
+        "地理総合",
+        "地理探究"
+      ]
     },
     {
       "id": "geography-nov25-maps-003",
@@ -71,7 +82,11 @@ registerQuestionPack({
       ],
       "e": "4×25000＝100000cm＝1000m＝1km。単位をそろえて計算する。",
       "knowledge": "required",
-      "basis": "地理1問1・問2"
+      "basis": "地理1問1",
+      "courses": [
+        "地理総合",
+        "地理探究"
+      ]
     },
     {
       "id": "geography-nov25-maps-004",
@@ -93,7 +108,14 @@ registerQuestionPack({
       ],
       "e": "分母が小さい大縮尺の地図ほど狭い範囲を詳しく表せる。",
       "knowledge": "required",
-      "basis": "地理1問1・問2"
+      "basis": "地理1問1",
+      "courses": [
+        "地理総合",
+        "地理探究"
+      ],
+      "source": "https://geo-hs.com/thematic_map/",
+      "sourceLabel": "高校地理の部屋：主題図と一般図",
+      "sourceChecked": "2026-10-07"
     },
     {
       "id": "geography-nov25-maps-005",
@@ -103,19 +125,26 @@ registerQuestionPack({
       "n": 5,
       "d": "B",
       "type": "choice",
-      "q": "都道府県ごとの高齢者割合を比較する地図に向く表現は？",
+      "q": "都道府県別の高齢者割合を階級に分けて示すのに適する主題図は？",
       "o": [
-        "人口の実数を同じ大きさの円で示す図",
-        "すべて同じ色の白地図",
-        "道路の模式図",
+        "ドットマップ",
+        "流線図",
+        "等値線図",
         "階級区分図"
       ],
       "a": [
         4
       ],
-      "e": "面の色を階級に対応させる階級区分図は割合や密度の比較に向く。",
+      "e": "割合を行政区ごとの色で比較するなら階級区分図。総人口のような絶対数は点や図形の量で表すと、面積の大小による誤解を抑えられる。",
       "knowledge": "required",
-      "basis": "地理1問1・問2"
+      "basis": "地理1問2",
+      "courses": [
+        "地理総合",
+        "地理探究"
+      ],
+      "source": "https://geo-hs.com/thematic_map/",
+      "sourceLabel": "高校地理の部屋：主題図と一般図",
+      "sourceChecked": "2026-10-07"
     },
     {
       "id": "geography-nov25-maps-006",
@@ -137,7 +166,14 @@ registerQuestionPack({
       ],
       "e": "絶対量は比例記号図で表しやすい。行政区域の面積が大きくても人口が多いとは限らない。",
       "knowledge": "required",
-      "basis": "地理1問1・問2"
+      "basis": "地理1問2",
+      "courses": [
+        "地理総合",
+        "地理探究"
+      ],
+      "source": "https://geo-hs.com/thematic_map/",
+      "sourceLabel": "高校地理の部屋：主題図と一般図",
+      "sourceChecked": "2026-10-07"
     },
     {
       "id": "geography-nov25-maps-007",
@@ -159,7 +195,14 @@ registerQuestionPack({
       ],
       "e": "円の面積は半径の2乗に比例する。面積4倍は半径2倍。",
       "knowledge": "required",
-      "basis": "地理1問1・問2"
+      "basis": "地理1問2",
+      "courses": [
+        "地理総合",
+        "地理探究"
+      ],
+      "source": "https://geo-hs.com/thematic_map/",
+      "sourceLabel": "高校地理の部屋：主題図と一般図",
+      "sourceChecked": "2026-10-07"
     },
     {
       "id": "geography-nov25-maps-008",
@@ -181,7 +224,14 @@ registerQuestionPack({
       ],
       "e": "凡例の1点あたりの数量と点数を掛ける。点が必ず個人の正確な住所を表すとは限らない。",
       "knowledge": "required",
-      "basis": "地理1問1・問2"
+      "basis": "地理1問2",
+      "courses": [
+        "地理総合",
+        "地理探究"
+      ],
+      "source": "https://geo-hs.com/thematic_map/",
+      "sourceLabel": "高校地理の部屋：主題図と一般図",
+      "sourceChecked": "2026-10-07"
     },
     {
       "id": "geography-nov25-maps-009",
@@ -191,19 +241,26 @@ registerQuestionPack({
       "n": 9,
       "d": "A",
       "type": "choice",
-      "q": "正距方位図法で正しく表されるのは？",
+      "q": "正距方位図法で正しい距離・方位の関係は？",
       "o": [
-        "任意の2地点間の距離すべて",
-        "すべての地域の面積",
-        "すべての海岸線の形",
-        "中心から各地点への距離と方位"
+        "任意の2地点間のすべて",
+        "同じ緯線上のすべて",
+        "同じ経線上のすべて",
+        "中心から各地点まで"
       ],
       "a": [
         4
       ],
-      "e": "正確さは図の中心を基準とする。中心以外の任意の地点間にはその性質を適用できない。",
+      "e": "正距方位図法の基準は中心。中心以外の2地点間まで距離が正しいわけではない。中心からの放射方向は大圏航路を考える手がかりになる。",
       "knowledge": "required",
-      "basis": "地理1問3・問4"
+      "basis": "地理1問4",
+      "courses": [
+        "地理総合",
+        "地理探究"
+      ],
+      "source": "https://chitonitose.com/geo/geo_lessons_projection.html",
+      "sourceLabel": "ちとにとせ：地図の図法",
+      "sourceChecked": "2026-10-07"
     },
     {
       "id": "geography-nov25-maps-010",
@@ -225,7 +282,14 @@ registerQuestionPack({
       ],
       "e": "大圏は球の中心を通る平面と球面の交線。地図上では曲線に見えることもある。",
       "knowledge": "required",
-      "basis": "地理1問3・問4"
+      "basis": "地理1問4",
+      "courses": [
+        "地理総合",
+        "地理探究"
+      ],
+      "source": "https://chitonitose.com/geo/geo_lessons_projection.html",
+      "sourceLabel": "ちとにとせ：地図の図法",
+      "sourceChecked": "2026-10-07"
     },
     {
       "id": "geography-nov25-maps-011",
@@ -247,7 +311,14 @@ registerQuestionPack({
       ],
       "e": "アンカレジなどは東アジアと北米間の航路で中継拠点になり得る。平面地図だけで遠近を判断しない。",
       "knowledge": "required",
-      "basis": "地理1問3・問4"
+      "basis": "地理1問4",
+      "courses": [
+        "地理総合",
+        "地理探究"
+      ],
+      "source": "https://chitonitose.com/geo/geo_lessons_projection.html",
+      "sourceLabel": "ちとにとせ：地図の図法",
+      "sourceChecked": "2026-10-07"
     },
     {
       "id": "geography-nov25-maps-012",
@@ -269,7 +340,11 @@ registerQuestionPack({
       ],
       "e": "方言周圏論では新しい表現が中心から外へ広がり、古い表現が周辺に残ると考える。すべての方言分布に当てはまるわけではない。",
       "knowledge": "required",
-      "basis": "地理1問3・問4"
+      "basis": "地理1問3",
+      "courses": [
+        "地理総合",
+        "地理探究"
+      ]
     },
     {
       "id": "geography-nov25-maps-013",
@@ -291,7 +366,11 @@ registerQuestionPack({
       ],
       "e": "需要と供給、通いやすさを同じ位置情報で重ねて不足する地域を探す。",
       "knowledge": "required",
-      "basis": "地理1問5・問6"
+      "basis": "地理1問5",
+      "courses": [
+        "地理総合",
+        "地理探究"
+      ]
     },
     {
       "id": "geography-nov25-maps-014",
@@ -313,7 +392,11 @@ registerQuestionPack({
       ],
       "e": "バッファは地点や線から一定距離の範囲を作る処理。利用圏の検討に使える。",
       "knowledge": "required",
-      "basis": "地理1問5・問6"
+      "basis": "地理1問5",
+      "courses": [
+        "地理総合",
+        "地理探究"
+      ]
     },
     {
       "id": "geography-nov25-maps-015",
@@ -335,7 +418,11 @@ registerQuestionPack({
       ],
       "e": "実際の移動は橋や入口、坂道、交通手段に左右される。直線距離と所要時間を区別する。",
       "knowledge": "required",
-      "basis": "地理1問5・問6"
+      "basis": "地理1問5",
+      "courses": [
+        "地理総合",
+        "地理探究"
+      ]
     },
     {
       "id": "geography-nov25-maps-016",
@@ -357,7 +444,11 @@ registerQuestionPack({
       ],
       "e": "人口の多さだけでなく定員、利用状況、今後の人口変化を合わせて判断する。",
       "knowledge": "required",
-      "basis": "地理1問5・問6"
+      "basis": "地理1問5",
+      "courses": [
+        "地理総合",
+        "地理探究"
+      ]
     },
     {
       "id": "geography-nov25-maps-017",
@@ -379,7 +470,14 @@ registerQuestionPack({
       ],
       "e": "色が示す数量と区切り方を確認する。同じ色でも別の図では異なる意味をもつ。",
       "knowledge": "related",
-      "basis": "地理1の関連"
+      "basis": "地理1の関連",
+      "courses": [
+        "地理総合",
+        "地理探究"
+      ],
+      "source": "https://geo-hs.com/thematic_map/",
+      "sourceLabel": "高校地理の部屋：主題図と一般図",
+      "sourceChecked": "2026-10-07"
     },
     {
       "id": "geography-nov25-maps-018",
@@ -401,7 +499,11 @@ registerQuestionPack({
       ],
       "e": "10人中8人は80％、1000人中500人は50％。割合が高くても実数は少ない場合がある。",
       "knowledge": "related",
-      "basis": "地理1の関連"
+      "basis": "地理1の関連",
+      "courses": [
+        "地理総合",
+        "地理探究"
+      ]
     },
     {
       "id": "geography-nov25-maps-019",
@@ -423,7 +525,127 @@ registerQuestionPack({
       ],
       "e": "第一次・第二次・第三次産業の構成比など、合計100％の3成分を一つの点で表す。",
       "knowledge": "related",
-      "basis": "地理1の関連"
+      "basis": "地理1の関連",
+      "courses": [
+        "地理総合",
+        "地理探究"
+      ]
+    },
+    {
+      "id": "geography-nov25-maps-020",
+      "subject": "geography",
+      "c": 1,
+      "s": "教材で深める関連知識",
+      "n": 20,
+      "d": "B",
+      "type": "choice",
+      "q": "メルカトル図法上の直線として表される航路は？",
+      "o": [
+        "等角航路",
+        "すべての大圏航路",
+        "赤道を通る航路だけ",
+        "距離が最短となる航路だけ"
+      ],
+      "a": [
+        1
+      ],
+      "e": "経線となす角が一定の航路を直線で表せる。一般に最短の大圏航路とは一致しない。",
+      "knowledge": "related",
+      "basis": "地理1問4の関連",
+      "courses": [
+        "地理総合",
+        "地理探究"
+      ],
+      "source": "https://chitonitose.com/geo/geo_lessons_projection.html",
+      "sourceLabel": "ちとにとせ：地図の図法",
+      "sourceChecked": "2026-10-07"
+    },
+    {
+      "id": "geography-nov25-maps-021",
+      "subject": "geography",
+      "c": 1,
+      "s": "教材で深める関連知識",
+      "n": 21,
+      "d": "B",
+      "type": "choice",
+      "q": "各地域の面積を正しく比較したい世界地図に求める性質は？",
+      "o": [
+        "正積",
+        "正角",
+        "中心からの正距だけ",
+        "経線が平行であることだけ"
+      ],
+      "a": [
+        1
+      ],
+      "e": "正積図法は面積比を保つ。メルカトル図法は高緯度ほど面積が誇張され、面積比較には不向き。",
+      "knowledge": "related",
+      "basis": "地理1問2の関連",
+      "courses": [
+        "地理総合",
+        "地理探究"
+      ],
+      "source": "https://chitonitose.com/geo/geo_lessons_projection.html",
+      "sourceLabel": "ちとにとせ：地図の図法",
+      "sourceChecked": "2026-10-07"
+    },
+    {
+      "id": "geography-nov25-maps-022",
+      "subject": "geography",
+      "c": 1,
+      "s": "教材で深める関連知識",
+      "n": 22,
+      "d": "B",
+      "type": "choice",
+      "q": "人口総数を行政区ごとの色の濃淡だけで示すと、特に何を混同しやすい？",
+      "o": [
+        "人口総数と人口密度",
+        "人口密度と標高",
+        "標高と気圧",
+        "方位と経度"
+      ],
+      "a": [
+        1
+      ],
+      "e": "広い行政区は総人口が多くても密度が低い場合がある。総量を示す図形と割合・密度を示す色を使い分ける。",
+      "knowledge": "related",
+      "basis": "地理1問2の関連",
+      "courses": [
+        "地理総合",
+        "地理探究"
+      ],
+      "source": "https://geo-hs.com/thematic_map/",
+      "sourceLabel": "高校地理の部屋：主題図と一般図",
+      "sourceChecked": "2026-10-07"
+    },
+    {
+      "id": "geography-nov25-maps-023",
+      "subject": "geography",
+      "c": 1,
+      "s": "教材で深める関連知識",
+      "n": 23,
+      "d": "B",
+      "type": "choice",
+      "q": "1：25000地形図の主曲線と計曲線の標高間隔の標準的な組合せは？",
+      "o": [
+        "10m／50m",
+        "5m／25m",
+        "20m／100m",
+        "50m／250m"
+      ],
+      "a": [
+        1
+      ],
+      "e": "主曲線を細線、5本ごとの計曲線を太線で示す。間隔を確かめてから高度差を読む。",
+      "knowledge": "related",
+      "basis": "地理1問1の関連",
+      "courses": [
+        "地理総合",
+        "地理探究"
+      ],
+      "source": "https://geo-hs.com/thematic_map/",
+      "sourceLabel": "高校地理の部屋：主題図と一般図",
+      "sourceChecked": "2026-10-07"
     }
   ]
 });

@@ -319,7 +319,7 @@ test('switching content clears old restrictions; selecting the same content keep
   app.click('力学');
   app.run("filters.diffs=['C']; filters.types=['choice']; filters.only='todo'; advancedOpen=true; render();");
   app.click('公式');
-  assert.deepEqual(app.value('filters'),{chapters:[],diffs:[],types:[],only:'all',content:'formula'});
+  assert.deepEqual(app.value('filters'),{chapters:[],diffs:[],types:[],only:'all',content:'formula',course:'all'});
   assert.equal(app.value('advancedOpen'),false);
   app.click('力学');
   app.click('公式');
@@ -513,8 +513,8 @@ for (const failure of ['missing','unregistered','duplicate','unsupported','timeo
 
 test('November geography and earth knowledge is available, filterable, and preserves learning history', () => {
   const imported = questions.filter(q => q.id.includes('-nov25-'));
-  assert.equal(imported.length, 224);
-  for (const [subject, count, chapters] of [['earth',107,[5,6,7,8,9,10]], ['geography',117,[1,2,3,4,5]]]) {
+  assert.equal(imported.length, 258);
+  for (const [subject, count, chapters] of [['earth',119,[5,6,7,8,9,10]], ['geography',139,[1,2,3,4,5]]]) {
     const qs = imported.filter(q => q.subject === subject);
     assert.equal(qs.length, count);
     assert.deepEqual([...new Set(qs.map(q=>q.c))].sort((a,b)=>a-b), chapters);
@@ -625,4 +625,46 @@ test('a reloaded pending copy reconnects only to its unchanged remote baseline',
   const conflict=driveHarness({records,remote:drivePayload({other:{seen:1,wrong:0,last:1}}),stored:{pending:true,fileId:'drive-file',baseline}});
   await conflict.drive.connect('client-id');assert.deepEqual(conflict.local(),records);
   assert.equal(conflict.drive.state.connected,false);
+});
+
+
+test('course filters separate foundation from advanced items and reset incompatible units', () => {
+  const app=makeApp();
+  app.run("subjectId='earth'; view='subject'; render();");
+  app.click('地学基礎');
+  assert.ok(app.value('pool().length')>0);
+  assert.ok(!app.value('pool().map(q=>q.id)').includes('earth-nov25-gravity-014'));
+  assert.ok(app.value('pool().map(q=>q.id)').includes('earth-nov25-interior-010'));
+  app.click('地学');
+  assert.ok(app.value('pool().map(q=>q.id)').includes('earth-nov25-gravity-014'));
+  app.run("subjectId='geography'; filters.chapters=[4]; filters.diffs=['A']; view='subject'; render();");
+  app.click('地理総合');
+  assert.deepEqual(app.value('filters.chapters'),[]);
+  assert.deepEqual(app.value('filters.diffs'),[]);
+  assert.ok(app.value('pool().every(q=>q.courses.includes("地理総合"))'));
+  assert.ok(!app.value('pool().map(q=>q.id)').includes('geography-nov25-climate-003'));
+  app.click('地理探究');
+  assert.equal(app.value('pool().length'),139);
+});
+
+test('article provenance is visible after answering without changing learning history', () => {
+  const app=makeApp();
+  const q=questions.find(q=>q.id==='geography-nov25-maps-009');
+  app.begin(q);
+  assert.ok(!app.html().includes(q.source));
+  app.answer(1000,true,q);
+  assert.ok(app.html().includes(q.source));
+  assert.ok(app.html().includes(q.sourceLabel));
+  assert.ok(app.html().includes(q.basis));
+  assert.deepEqual(app.saved()[q.id],{seen:1,wrong:0,last:1});
+});
+
+test('geography exam references do not contain nonexistent subquestions', () => {
+  const maxima={1:5,2:7,3:3,4:7,5:7};
+  for(const q of questions.filter(q=>q.subject==='geography')) {
+    assert.ok(q.courses.includes('地理探究'));
+    const main=Number(q.basis.match(/地理(\d)/)[1]);
+    for(const match of q.basis.matchAll(/問(\d+)/g)) assert.ok(Number(match[1])<=maxima[main],q.id);
+    if(q.source) {assert.equal(new URL(q.source).protocol,'https:');assert.ok(q.sourceLabel);}
+  }
 });

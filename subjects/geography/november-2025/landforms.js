@@ -1,11 +1,11 @@
-/* 用語・原理・関連知識を確認する独自の短問。元の設問・図版の転載ではありません。 */
+/* 高校向け教材の解説を参照した独自短問。設問・図版の転載ではありません。 */
 registerQuestionPack({
   "subject": "geography",
   "name": "地理",
   "chapters": {
     "4": "地形・災害と土地利用"
   },
-  "knowledgeSource": "提供された2025年度高2・11月総合学力テストの出題分野をもとにした独自の知識確認問題",
+  "knowledgeSource": "提供模試の範囲に対応する独自短問。高校向け解説記事を問題ごとに参照。",
   "questions": [
     {
       "id": "geography-nov25-landforms-001",
@@ -27,7 +27,10 @@ registerQuestionPack({
       ],
       "e": "海洋プレートが陸側の地下へ斜めに沈み込むため、震源の深さの分布がその形を示す。",
       "knowledge": "required",
-      "basis": "地理4問1・問2・問3"
+      "basis": "地理4問1",
+      "courses": [
+        "地理探究"
+      ]
     },
     {
       "id": "geography-nov25-landforms-002",
@@ -49,7 +52,10 @@ registerQuestionPack({
       ],
       "e": "火山の熱のほか、地下深部の地温などによる温泉もある。温泉の位置だけで活火山を断定しない。",
       "knowledge": "required",
-      "basis": "地理4問1・問2・問3"
+      "basis": "地理4問1",
+      "courses": [
+        "地理探究"
+      ]
     },
     {
       "id": "geography-nov25-landforms-003",
@@ -71,7 +77,10 @@ registerQuestionPack({
       ],
       "e": "海洋が約7割を占める。高度別面積のグラフは海底の負の標高も含む。",
       "knowledge": "required",
-      "basis": "地理4問1・問2・問3"
+      "basis": "地理4問2",
+      "courses": [
+        "地理探究"
+      ]
     },
     {
       "id": "geography-nov25-landforms-004",
@@ -93,7 +102,10 @@ registerQuestionPack({
       ],
       "e": "深海底が広い一方、最深の海溝は狭い。最深部と最頻の深さを区別する。",
       "knowledge": "required",
-      "basis": "地理4問1・問2・問3"
+      "basis": "地理4問2",
+      "courses": [
+        "地理探究"
+      ]
     },
     {
       "id": "geography-nov25-landforms-005",
@@ -115,7 +127,10 @@ registerQuestionPack({
       ],
       "e": "大陸同士の衝突に伴う圧縮と隆起により高い山脈が形成された。",
       "knowledge": "required",
-      "basis": "地理4問1・問2・問3"
+      "basis": "地理4問3",
+      "courses": [
+        "地理探究"
+      ]
     },
     {
       "id": "geography-nov25-landforms-006",
@@ -137,7 +152,10 @@ registerQuestionPack({
       ],
       "e": "位置関係を断面図や地図で確認する。高原を通る経路と中国東部の低地を通る経路は高度分布が異なる。",
       "knowledge": "required",
-      "basis": "地理4問1・問2・問3"
+      "basis": "地理4問3",
+      "courses": [
+        "地理探究"
+      ]
     },
     {
       "id": "geography-nov25-landforms-007",
@@ -159,7 +177,10 @@ registerQuestionPack({
       ],
       "e": "流れが緩やかになった場所で土砂がたまり平野を作る。ガンジス・ブラマプトラの下流も例となる。",
       "knowledge": "required",
-      "basis": "地理4問1・問2・問3"
+      "basis": "地理4問4",
+      "courses": [
+        "地理探究"
+      ]
     },
     {
       "id": "geography-nov25-landforms-008",
@@ -181,7 +202,10 @@ registerQuestionPack({
       ],
       "e": "日本は山地から海までが近い。ライン川などでは緩やかな流れが内陸水運に利用される。",
       "knowledge": "required",
-      "basis": "地理4問1・問2・問3"
+      "basis": "地理4問4",
+      "courses": [
+        "地理探究"
+      ]
     },
     {
       "id": "geography-nov25-landforms-009",
@@ -203,7 +227,10 @@ registerQuestionPack({
       ],
       "e": "マグマの大量噴出後に地表が陥没して大きな凹地を作る。通常の小さな火口とは区別する。",
       "knowledge": "required",
-      "basis": "地理4問4・問5・問6"
+      "basis": "地理4問5",
+      "courses": [
+        "地理探究"
+      ]
     },
     {
       "id": "geography-nov25-landforms-010",
@@ -225,7 +252,10 @@ registerQuestionPack({
       ],
       "e": "姶良カルデラは鹿児島湾北部に位置する。阿蘇や箱根にもカルデラ地形がある。",
       "knowledge": "required",
-      "basis": "地理4問4・問5・問6"
+      "basis": "地理4問5",
+      "courses": [
+        "地理探究"
+      ]
     },
     {
       "id": "geography-nov25-landforms-011",
@@ -247,7 +277,10 @@ registerQuestionPack({
       ],
       "e": "降灰は交通、健康、機器、排水などに影響する。地域ごとの回収や清掃の工夫がある。",
       "knowledge": "required",
-      "basis": "地理4問4・問5・問6"
+      "basis": "地理4問5",
+      "courses": [
+        "地理探究"
+      ]
     },
     {
       "id": "geography-nov25-landforms-012",
@@ -269,7 +302,10 @@ registerQuestionPack({
       ],
       "e": "高床の倉庫は貯蔵物を守るための工夫。すべての地域文化を火山灰への対応とみなさない。",
       "knowledge": "required",
-      "basis": "地理4問4・問5・問6"
+      "basis": "地理4問5",
+      "courses": [
+        "地理探究"
+      ]
     },
     {
       "id": "geography-nov25-landforms-013",
@@ -291,7 +327,10 @@ registerQuestionPack({
       ],
       "e": "ほぼ固定したホットスポット上で火山が生まれ、プレートに乗って離れると古くなる。",
       "knowledge": "required",
-      "basis": "地理4問4・問5・問6"
+      "basis": "地理4問6",
+      "courses": [
+        "地理探究"
+      ]
     },
     {
       "id": "geography-nov25-landforms-014",
@@ -313,7 +352,13 @@ registerQuestionPack({
       ],
       "e": "島が沈みサンゴが成長を続ける条件下では、陸との間に潟ができ、最後は輪状の礁が残る。",
       "knowledge": "required",
-      "basis": "地理4問4・問5・問6"
+      "basis": "地理4問6",
+      "courses": [
+        "地理探究"
+      ],
+      "source": "https://www.geography-lesson.com/glacial-karst-coral-landforms/",
+      "sourceLabel": "高校地理の授業動画：氷河地形・カルスト地形・サンゴ礁",
+      "sourceChecked": "2026-10-07"
     },
     {
       "id": "geography-nov25-landforms-015",
@@ -335,7 +380,13 @@ registerQuestionPack({
       ],
       "e": "多くの造礁サンゴは共生藻から栄養を得るため光が重要。水温や水質などの条件も関係する。",
       "knowledge": "required",
-      "basis": "地理4問4・問5・問6"
+      "basis": "地理4問6",
+      "courses": [
+        "地理探究"
+      ],
+      "source": "https://www.geography-lesson.com/glacial-karst-coral-landforms/",
+      "sourceLabel": "高校地理の授業動画：氷河地形・カルスト地形・サンゴ礁",
+      "sourceChecked": "2026-10-07"
     },
     {
       "id": "geography-nov25-landforms-016",
@@ -345,19 +396,26 @@ registerQuestionPack({
       "n": 16,
       "d": "A",
       "type": "choice",
-      "q": "河岸段丘ができる代表的な過程は？",
+      "q": "土地が隆起し河川の下刻が進むと、かつての谷底平野は何になる？",
       "o": [
-        "かつての河床を川が下刻し高い面として残す",
-        "海水だけが凍る",
-        "砂丘が必ず水没する",
-        "平野がすべて同時に沈む"
+        "河岸段丘の段丘面",
+        "三角州の河口州",
+        "後背湿地の湿地面",
+        "扇状地の扇頂"
       ],
       "a": [
         1
       ],
-      "e": "川が低い位置を掘り込むことで古い谷底の面が段になって残る。",
+      "e": "川が旧平地より低いところを流れるようになり、旧平地が段丘面として残る。段丘面と現在の低い河床を区別して地形を読む。",
       "knowledge": "required",
-      "basis": "地理4問7・問8"
+      "basis": "地理4問7の関連",
+      "courses": [
+        "地理総合",
+        "地理探究"
+      ],
+      "source": "https://geo-hs.com/valleyplain/",
+      "sourceLabel": "高校地理の部屋：谷底平野・河岸段丘",
+      "sourceChecked": "2026-10-07"
     },
     {
       "id": "geography-nov25-landforms-017",
@@ -367,19 +425,26 @@ registerQuestionPack({
       "n": 17,
       "d": "A",
       "type": "choice",
-      "q": "自然堤防の特徴は？",
+      "q": "自然堤防と後背湿地を比べた一般的な特徴は？",
       "o": [
-        "山頂の露出した岩盤",
-        "必ずコンクリート製の人工堤防",
-        "海底の火山",
-        "河道沿いの少し高い砂などの堆積地"
+        "自然堤防は低地で、水はけが比較的悪い",
+        "自然堤防は人工のコンクリート堤防である",
+        "自然堤防は河口の沖合だけに形成される",
+        "自然堤防は微高地で、水はけが比較的よい"
       ],
       "a": [
         4
       ],
-      "e": "洪水時に河道近くで比較的粗い土砂が堆積してできる。人工の堤防と区別する。",
+      "e": "氾濫した水から比較的粗い土砂が河道近くに堆積して微高地となる。背後の低い湿地には細かい土砂がたまりやすい。自然堤防でも浸水がないとはいえない。",
       "knowledge": "required",
-      "basis": "地理4問7・問8"
+      "basis": "地理4問7の関連",
+      "courses": [
+        "地理総合",
+        "地理探究"
+      ],
+      "source": "https://geo-hs.com/floodplain/",
+      "sourceLabel": "高校地理の部屋：氾濫原",
+      "sourceChecked": "2026-10-07"
     },
     {
       "id": "geography-nov25-landforms-018",
@@ -401,7 +466,14 @@ registerQuestionPack({
       ],
       "e": "洪水の細粒物質がたまる低地で、排水条件や浸水への注意が必要。",
       "knowledge": "required",
-      "basis": "地理4問7・問8"
+      "basis": "地理4問7の関連",
+      "courses": [
+        "地理総合",
+        "地理探究"
+      ],
+      "source": "https://geo-hs.com/floodplain/",
+      "sourceLabel": "高校地理の部屋：氾濫原",
+      "sourceChecked": "2026-10-07"
     },
     {
       "id": "geography-nov25-landforms-019",
@@ -423,7 +495,14 @@ registerQuestionPack({
       ],
       "e": "山地から平野へ出て勾配が変わる場所にできる。水はけのよい部分は果樹栽培などに利用される。",
       "knowledge": "required",
-      "basis": "地理4問7・問8"
+      "basis": "地理4問7の関連",
+      "courses": [
+        "地理総合",
+        "地理探究"
+      ],
+      "source": "https://geo-hs.com/alluvialfan/",
+      "sourceLabel": "高校地理の部屋：扇状地",
+      "sourceChecked": "2026-10-07"
     },
     {
       "id": "geography-nov25-landforms-020",
@@ -445,7 +524,11 @@ registerQuestionPack({
       ],
       "e": "河川の土砂が河口付近に堆積する。低平で水害や高潮への備えが必要になる。",
       "knowledge": "required",
-      "basis": "地理4問7・問8"
+      "basis": "地理4問7の関連",
+      "courses": [
+        "地理総合",
+        "地理探究"
+      ]
     },
     {
       "id": "geography-nov25-landforms-021",
@@ -467,7 +550,11 @@ registerQuestionPack({
       ],
       "e": "水面の標高とその地点での浸水深は異なる。地形や建物条件も被害を左右する。",
       "knowledge": "required",
-      "basis": "地理4問7・問8"
+      "basis": "地理4問7の関連",
+      "courses": [
+        "地理総合",
+        "地理探究"
+      ]
     },
     {
       "id": "geography-nov25-landforms-022",
@@ -489,7 +576,11 @@ registerQuestionPack({
       ],
       "e": "想定浸水域、深さ、避難先と移動経路を確認する。過去の浸水がない場所でも危険がないとは限らない。",
       "knowledge": "required",
-      "basis": "地理4問7・問8"
+      "basis": "地理4問7の関連",
+      "courses": [
+        "地理総合",
+        "地理探究"
+      ]
     },
     {
       "id": "geography-nov25-landforms-023",
@@ -511,7 +602,180 @@ registerQuestionPack({
       ],
       "e": "地形の変化で湖ができ、細かな物質が湖底にたまる。その後川が侵食すると古い面が残る場合もある。",
       "knowledge": "required",
-      "basis": "地理4問7・問8"
+      "basis": "地理4問7の関連",
+      "courses": [
+        "地理総合",
+        "地理探究"
+      ]
+    },
+    {
+      "id": "geography-nov25-landforms-024",
+      "subject": "geography",
+      "c": 4,
+      "s": "教材で深める関連知識",
+      "n": 24,
+      "d": "B",
+      "type": "choice",
+      "q": "扇状地の扇央で果樹栽培が行われやすい理由は？",
+      "o": [
+        "砂礫が多く水が浸透し、水はけがよい",
+        "粘土が厚く年中水没する",
+        "海水が毎日入り塩分が高い",
+        "氷河が地表を常に覆う"
+      ],
+      "a": [
+        1
+      ],
+      "e": "扇央は地表水を得にくい一方で排水がよい。扇端の湧水と水田利用と対比する。",
+      "knowledge": "related",
+      "basis": "地理4問7の関連",
+      "courses": [
+        "地理探究"
+      ],
+      "source": "https://geo-hs.com/alluvialfan/",
+      "sourceLabel": "高校地理の部屋：扇状地",
+      "sourceChecked": "2026-10-07"
+    },
+    {
+      "id": "geography-nov25-landforms-025",
+      "subject": "geography",
+      "c": 4,
+      "s": "教材で深める関連知識",
+      "n": 25,
+      "d": "B",
+      "type": "choice",
+      "q": "扇状地の扇端に湧水が見られる主な理由は？",
+      "o": [
+        "扇央で浸透した地下水が地表に現れる",
+        "海水が山側に押し上げられる",
+        "火山灰が常に発熱する",
+        "上空の雲が地下から出る"
+      ],
+      "a": [
+        1
+      ],
+      "e": "扇端では地下水が湧き出し、水を使う集落や水田が立地することがある。",
+      "knowledge": "related",
+      "basis": "地理4問7の関連",
+      "courses": [
+        "地理探究"
+      ],
+      "source": "https://geo-hs.com/alluvialfan/",
+      "sourceLabel": "高校地理の部屋：扇状地",
+      "sourceChecked": "2026-10-07"
+    },
+    {
+      "id": "geography-nov25-landforms-026",
+      "subject": "geography",
+      "c": 4,
+      "s": "教材で深める関連知識",
+      "n": 26,
+      "d": "B",
+      "type": "choice",
+      "q": "蛇行した河道が切り離されて残った湖は？",
+      "o": [
+        "三日月湖",
+        "カルデラ湖",
+        "氷河湖",
+        "潟湖"
+      ],
+      "a": [
+        1
+      ],
+      "e": "旧河道の痕跡はかつて川が流れた位置を示す。土地の履歴を知る防災上の手がかりにもなる。",
+      "knowledge": "related",
+      "basis": "地理4問7の関連",
+      "courses": [
+        "地理総合",
+        "地理探究"
+      ],
+      "source": "https://geo-hs.com/floodplain/",
+      "sourceLabel": "高校地理の部屋：氾濫原",
+      "sourceChecked": "2026-10-07"
+    },
+    {
+      "id": "geography-nov25-landforms-027",
+      "subject": "geography",
+      "c": 4,
+      "s": "教材で深める関連知識",
+      "n": 27,
+      "d": "B",
+      "type": "choice",
+      "q": "裾礁と堡礁を見分ける主な地形上の違いは？",
+      "o": [
+        "陸地と礁の間に礁湖があるか",
+        "海水が淡水になっているか",
+        "サンゴが植物であるか",
+        "礁が河川の堆積物か"
+      ],
+      "a": [
+        1
+      ],
+      "e": "裾礁は陸地に接し、堡礁は陸地との間に礁湖を挟む。沈降に伴うサンゴの上方成長で説明できる。",
+      "knowledge": "related",
+      "basis": "地理4問6の関連",
+      "courses": [
+        "地理探究"
+      ],
+      "source": "https://www.geography-lesson.com/glacial-karst-coral-landforms/",
+      "sourceLabel": "高校地理の授業動画：氷河地形・カルスト地形・サンゴ礁",
+      "sourceChecked": "2026-10-07"
+    },
+    {
+      "id": "geography-nov25-landforms-028",
+      "subject": "geography",
+      "c": 4,
+      "s": "教材で深める関連知識",
+      "n": 28,
+      "d": "B",
+      "type": "choice",
+      "q": "U字谷が沈水してできる、湾が細長く奥深い海岸は？",
+      "o": [
+        "フィヨルド",
+        "リアス海岸",
+        "砂州海岸",
+        "隆起サンゴ礁海岸"
+      ],
+      "a": [
+        1
+      ],
+      "e": "氷河が削ったU字谷の沈水がフィヨルド。河川が削った谷の沈水でできるリアス海岸と区別する。",
+      "knowledge": "related",
+      "basis": "地理4の関連",
+      "courses": [
+        "地理探究"
+      ],
+      "source": "https://www.geography-lesson.com/glacial-karst-coral-landforms/",
+      "sourceLabel": "高校地理の授業動画：氷河地形・カルスト地形・サンゴ礁",
+      "sourceChecked": "2026-10-07"
+    },
+    {
+      "id": "geography-nov25-landforms-029",
+      "subject": "geography",
+      "c": 4,
+      "s": "教材で深める関連知識",
+      "n": 29,
+      "d": "B",
+      "type": "choice",
+      "q": "カルスト地形の形成で重要な作用は？",
+      "o": [
+        "石灰岩の溶食",
+        "花こう岩の凝固",
+        "砂礫の扇状の堆積",
+        "海底の玄武岩の噴出"
+      ],
+      "a": [
+        1
+      ],
+      "e": "二酸化炭素を含む水によって石灰岩が溶かされ、凹地や鍾乳洞が形成される。",
+      "knowledge": "related",
+      "basis": "地理4の関連",
+      "courses": [
+        "地理探究"
+      ],
+      "source": "https://www.geography-lesson.com/glacial-karst-coral-landforms/",
+      "sourceLabel": "高校地理の授業動画：氷河地形・カルスト地形・サンゴ礁",
+      "sourceChecked": "2026-10-07"
     }
   ]
 });

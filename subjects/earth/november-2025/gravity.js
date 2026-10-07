@@ -1,11 +1,11 @@
-/* 用語・原理・関連知識を確認する独自の短問。元の設問・図版の転載ではありません。 */
+/* 高校向け教材の解説を参照した独自短問。設問・図版の転載ではありません。 */
 registerQuestionPack({
   "subject": "earth",
   "name": "地学",
   "chapters": {
     "10": "地球の形・重力"
   },
-  "knowledgeSource": "提供された2025年度高2・11月総合学力テストの出題分野をもとにした独自の知識確認問題",
+  "knowledgeSource": "提供模試の範囲に対応する独自短問。高校向け解説記事を問題ごとに参照。",
   "questions": [
     {
       "id": "earth-nov25-gravity-001",
@@ -27,7 +27,13 @@ registerQuestionPack({
       ],
       "e": "ジオイドは平均海面に対応する重力の等ポテンシャル面で、標高の基準となる。",
       "knowledge": "required",
-      "basis": "地学5問1・問2"
+      "basis": "地学5問1・問2",
+      "courses": [
+        "地学"
+      ],
+      "source": "https://www.s-yamaga.jp/nanimono/chikyu/chikyunokatachi-01.htm",
+      "sourceLabel": "山賀進の教材：地球の形と大きさ",
+      "sourceChecked": "2026-10-07"
     },
     {
       "id": "earth-nov25-gravity-002",
@@ -49,7 +55,13 @@ registerQuestionPack({
       ],
       "e": "準拠楕円体は数学的に扱いやすい地球の近似。ジオイドは実際の重力分布により起伏する。",
       "knowledge": "required",
-      "basis": "地学5問1・問2"
+      "basis": "地学5問1・問2",
+      "courses": [
+        "地学"
+      ],
+      "source": "https://www.s-yamaga.jp/nanimono/chikyu/chikyunokatachi-01.htm",
+      "sourceLabel": "山賀進の教材：地球の形と大きさ",
+      "sourceChecked": "2026-10-07"
     },
     {
       "id": "earth-nov25-gravity-003",
@@ -71,7 +83,14 @@ registerQuestionPack({
       ],
       "e": "自転により赤道方向へふくらみ、極方向にわずかにつぶれている。",
       "knowledge": "required",
-      "basis": "地学5問1・問2"
+      "basis": "地学5問1・問2",
+      "courses": [
+        "地学基礎",
+        "地学"
+      ],
+      "source": "https://www.s-yamaga.jp/nanimono/chikyu/chikyunokatachi-01.htm",
+      "sourceLabel": "山賀進の教材：地球の形と大きさ",
+      "sourceChecked": "2026-10-07"
     },
     {
       "id": "earth-nov25-gravity-004",
@@ -93,7 +112,13 @@ registerQuestionPack({
       ],
       "e": "回転楕円体では高緯度ほど曲率半径が大きく、同じ緯度差に対応する経線弧が長くなる。",
       "knowledge": "required",
-      "basis": "地学5問1・問2"
+      "basis": "地学5問1・問2",
+      "courses": [
+        "地学"
+      ],
+      "source": "https://www.s-yamaga.jp/nanimono/chikyu/chikyunokatachi-01.htm",
+      "sourceLabel": "山賀進の教材：地球の形と大きさ",
+      "sourceChecked": "2026-10-07"
     },
     {
       "id": "earth-nov25-gravity-005",
@@ -115,7 +140,13 @@ registerQuestionPack({
       ],
       "e": "極方向につぶれた楕円体なので、子午線周長は赤道周長より少し短い。",
       "knowledge": "required",
-      "basis": "地学5問1・問2"
+      "basis": "地学5問1・問2",
+      "courses": [
+        "地学"
+      ],
+      "source": "https://www.s-yamaga.jp/nanimono/chikyu/chikyunokatachi-01.htm",
+      "sourceLabel": "山賀進の教材：地球の形と大きさ",
+      "sourceChecked": "2026-10-07"
     },
     {
       "id": "earth-nov25-gravity-006",
@@ -137,7 +168,13 @@ registerQuestionPack({
       ],
       "e": "偏平率は赤道半径からのつぶれ具合を赤道半径で割った値。球では0となる。",
       "knowledge": "required",
-      "basis": "地学5問1・問2"
+      "basis": "地学5問1・問2",
+      "courses": [
+        "地学"
+      ],
+      "source": "https://www.s-yamaga.jp/nanimono/chikyu/chikyunokatachi-01.htm",
+      "sourceLabel": "山賀進の教材：地球の形と大きさ",
+      "sourceChecked": "2026-10-07"
     },
     {
       "id": "earth-nov25-gravity-007",
@@ -159,7 +196,13 @@ registerQuestionPack({
       ],
       "e": "自転が遅いと遠心力の影響が弱まり、球に近づく。赤道のふくらみと偏平率が減る。",
       "knowledge": "required",
-      "basis": "地学5問3・問4"
+      "basis": "地学5問3・問4",
+      "courses": [
+        "地学"
+      ],
+      "source": "https://www.s-yamaga.jp/nanimono/chikyu/juryoku-01.htm",
+      "sourceLabel": "山賀進の教材：重力（1）",
+      "sourceChecked": "2026-10-07"
     },
     {
       "id": "earth-nov25-gravity-008",
@@ -181,7 +224,13 @@ registerQuestionPack({
       ],
       "e": "地表の重力は地球の引力と自転による遠心力を合わせた実効的な力。",
       "knowledge": "required",
-      "basis": "地学5問3・問4"
+      "basis": "地学5問3・問4",
+      "courses": [
+        "地学"
+      ],
+      "source": "https://www.s-yamaga.jp/nanimono/chikyu/juryoku-01.htm",
+      "sourceLabel": "山賀進の教材：重力（1）",
+      "sourceChecked": "2026-10-07"
     },
     {
       "id": "earth-nov25-gravity-009",
@@ -203,7 +252,13 @@ registerQuestionPack({
       ],
       "e": "遠心力は自転軸に垂直で軸から外向き。一般の緯度では地球中心からの半径方向と一致しない。",
       "knowledge": "required",
-      "basis": "地学5問3・問4"
+      "basis": "地学5問3・問4",
+      "courses": [
+        "地学"
+      ],
+      "source": "https://www.s-yamaga.jp/nanimono/chikyu/juryoku-01.htm",
+      "sourceLabel": "山賀進の教材：重力（1）",
+      "sourceChecked": "2026-10-07"
     },
     {
       "id": "earth-nov25-gravity-010",
@@ -225,7 +280,13 @@ registerQuestionPack({
       ],
       "e": "自転軸上では回転半径が0なので遠心力が0。赤道で影響が最大となる。",
       "knowledge": "required",
-      "basis": "地学5問3・問4"
+      "basis": "地学5問3・問4",
+      "courses": [
+        "地学"
+      ],
+      "source": "https://www.s-yamaga.jp/nanimono/chikyu/juryoku-01.htm",
+      "sourceLabel": "山賀進の教材：重力（1）",
+      "sourceChecked": "2026-10-07"
     },
     {
       "id": "earth-nov25-gravity-011",
@@ -247,7 +308,13 @@ registerQuestionPack({
       ],
       "e": "両極では遠心力が0、赤道では引力と遠心力が同一直線上にある。",
       "knowledge": "required",
-      "basis": "地学5問3・問4"
+      "basis": "地学5問3・問4",
+      "courses": [
+        "地学"
+      ],
+      "source": "https://www.s-yamaga.jp/nanimono/chikyu/juryoku-01.htm",
+      "sourceLabel": "山賀進の教材：重力（1）",
+      "sourceChecked": "2026-10-07"
     },
     {
       "id": "earth-nov25-gravity-012",
@@ -257,19 +324,25 @@ registerQuestionPack({
       "n": 12,
       "d": "A",
       "type": "choice",
-      "q": "地表の重力加速度は一般に極と赤道のどちらで大きい？",
+      "q": "一般に極の重力が赤道より大きい理由の組合せは？",
       "o": [
-        "極",
-        "赤道",
-        "必ず同じ",
-        "両方ともゼロ"
+        "中心から近く、遠心力がゼロだから",
+        "中心から遠く、遠心力がゼロだから",
+        "中心から近く、遠心力が最大だから",
+        "中心から遠く、遠心力が最大だから"
       ],
       "a": [
         1
       ],
-      "e": "極では遠心力がなく中心までの距離も小さい。赤道では遠心力が引力を一部打ち消す。",
+      "e": "極では中心までの距離が短いので引力が大きく、自転による遠心力もゼロ。赤道では両方の要因が重力を小さくする方向に働く。",
       "knowledge": "required",
-      "basis": "地学5問3・問4"
+      "basis": "地学5問3・問4",
+      "courses": [
+        "地学"
+      ],
+      "source": "https://www.s-yamaga.jp/nanimono/chikyu/juryoku-01.htm",
+      "sourceLabel": "山賀進の教材：重力（1）",
+      "sourceChecked": "2026-10-07"
     },
     {
       "id": "earth-nov25-gravity-013",
@@ -291,7 +364,13 @@ registerQuestionPack({
       ],
       "e": "高さによる標準的な重力の変化を補正する。測定点と基準面の間の岩盤質量の影響はブーゲー補正。",
       "knowledge": "required",
-      "basis": "地学5問5"
+      "basis": "地学5問5",
+      "courses": [
+        "地学"
+      ],
+      "source": "https://www.s-yamaga.jp/nanimono/chikyu/juryoku-02.htm",
+      "sourceLabel": "山賀進の教材：重力（2）",
+      "sourceChecked": "2026-10-07"
     },
     {
       "id": "earth-nov25-gravity-014",
@@ -301,19 +380,25 @@ registerQuestionPack({
       "n": 14,
       "d": "A",
       "type": "choice",
-      "q": "ブーゲー補正で主に取り除く影響は？",
+      "q": "ブーゲー補正とフリーエア補正の違いは？",
       "o": [
-        "太陽からの距離だけ",
-        "降水量だけ",
-        "測定点と基準面の間にある物質の引力",
-        "自転周期の季節変化だけ"
+        "ブーゲー補正は緯度の影響だけを考慮する",
+        "ブーゲー補正は自転の角速度だけを考慮する",
+        "ブーゲー補正は観測点と基準面の間の岩石の引力を考慮する",
+        "ブーゲー補正は海岸線からの水平距離だけを考慮する"
       ],
       "a": [
         3
       ],
-      "e": "基準面までの岩盤を一定密度の板として近似し、その重力効果を除く。",
+      "e": "フリーエア補正は主に高度による距離の効果を補正する。ブーゲー補正では基準面との間にある岩石の質量も考慮し、地下の密度構造を調べる。",
       "knowledge": "required",
-      "basis": "地学5問5"
+      "basis": "地学5問5",
+      "courses": [
+        "地学"
+      ],
+      "source": "https://www.s-yamaga.jp/nanimono/chikyu/juryoku-02.htm",
+      "sourceLabel": "山賀進の教材：重力（2）",
+      "sourceChecked": "2026-10-07"
     },
     {
       "id": "earth-nov25-gravity-015",
@@ -335,7 +420,13 @@ registerQuestionPack({
       ],
       "e": "周辺の山や谷は平らな地形と質量配置が異なるので、その引力の違いを補正する。",
       "knowledge": "required",
-      "basis": "地学5問5"
+      "basis": "地学5問5",
+      "courses": [
+        "地学"
+      ],
+      "source": "https://www.s-yamaga.jp/nanimono/chikyu/juryoku-02.htm",
+      "sourceLabel": "山賀進の教材：重力（2）",
+      "sourceChecked": "2026-10-07"
     },
     {
       "id": "earth-nov25-gravity-016",
@@ -357,7 +448,13 @@ registerQuestionPack({
       ],
       "e": "基準より低密度なら質量が不足し引力が弱い。モデル上、その岩体の上では負の異常が現れる。",
       "knowledge": "required",
-      "basis": "地学5問5"
+      "basis": "地学5問5",
+      "courses": [
+        "地学"
+      ],
+      "source": "https://www.s-yamaga.jp/nanimono/chikyu/juryoku-02.htm",
+      "sourceLabel": "山賀進の教材：重力（2）",
+      "sourceChecked": "2026-10-07"
     },
     {
       "id": "earth-nov25-gravity-017",
@@ -379,7 +476,69 @@ registerQuestionPack({
       ],
       "e": "基準より高密度なら引力が強い。正の異常は相対的な質量の過剰と結びつく。",
       "knowledge": "required",
-      "basis": "地学5問5"
+      "basis": "地学5問5",
+      "courses": [
+        "地学"
+      ],
+      "source": "https://www.s-yamaga.jp/nanimono/chikyu/juryoku-02.htm",
+      "sourceLabel": "山賀進の教材：重力（2）",
+      "sourceChecked": "2026-10-07"
+    },
+    {
+      "id": "earth-nov25-gravity-018",
+      "subject": "earth",
+      "c": 10,
+      "s": "教材で深める関連知識",
+      "n": 18,
+      "d": "B",
+      "type": "choice",
+      "q": "ジオイド面と鉛直線（重力方向）の関係は？",
+      "o": [
+        "互いに垂直",
+        "どこでも平行",
+        "赤道以外では一致",
+        "緯度に関係なく45°"
+      ],
+      "a": [
+        1
+      ],
+      "e": "ジオイドは平均海面を陸へ延長した重力の等ポテンシャル面。凹凸のある地表面や単純な楕円体とは区別する。",
+      "knowledge": "related",
+      "basis": "地学5問1・問2の関連",
+      "courses": [
+        "地学"
+      ],
+      "source": "https://www.s-yamaga.jp/nanimono/chikyu/chikyunokatachi-01.htm",
+      "sourceLabel": "山賀進の教材：地球の形と大きさ",
+      "sourceChecked": "2026-10-07"
+    },
+    {
+      "id": "earth-nov25-gravity-019",
+      "subject": "earth",
+      "c": 10,
+      "s": "教材で深める関連知識",
+      "n": 19,
+      "d": "B",
+      "type": "choice",
+      "q": "地球の半径・質量を固定し、自転角速度を2倍にすると赤道の遠心加速度は？",
+      "o": [
+        "4倍",
+        "2倍",
+        "1/2倍",
+        "変わらない"
+      ],
+      "a": [
+        1
+      ],
+      "e": "遠心加速度はrω²。自転の効果だけを見る仮定であり、実際の形状変化とは分けて計算する。",
+      "knowledge": "related",
+      "basis": "地学5問3・問4の関連",
+      "courses": [
+        "地学"
+      ],
+      "source": "https://www.s-yamaga.jp/nanimono/chikyu/juryoku-01.htm",
+      "sourceLabel": "山賀進の教材：重力（1）",
+      "sourceChecked": "2026-10-07"
     }
   ]
 });

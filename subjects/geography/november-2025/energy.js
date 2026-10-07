@@ -1,11 +1,11 @@
-/* 用語・原理・関連知識を確認する独自の短問。元の設問・図版の転載ではありません。 */
+/* 高校向け教材の解説を参照した独自短問。設問・図版の転載ではありません。 */
 registerQuestionPack({
   "subject": "geography",
   "name": "地理",
   "chapters": {
     "3": "資源・エネルギーと統計"
   },
-  "knowledgeSource": "提供された2025年度高2・11月総合学力テストの出題分野をもとにした独自の知識確認問題",
+  "knowledgeSource": "提供模試の範囲に対応する独自短問。高校向け解説記事を問題ごとに参照。",
   "questions": [
     {
       "id": "geography-nov25-energy-001",
@@ -27,7 +27,10 @@ registerQuestionPack({
       ],
       "e": "人口が多いと総量が大きくなりやすい。総量を人口で割って比較する。",
       "knowledge": "required",
-      "basis": "地理3問1・問2"
+      "basis": "地理3問1",
+      "courses": [
+        "地理探究"
+      ]
     },
     {
       "id": "geography-nov25-energy-002",
@@ -49,7 +52,10 @@ registerQuestionPack({
       ],
       "e": "200÷50＝4。単位も「エネルギー量／人」として確認する。",
       "knowledge": "required",
-      "basis": "地理3問1・問2"
+      "basis": "地理3問1",
+      "courses": [
+        "地理探究"
+      ]
     },
     {
       "id": "geography-nov25-energy-003",
@@ -71,7 +77,10 @@ registerQuestionPack({
       ],
       "e": "エネルギー原単位の改善。GDPが大きく増えれば総消費量は増えることもある。",
       "knowledge": "required",
-      "basis": "地理3問1・問2"
+      "basis": "地理3問1",
+      "courses": [
+        "地理探究"
+      ]
     },
     {
       "id": "geography-nov25-energy-004",
@@ -93,7 +102,10 @@ registerQuestionPack({
       ],
       "e": "総量＝単位量あたりの排出量×消費量。効率と燃料構成の違いを分けて考えられる。",
       "knowledge": "required",
-      "basis": "地理3問1・問2"
+      "basis": "地理3問1",
+      "courses": [
+        "地理探究"
+      ]
     },
     {
       "id": "geography-nov25-energy-005",
@@ -115,7 +127,10 @@ registerQuestionPack({
       ],
       "e": "二重軸では見た目の高さが等しくても数値や単位は異なる。",
       "knowledge": "required",
-      "basis": "地理3問1・問2"
+      "basis": "地理3問1",
+      "courses": [
+        "地理探究"
+      ]
     },
     {
       "id": "geography-nov25-energy-006",
@@ -125,19 +140,25 @@ registerQuestionPack({
       "n": 6,
       "d": "A",
       "type": "choice",
-      "q": "一次エネルギーと二次エネルギーの組合せは？",
+      "q": "一次エネルギー／二次エネルギーの正しい組合せは？",
       "o": [
-        "ガソリンと石炭",
-        "水素と天然ガス",
-        "原油と電気",
-        "電気と原油"
+        "電力／石油",
+        "都市ガス／天然ガス",
+        "石炭／電力",
+        "ガソリン／水力"
       ],
       "a": [
         3
       ],
-      "e": "自然から得る原油などが一次、変換して得る電気などが二次。",
+      "e": "自然から得る資源が一次、それを加工・変換して得るものが二次。電力は火力・水力などの方式にかかわらず二次エネルギー。",
       "knowledge": "required",
-      "basis": "地理3問1・問2"
+      "basis": "地理3問1の関連",
+      "courses": [
+        "地理探究"
+      ],
+      "source": "https://chitonitose.com/geo/geo_lessons_energy_resources.html",
+      "sourceLabel": "ちとにとせ：エネルギー資源",
+      "sourceChecked": "2026-10-07"
     },
     {
       "id": "geography-nov25-energy-007",
@@ -159,7 +180,10 @@ registerQuestionPack({
       ],
       "e": "燃焼段階では石炭が多く天然ガスが少ない傾向。採掘・輸送時の排出まで含む評価とは区別する。",
       "knowledge": "required",
-      "basis": "地理3問3・問4"
+      "basis": "地理3問2",
+      "courses": [
+        "地理探究"
+      ]
     },
     {
       "id": "geography-nov25-energy-008",
@@ -181,7 +205,13 @@ registerQuestionPack({
       ],
       "e": "液化により体積を小さくし専用船で運ぶ。液化設備や低温保持の費用がかかる。",
       "knowledge": "required",
-      "basis": "地理3問3・問4"
+      "basis": "地理3問2",
+      "courses": [
+        "地理探究"
+      ],
+      "source": "https://chitonitose.com/geo/geo_lessons_energy_resources.html",
+      "sourceLabel": "ちとにとせ：エネルギー資源",
+      "sourceChecked": "2026-10-07"
     },
     {
       "id": "geography-nov25-energy-009",
@@ -203,7 +233,10 @@ registerQuestionPack({
       ],
       "e": "LNGは主にメタンからなる天然ガスを低温で液化したもの。組成により性質は多少異なる。",
       "knowledge": "required",
-      "basis": "地理3問3・問4"
+      "basis": "地理3問2",
+      "courses": [
+        "地理探究"
+      ]
     },
     {
       "id": "geography-nov25-energy-010",
@@ -225,7 +258,13 @@ registerQuestionPack({
       ],
       "e": "陸上輸送ではパイプラインが使われる。海を隔てる日本などではLNG輸入が重要。",
       "knowledge": "required",
-      "basis": "地理3問3・問4"
+      "basis": "地理3問2",
+      "courses": [
+        "地理探究"
+      ],
+      "source": "https://chitonitose.com/geo/geo_lessons_energy_resources.html",
+      "sourceLabel": "ちとにとせ：エネルギー資源",
+      "sourceChecked": "2026-10-07"
     },
     {
       "id": "geography-nov25-energy-011",
@@ -247,7 +286,10 @@ registerQuestionPack({
       ],
       "e": "岩盤に亀裂を作りガスを取り出す。地下水や排水など環境管理も必要になる。",
       "knowledge": "required",
-      "basis": "地理3問3・問4"
+      "basis": "地理3問2",
+      "courses": [
+        "地理探究"
+      ]
     },
     {
       "id": "geography-nov25-energy-012",
@@ -269,7 +311,10 @@ registerQuestionPack({
       ],
       "e": "供給増は価格の下押し要因。ただし実際は需要、輸送制約、為替などにも左右される。",
       "knowledge": "required",
-      "basis": "地理3問3・問4"
+      "basis": "地理3問2",
+      "courses": [
+        "地理探究"
+      ]
     },
     {
       "id": "geography-nov25-energy-013",
@@ -291,7 +336,13 @@ registerQuestionPack({
       ],
       "e": "発電構成の変化が燃料輸入に影響した。特定年の出来事と現在の状況は区別する。",
       "knowledge": "required",
-      "basis": "地理3問3・問4"
+      "basis": "地理3問2",
+      "courses": [
+        "地理探究"
+      ],
+      "source": "https://chitonitose.com/geo/geo_lessons_trade.html",
+      "sourceLabel": "ちとにとせ：世界の貿易",
+      "sourceChecked": "2026-10-07"
     },
     {
       "id": "geography-nov25-energy-014",
@@ -313,7 +364,14 @@ registerQuestionPack({
       ],
       "e": "植物の糖などを発酵してエタノールを作り、燃料に利用する。",
       "knowledge": "required",
-      "basis": "地理3問5・問6"
+      "basis": "地理3問3の関連",
+      "courses": [
+        "地理総合",
+        "地理探究"
+      ],
+      "source": "https://chitonitose.com/geo/geo_lessons_energy_resources.html",
+      "sourceLabel": "ちとにとせ：エネルギー資源",
+      "sourceChecked": "2026-10-07"
     },
     {
       "id": "geography-nov25-energy-015",
@@ -335,7 +393,11 @@ registerQuestionPack({
       ],
       "e": "生産拡大は食料価格、森林開発、水利用などにも影響し得る。",
       "knowledge": "required",
-      "basis": "地理3問5・問6"
+      "basis": "地理3問3の関連",
+      "courses": [
+        "地理総合",
+        "地理探究"
+      ]
     },
     {
       "id": "geography-nov25-energy-016",
@@ -357,7 +419,11 @@ registerQuestionPack({
       ],
       "e": "嫌気性分解でメタンなどを含むガスが生じる。廃棄物の利用にもつながる。",
       "knowledge": "required",
-      "basis": "地理3問5・問6"
+      "basis": "地理3問3の関連",
+      "courses": [
+        "地理総合",
+        "地理探究"
+      ]
     },
     {
       "id": "geography-nov25-energy-017",
@@ -379,7 +445,14 @@ registerQuestionPack({
       ],
       "e": "再生可能エネルギーの割合が高くても、近代的な発電設備の普及を意味するとは限らない。",
       "knowledge": "required",
-      "basis": "地理3問5・問6"
+      "basis": "地理3問3の関連",
+      "courses": [
+        "地理総合",
+        "地理探究"
+      ],
+      "source": "https://chitonitose.com/geo/geo_lessons_energy_resources.html",
+      "sourceLabel": "ちとにとせ：エネルギー資源",
+      "sourceChecked": "2026-10-07"
     },
     {
       "id": "geography-nov25-energy-018",
@@ -401,7 +474,14 @@ registerQuestionPack({
       ],
       "e": "蓄電、送電網、他電源との調整などが安定供給に関係する。",
       "knowledge": "required",
-      "basis": "地理3問5・問6"
+      "basis": "地理3問3の関連",
+      "courses": [
+        "地理総合",
+        "地理探究"
+      ],
+      "source": "https://chitonitose.com/geo/geo_lessons_energy_resources.html",
+      "sourceLabel": "ちとにとせ：エネルギー資源",
+      "sourceChecked": "2026-10-07"
     },
     {
       "id": "geography-nov25-energy-019",
@@ -423,7 +503,11 @@ registerQuestionPack({
       ],
       "e": "使用時だけでなく資源採取、製造、輸送、処分なども含めて考える。",
       "knowledge": "required",
-      "basis": "地理3問5・問6"
+      "basis": "地理3問3の関連",
+      "courses": [
+        "地理総合",
+        "地理探究"
+      ]
     },
     {
       "id": "geography-nov25-energy-020",
@@ -445,7 +529,11 @@ registerQuestionPack({
       ],
       "e": "効率改善と実際の総消費量の削減は同じとは限らない。使用量も確認する。",
       "knowledge": "required",
-      "basis": "地理3問5・問6"
+      "basis": "地理3問3の関連",
+      "courses": [
+        "地理総合",
+        "地理探究"
+      ]
     },
     {
       "id": "geography-nov25-energy-021",
@@ -467,7 +555,124 @@ registerQuestionPack({
       ],
       "e": "エネルギー回収だけでなく廃棄物を減らすことや資源循環を考える。",
       "knowledge": "required",
-      "basis": "地理3問5・問6"
+      "basis": "地理3問3の関連",
+      "courses": [
+        "地理総合",
+        "地理探究"
+      ]
+    },
+    {
+      "id": "geography-nov25-energy-022",
+      "subject": "geography",
+      "c": 3,
+      "s": "教材で深める関連知識",
+      "n": 22,
+      "d": "B",
+      "type": "choice",
+      "q": "水力発電の立地に有利な自然条件は？",
+      "o": [
+        "豊富で安定した流量と落差",
+        "少ない流量と平坦な海岸だけ",
+        "豊富な石炭と強い風だけ",
+        "年間を通じた乾燥と広い砂漠"
+      ],
+      "a": [
+        1
+      ],
+      "e": "水の位置エネルギーを利用するため、流量と落差が重要。資源・地形・気候を結びつけて考える。",
+      "knowledge": "related",
+      "basis": "地理3の関連",
+      "courses": [
+        "地理探究"
+      ],
+      "source": "https://chitonitose.com/geo/geo_lessons_energy_resources.html",
+      "sourceLabel": "ちとにとせ：エネルギー資源",
+      "sourceChecked": "2026-10-07"
+    },
+    {
+      "id": "geography-nov25-energy-023",
+      "subject": "geography",
+      "c": 3,
+      "s": "教材で深める関連知識",
+      "n": 23,
+      "d": "B",
+      "type": "choice",
+      "q": "石油への依存を見直す契機となった1970年代の出来事は？",
+      "o": [
+        "石油危機",
+        "産業革命の開始",
+        "大陸移動説の発表",
+        "第一次世界大戦の開始"
+      ],
+      "a": [
+        1
+      ],
+      "e": "価格高騰を受けて天然ガス・石炭・原子力などへの分散が進んだ。時代ごとのエネルギー転換を区別する。",
+      "knowledge": "related",
+      "basis": "地理3問2の関連",
+      "courses": [
+        "地理探究"
+      ],
+      "source": "https://chitonitose.com/geo/geo_lessons_energy_resources.html",
+      "sourceLabel": "ちとにとせ：エネルギー資源",
+      "sourceChecked": "2026-10-07"
+    },
+    {
+      "id": "geography-nov25-energy-024",
+      "subject": "geography",
+      "c": 3,
+      "s": "教材で深める関連知識",
+      "n": 24,
+      "d": "B",
+      "type": "choice",
+      "q": "鉄鋼業で石炭からつくるコークスが主に果たす役割は？",
+      "o": [
+        "燃料と鉄鉱石の還元剤",
+        "鉄鉱石を海上輸送する容器",
+        "鉄鉱石そのものの代替",
+        "製品を冷却する液体"
+      ],
+      "a": [
+        1
+      ],
+      "e": "石炭は発電燃料だけでなく製鉄にも使う。炭田と鉄鉱石の産地・輸送条件は工業立地に関係する。",
+      "knowledge": "related",
+      "basis": "地理3の関連",
+      "courses": [
+        "地理探究"
+      ],
+      "source": "https://chitonitose.com/geo/geo_lessons_energy_resources.html",
+      "sourceLabel": "ちとにとせ：エネルギー資源",
+      "sourceChecked": "2026-10-07"
+    },
+    {
+      "id": "geography-nov25-energy-025",
+      "subject": "geography",
+      "c": 3,
+      "s": "教材で深める関連知識",
+      "n": 25,
+      "d": "B",
+      "type": "choice",
+      "q": "再生可能エネルギーでも立地を検討すべき理由は？",
+      "o": [
+        "自然条件や地域への影響が発電方式ごとに異なる",
+        "燃料を必ずすべて輸入する",
+        "すべて同じ場所で同じ出力を得られる",
+        "どの方式も化石燃料を燃やす"
+      ],
+      "a": [
+        1
+      ],
+      "e": "風力は風況や騒音、水力は流量や浸水する土地、地熱は火山地帯の利用条件などを比較する。",
+      "knowledge": "related",
+      "basis": "地理3問3の関連",
+      "courses": [
+        "地理総合",
+        "地理探究"
+      ],
+      "source": "https://chitonitose.com/geo/geo_lessons_energy_resources.html",
+      "sourceLabel": "ちとにとせ：エネルギー資源",
+      "sourceChecked": "2026-10-07"
     }
   ]
 });

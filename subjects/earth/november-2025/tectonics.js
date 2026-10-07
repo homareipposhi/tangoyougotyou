@@ -1,11 +1,11 @@
-/* 用語・原理・関連知識を確認する独自の短問。元の設問・図版の転載ではありません。 */
+/* 高校向け教材の解説を参照した独自短問。設問・図版の転載ではありません。 */
 registerQuestionPack({
   "subject": "earth",
   "name": "地学",
   "chapters": {
     "7": "プレート・地震と震源"
   },
-  "knowledgeSource": "提供された2025年度高2・11月総合学力テストの出題分野をもとにした独自の知識確認問題",
+  "knowledgeSource": "提供模試の範囲に対応する独自短問。高校向け解説記事を問題ごとに参照。",
   "questions": [
     {
       "id": "earth-nov25-tectonics-001",
@@ -27,7 +27,14 @@ registerQuestionPack({
       ],
       "e": "地球のかたい表層が複数のプレートに分かれて動くことで、多くの地球活動を説明する。",
       "knowledge": "required",
-      "basis": "地学2問1・問2"
+      "basis": "地学2問1・問2",
+      "courses": [
+        "地学基礎",
+        "地学"
+      ],
+      "source": "https://tigakutasu.com/newtigakukisokyousitu-puretotekutonikusu/",
+      "sourceLabel": "ちがくたす：プレートテクトニクス",
+      "sourceChecked": "2026-10-07"
     },
     {
       "id": "earth-nov25-tectonics-002",
@@ -49,7 +56,14 @@ registerQuestionPack({
       ],
       "e": "海嶺ではプレートが離れ、上昇したマグマが新しい海洋地殻をつくる。",
       "knowledge": "required",
-      "basis": "地学2問1・問2"
+      "basis": "地学2問1・問2",
+      "courses": [
+        "地学基礎",
+        "地学"
+      ],
+      "source": "https://tigakutasu.com/newtigakukisokyousitupuretonokyoukai/",
+      "sourceLabel": "ちがくたす：プレートの境界",
+      "sourceChecked": "2026-10-07"
     },
     {
       "id": "earth-nov25-tectonics-003",
@@ -71,7 +85,14 @@ registerQuestionPack({
       ],
       "e": "海洋プレートが沈み込む収束境界には海溝ができる。",
       "knowledge": "required",
-      "basis": "地学2問1・問2"
+      "basis": "地学2問1・問2",
+      "courses": [
+        "地学基礎",
+        "地学"
+      ],
+      "source": "https://tigakutasu.com/newtigakukisokyousitupuretonokyoukai/",
+      "sourceLabel": "ちがくたす：プレートの境界",
+      "sourceChecked": "2026-10-07"
     },
     {
       "id": "earth-nov25-tectonics-004",
@@ -93,7 +114,14 @@ registerQuestionPack({
       ],
       "e": "インド側の大陸とユーラシア側の大陸の衝突による圧縮・隆起で形成された。",
       "knowledge": "required",
-      "basis": "地学2問1・問2"
+      "basis": "地学2問1・問2",
+      "courses": [
+        "地学基礎",
+        "地学"
+      ],
+      "source": "https://tigakutasu.com/newtigakukisokyousitupuretonokyoukai/",
+      "sourceLabel": "ちがくたす：プレートの境界",
+      "sourceChecked": "2026-10-07"
     },
     {
       "id": "earth-nov25-tectonics-005",
@@ -115,7 +143,14 @@ registerQuestionPack({
       ],
       "e": "プレートどうしが横ずれする境界。地震は起きるが、新しい海洋地殻の生成とは違う。",
       "knowledge": "required",
-      "basis": "地学2問1・問2"
+      "basis": "地学2問1・問2",
+      "courses": [
+        "地学基礎",
+        "地学"
+      ],
+      "source": "https://tigakutasu.com/newtigakukisokyousitupuretonokyoukai/",
+      "sourceLabel": "ちがくたす：プレートの境界",
+      "sourceChecked": "2026-10-07"
     },
     {
       "id": "earth-nov25-tectonics-006",
@@ -137,7 +172,11 @@ registerQuestionPack({
       ],
       "e": "海嶺で生まれた海洋地殻が左右へ移動するため、海嶺から離れるほど古くなる。",
       "knowledge": "required",
-      "basis": "地学2問3・問4"
+      "basis": "地学2問3・問4",
+      "courses": [
+        "地学基礎",
+        "地学"
+      ]
     },
     {
       "id": "earth-nov25-tectonics-007",
@@ -159,7 +198,11 @@ registerQuestionPack({
       ],
       "e": "海洋地殻は生成と沈み込みを繰り返す。古い海洋底でも年代はおよそ2億年程度の規模。",
       "knowledge": "required",
-      "basis": "地学2問3・問4"
+      "basis": "地学2問3・問4",
+      "courses": [
+        "地学基礎",
+        "地学"
+      ]
     },
     {
       "id": "earth-nov25-tectonics-008",
@@ -181,7 +224,11 @@ registerQuestionPack({
       ],
       "e": "ホットスポット火山は境界から離れた場所にも存在し、ハワイが代表例。",
       "knowledge": "required",
-      "basis": "地学2問3・問4"
+      "basis": "地学2問3・問4",
+      "courses": [
+        "地学基礎",
+        "地学"
+      ]
     },
     {
       "id": "earth-nov25-tectonics-009",
@@ -203,7 +250,11 @@ registerQuestionPack({
       ],
       "e": "プレートはホットスポットの上を移動する。現在のホットスポットに近い島ほど若い。",
       "knowledge": "required",
-      "basis": "地学2問3・問4"
+      "basis": "地学2問3・問4",
+      "courses": [
+        "地学基礎",
+        "地学"
+      ]
     },
     {
       "id": "earth-nov25-tectonics-010",
@@ -225,7 +276,11 @@ registerQuestionPack({
       ],
       "e": "現在の火山から古い火山列へ向かう方向がおおよそのプレート移動方向になる。",
       "knowledge": "required",
-      "basis": "地学2問3・問4"
+      "basis": "地学2問3・問4",
+      "courses": [
+        "地学基礎",
+        "地学"
+      ]
     },
     {
       "id": "earth-nov25-tectonics-011",
@@ -247,7 +302,14 @@ registerQuestionPack({
       ],
       "e": "P波の方が速く先に到着する。その後S波が到着するまでの時間差を使う。",
       "knowledge": "required",
-      "basis": "地学2問5・問6"
+      "basis": "地学2問5・問6",
+      "courses": [
+        "地学基礎",
+        "地学"
+      ],
+      "source": "https://tigakutasu.com/newtigakukisokyousitu-zisin/",
+      "sourceLabel": "ちがくたす：地震",
+      "sourceChecked": "2026-10-07"
     },
     {
       "id": "earth-nov25-tectonics-012",
@@ -269,7 +331,13 @@ registerQuestionPack({
       ],
       "e": "速度を一定とみなすと震源距離は初期微動継続時間に比例する。",
       "knowledge": "required",
-      "basis": "地学2問5・問6"
+      "basis": "地学2問5・問6",
+      "courses": [
+        "地学"
+      ],
+      "source": "https://tigakutasu.com/newtigakukisokyousitu-zisin/",
+      "sourceLabel": "ちがくたす：地震",
+      "sourceChecked": "2026-10-07"
     },
     {
       "id": "earth-nov25-tectonics-013",
@@ -291,7 +359,13 @@ registerQuestionPack({
       ],
       "e": "T＝D/Vs−D/Vpを通分し、Dについて解くとk＝VpVs/(Vp−Vs)。Vp＞Vsで正となる。",
       "knowledge": "required",
-      "basis": "地学2問5・問6"
+      "basis": "地学2問5・問6",
+      "courses": [
+        "地学"
+      ],
+      "source": "https://tigakutasu.com/newtigakukisokyousitu-zisin/",
+      "sourceLabel": "ちがくたす：地震",
+      "sourceChecked": "2026-10-07"
     },
     {
       "id": "earth-nov25-tectonics-014",
@@ -313,7 +387,13 @@ registerQuestionPack({
       ],
       "e": "D＝kTなので比例する。地震波速度の条件が同じであることが前提。",
       "knowledge": "required",
-      "basis": "地学2問5・問6"
+      "basis": "地学2問5・問6",
+      "courses": [
+        "地学"
+      ],
+      "source": "https://tigakutasu.com/newtigakukisokyousitu-zisin/",
+      "sourceLabel": "ちがくたす：地震",
+      "sourceChecked": "2026-10-07"
     },
     {
       "id": "earth-nov25-tectonics-015",
@@ -335,7 +415,13 @@ registerQuestionPack({
       ],
       "e": "k＝6×3/(6−3)＝6 km/s。D＝6×8＝48 km。震央距離ではなく震源距離。",
       "knowledge": "required",
-      "basis": "地学2問5・問6"
+      "basis": "地学2問5・問6",
+      "courses": [
+        "地学"
+      ],
+      "source": "https://tigakutasu.com/newtigakukisokyousitu-zisin/",
+      "sourceLabel": "ちがくたす：地震",
+      "sourceChecked": "2026-10-07"
     },
     {
       "id": "earth-nov25-tectonics-016",
@@ -357,7 +443,13 @@ registerQuestionPack({
       ],
       "e": "震源は地下の地震発生点、震央はその真上の地表の位置。深さがあるため距離も異なる。",
       "knowledge": "required",
-      "basis": "地学2問7"
+      "basis": "地学2問7",
+      "courses": [
+        "地学"
+      ],
+      "source": "https://tigakutasu.com/newtigakukisokyousitu-zisin/",
+      "sourceLabel": "ちがくたす：地震",
+      "sourceChecked": "2026-10-07"
     },
     {
       "id": "earth-nov25-tectonics-017",
@@ -379,7 +471,10 @@ registerQuestionPack({
       ],
       "e": "局所的に平面とみなすと、三つの距離で直角三角形をつくり三平方の定理を使える。",
       "knowledge": "required",
-      "basis": "地学2問7"
+      "basis": "地学2問7",
+      "courses": [
+        "地学"
+      ]
     },
     {
       "id": "earth-nov25-tectonics-018",
@@ -401,7 +496,10 @@ registerQuestionPack({
       ],
       "e": "h＝√(13²−5²)＝12 km。震源距離は斜辺なので震央距離より短くはならない。",
       "knowledge": "required",
-      "basis": "地学2問7"
+      "basis": "地学2問7",
+      "courses": [
+        "地学"
+      ]
     },
     {
       "id": "earth-nov25-tectonics-019",
@@ -423,7 +521,10 @@ registerQuestionPack({
       ],
       "e": "直角三角形の斜辺が震源距離D、底辺が震央距離Lとなるように作図する。",
       "knowledge": "required",
-      "basis": "地学2問7"
+      "basis": "地学2問7",
+      "courses": [
+        "地学"
+      ]
     },
     {
       "id": "earth-nov25-tectonics-020",
@@ -445,7 +546,67 @@ registerQuestionPack({
       ],
       "e": "一地点では距離がわかっても方向が定まらない。複数地点の距離条件を合わせて震源を求める。",
       "knowledge": "required",
-      "basis": "地学2問7"
+      "basis": "地学2問7",
+      "courses": [
+        "地学"
+      ]
+    },
+    {
+      "id": "earth-nov25-tectonics-021",
+      "subject": "earth",
+      "c": 7,
+      "s": "教材で深める関連知識",
+      "n": 21,
+      "d": "B",
+      "type": "choice",
+      "q": "地震波のP波とS波を到着順と変形で比べると？",
+      "o": [
+        "P波が先に届き、P波は縦波・S波は横波",
+        "S波が先に届き、P波は縦波・S波は横波",
+        "P波が先に届き、P波は横波・S波は縦波",
+        "S波が先に届き、P波は横波・S波は縦波"
+      ],
+      "a": [
+        1
+      ],
+      "e": "P波の速さがS波より大きいから初期微動が生じる。横波のS波は液体を伝わらない。",
+      "knowledge": "related",
+      "basis": "地学2問5・問6の関連",
+      "courses": [
+        "地学基礎",
+        "地学"
+      ],
+      "source": "https://tigakutasu.com/newtigakukisokyousitu-zisin/",
+      "sourceLabel": "ちがくたす：地震",
+      "sourceChecked": "2026-10-07"
+    },
+    {
+      "id": "earth-nov25-tectonics-022",
+      "subject": "earth",
+      "c": 7,
+      "s": "教材で深める関連知識",
+      "n": 22,
+      "d": "B",
+      "type": "choice",
+      "q": "Vp=8km/s、Vs=4km/s、震源距離80kmなら初期微動継続時間は？",
+      "o": [
+        "10秒",
+        "5秒",
+        "20秒",
+        "40秒"
+      ],
+      "a": [
+        1
+      ],
+      "e": "P波到着は80/8=10秒後、S波は80/4=20秒後。差の10秒が初期微動継続時間。",
+      "knowledge": "related",
+      "basis": "地学2問5・問6の関連",
+      "courses": [
+        "地学"
+      ],
+      "source": "https://tigakutasu.com/newtigakukisokyousitu-zisin/",
+      "sourceLabel": "ちがくたす：地震",
+      "sourceChecked": "2026-10-07"
     }
   ]
 });

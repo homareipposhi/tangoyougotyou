@@ -1,62 +1,69 @@
-# 2025年度 高2・11月テスト：必要知識と関連知識
+# 2025年度 高2・11月模試：高校向け教材で補う知識
 
-提供された「地学」「地総、地探」の問題PDFから出題分野を抽出し、独自の短い四択問題と解説を追加した。元の設問・選択肢・図版は転載していない。既存問題と学習記録のIDは変更しない。
+2026-10-07改訂。提供PDFは範囲の特定に使い、下記の高校向け教材の該当記事本文を確認して独自短問を修正・追加した。官公庁の一般ページだけを問題作成の中心にしない。元の試験本文・選択肢・図版は転載していない。
 
-出典の設問番号はPDFの大問と小問を指す。`required` は出題分野の基礎、`related` は理解を広げる関連知識。どちらも通常の学習・復習で利用できる。
+## 科目の扱い
 
-|科目|単元|知識のまとまり|対応分野|区分|問題数|
-|---|---|---|---|---|---:|
-|地学|地球の内部構造|地殻・マントル・核|地学1問1・問3・問4|必要|10|
-|地学|地球の内部構造|内部構造の関連知識|地学1問3・問4の関連|関連|4|
-|地学|地球の内部構造|球殻の体積|地学1問2|必要|3|
-|地学|地球の内部構造|マントル対流|地学1問5|必要|3|
-|地学|大気の構造・雲と湿度|大気の層構造|地学1問6・問7|必要|7|
-|地学|大気の構造・雲と湿度|気圧と大気の組成|地学1問8・問9|必要|4|
-|地学|大気の構造・雲と湿度|露点・湿度|地学1問10|必要|5|
-|地学|大気の構造・雲と湿度|雲と断熱変化の関連|地学1問10の関連|関連|3|
-|地学|プレート・地震と震源|プレート境界|地学2問1・問2|必要|5|
-|地学|プレート・地震と震源|海洋底・ホットスポット|地学2問3・問4|必要|5|
-|地学|プレート・地震と震源|初期微動と大森公式|地学2問5・問6|必要|5|
-|地学|プレート・地震と震源|震源・震央の作図|地学2問7|必要|5|
-|地学|太陽系の惑星|地球型惑星|地学3問1・問2|必要|5|
-|地学|太陽系の惑星|木星型惑星・準惑星|地学3問3〜問6|必要|7|
-|地学|太陽系の惑星|惑星の関連知識|地学3の関連|関連|3|
-|地学|地史・古生物と環境|植物と地質時代|地学4問1|必要|4|
-|地学|地史・古生物と環境|示準化石と大量絶滅|地学4問2|必要|6|
-|地学|地史・古生物と環境|氷期と人類|地学4問3・問4|必要|6|
-|地学|地球の形・重力|ジオイドと楕円体|地学5問1・問2|必要|6|
-|地学|地球の形・重力|自転と重力|地学5問3・問4|必要|6|
-|地学|地球の形・重力|重力補正と異常|地学5問5|必要|5|
-|地理|地図・GISと図表の読み方|地図の表現と縮尺|地理1問1・問2|必要|8|
-|地理|地図・GISと図表の読み方|投影法・文化の分布|地理1問3・問4|必要|4|
-|地理|地図・GISと図表の読み方|GISと立地判断|地理1問5・問6|必要|4|
-|地理|地図・GISと図表の読み方|図表の関連知識|地理1の関連|関連|3|
-|地理|産業・都市・地域の持続性|都市と産業構造|地理2問1・問2・問3|必要|9|
-|地理|産業・都市・地域の持続性|サービス貿易とデジタル経済|地理2問4・問5|必要|6|
-|地理|産業・都市・地域の持続性|世界農業遺産と地域の循環|地理2問6・問7|必要|6|
-|地理|産業・都市・地域の持続性|持続性の関連知識|地理2の関連|関連|2|
-|地理|資源・エネルギーと統計|エネルギー統計の読み方|地理3問1・問2|必要|6|
-|地理|資源・エネルギーと統計|化石燃料と輸送|地理3問3・問4|必要|7|
-|地理|資源・エネルギーと統計|バイオマスと省エネルギー|地理3問5・問6|必要|8|
-|地理|地形・災害と土地利用|プレートと海陸の地形|地理4問1・問2・問3|必要|8|
-|地理|地形・災害と土地利用|火山・島とサンゴ礁|地理4問4・問5・問6|必要|7|
-|地理|地形・災害と土地利用|河川地形と水害|地理4問7・問8|必要|8|
-|地理|気候・海洋と暮らし|気温と降水の分布|地理5問1・問2・問3|必要|10|
-|地理|気候・海洋と暮らし|海洋・風と気圧|地理5問4・問5|必要|7|
-|地理|気候・海洋と暮らし|気温指標と都市気候|地理5問6・問7|必要|8|
-|地理|気候・海洋と暮らし|寒流・乾燥と生態系|地理5問8と関連|関連|6|
+- 地理総合：地図・GIS、生活文化と国際理解、防災、持続可能な地域づくりに関わる学習。
+- 地理探究：自然環境・資源産業などの系統地理的理解を含め、総合の基礎を使って深める学習。
+- 地学基礎：地球内部、プレート、大気、太陽系、地史などの基本的理解。
+- 地学：基礎も含む全内容。球殻の計算、大森公式の計算・作図、重力補正などの発展内容を含める。
 
-## 定義の確認に使用した一次資料
+`courses` はこのアプリの学習範囲の整理。模試の科目別採点区分を断定するものではない。共通内容には両科目を付け、基礎側のフィルターでは発展問題を除く。
 
-- 気象庁 気温に関する用語：https://www.jma.go.jp/jma/kishou/know/yougo_hp/kion.html
-- 農林水産省 世界農業遺産：https://www.maff.go.jp/j/nousin/kantai/giahs_1_1.html
-- 産総研 地質調査総合センター 重力補正：https://gbank.gsj.jp/gravdb/pub_map/reference.html
-- 国土地理院 ジオイド：https://www.gsi.go.jp/buturisokuchi/grageo_geoid.html
-- NASA 天王星・海王星の内部組成：https://science.nasa.gov/missions/webb/examining-ice-giants-with-nasas-webb-telescope/
+## 実際に参照した解説記事と問題
 
-## 教材の扱い
+|教材・記事|参照する問題ID|
+|---|---|
+|[ちがくたす：顕生代](https://tigakutasu.com/kisokyousitukenseidai/)|earth-nov25-history-002, earth-nov25-history-006, earth-nov25-history-007, earth-nov25-history-009, earth-nov25-history-018|
+|[ちがくたす：化石](https://tigakutasu.com/kisokyousitukaseki/)|earth-nov25-history-005, earth-nov25-history-010, earth-nov25-history-017|
+|[山賀進の教材：地球の形と大きさ](https://www.s-yamaga.jp/nanimono/chikyu/chikyunokatachi-01.htm)|earth-nov25-gravity-001, earth-nov25-gravity-002, earth-nov25-gravity-003, earth-nov25-gravity-004, earth-nov25-gravity-005, earth-nov25-gravity-006, earth-nov25-gravity-018|
+|[山賀進の教材：重力（1）](https://www.s-yamaga.jp/nanimono/chikyu/juryoku-01.htm)|earth-nov25-gravity-007, earth-nov25-gravity-008, earth-nov25-gravity-009, earth-nov25-gravity-010, earth-nov25-gravity-011, earth-nov25-gravity-012, earth-nov25-gravity-019|
+|[山賀進の教材：重力（2）](https://www.s-yamaga.jp/nanimono/chikyu/juryoku-02.htm)|earth-nov25-gravity-013, earth-nov25-gravity-014, earth-nov25-gravity-015, earth-nov25-gravity-016, earth-nov25-gravity-017|
+|[ちがくたす：プレートテクトニクス](https://tigakutasu.com/newtigakukisokyousitu-puretotekutonikusu/)|earth-nov25-tectonics-001, earth-nov25-interior-008, earth-nov25-interior-009, earth-nov25-interior-022|
+|[ちがくたす：プレートの境界](https://tigakutasu.com/newtigakukisokyousitupuretonokyoukai/)|earth-nov25-tectonics-002, earth-nov25-tectonics-003, earth-nov25-tectonics-004, earth-nov25-tectonics-005|
+|[ちがくたす：地震](https://tigakutasu.com/newtigakukisokyousitu-zisin/)|earth-nov25-tectonics-011, earth-nov25-tectonics-012, earth-nov25-tectonics-013, earth-nov25-tectonics-014, earth-nov25-tectonics-015, earth-nov25-tectonics-016, earth-nov25-tectonics-021, earth-nov25-tectonics-022|
+|[ちがくたす：大気圏](https://tigakutasu.com/newtigakukisokyousitu-taikiken/)|earth-nov25-atmosphere-001, earth-nov25-atmosphere-002, earth-nov25-atmosphere-003, earth-nov25-atmosphere-004, earth-nov25-atmosphere-005, earth-nov25-atmosphere-006, earth-nov25-atmosphere-007, earth-nov25-atmosphere-008, earth-nov25-atmosphere-009, earth-nov25-atmosphere-010, earth-nov25-atmosphere-011, earth-nov25-atmosphere-021|
+|[ちがくたす：雲のでき方](https://tigakutasu.com/kisokyousitukumonodekikata/)|earth-nov25-atmosphere-012, earth-nov25-atmosphere-013, earth-nov25-atmosphere-015, earth-nov25-atmosphere-016, earth-nov25-atmosphere-019, earth-nov25-atmosphere-020|
+|[山賀進の教材：惑星](https://www.s-yamaga.jp/nanimono/uchu/wakusei-01.htm)|earth-nov25-planets-001, earth-nov25-planets-006, earth-nov25-planets-009, earth-nov25-planets-010, earth-nov25-planets-012, earth-nov25-planets-013, earth-nov25-planets-016|
+|[山賀進の教材：土星](https://www.s-yamaga.jp/nanimono/uchu/wakusei-06.htm)|earth-nov25-planets-007, earth-nov25-planets-017|
+|[山賀進の教材：木星](https://www.s-yamaga.jp/nanimono/uchu/wakusei-05.htm)|earth-nov25-planets-008|
+|[ちがくたす：地球の中](https://tigakutasu.com/tigakukisokyousitu-tikyuunonaka/)|earth-nov25-interior-001, earth-nov25-interior-002, earth-nov25-interior-003, earth-nov25-interior-004, earth-nov25-interior-005, earth-nov25-interior-006, earth-nov25-interior-007, earth-nov25-interior-010, earth-nov25-interior-011, earth-nov25-interior-012, earth-nov25-interior-013, earth-nov25-interior-014, earth-nov25-interior-018, earth-nov25-interior-019, earth-nov25-interior-020, earth-nov25-interior-021|
+|[高校地理の授業動画：気候要素と気候因子](https://www.geography-lesson.com/climate-elements-factors/)|geography-nov25-climate-001, geography-nov25-climate-003, geography-nov25-climate-004, geography-nov25-climate-005, geography-nov25-climate-006, geography-nov25-climate-032, geography-nov25-climate-033|
+|[高校地理の授業動画：大気大循環](https://www.geography-lesson.com/atmospheric-circulation/)|geography-nov25-climate-013, geography-nov25-climate-014, geography-nov25-climate-034, geography-nov25-climate-035|
+|[高校地理の授業動画：海流と気候](https://www.geography-lesson.com/ocean-currents-climate/)|geography-nov25-climate-026, geography-nov25-climate-027, geography-nov25-climate-028, geography-nov25-climate-029, geography-nov25-climate-036, geography-nov25-climate-037|
+|[高校地理の授業動画：氷河地形・カルスト地形・サンゴ礁](https://www.geography-lesson.com/glacial-karst-coral-landforms/)|geography-nov25-landforms-014, geography-nov25-landforms-015, geography-nov25-landforms-027, geography-nov25-landforms-028, geography-nov25-landforms-029|
+|[高校地理の部屋：谷底平野・河岸段丘](https://geo-hs.com/valleyplain/)|geography-nov25-landforms-016|
+|[高校地理の部屋：氾濫原](https://geo-hs.com/floodplain/)|geography-nov25-landforms-017, geography-nov25-landforms-018, geography-nov25-landforms-026|
+|[高校地理の部屋：扇状地](https://geo-hs.com/alluvialfan/)|geography-nov25-landforms-019, geography-nov25-landforms-024, geography-nov25-landforms-025|
+|[ちとにとせ：世界の貿易](https://chitonitose.com/geo/geo_lessons_trade.html)|geography-nov25-industry-010, geography-nov25-industry-024, geography-nov25-industry-025, geography-nov25-energy-013|
+|[ちとにとせ：エネルギー資源](https://chitonitose.com/geo/geo_lessons_energy_resources.html)|geography-nov25-energy-006, geography-nov25-energy-008, geography-nov25-energy-010, geography-nov25-energy-014, geography-nov25-energy-017, geography-nov25-energy-018, geography-nov25-energy-022, geography-nov25-energy-023, geography-nov25-energy-024, geography-nov25-energy-025|
+|[高校地理の部屋：主題図と一般図](https://geo-hs.com/thematic_map/)|geography-nov25-maps-001, geography-nov25-maps-004, geography-nov25-maps-005, geography-nov25-maps-006, geography-nov25-maps-007, geography-nov25-maps-008, geography-nov25-maps-017, geography-nov25-maps-022, geography-nov25-maps-023|
+|[ちとにとせ：地図の図法](https://chitonitose.com/geo/geo_lessons_projection.html)|geography-nov25-maps-009, geography-nov25-maps-010, geography-nov25-maps-011, geography-nov25-maps-020, geography-nov25-maps-021|
 
-- 熱帯夜は正式な「夜間の最低気温25℃以上」と、日最低気温を使う教材上の代用を区別。
-- 統計の国別順位を現在の固定知識にせず、年次・単位・総量・割合の読み方を学習する。
-- 図版そのものの判読練習に代えて、縮尺・距離・高度・因果関係を判断する原理を短問化。元の図との照合は提供PDFで行う。
-- 既存の物理の時間基準（20秒・40秒・70秒）は変更しない。
+## 出典を混同しないための扱い
+
+- `source` はその問題の確認・関連説明に使った記事。トップページや単元一覧を本文の代わりにしない。
+- 記事を対応させていない既存短問は、今回その記事で照合済みとは表示しない。個別地域の農業遺産、気温の公式定義など、従来の確認資料が必要な内容は残る。
+- 官公庁資料は定義・個別事例の補助確認に使う。教材の中心とは別に扱う。
+- ブログ内の明らかな誤記や古い統計をコピーしない。扇状地記事の冒頭の扇端／扇頂の誤記、重力教材の数値の誤植、古い惑星の衛星数などは問題化しない。
+- 現代の統計順位を固定知識にせず、年次・単位・総量・割合を区別する。
+
+## 変更量
+
+- 関連知識を34問追加。
+- 同じ学習対象の既存16問について、設問・選択肢・解説を更新。既存の問題IDは維持。
+- 地理の大問1は問1〜5、大問3は問1〜3、大問4・5は問1〜7。存在しない小問への参照を修正。
+
+|科目|今回の模試対応パックの問題数|
+|---|---:|
+|地理|139|
+|地学|119|
+
+## 補助確認資料（従来）
+
+- [気象庁：気温の用語](https://www.jma.go.jp/jma/kishou/know/yougo_hp/kion.html)
+- [農林水産省：世界農業遺産](https://www.maff.go.jp/j/nousin/kantai/giahs_1_1.html)
+- [産総研：重力補正](https://gbank.gsj.jp/gravdb/pub_map/reference.html)
+
+提供模試の設問と関連する原理を短問化したもので、図版そのものの判読練習は含まない。

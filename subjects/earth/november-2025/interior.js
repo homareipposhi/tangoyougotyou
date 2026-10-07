@@ -1,11 +1,11 @@
-/* 用語・原理・関連知識を確認する独自の短問。元の設問・図版の転載ではありません。 */
+/* 高校向け教材の解説を参照した独自短問。設問・図版の転載ではありません。 */
 registerQuestionPack({
   "subject": "earth",
   "name": "地学",
   "chapters": {
     "5": "地球の内部構造"
   },
-  "knowledgeSource": "提供された2025年度高2・11月総合学力テストの出題分野をもとにした独自の知識確認問題",
+  "knowledgeSource": "提供模試の範囲に対応する独自短問。高校向け解説記事を問題ごとに参照。",
   "questions": [
     {
       "id": "earth-nov25-interior-001",
@@ -27,7 +27,14 @@ registerQuestionPack({
       ],
       "e": "物質組成による区分は地殻、マントル、核。かたさによる区分とは別である。",
       "knowledge": "required",
-      "basis": "地学1問1・問3・問4"
+      "basis": "地学1問1・問3・問4",
+      "courses": [
+        "地学基礎",
+        "地学"
+      ],
+      "source": "https://tigakutasu.com/tigakukisokyousitu-tikyuunonaka/",
+      "sourceLabel": "ちがくたす：地球の中",
+      "sourceChecked": "2026-10-07"
     },
     {
       "id": "earth-nov25-interior-002",
@@ -49,7 +56,14 @@ registerQuestionPack({
       ],
       "e": "大陸地殻では酸素が約半分を占め、次にケイ素が多い。酸素は主に鉱物を構成している。",
       "knowledge": "required",
-      "basis": "地学1問1・問3・問4"
+      "basis": "地学1問1・問3・問4",
+      "courses": [
+        "地学基礎",
+        "地学"
+      ],
+      "source": "https://tigakutasu.com/tigakukisokyousitu-tikyuunonaka/",
+      "sourceLabel": "ちがくたす：地球の中",
+      "sourceChecked": "2026-10-07"
     },
     {
       "id": "earth-nov25-interior-003",
@@ -71,7 +85,14 @@ registerQuestionPack({
       ],
       "e": "大陸地殻はケイ酸塩鉱物を主体とするため、酸素とケイ素が多い。",
       "knowledge": "required",
-      "basis": "地学1問1・問3・問4"
+      "basis": "地学1問1・問3・問4",
+      "courses": [
+        "地学基礎",
+        "地学"
+      ],
+      "source": "https://tigakutasu.com/tigakukisokyousitu-tikyuunonaka/",
+      "sourceLabel": "ちがくたす：地球の中",
+      "sourceChecked": "2026-10-07"
     },
     {
       "id": "earth-nov25-interior-004",
@@ -93,7 +114,14 @@ registerQuestionPack({
       ],
       "e": "核は鉄を主成分とし、ニッケルなども含む。地殻と核では元素の割合が大きく異なる。",
       "knowledge": "required",
-      "basis": "地学1問1・問3・問4"
+      "basis": "地学1問1・問3・問4",
+      "courses": [
+        "地学基礎",
+        "地学"
+      ],
+      "source": "https://tigakutasu.com/tigakukisokyousitu-tikyuunonaka/",
+      "sourceLabel": "ちがくたす：地球の中",
+      "sourceChecked": "2026-10-07"
     },
     {
       "id": "earth-nov25-interior-005",
@@ -115,7 +143,14 @@ registerQuestionPack({
       ],
       "e": "上部マントルはかんらん岩質。大陸地殻上部の花こう岩質とは区別する。",
       "knowledge": "required",
-      "basis": "地学1問1・問3・問4"
+      "basis": "地学1問1・問3・問4",
+      "courses": [
+        "地学基礎",
+        "地学"
+      ],
+      "source": "https://tigakutasu.com/tigakukisokyousitu-tikyuunonaka/",
+      "sourceLabel": "ちがくたす：地球の中",
+      "sourceChecked": "2026-10-07"
     },
     {
       "id": "earth-nov25-interior-006",
@@ -137,7 +172,14 @@ registerQuestionPack({
       ],
       "e": "モホ面で地震波の速度が変化する。境界までの深さは大陸と海洋などで異なる。",
       "knowledge": "required",
-      "basis": "地学1問1・問3・問4"
+      "basis": "地学1問1・問3・問4",
+      "courses": [
+        "地学基礎",
+        "地学"
+      ],
+      "source": "https://tigakutasu.com/tigakukisokyousitu-tikyuunonaka/",
+      "sourceLabel": "ちがくたす：地球の中",
+      "sourceChecked": "2026-10-07"
     },
     {
       "id": "earth-nov25-interior-007",
@@ -159,7 +201,14 @@ registerQuestionPack({
       ],
       "e": "鉄を主体とする核は、岩石主体のマントルより平均密度が大きい。",
       "knowledge": "required",
-      "basis": "地学1問1・問3・問4"
+      "basis": "地学1問1・問3・問4",
+      "courses": [
+        "地学基礎",
+        "地学"
+      ],
+      "source": "https://tigakutasu.com/tigakukisokyousitu-tikyuunonaka/",
+      "sourceLabel": "ちがくたす：地球の中",
+      "sourceChecked": "2026-10-07"
     },
     {
       "id": "earth-nov25-interior-008",
@@ -169,19 +218,26 @@ registerQuestionPack({
       "n": 8,
       "d": "A",
       "type": "choice",
-      "q": "リソスフェアはどの部分を含む？",
+      "q": "物質による区分と力学的な区分を比べると、リソスフェアはどこまで含む？",
       "o": [
-        "地殻と最上部マントル",
+        "地殻と上部マントルの最上部",
         "地殻だけ",
-        "マントル全体と核",
+        "マントル全体",
         "外核と内核"
       ],
       "a": [
         1
       ],
-      "e": "リソスフェアはかたい表層で、地殻と最上部マントルからなり、プレートを構成する。",
+      "e": "プレートの硬い部分を表すリソスフェアは、地殻という物質区分と一致しない。その下には変形しやすいアセノスフェアがある。",
       "knowledge": "required",
-      "basis": "地学1問1・問3・問4"
+      "basis": "地学1問1・問3・問4",
+      "courses": [
+        "地学基礎",
+        "地学"
+      ],
+      "source": "https://tigakutasu.com/newtigakukisokyousitu-puretotekutonikusu/",
+      "sourceLabel": "ちがくたす：プレートテクトニクス",
+      "sourceChecked": "2026-10-07"
     },
     {
       "id": "earth-nov25-interior-009",
@@ -203,7 +259,14 @@ registerQuestionPack({
       ],
       "e": "アセノスフェアは比較的やわらかい上部マントル。マントル全体が液体という意味ではない。",
       "knowledge": "required",
-      "basis": "地学1問1・問3・問4"
+      "basis": "地学1問1・問3・問4",
+      "courses": [
+        "地学基礎",
+        "地学"
+      ],
+      "source": "https://tigakutasu.com/newtigakukisokyousitu-puretotekutonikusu/",
+      "sourceLabel": "ちがくたす：プレートテクトニクス",
+      "sourceChecked": "2026-10-07"
     },
     {
       "id": "earth-nov25-interior-010",
@@ -213,19 +276,26 @@ registerQuestionPack({
       "n": 10,
       "d": "A",
       "type": "choice",
-      "q": "外核と内核の状態の組合せは？",
+      "q": "地震波から判断される外核／内核の状態は？",
       "o": [
-        "どちらも液体",
-        "どちらも気体",
-        "外核は液体、内核は固体",
-        "外核は固体、内核は液体"
+        "固体／液体",
+        "液体／液体",
+        "液体／固体",
+        "固体／固体"
       ],
       "a": [
         3
       ],
-      "e": "外核は液体、内核はより高い圧力のため固体である。",
+      "e": "核が一律に液体なのではない。外核は液体でS波が通れず、内核は固体。内部の状態は温度だけでなく圧力にも左右される。",
       "knowledge": "required",
-      "basis": "地学1問1・問3・問4"
+      "basis": "地学1問1・問3・問4",
+      "courses": [
+        "地学基礎",
+        "地学"
+      ],
+      "source": "https://tigakutasu.com/tigakukisokyousitu-tikyuunonaka/",
+      "sourceLabel": "ちがくたす：地球の中",
+      "sourceChecked": "2026-10-07"
     },
     {
       "id": "earth-nov25-interior-011",
@@ -247,7 +317,14 @@ registerQuestionPack({
       ],
       "e": "大陸地殻は海洋地殻より厚く、平均密度は小さい。大陸が高く海洋が低いことに関係する。",
       "knowledge": "related",
-      "basis": "地学1問3・問4の関連"
+      "basis": "地学1問3・問4の関連",
+      "courses": [
+        "地学基礎",
+        "地学"
+      ],
+      "source": "https://tigakutasu.com/tigakukisokyousitu-tikyuunonaka/",
+      "sourceLabel": "ちがくたす：地球の中",
+      "sourceChecked": "2026-10-07"
     },
     {
       "id": "earth-nov25-interior-012",
@@ -269,7 +346,14 @@ registerQuestionPack({
       ],
       "e": "海洋地殻は玄武岩質。地表で冷えれば玄武岩、地下でゆっくり冷えれば斑れい岩となる。",
       "knowledge": "related",
-      "basis": "地学1問3・問4の関連"
+      "basis": "地学1問3・問4の関連",
+      "courses": [
+        "地学基礎",
+        "地学"
+      ],
+      "source": "https://tigakutasu.com/tigakukisokyousitu-tikyuunonaka/",
+      "sourceLabel": "ちがくたす：地球の中",
+      "sourceChecked": "2026-10-07"
     },
     {
       "id": "earth-nov25-interior-013",
@@ -291,7 +375,14 @@ registerQuestionPack({
       ],
       "e": "S波は横波で、液体を伝わらない。外核が液体であることを示す重要な手がかり。",
       "knowledge": "related",
-      "basis": "地学1問3・問4の関連"
+      "basis": "地学1問3・問4の関連",
+      "courses": [
+        "地学基礎",
+        "地学"
+      ],
+      "source": "https://tigakutasu.com/tigakukisokyousitu-tikyuunonaka/",
+      "sourceLabel": "ちがくたす：地球の中",
+      "sourceChecked": "2026-10-07"
     },
     {
       "id": "earth-nov25-interior-014",
@@ -313,7 +404,14 @@ registerQuestionPack({
       ],
       "e": "モホ面は地殻の底。厚い地殻の下では境界も深くなる。",
       "knowledge": "related",
-      "basis": "地学1問3・問4の関連"
+      "basis": "地学1問3・問4の関連",
+      "courses": [
+        "地学基礎",
+        "地学"
+      ],
+      "source": "https://tigakutasu.com/tigakukisokyousitu-tikyuunonaka/",
+      "sourceLabel": "ちがくたす：地球の中",
+      "sourceChecked": "2026-10-07"
     },
     {
       "id": "earth-nov25-interior-015",
@@ -335,7 +433,10 @@ registerQuestionPack({
       ],
       "e": "球の体積は半径の三乗に比例する。外側の球から内側の球を引いて比をとる。",
       "knowledge": "required",
-      "basis": "地学1問2"
+      "basis": "地学1問2",
+      "courses": [
+        "地学"
+      ]
     },
     {
       "id": "earth-nov25-interior-016",
@@ -357,7 +458,10 @@ registerQuestionPack({
       ],
       "e": "深さは地表からの距離。核の半径は中心から測るため、地球半径から深さを引く。",
       "knowledge": "required",
-      "basis": "地学1問2"
+      "basis": "地学1問2",
+      "courses": [
+        "地学"
+      ]
     },
     {
       "id": "earth-nov25-interior-017",
@@ -379,7 +483,10 @@ registerQuestionPack({
       ],
       "e": "核の体積割合は(1/2)³＝1/8。残りは7/8＝87.5％。厚さの比と体積の比を混同しない。",
       "knowledge": "required",
-      "basis": "地学1問2"
+      "basis": "地学1問2",
+      "courses": [
+        "地学"
+      ]
     },
     {
       "id": "earth-nov25-interior-018",
@@ -401,7 +508,14 @@ registerQuestionPack({
       ],
       "e": "温度上昇で密度が低下した物質は浮力を受ける。地表付近で冷えると密度が増して下降しやすい。",
       "knowledge": "required",
-      "basis": "地学1問5"
+      "basis": "地学1問5",
+      "courses": [
+        "地学基礎",
+        "地学"
+      ],
+      "source": "https://tigakutasu.com/tigakukisokyousitu-tikyuunonaka/",
+      "sourceLabel": "ちがくたす：地球の中",
+      "sourceChecked": "2026-10-07"
     },
     {
       "id": "earth-nov25-interior-019",
@@ -423,7 +537,14 @@ registerQuestionPack({
       ],
       "e": "マントル対流は内部の熱を表層へ運ぶ。マントルは主に固体だが、長い時間では流動する。",
       "knowledge": "required",
-      "basis": "地学1問5"
+      "basis": "地学1問5",
+      "courses": [
+        "地学基礎",
+        "地学"
+      ],
+      "source": "https://tigakutasu.com/tigakukisokyousitu-tikyuunonaka/",
+      "sourceLabel": "ちがくたす：地球の中",
+      "sourceChecked": "2026-10-07"
     },
     {
       "id": "earth-nov25-interior-020",
@@ -445,7 +566,72 @@ registerQuestionPack({
       ],
       "e": "固体という状態と長期の変形のしやすさは別。プレート運動を考えるときの基本である。",
       "knowledge": "required",
-      "basis": "地学1問5"
+      "basis": "地学1問5",
+      "courses": [
+        "地学基礎",
+        "地学"
+      ],
+      "source": "https://tigakutasu.com/tigakukisokyousitu-tikyuunonaka/",
+      "sourceLabel": "ちがくたす：地球の中",
+      "sourceChecked": "2026-10-07"
+    },
+    {
+      "id": "earth-nov25-interior-021",
+      "subject": "earth",
+      "c": 5,
+      "s": "教材で深める関連知識",
+      "n": 21,
+      "d": "B",
+      "type": "choice",
+      "q": "マントル対流が起きることと、マントルが固体であることは矛盾するか？",
+      "o": [
+        "矛盾しない。長い時間には固体も変形・流動できる",
+        "矛盾する。マントルはすべて液体である",
+        "矛盾する。対流は外核だけで起きる",
+        "矛盾しない。マントルは気体である"
+      ],
+      "a": [
+        1
+      ],
+      "e": "短時間の地震波に対して固体として振る舞うことと、地質学的な長時間の流動を区別する。",
+      "knowledge": "related",
+      "basis": "地学1問5の関連",
+      "courses": [
+        "地学基礎",
+        "地学"
+      ],
+      "source": "https://tigakutasu.com/tigakukisokyousitu-tikyuunonaka/",
+      "sourceLabel": "ちがくたす：地球の中",
+      "sourceChecked": "2026-10-07"
+    },
+    {
+      "id": "earth-nov25-interior-022",
+      "subject": "earth",
+      "c": 5,
+      "s": "教材で深める関連知識",
+      "n": 22,
+      "d": "B",
+      "type": "choice",
+      "q": "地殻とプレートを同じものと考えてはいけない理由は？",
+      "o": [
+        "プレートはマントル最上部も含む",
+        "プレートは内核までを含む",
+        "地殻は液体だけからなる",
+        "プレートは大陸地殻だけを指す"
+      ],
+      "a": [
+        1
+      ],
+      "e": "物質の違いによる地殻・マントルの区分と、硬さによるリソスフェアの区分は異なる。",
+      "knowledge": "related",
+      "basis": "地学1問3・問4の関連",
+      "courses": [
+        "地学基礎",
+        "地学"
+      ],
+      "source": "https://tigakutasu.com/newtigakukisokyousitu-puretotekutonikusu/",
+      "sourceLabel": "ちがくたす：プレートテクトニクス",
+      "sourceChecked": "2026-10-07"
     }
   ]
 });

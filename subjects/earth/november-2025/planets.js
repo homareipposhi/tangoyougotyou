@@ -1,11 +1,11 @@
-/* 用語・原理・関連知識を確認する独自の短問。元の設問・図版の転載ではありません。 */
+/* 高校向け教材の解説を参照した独自短問。設問・図版の転載ではありません。 */
 registerQuestionPack({
   "subject": "earth",
   "name": "地学",
   "chapters": {
     "8": "太陽系の惑星"
   },
-  "knowledgeSource": "提供された2025年度高2・11月総合学力テストの出題分野をもとにした独自の知識確認問題",
+  "knowledgeSource": "提供模試の範囲に対応する独自短問。高校向け解説記事を問題ごとに参照。",
   "questions": [
     {
       "id": "earth-nov25-planets-001",
@@ -27,7 +27,14 @@ registerQuestionPack({
       ],
       "e": "地球型惑星は岩石と金属が主体で、比較的小さく密度が大きい。",
       "knowledge": "required",
-      "basis": "地学3問1・問2"
+      "basis": "地学3問1・問2",
+      "courses": [
+        "地学基礎",
+        "地学"
+      ],
+      "source": "https://www.s-yamaga.jp/nanimono/uchu/wakusei-01.htm",
+      "sourceLabel": "山賀進の教材：惑星",
+      "sourceChecked": "2026-10-07"
     },
     {
       "id": "earth-nov25-planets-002",
@@ -49,7 +56,11 @@ registerQuestionPack({
       ],
       "e": "薄い大気では熱の保持と輸送が弱い。長い昼夜も日中の加熱・夜の冷却に影響する。",
       "knowledge": "required",
-      "basis": "地学3問1・問2"
+      "basis": "地学3問1・問2",
+      "courses": [
+        "地学基礎",
+        "地学"
+      ]
     },
     {
       "id": "earth-nov25-planets-003",
@@ -71,7 +82,10 @@ registerQuestionPack({
       ],
       "e": "水星は自転が遅く、長い夜に冷却が進む。太陽に近いだけで夜側も高温とはいえない。",
       "knowledge": "required",
-      "basis": "地学3問1・問2"
+      "basis": "地学3問1・問2",
+      "courses": [
+        "地学"
+      ]
     },
     {
       "id": "earth-nov25-planets-004",
@@ -93,7 +107,11 @@ registerQuestionPack({
       ],
       "e": "金星は太陽からの距離では水星より遠いが、強い温室効果で地表が高温となる。",
       "knowledge": "required",
-      "basis": "地学3問1・問2"
+      "basis": "地学3問1・問2",
+      "courses": [
+        "地学基礎",
+        "地学"
+      ]
     },
     {
       "id": "earth-nov25-planets-005",
@@ -115,7 +133,11 @@ registerQuestionPack({
       ],
       "e": "温室効果は赤外線の吸収・放射に関係する。オゾンによる紫外線吸収と混同しない。",
       "knowledge": "required",
-      "basis": "地学3問1・問2"
+      "basis": "地学3問1・問2",
+      "courses": [
+        "地学基礎",
+        "地学"
+      ]
     },
     {
       "id": "earth-nov25-planets-006",
@@ -137,7 +159,14 @@ registerQuestionPack({
       ],
       "e": "これらは巨大惑星で、地球型より平均密度が小さい。内部構造は木星・土星と天王星・海王星で異なる。",
       "knowledge": "required",
-      "basis": "地学3問3〜問6"
+      "basis": "地学3問3〜問6",
+      "courses": [
+        "地学基礎",
+        "地学"
+      ],
+      "source": "https://www.s-yamaga.jp/nanimono/uchu/wakusei-01.htm",
+      "sourceLabel": "山賀進の教材：惑星",
+      "sourceChecked": "2026-10-07"
     },
     {
       "id": "earth-nov25-planets-007",
@@ -159,7 +188,14 @@ registerQuestionPack({
       ],
       "e": "土星の平均密度は約0.7 g/cm³。木星は最大の惑星だが、最低密度ではない。",
       "knowledge": "required",
-      "basis": "地学3問3〜問6"
+      "basis": "地学3問3〜問6",
+      "courses": [
+        "地学基礎",
+        "地学"
+      ],
+      "source": "https://www.s-yamaga.jp/nanimono/uchu/wakusei-06.htm",
+      "sourceLabel": "山賀進の教材：土星",
+      "sourceChecked": "2026-10-07"
     },
     {
       "id": "earth-nov25-planets-008",
@@ -181,7 +217,14 @@ registerQuestionPack({
       ],
       "e": "巨大惑星の大気は水素とヘリウムが主。天王星・海王星ではメタンも特徴的。",
       "knowledge": "required",
-      "basis": "地学3問3〜問6"
+      "basis": "地学3問3〜問6",
+      "courses": [
+        "地学基礎",
+        "地学"
+      ],
+      "source": "https://www.s-yamaga.jp/nanimono/uchu/wakusei-05.htm",
+      "sourceLabel": "山賀進の教材：木星",
+      "sourceChecked": "2026-10-07"
     },
     {
       "id": "earth-nov25-planets-009",
@@ -203,7 +246,14 @@ registerQuestionPack({
       ],
       "e": "巨大惑星はおよそ半日程度などで自転し、地球型より一般に速く自転する。",
       "knowledge": "required",
-      "basis": "地学3問3〜問6"
+      "basis": "地学3問3〜問6",
+      "courses": [
+        "地学基礎",
+        "地学"
+      ],
+      "source": "https://www.s-yamaga.jp/nanimono/uchu/wakusei-01.htm",
+      "sourceLabel": "山賀進の教材：惑星",
+      "sourceChecked": "2026-10-07"
     },
     {
       "id": "earth-nov25-planets-010",
@@ -225,7 +275,13 @@ registerQuestionPack({
       ],
       "e": "天王星と海王星は氷巨大惑星。ここでいう氷成分は物質の種類で、内部全体が冷たい固体氷という意味ではない。",
       "knowledge": "required",
-      "basis": "地学3問3〜問6"
+      "basis": "地学3問3〜問6",
+      "courses": [
+        "地学"
+      ],
+      "source": "https://www.s-yamaga.jp/nanimono/uchu/wakusei-01.htm",
+      "sourceLabel": "山賀進の教材：惑星",
+      "sourceChecked": "2026-10-07"
     },
     {
       "id": "earth-nov25-planets-011",
@@ -247,7 +303,10 @@ registerQuestionPack({
       ],
       "e": "冥王星は太陽系外縁天体の代表例で、準惑星でもある。外縁天体と準惑星は分類の観点が違う。",
       "knowledge": "required",
-      "basis": "地学3問3〜問6"
+      "basis": "地学3問3〜問6",
+      "courses": [
+        "地学"
+      ]
     },
     {
       "id": "earth-nov25-planets-012",
@@ -269,7 +328,14 @@ registerQuestionPack({
       ],
       "e": "冥王星は準惑星。太陽の周りを回りほぼ球形だが、軌道周辺を支配しているという惑星の条件を満たさない。",
       "knowledge": "required",
-      "basis": "地学3問3〜問6"
+      "basis": "地学3問3〜問6",
+      "courses": [
+        "地学基礎",
+        "地学"
+      ],
+      "source": "https://www.s-yamaga.jp/nanimono/uchu/wakusei-01.htm",
+      "sourceLabel": "山賀進の教材：惑星",
+      "sourceChecked": "2026-10-07"
     },
     {
       "id": "earth-nov25-planets-013",
@@ -291,7 +357,14 @@ registerQuestionPack({
       ],
       "e": "内側の四惑星が地球型、その外側に木星・土星・天王星・海王星がある。",
       "knowledge": "related",
-      "basis": "地学3の関連"
+      "basis": "地学3の関連",
+      "courses": [
+        "地学基礎",
+        "地学"
+      ],
+      "source": "https://www.s-yamaga.jp/nanimono/uchu/wakusei-01.htm",
+      "sourceLabel": "山賀進の教材：惑星",
+      "sourceChecked": "2026-10-07"
     },
     {
       "id": "earth-nov25-planets-014",
@@ -313,7 +386,11 @@ registerQuestionPack({
       ],
       "e": "1 AUは約1億5000万km。光年は光が1年で進む距離で、別の単位。",
       "knowledge": "related",
-      "basis": "地学3の関連"
+      "basis": "地学3の関連",
+      "courses": [
+        "地学基礎",
+        "地学"
+      ]
     },
     {
       "id": "earth-nov25-planets-015",
@@ -335,7 +412,67 @@ registerQuestionPack({
       ],
       "e": "太陽放射の強さは距離の二乗に反比例する。ただし表面温度は大気などにも左右される。",
       "knowledge": "related",
-      "basis": "地学3の関連"
+      "basis": "地学3の関連",
+      "courses": [
+        "地学"
+      ]
+    },
+    {
+      "id": "earth-nov25-planets-016",
+      "subject": "earth",
+      "c": 8,
+      "s": "教材で深める関連知識",
+      "n": 16,
+      "d": "B",
+      "type": "choice",
+      "q": "内惑星である金星の見かけの位置の特徴は？",
+      "o": [
+        "太陽から大きく離れず、真夜中の南中はしない",
+        "太陽と必ず180°離れる",
+        "毎日真夜中に南中する",
+        "どの季節も一晩中見える"
+      ],
+      "a": [
+        1
+      ],
+      "e": "地球より内側の軌道を回るため離角には上限があり、明け方か夕方に見える。",
+      "knowledge": "related",
+      "basis": "地学3の関連",
+      "courses": [
+        "地学"
+      ],
+      "source": "https://www.s-yamaga.jp/nanimono/uchu/wakusei-01.htm",
+      "sourceLabel": "山賀進の教材：惑星",
+      "sourceChecked": "2026-10-07"
+    },
+    {
+      "id": "earth-nov25-planets-017",
+      "subject": "earth",
+      "c": 8,
+      "s": "教材で深める関連知識",
+      "n": 17,
+      "d": "B",
+      "type": "choice",
+      "q": "土星の平均密度を地球と比べると？",
+      "o": [
+        "土星の方が小さい",
+        "土星の方が大きい",
+        "両方とも必ず1g/cm³である",
+        "密度は半径だけで決まり比較不能"
+      ],
+      "a": [
+        1
+      ],
+      "e": "地球は岩石・金属を主体とし、土星は水素・ヘリウムを多く含む。惑星の大きさだけで密度を判断しない。",
+      "knowledge": "related",
+      "basis": "地学3問3〜問6の関連",
+      "courses": [
+        "地学基礎",
+        "地学"
+      ],
+      "source": "https://www.s-yamaga.jp/nanimono/uchu/wakusei-06.htm",
+      "sourceLabel": "山賀進の教材：土星",
+      "sourceChecked": "2026-10-07"
     }
   ]
 });

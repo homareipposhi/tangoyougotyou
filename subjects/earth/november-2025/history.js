@@ -1,11 +1,11 @@
-/* 用語・原理・関連知識を確認する独自の短問。元の設問・図版の転載ではありません。 */
+/* 高校向け教材の解説を参照した独自短問。設問・図版の転載ではありません。 */
 registerQuestionPack({
   "subject": "earth",
   "name": "地学",
   "chapters": {
     "9": "地史・古生物と環境"
   },
-  "knowledgeSource": "提供された2025年度高2・11月総合学力テストの出題分野をもとにした独自の知識確認問題",
+  "knowledgeSource": "提供模試の範囲に対応する独自短問。高校向け解説記事を問題ごとに参照。",
   "questions": [
     {
       "id": "earth-nov25-history-001",
@@ -27,7 +27,10 @@ registerQuestionPack({
       ],
       "e": "クックソニアはシルル紀の初期の陸上植物として学ぶ。植物の陸上進出の手がかり。",
       "knowledge": "required",
-      "basis": "地学4問1"
+      "basis": "地学4問1",
+      "courses": [
+        "地学"
+      ]
     },
     {
       "id": "earth-nov25-history-002",
@@ -49,7 +52,14 @@ registerQuestionPack({
       ],
       "e": "大量の植物遺骸が埋没し、長い時間に炭化して石炭が形成された。",
       "knowledge": "required",
-      "basis": "地学4問1"
+      "basis": "地学4問1",
+      "courses": [
+        "地学基礎",
+        "地学"
+      ],
+      "source": "https://tigakutasu.com/kisokyousitukenseidai/",
+      "sourceLabel": "ちがくたす：顕生代",
+      "sourceChecked": "2026-10-07"
     },
     {
       "id": "earth-nov25-history-003",
@@ -71,7 +81,10 @@ registerQuestionPack({
       ],
       "e": "古生代後期にはシダ植物、中生代には裸子植物が繁栄し、被子植物が後に多様化した。",
       "knowledge": "required",
-      "basis": "地学4問1"
+      "basis": "地学4問1",
+      "courses": [
+        "地学"
+      ]
     },
     {
       "id": "earth-nov25-history-004",
@@ -93,7 +106,10 @@ registerQuestionPack({
       ],
       "e": "被子植物は胚珠が子房に包まれる。裸子植物の胚珠は子房に包まれない。",
       "knowledge": "required",
-      "basis": "地学4問1"
+      "basis": "地学4問1",
+      "courses": [
+        "地学"
+      ]
     },
     {
       "id": "earth-nov25-history-005",
@@ -103,19 +119,26 @@ registerQuestionPack({
       "n": 5,
       "d": "A",
       "type": "choice",
-      "q": "示準化石として適する生物の特徴は？",
+      "q": "示準化石として適する条件の組合せは？",
       "o": [
-        "生存期間が長く一地点だけに分布する",
-        "どの時代にも必ず生存する",
-        "現在の気温だけを表す",
-        "生存期間が短く地理的分布が広い"
+        "生存期間が長く、分布が広い",
+        "生存期間が短く、分布が狭い",
+        "生存期間が長く、分布が狭い",
+        "生存期間が短く、分布が広い"
       ],
       "a": [
         4
       ],
-      "e": "短い生存期間で年代を絞り、広い分布で離れた地層を対比できる。",
+      "e": "年代の幅を狭め、離れた地域の地層を対比するにはこの組合せが有利。生息環境を推定する示相化石と役割を区別する。",
       "knowledge": "required",
-      "basis": "地学4問2"
+      "basis": "地学4問2",
+      "courses": [
+        "地学基礎",
+        "地学"
+      ],
+      "source": "https://tigakutasu.com/kisokyousitukaseki/",
+      "sourceLabel": "ちがくたす：化石",
+      "sourceChecked": "2026-10-07"
     },
     {
       "id": "earth-nov25-history-006",
@@ -137,7 +160,14 @@ registerQuestionPack({
       ],
       "e": "アンモナイトとモノチスは中生代の年代判定でよく使われる。",
       "knowledge": "required",
-      "basis": "地学4問2"
+      "basis": "地学4問2",
+      "courses": [
+        "地学基礎",
+        "地学"
+      ],
+      "source": "https://tigakutasu.com/kisokyousitukenseidai/",
+      "sourceLabel": "ちがくたす：顕生代",
+      "sourceChecked": "2026-10-07"
     },
     {
       "id": "earth-nov25-history-007",
@@ -159,7 +189,14 @@ registerQuestionPack({
       ],
       "e": "フズリナやフデイシは古生代。中生代・新生代の化石と整理して覚える。",
       "knowledge": "required",
-      "basis": "地学4問2"
+      "basis": "地学4問2",
+      "courses": [
+        "地学基礎",
+        "地学"
+      ],
+      "source": "https://tigakutasu.com/kisokyousitukenseidai/",
+      "sourceLabel": "ちがくたす：顕生代",
+      "sourceChecked": "2026-10-07"
     },
     {
       "id": "earth-nov25-history-008",
@@ -181,7 +218,11 @@ registerQuestionPack({
       ],
       "e": "ヌンムリテスやデスモスチルスは新生代の代表的な化石として扱う。",
       "knowledge": "required",
-      "basis": "地学4問2"
+      "basis": "地学4問2",
+      "courses": [
+        "地学基礎",
+        "地学"
+      ]
     },
     {
       "id": "earth-nov25-history-009",
@@ -203,7 +244,14 @@ registerQuestionPack({
       ],
       "e": "約6600万年前の白亜紀末の天体衝突は大量絶滅に関わる。地球誕生時とは時代が違う。",
       "knowledge": "required",
-      "basis": "地学4問2"
+      "basis": "地学4問2",
+      "courses": [
+        "地学基礎",
+        "地学"
+      ],
+      "source": "https://tigakutasu.com/kisokyousitukenseidai/",
+      "sourceLabel": "ちがくたす：顕生代",
+      "sourceChecked": "2026-10-07"
     },
     {
       "id": "earth-nov25-history-010",
@@ -225,7 +273,14 @@ registerQuestionPack({
       ],
       "e": "示相化石は環境を、示準化石は年代を推定する。造礁サンゴなどは暖かい浅海の手がかり。",
       "knowledge": "required",
-      "basis": "地学4問2"
+      "basis": "地学4問2",
+      "courses": [
+        "地学基礎",
+        "地学"
+      ],
+      "source": "https://tigakutasu.com/kisokyousitukaseki/",
+      "sourceLabel": "ちがくたす：化石",
+      "sourceChecked": "2026-10-07"
     },
     {
       "id": "earth-nov25-history-011",
@@ -247,7 +302,11 @@ registerQuestionPack({
       ],
       "e": "海から移動した水が陸上の氷床として蓄えられると、海の水量が減って海面が下がる。",
       "knowledge": "required",
-      "basis": "地学4問3・問4"
+      "basis": "地学4問3・問4",
+      "courses": [
+        "地学基礎",
+        "地学"
+      ]
     },
     {
       "id": "earth-nov25-history-012",
@@ -269,7 +328,11 @@ registerQuestionPack({
       ],
       "e": "海面低下で陸橋ができると、生物や人類の分布拡大の経路になる。",
       "knowledge": "required",
-      "basis": "地学4問3・問4"
+      "basis": "地学4問3・問4",
+      "courses": [
+        "地学基礎",
+        "地学"
+      ]
     },
     {
       "id": "earth-nov25-history-013",
@@ -291,7 +354,10 @@ registerQuestionPack({
       ],
       "e": "最初期の人類は新第三紀後半に出現した。第四紀には複数の人類が広がった。",
       "knowledge": "required",
-      "basis": "地学4問3・問4"
+      "basis": "地学4問3・問4",
+      "courses": [
+        "地学"
+      ]
     },
     {
       "id": "earth-nov25-history-014",
@@ -313,7 +379,11 @@ registerQuestionPack({
       ],
       "e": "現生人類はホモ・サピエンス。ネアンデルタール人などの別の人類と区別する。",
       "knowledge": "required",
-      "basis": "地学4問3・問4"
+      "basis": "地学4問3・問4",
+      "courses": [
+        "地学基礎",
+        "地学"
+      ]
     },
     {
       "id": "earth-nov25-history-015",
@@ -335,7 +405,11 @@ registerQuestionPack({
       ],
       "e": "人類の進化では直立二足歩行が重要。大きな脳だけを人類出現の基準にしない。",
       "knowledge": "required",
-      "basis": "地学4問3・問4"
+      "basis": "地学4問3・問4",
+      "courses": [
+        "地学基礎",
+        "地学"
+      ]
     },
     {
       "id": "earth-nov25-history-016",
@@ -357,7 +431,69 @@ registerQuestionPack({
       ],
       "e": "パンゲアは古生代末の超大陸。後に分裂し、大陸の位置が変わった。",
       "knowledge": "required",
-      "basis": "地学4問3・問4"
+      "basis": "地学4問3・問4",
+      "courses": [
+        "地学基礎",
+        "地学"
+      ]
+    },
+    {
+      "id": "earth-nov25-history-017",
+      "subject": "earth",
+      "c": 9,
+      "s": "教材で深める関連知識",
+      "n": 17,
+      "d": "B",
+      "type": "choice",
+      "q": "示相化石から主に推定するものは？",
+      "o": [
+        "地層ができた環境",
+        "地層の絶対年代だけ",
+        "地球の半径",
+        "断層の移動速度"
+      ],
+      "a": [
+        1
+      ],
+      "e": "環境への適応が明確な生物を手がかりにする。示準化石による年代対比との違いを押さえる。",
+      "knowledge": "related",
+      "basis": "地学4問2の関連",
+      "courses": [
+        "地学基礎",
+        "地学"
+      ],
+      "source": "https://tigakutasu.com/kisokyousitukaseki/",
+      "sourceLabel": "ちがくたす：化石",
+      "sourceChecked": "2026-10-07"
+    },
+    {
+      "id": "earth-nov25-history-018",
+      "subject": "earth",
+      "c": 9,
+      "s": "教材で深める関連知識",
+      "n": 18,
+      "d": "B",
+      "type": "choice",
+      "q": "生物の陸上進出に有利になった大気の変化は？",
+      "o": [
+        "オゾン層の形成により有害な紫外線が減った",
+        "酸素が完全になくなった",
+        "太陽放射がすべて遮られた",
+        "大気圧がゼロになった"
+      ],
+      "a": [
+        1
+      ],
+      "e": "酸素から生じるオゾンが紫外線を吸収する。地史と大気の性質を関連付けて理解する。",
+      "knowledge": "related",
+      "basis": "地学4問1の関連",
+      "courses": [
+        "地学基礎",
+        "地学"
+      ],
+      "source": "https://tigakutasu.com/kisokyousitukenseidai/",
+      "sourceLabel": "ちがくたす：顕生代",
+      "sourceChecked": "2026-10-07"
     }
   ]
 });
