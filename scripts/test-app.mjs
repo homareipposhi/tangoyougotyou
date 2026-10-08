@@ -640,16 +640,30 @@ test('course filters separate foundation from advanced items and reset incompati
   assert.ok(app.value('pool().length')>0);
   assert.ok(!app.value('pool().map(q=>q.id)').includes('earth-nov25-gravity-014'));
   assert.ok(app.value('pool().map(q=>q.id)').includes('earth-nov25-interior-010'));
+  assert.ok(!app.value('pool().map(q=>q.id)').includes('earth-lecture-ocean-001'));
+  assert.ok(!app.value('pool().map(q=>q.id)').includes('earth-nov25-history-001'));
   app.click('地学');
+  assert.ok(app.value('pool().map(q=>q.id)').includes('earth-nov25-interior-010'));
   assert.ok(app.value('pool().map(q=>q.id)').includes('earth-nov25-gravity-014'));
+  assert.ok(app.value('pool().map(q=>q.id)').includes('earth-lecture-ocean-001'));
+  assert.ok(app.value('pool().map(q=>q.id)').includes('earth-h2nov26-geomag-ext-043'));
+  assert.ok(!app.value('pool().map(q=>q.id)').includes('earth-lecture-environment-006'));
+  assert.ok(!app.value('pool().map(q=>q.id)').includes('earth-lecture-weather-006'));
   app.run("subjectId='geography'; filters.chapters=[4]; filters.diffs=['A']; view='subject'; render();");
   app.click('地理総合');
   assert.deepEqual(app.value('filters.chapters'),[]);
   assert.deepEqual(app.value('filters.diffs'),[]);
-  assert.ok(app.value('pool().every(q=>q.courses.includes("地理総合"))'));
+  assert.ok(app.value('pool().every(q=>geographyNovemberCourse(q)==="地理総合")'));
+  assert.ok(app.value('pool().map(q=>q.id)').includes('geography-nov25-energy-001'));
+  assert.ok(app.value('pool().map(q=>q.id)').includes('geography-h2nov26-culture-001'));
+  assert.ok(!app.value('pool().map(q=>q.id)').includes('geography-nov25-industry-001'));
   assert.ok(!app.value('pool().map(q=>q.id)').includes('geography-nov25-climate-003'));
+  assert.equal(app.value('pool().length'),57);
   app.click('地理探究');
-  assert.equal(app.value('pool().length'),132);
+  assert.ok(app.value('pool().map(q=>q.id)').includes('geography-nov25-landforms-001'));
+  assert.ok(app.value('pool().map(q=>q.id)').includes('geography-nov25-climate-003'));
+  assert.ok(!app.value('pool().map(q=>q.id)').includes('geography-nov25-energy-001'));
+  assert.equal(app.value('pool().length'),64);
 });
 
 
