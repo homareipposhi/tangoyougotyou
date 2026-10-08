@@ -280,9 +280,68 @@ function physicsContentMatches(q, content=filters.content){
   if(content==="exam") return Boolean(q.exam);
   return !q.exam && q.rta===content;
 }
+// 「学習範囲」の既存ボタンを、11月模試の指定単元に対応させる。
+// 「全範囲」は従来どおり全問題を表示する。問題データと学習履歴は変更しない。
+function matchesNumberedId(id, prefix, list){
+  if(!id.startsWith(prefix)) return false;
+  const tail=id.slice(prefix.length);
+  if(!/^\\d+$/.test(tail)) return false;
+  const n=Number(tail);
+  return list.split(",").some(range=>{
+    const [min,max=min]=range.split("-").map(Number);
+    return n>=min && n<=max;
+  });
+}
+function earthNovemberCourse(q){
+  if(q.studyTarget==="benesse-h2-nov-2026") return "地学";
+  const id=q.id;
+  if(["ear-1","ear-2","ear-3","ear-6"].includes(id)) return "両方";
+  if(["ear-4","ear-5","ear-7","ear-8","ear-10"].includes(id)) return "地学";
+  const both=[
+    ["earth-nov25-interior-","1-22"],
+    ["earth-nov25-tectonics-","1-22"],
+    ["earth-nov25-gravity-","3-6"],
+    ["earth-nov25-atmosphere-","1-11,21"],
+    ["earth-lecture-volcano-","1-7"],
+    ["earth-lecture-circulation-","1-2,5"],
+    ["earth-lecture-environment-","1-2,4"],
+    ["earth-lecture-sun-","1"],
+    ["earth-nov25-planets-","5,15"]
+  ];
+  if(both.some(([prefix,range])=>matchesNumberedId(id,prefix,range))) return "両方";
+  const advanced=[
+    ["earth-nov25-gravity-","1-2,7-19"],
+    ["earth-nov25-atmosphere-","12-20"],
+    ["earth-lecture-circulation-","3-4"],
+    ["earth-lecture-ocean-","1-4"],
+    ["earth-lecture-strata-","1-8"],
+    ["earth-lecture-sun-","2-5"],
+    ["earth-lecture-cosmos-","1-2"],
+    ["earth-nov25-history-","1-18"],
+    ["earth-nov25-planets-","1-4,6-14,17"]
+  ];
+  return advanced.some(([prefix,range])=>matchesNumberedId(id,prefix,range)) ? "地学" : null;
+}
+function geographyNovemberCourse(q){
+  const id=q.id;
+  if(q.studyTarget==="benesse-h2-nov-2026-geography") return "地理総合";
+  if(id.startsWith("geography-nov25-maps-")) return "地理総合";
+  if(id.startsWith("geography-nov25-energy-")) return "地理総合";
+  if(id.startsWith("geography-nov25-climate-")) return "地理探究";
+  if(id.startsWith("geography-nov25-landforms-")) return "地理探究";
+  if(matchesNumberedId(id,"geography-nov25-industry-","4,7-8,16-20")) return "地理総合";
+  return null;
+}
 function courseMatches(q, course=filters.course){
   if(!course || course==="all") return true;
-  const courses=q.courses || (q.subject==="earth" ? ["地学基礎","地学"] : []);
+  if(q.subject==="earth" && (course==="地学基礎" || course==="地学")){
+    const scope=earthNovemberCourse(q);
+    return scope==="両方" || scope===course;
+  }
+  if(q.subject==="geography" && (course==="地理総合" || course==="地理探究")){
+    return geographyNovemberCourse(q)===course;
+  }
+  const courses=q.courses || [];
   return courses.includes(course);
 }
 function scopedBase(){
