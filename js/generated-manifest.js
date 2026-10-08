@@ -7,6 +7,7 @@ const MANIFEST = [
   "subjects/biology/vegetation.js",
   "subjects/biology/world-biomes.js",
   "subjects/classics/general.js",
+  "subjects/earth/benesse-2026/geomagnetism-extended.js",
   "subjects/earth/benesse-2026/geomagnetism.js",
   "subjects/earth/benesse-2026/shape-gravity.js",
   "subjects/earth/general.js",
