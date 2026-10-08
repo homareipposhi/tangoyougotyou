@@ -18,7 +18,6 @@ let S = load();
 let view = "home";
 let subjectId = null;
 let filters = {chapters:[], diffs:[], types:[], only:"all", content:"exam", course:"all"};
-let earthExamScope = "all";
 let advancedOpen = false;
 let size = 10;
 let order = "mix";
@@ -268,7 +267,7 @@ function home(){
       <b>${esc(sub.name)}</b>
       <span>${qs.length}問<br>要復習 ${t.todo} ・ 未着手 ${t.fresh}</span>
     </button>`);
-    b.addEventListener("click",()=>{subjectId=id;filters={chapters:[],diffs:[],types:[],only:"all",content:"exam",course:"all"};earthExamScope="all";advancedOpen=false;view="subject";render();});
+    b.addEventListener("click",()=>{subjectId=id;filters={chapters:[],diffs:[],types:[],only:"all",content:"exam",course:"all"};advancedOpen=false;view="subject";render();});
     box.appendChild(b);
   });
   body.appendChild(h(`<p class="empty">科目を選ぶと、単元・難易度・問題形式を絞って演習できます。</p>`));
@@ -286,71 +285,8 @@ function courseMatches(q, course=filters.course){
   const courses=q.courses || (q.subject==="earth" ? ["地学基礎","地学"] : []);
   return courses.includes(course);
 }
-/* 2026年11月進研模試の出題範囲と、文科省の現行学習指導要領を突き合わせた単元索引。
-   「地学基礎」: (1)地球のすがたのうち大気と海水の運動を除く
-   「専門地学」: (1)地球のすがた全部 + (2)変動する地球のうち地球の環境を除く + 地学(1)(ア)地球の形状。
-   教材のページ番号だけで判定しない（同一ページ内に範囲内と範囲外が混在するため）。 */
-const EARTH_MEXT_2026 = new Map();
-function markEarth2026(prefix, numbers, unit, shared) {
-  for (const span of numbers.split(",")) {
-    const [first, last=first] = span.split("-").map(Number);
-    for (let n=first; n<=last; n++) {
-      const id = prefix + String(n).padStart(3, "0");
-      if(EARTH_MEXT_2026.has(id)) throw new Error("MEXT区分重複: "+id);
-      EARTH_MEXT_2026.set(id, {unit,shared});
-    }
-  }
-}
-function markEarthId2026(id, unit, shared) {
-  if(EARTH_MEXT_2026.has(id)) throw new Error("MEXT区分重複: "+id);
-  EARTH_MEXT_2026.set(id, {unit,shared});
-}
-const earthBasicUnit = "地球のすがた：惑星としての地球";
-const earthPlateUnit = "地球のすがた：活動する地球";
-const earthHeatUnit = "地球のすがた：地球の熱収支";
-const earthMotionUnit = "地球のすがた：大気と海水の運動";
-const earthHistoryUnit = "変動する地球：地球の変遷";
-const earthShapeUnit = "地球の形状（専門地学）";
-[
-  ["ear-1",earthBasicUnit,true], ["ear-2",earthBasicUnit,true], ["ear-3",earthPlateUnit,true],
-  ["ear-4",earthHistoryUnit,false], ["ear-5",earthHistoryUnit,false],
-  ["ear-6",earthHeatUnit,true], ["ear-7",earthMotionUnit,false], ["ear-8",earthMotionUnit,false],
-  ["ear-10",earthHistoryUnit,false]
-].forEach(([id,unit,shared])=>markEarthId2026(id,unit,shared));
-markEarth2026("earth-nov25-interior-","1-22",earthBasicUnit,true);
-markEarth2026("earth-nov25-tectonics-","1-22",earthPlateUnit,true);
-markEarth2026("earth-lecture-volcano-","1-7",earthPlateUnit,true);
-markEarth2026("earth-lecture-strata-","4-6",earthPlateUnit,true);
-markEarth2026("earth-lecture-strata-","1-3,7-8",earthHistoryUnit,false);
-markEarth2026("earth-nov25-history-","1-18",earthHistoryUnit,false);
-markEarth2026("earth-lecture-circulation-","1-2,5",earthHeatUnit,true);
-markEarth2026("earth-lecture-circulation-","3-4",earthMotionUnit,false);
-markEarth2026("earth-nov25-atmosphere-","1-21",earthHeatUnit,true);
-markEarth2026("earth-lecture-ocean-","1-4",earthMotionUnit,false);
-markEarth2026("earth-lecture-sun-","1",earthHeatUnit,true);
-markEarth2026("earth-lecture-sun-","2-3",earthHistoryUnit,false);
-markEarth2026("earth-lecture-sun-","4-5",earthShapeUnit,false);
-markEarth2026("earth-lecture-cosmos-","1-2",earthHistoryUnit,false);
-markEarth2026("earth-lecture-environment-","1",earthPlateUnit,true);
-markEarth2026("earth-lecture-environment-","4",earthHeatUnit,true);
-markEarth2026("earth-nov25-planets-","5,15",earthHeatUnit,true);
-markEarth2026("earth-nov25-planets-","1-4,6-14,17",earthHistoryUnit,false);
-markEarth2026("earth-nov25-gravity-","3-6",earthBasicUnit,true);
-markEarth2026("earth-nov25-gravity-","1-2,7-19",earthShapeUnit,false);
-function earthMext2026(q) {
-  if(q.studyTarget==="benesse-h2-nov-2026") {
-    return {unit:earthShapeUnit,shared:false};
-  }
-  return EARTH_MEXT_2026.get(q.id) || null;
-}
-function earthNov2026Matches(q, exam=earthExamScope) {
-  if(q.subject!=="earth") return false;
-  const topic=earthMext2026(q);
-  return !!topic && (exam==="nov2026" || (exam==="nov2026basic" && topic.shared));
-}
 function scopedBase(){
-  let p=subjectQuestions().filter(q=>subjectId==="earth" && earthExamScope!=="all" ? true : courseMatches(q));
-  if(subjectId==="earth" && earthExamScope!=="all") p=p.filter(q=>earthNov2026Matches(q));
+  let p=subjectQuestions().filter(q=>courseMatches(q));
   if(subjectId==="physics") p=p.filter(q=>physicsContentMatches(q));
   if(filters.chapters.length) p=p.filter(q=>filters.chapters.includes(q.c));
   if(filters.diffs.length) p=p.filter(q=>filters.diffs.includes(q.d));
@@ -376,7 +312,7 @@ function filterButton(txt,on,fn,disabled=false){
 function subjectView(){
   const sub=currentSubject(), all=subjectQuestions(), base=scopedBase(), t=tally(base), p=pool();
   const physics=subjectId==="physics";
-  const categoryQuestions=all.filter(q=>(subjectId==="earth" && earthExamScope!=="all" ? earthNov2026Matches(q) : courseMatches(q)) && (!physics || physicsContentMatches(q)));
+  const categoryQuestions=all.filter(q=>courseMatches(q) && (!physics || physicsContentMatches(q)));
   const head=h(`<header class="top"><button class="back" type="button">← 科目</button><h1>${esc(sub.name)}</h1><span class="subtle">${all.length}問</span></header>`);
   head.querySelector(".back").addEventListener("click",()=>{view="home";subjectId=null;render();});
   app.appendChild(head);
@@ -394,7 +330,7 @@ function subjectView(){
   </div>`));
 
   const panel=h(`<div class="panel"></div>`);
-  if((subjectId==="earth" && earthExamScope==="all") || subjectId==="geography"){
+  if(subjectId==="earth" || subjectId==="geography"){
     const courses=subjectId==="earth" ? ["地学基礎","地学"] : ["地理総合","地理探究"];
     const group=h(`<div class="grp"><span>学習範囲</span><div class="opts"></div></div>`);
     ["all",...courses].forEach(value=>{
@@ -405,19 +341,6 @@ function subjectView(){
     });
     panel.appendChild(group);
     panel.appendChild(h(`<p class="subtle">共通する内容は両方の科目に含まれます。</p>`));
-  }
-  if(subjectId==="earth"){
-    const exam=h(`<div class="grp"><span>模試対策</span><div class="opts"></div></div>`);
-    [["all","全問題"],["nov2026","11月模試・専門地学"],["nov2026basic","11月模試・地学基礎"]].forEach(([value,label])=>{
-      exam.querySelector(".opts").appendChild(filterButton(label,earthExamScope===value,()=>{
-        earthExamScope=value;
-        filters.course="all";
-        filters.chapters=[];filters.diffs=[];filters.types=[];filters.only="all";
-        render();
-      }));
-    });
-    panel.appendChild(exam);
-    if(earthExamScope!=="all") panel.appendChild(h(`<p class="subtle">${earthExamScope==="nov2026"?"専門地学：地球のすがた・変動する地球（地球の環境を除く）・地球の形状。":"地学基礎：地球のすがた（大気と海水の運動を除く）。"}教科書・地学基礎PDFの各問題を、文部科学省の学習指導要領の内容区分に照合して選別しています。<a href="https://www.mext.go.jp/content/20250311-mxt_kyoiku02-100002620_05.pdf" target="_blank" rel="noopener noreferrer">文科省資料</a></p>`));
   }
   if(physics){
     const categories=h(`<div class="grp"><span>学習内容</span><div class="opts"></div></div>`);
@@ -572,8 +495,6 @@ function quiz(){
   tags.appendChild(h(`<span class="tg">難易度 ${esc(q.d)}</span>`));
   tags.appendChild(h(`<span class="tg good">${typeLabel(q.type)}</span>`));
   if(q.courses) tags.appendChild(h(`<span class="tg">${esc(q.courses.join("・"))}</span>`));
-  if(q.subject==="earth" && earthExamScope!=="all" && earthMext2026(q))
-    tags.appendChild(h(`<span class="tg">${esc(earthMext2026(q).unit)}</span>`));
   if(isRta(q)) tags.appendChild(h(`<span class="tg">RTA・${esc({formula:"公式",unit:"単位",symbol:"微積物理の記号",term:"用語の定義",recognition:"条件判断"}[q.rta]||q.rta)}</span>`));
   if(todo(q)) tags.appendChild(h(`<span class="tg hot">要復習</span>`));
   app.appendChild(tags);
