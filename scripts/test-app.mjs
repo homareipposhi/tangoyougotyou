@@ -652,6 +652,43 @@ test('course filters separate foundation from advanced items and reset incompati
   assert.equal(app.value('pool().length'),132);
 });
 
+
+test('2026 November earth scope follows MEXT item-by-item instead of selecting whole PDF pages', () => {
+  const app=makeApp({ 'earth-h2nov26-21-001':{seen:3,wrong:1,last:0} });
+  app.run("subjectId='earth'; view='subject'; render();");
+  app.click('11月模試・地学基礎');
+  const common=app.value('pool().map(q=>q.id)');
+  assert.ok(common.includes('earth-lecture-circulation-001'), '大気の熱収支は基礎に含まれる');
+  assert.ok(common.includes('earth-lecture-environment-004'), '温室効果は出典の章名に関係なく熱収支に含まれる');
+  assert.ok(common.includes('earth-nov25-interior-010'), '内部構造は基礎に含まれる');
+  for(const id of ['earth-lecture-ocean-001','earth-lecture-circulation-004','earth-lecture-cosmos-001',
+    'earth-lecture-environment-006','earth-lecture-weather-006','earth-h2nov26-21-001']){
+    assert.ok(!common.includes(id), '基礎の除外範囲: '+id);
+  }
+  assert.ok(app.html().includes('文科省資料'));
+  app.click('11月模試・専門地学');
+  const specialist=app.value('pool().map(q=>q.id)');
+  assert.ok(specialist.length>common.length);
+  for(const id of ['earth-lecture-circulation-001','earth-lecture-ocean-001','earth-lecture-circulation-004',
+    'earth-lecture-cosmos-001','earth-nov25-history-017','earth-h2nov26-21-001',
+    'earth-h2nov26-geomag-ext-043']){
+    assert.ok(specialist.includes(id), '専門地学の対象: '+id);
+  }
+  for(const id of ['earth-lecture-environment-006','earth-lecture-ocean-005','earth-lecture-weather-006',
+    'earth-lecture-cosmos-004','earth-lecture-sun-006']){
+    assert.ok(!specialist.includes(id), '専門地学の除外範囲: '+id);
+  }
+  const q=questions.find(q=>q.id==='earth-h2nov26-geomag-ext-043');
+  app.begin(q);
+  assert.ok(app.html().includes('地球の形状（専門地学）'));
+  app.answer(1200,true,q);
+  assert.ok(app.html().includes('教科書 43ページ'));
+  assert.deepEqual(app.saved()['earth-h2nov26-21-001'],{seen:3,wrong:1,last:0});
+  app.run("view='subject'; render();");
+  app.click('全問題');
+  assert.ok(app.value('pool().map(q=>q.id)').includes('earth-lecture-weather-006'));
+});
+
 test('article provenance is visible after answering without changing learning history', () => {
   const app=makeApp();
   const q=questions.find(q=>q.id==='geography-nov25-maps-009');
