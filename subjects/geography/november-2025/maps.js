@@ -68,7 +68,13 @@ registerQuestionPack({
       "examMaterial": {
         "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
         "section": "地理1問1"
-      }
+      },
+      "references": [
+        {
+          "url": "https://geo-hs.com/thematic_map/",
+          "label": "高校地理の部屋：主題図と一般図"
+        }
+      ]
     },
     {
       "id": "geography-nov25-maps-003",
@@ -98,7 +104,13 @@ registerQuestionPack({
       "examMaterial": {
         "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
         "section": "地理1問1"
-      }
+      },
+      "references": [
+        {
+          "url": "https://geo-hs.com/thematic_map/",
+          "label": "高校地理の部屋：主題図と一般図"
+        }
+      ]
     },
     {
       "id": "geography-nov25-maps-004",
@@ -372,17 +384,20 @@ registerQuestionPack({
       "n": 12,
       "d": "A",
       "type": "choice",
-      "q": "文化の中心から新しい言葉が広がると、古い表現はどこに残りやすい？",
+      "q": "方言周圏論では、文化の中心から新しい言葉が広がると、古い表現はどこに残りやすい？",
       "o": [
         "中心から離れた周辺地域",
-        "必ず中心の1地点だけ",
-        "必ず赤道上",
-        "必ず海底"
+        "新しい言葉が生まれた中心地域",
+        "中心との距離にかかわらず大都市だけ",
+        "中心に近い地域ほど古い表現が残る"
       ],
       "a": [
         1
       ],
-      "e": "方言周圏論では新しい表現が中心から外へ広がり、古い表現が周辺に残ると考える。すべての方言分布に当てはまるわけではない。",
+      "e": "方言周圏論は、中心地で生まれた新しい語が周辺へ広がることが繰り返され、外側ほど古い語、内側ほど新しい語が分布するという考え方。柳田国男が『蝸牛考』でカタツムリの呼び名の分布を解釈する際に唱えた。すべての方言分布を一律に説明する法則ではない。",
+      "source": "https://kotoba.ninjal.ac.jp/qa/yokuaru/qa-151/",
+      "sourceLabel": "国立国語研究所：方言に残る古語と方言周圏論",
+      "sourceChecked": "2026-10-08",
       "knowledge": "required",
       "basis": "地理1問3",
       "courses": [
@@ -422,7 +437,13 @@ registerQuestionPack({
       "examMaterial": {
         "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
         "section": "地理1問5"
-      }
+      },
+      "references": [
+        {
+          "url": "https://geo.ewrs.jp/high/sogo/maps-gis/02-gis.html",
+          "label": "ちりナビ：GIS（地理情報システム）の解説"
+        }
+      ]
     },
     {
       "id": "geography-nov25-maps-014",
@@ -452,7 +473,13 @@ registerQuestionPack({
       "examMaterial": {
         "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
         "section": "地理1問5"
-      }
+      },
+      "references": [
+        {
+          "url": "https://geo.ewrs.jp/high/sogo/maps-gis/02-gis.html",
+          "label": "ちりナビ：GIS（地理情報システム）の解説"
+        }
+      ]
     },
     {
       "id": "geography-nov25-maps-015",
@@ -482,7 +509,13 @@ registerQuestionPack({
       "examMaterial": {
         "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
         "section": "地理1問5"
-      }
+      },
+      "references": [
+        {
+          "url": "https://geo.ewrs.jp/high/sogo/maps-gis/02-gis.html",
+          "label": "ちりナビ：GIS（地理情報システム）の解説"
+        }
+      ]
     },
     {
       "id": "geography-nov25-maps-016",
@@ -512,7 +545,13 @@ registerQuestionPack({
       "examMaterial": {
         "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
         "section": "地理1問5"
-      }
+      },
+      "references": [
+        {
+          "url": "https://geo.ewrs.jp/high/sogo/maps-gis/02-gis.html",
+          "label": "ちりナビ：GIS（地理情報システム）の解説"
+        }
+      ]
     },
     {
       "id": "geography-nov25-maps-017",
@@ -575,7 +614,13 @@ registerQuestionPack({
       "examMaterial": {
         "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
         "section": "地理1の関連"
-      }
+      },
+      "references": [
+        {
+          "url": "https://geo-hs.com/thematic_map/",
+          "label": "高校地理の部屋：主題図と一般図"
+        }
+      ]
     },
     {
       "id": "geography-nov25-maps-019",
@@ -737,7 +782,13 @@ registerQuestionPack({
       "examMaterial": {
         "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
         "section": "地理1問1の関連"
-      }
+      },
+      "references": [
+        {
+          "url": "https://chitonitose.com/geo/geo_lessons_topographical_map.html",
+          "label": "ちとにとせ：地形図の見方"
+        }
+      ]
     }
   ]
 });

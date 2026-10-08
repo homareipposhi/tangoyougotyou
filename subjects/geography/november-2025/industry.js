@@ -35,7 +35,13 @@ registerQuestionPack({
       "examMaterial": {
         "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
         "section": "地理2問1"
-      }
+      },
+      "references": [
+        {
+          "url": "https://geo.ewrs.jp/high/tankyu/system-human/06-urban-village.html",
+          "label": "ちりナビ：村落と都市問題の解説"
+        }
+      ]
     },
     {
       "id": "geography-nov25-industry-002",
@@ -65,7 +71,13 @@ registerQuestionPack({
       "examMaterial": {
         "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
         "section": "地理2問1"
-      }
+      },
+      "references": [
+        {
+          "url": "https://geo.ewrs.jp/high/tankyu/system-human/06-urban-village.html",
+          "label": "ちりナビ：村落と都市問題の解説"
+        }
+      ]
     },
     {
       "id": "geography-nov25-industry-003",
@@ -95,7 +107,13 @@ registerQuestionPack({
       "examMaterial": {
         "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
         "section": "地理2問1"
-      }
+      },
+      "references": [
+        {
+          "url": "https://geo.ewrs.jp/high/tankyu/system-human/04-tertiary-industry.html",
+          "label": "ちりナビ：商業・サービス・交通・通信・観光の解説"
+        }
+      ]
     },
     {
       "id": "geography-nov25-industry-004",
@@ -338,7 +356,13 @@ registerQuestionPack({
       "examMaterial": {
         "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
         "section": "地理2問4"
-      }
+      },
+      "references": [
+        {
+          "url": "https://chitonitose.com/geo/geo_lessons_trade.html",
+          "label": "ちとにとせ：世界の貿易"
+        }
+      ]
     },
     {
       "id": "geography-nov25-industry-012",
@@ -458,7 +482,13 @@ registerQuestionPack({
       "examMaterial": {
         "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
         "section": "地理2問5の関連"
-      }
+      },
+      "references": [
+        {
+          "url": "https://geo.ewrs.jp/high/tankyu/system-human/04-tertiary-industry.html",
+          "label": "ちりナビ：商業・サービス・交通・通信・観光の解説"
+        }
+      ]
     },
     {
       "id": "geography-nov25-industry-016",
@@ -764,7 +794,13 @@ registerQuestionPack({
       "examMaterial": {
         "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
         "section": "地理2問4の関連"
-      }
+      },
+      "references": [
+        {
+          "url": "https://geo.ewrs.jp/high/tankyu/system-human/04-tertiary-industry.html",
+          "label": "ちりナビ：商業・サービス・交通・通信・観光の解説"
+        }
+      ]
     }
   ]
 });

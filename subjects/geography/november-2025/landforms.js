@@ -34,7 +34,13 @@ registerQuestionPack({
       "examMaterial": {
         "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
         "section": "地理4問1"
-      }
+      },
+      "references": [
+        {
+          "url": "https://geo-hs.com/convergentboundary/",
+          "label": "高校地理の部屋：狭まる境界"
+        }
+      ]
     },
     {
       "id": "geography-nov25-landforms-002",
@@ -63,7 +69,13 @@ registerQuestionPack({
       "examMaterial": {
         "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
         "section": "地理4問1"
-      }
+      },
+      "references": [
+        {
+          "url": "https://geo-hs.com/volcano/",
+          "label": "高校地理の部屋：火山"
+        }
+      ]
     },
     {
       "id": "geography-nov25-landforms-003",
@@ -150,7 +162,13 @@ registerQuestionPack({
       "examMaterial": {
         "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
         "section": "地理4問3"
-      }
+      },
+      "references": [
+        {
+          "url": "https://geo-hs.com/convergentboundary/",
+          "label": "高校地理の部屋：狭まる境界"
+        }
+      ]
     },
     {
       "id": "geography-nov25-landforms-006",
@@ -208,7 +226,13 @@ registerQuestionPack({
       "examMaterial": {
         "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
         "section": "地理4問4"
-      }
+      },
+      "references": [
+        {
+          "url": "https://geo-hs.com/floodplain/",
+          "label": "高校地理の部屋：氾濫原"
+        }
+      ]
     },
     {
       "id": "geography-nov25-landforms-008",
@@ -237,7 +261,13 @@ registerQuestionPack({
       "examMaterial": {
         "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
         "section": "地理4問4"
-      }
+      },
+      "references": [
+        {
+          "url": "https://alivevulnerable.com/basic/river-water/",
+          "label": "地理ラボ：河川水（河況係数と河川勾配） - 地理ラボ　詳しすぎる高校地理"
+        }
+      ]
     },
     {
       "id": "geography-nov25-landforms-009",
@@ -266,7 +296,13 @@ registerQuestionPack({
       "examMaterial": {
         "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
         "section": "地理4問5"
-      }
+      },
+      "references": [
+        {
+          "url": "https://geo-hs.com/volcano/",
+          "label": "高校地理の部屋：火山"
+        }
+      ]
     },
     {
       "id": "geography-nov25-landforms-010",
@@ -295,7 +331,13 @@ registerQuestionPack({
       "examMaterial": {
         "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
         "section": "地理4問5"
-      }
+      },
+      "references": [
+        {
+          "url": "https://geo-hs.com/volcano/",
+          "label": "高校地理の部屋：火山"
+        }
+      ]
     },
     {
       "id": "geography-nov25-landforms-011",
@@ -382,7 +424,13 @@ registerQuestionPack({
       "examMaterial": {
         "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
         "section": "地理4問6"
-      }
+      },
+      "references": [
+        {
+          "url": "https://geo-hs.com/hotspot/",
+          "label": "高校地理の部屋：ホットスポット"
+        }
+      ]
     },
     {
       "id": "geography-nov25-landforms-014",
@@ -608,7 +656,13 @@ registerQuestionPack({
       "examMaterial": {
         "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
         "section": "地理4問7の関連"
-      }
+      },
+      "references": [
+        {
+          "url": "https://geo-hs.com/delta/",
+          "label": "高校地理の部屋：三角州"
+        }
+      ]
     },
     {
       "id": "geography-nov25-landforms-021",

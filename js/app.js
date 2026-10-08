@@ -1,4 +1,17 @@
 const KEY = "multi-study-drill-v1";
+const GEOGRAPHY_MATERIALS = [
+  {name:"地理ラボ",url:"https://alivevulnerable.com/basic/",description:"地理情報・地形・気候・農林水産業の解説"},
+  {name:"いちごドリル・地理探究",url:"https://ichigo-drill.jp/chiritankyu-print",description:"分野別の問題・解答プリント"},
+  {name:"地理教材共有サイト",url:"https://sites.google.com/view/geoclass2020/",description:"高校地理教員の授業スライド・プリント"},
+  {name:"ちとにとせ",url:"https://chitonitose.com/geo/geo.html",description:"地図・自然環境・産業・人口・都市・地誌の解説"},
+  {name:"高校地理授業動画",url:"https://www.geography-lesson.com/",description:"単元別の授業動画と解説テキスト"},
+  {name:"高校地理の部屋",url:"https://geo-hs.com/",description:"地形・気候・地図の解説"},
+  {name:"トフィーの地理教室",url:"https://note.com/toffee101",description:"高校・予備校講師の授業動画とプリント"},
+  {name:"希望ケ丘高校・地理総合",url:"https://sites.google.com/gl.pen-kanagawa.ed.jp/geography-sogo2024/",description:"地理総合の授業プリント"},
+  {name:"ちりナビ・高校地理",url:"https://geo.ewrs.jp/high/index.html",description:"地理総合・地理探究の解説と確認問題"},
+  {name:"地理の王国",url:"https://kog-edu.jp/",description:"解説・気候グラフ・地図の学習ツール"},
+  {name:"高校地理の一問一答",url:"https://school-plus.org/library/kou-social/geography/",description:"分野別の四択と解説"},
+];
 
 const app = document.getElementById("app");
 let S = load();
@@ -305,6 +318,11 @@ function subjectView(){
   app.appendChild(head);
 
   const body=h(`<div class="grow"></div>`);
+  if(subjectId==="geography"){
+    const materials=h(`<button class="ghost" type="button">教材を読む（11サイト）</button>`);
+    materials.addEventListener("click",()=>{view="materials";render();});
+    body.appendChild(materials);
+  }
   body.appendChild(h(`<div class="tiles">
     <div class="tile bad"><b>${t.todo}</b><span>要復習</span></div>
     <div class="tile good"><b>${t.seen-t.todo}</b><span>解けた</span></div>
@@ -520,10 +538,15 @@ function quiz(){
     if(q.basis) fb.appendChild(h(`<div class="subtle">対応する出題分野：${esc(q.basis)}</div>`));
     if(q.material) fb.appendChild(h(`<div class="subtle">教材：${esc(q.material.title)} — PDF ${esc(q.material.page)}ページ・${esc(q.material.section)}</div>`));
     if(q.examMaterial) fb.appendChild(h(`<div class="subtle">範囲：${esc(q.examMaterial.title)}・${esc(q.examMaterial.section)}</div>`));
-    if(q.source){
-      const url=new URL(q.source,location.href);
+    const references=[...(q.source?[{url:q.source,label:q.sourceLabel||"公開入試問題・出題意図"}]:[]),...(q.references||[])];
+    const shown=new Set();
+    for(const reference of references){
+      let url;
+      try{url=new URL(reference.url,location.href);}catch{continue;}
+      if(shown.has(url.href)) continue;
+      shown.add(url.href);
       if(url.protocol==="https:"){
-        const link=h(`<a href="${esc(url.href)}" target="_blank" rel="noopener noreferrer">参考：${esc(q.sourceLabel||"公開入試問題・出題意図")}</a>`);
+        const link=h(`<p><a href="${esc(url.href)}" target="_blank" rel="noopener noreferrer">教材：${esc(reference.label||"関連する解説")}</a></p>`);
         fb.appendChild(link);
       }
     }
@@ -576,11 +599,34 @@ function result(){
   const back=h(`<button class="ghost" type="button">科目画面へ</button>`);back.addEventListener("click",()=>{view="subject";render();});
   dock.appendChild(again);dock.appendChild(back);app.appendChild(dock);
 }
+function materialsView(){
+  const library=window.GEOGRAPHY_LIBRARY || {sites:GEOGRAPHY_MATERIALS,items:[]};
+  const head=h(`<header class="top"><button class="back" type="button">← 地理</button><h1>地理の教材</h1><span class="subtle">11サイト</span></header>`);
+  head.querySelector(".back").addEventListener("click",()=>{view="subject";render();});
+  app.appendChild(head);
+  const body=h(`<div class="grow"></div>`);
+  const index=h(`<div class="panel"><h2>教材元</h2></div>`);
+  library.sites.forEach(site=>index.appendChild(h(`<p><a href="${esc(site.url)}" target="_blank" rel="noopener noreferrer">${esc(site.name)}</a><br><span class="subtle">${esc(site.description)}</span></p>`)));
+  body.appendChild(index);
+  const search=h(`<div class="panel"><label for="material-search">記事・プリント・スライドを探す</label><input id="material-search" type="search" placeholder="例：海流、地形、資源" autocomplete="off"><p class="subtle" role="status"></p></div>`);
+  const list=h(`<div class="list"></div>`);
+  const draw=term=>{
+    list.innerHTML="";
+    const terms=term.trim().toLowerCase().split(/\s+/).filter(Boolean);
+    const items=library.items.filter(item=>terms.every(word=>(item.title+" "+item.siteName).toLowerCase().includes(word)));
+    search.querySelector('[role="status"]').textContent=`${items.length}件${items.length>60?"（先頭60件を表示。検索して絞り込めます）":""}`;
+    items.slice(0,60).forEach(item=>list.appendChild(h(`<div class="item"><a href="${esc(item.url)}" target="_blank" rel="noopener noreferrer">${esc(item.title)}</a><p class="subtle">${esc(item.siteName)}・${esc(item.kind)}</p></div>`)));
+    if(!items.length) list.appendChild(h(`<p class="empty">該当する教材はありません。</p>`));
+  };
+  search.querySelector("input").addEventListener("input",event=>draw(event.target.value));
+  body.appendChild(search);body.appendChild(list);app.appendChild(body);draw("");
+}
 function render(){
   app.innerHTML="";
   if(view==="home") home();
   else if(view==="subject") subjectView();
   else if(view==="quiz") quiz();
+  else if(view==="materials") materialsView();
   else if(view==="log") logView();
   else result();
   window.scrollTo(0,0);

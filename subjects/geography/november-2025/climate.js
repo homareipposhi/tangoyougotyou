@@ -37,7 +37,13 @@ registerQuestionPack({
       "examMaterial": {
         "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
         "section": "地理5問1"
-      }
+      },
+      "references": [
+        {
+          "url": "https://alivevulnerable.com/basic/climatic-factor/",
+          "label": "地理ラボ：気候と気候因子（緯度・標高・隔海度など） - 地理ラボ　詳しすぎる高校地理"
+        }
+      ]
     },
     {
       "id": "geography-nov25-climate-002",
@@ -66,7 +72,13 @@ registerQuestionPack({
       "examMaterial": {
         "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
         "section": "地理5問1"
-      }
+      },
+      "references": [
+        {
+          "url": "https://alivevulnerable.com/basic/climatic-factor/",
+          "label": "地理ラボ：気候と気候因子（緯度・標高・隔海度など） - 地理ラボ　詳しすぎる高校地理"
+        }
+      ]
     },
     {
       "id": "geography-nov25-climate-003",
@@ -98,7 +110,13 @@ registerQuestionPack({
       "examMaterial": {
         "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
         "section": "地理5問2"
-      }
+      },
+      "references": [
+        {
+          "url": "https://alivevulnerable.com/basic/climatic-factor/",
+          "label": "地理ラボ：気候と気候因子（緯度・標高・隔海度など） - 地理ラボ　詳しすぎる高校地理"
+        }
+      ]
     },
     {
       "id": "geography-nov25-climate-004",
@@ -130,7 +148,13 @@ registerQuestionPack({
       "examMaterial": {
         "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
         "section": "地理5問2"
-      }
+      },
+      "references": [
+        {
+          "url": "https://alivevulnerable.com/basic/climatic-factor/",
+          "label": "地理ラボ：気候と気候因子（緯度・標高・隔海度など） - 地理ラボ　詳しすぎる高校地理"
+        }
+      ]
     },
     {
       "id": "geography-nov25-climate-005",
@@ -162,7 +186,13 @@ registerQuestionPack({
       "examMaterial": {
         "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
         "section": "地理5問2"
-      }
+      },
+      "references": [
+        {
+          "url": "https://alivevulnerable.com/basic/climatic-factor/",
+          "label": "地理ラボ：気候と気候因子（緯度・標高・隔海度など） - 地理ラボ　詳しすぎる高校地理"
+        }
+      ]
     },
     {
       "id": "geography-nov25-climate-006",
@@ -194,7 +224,13 @@ registerQuestionPack({
       "examMaterial": {
         "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
         "section": "地理5問3の関連"
-      }
+      },
+      "references": [
+        {
+          "url": "https://alivevulnerable.com/basic/climatic-factor/",
+          "label": "地理ラボ：気候と気候因子（緯度・標高・隔海度など） - 地理ラボ　詳しすぎる高校地理"
+        }
+      ]
     },
     {
       "id": "geography-nov25-climate-007",
@@ -223,7 +259,13 @@ registerQuestionPack({
       "examMaterial": {
         "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
         "section": "地理5問3の関連"
-      }
+      },
+      "references": [
+        {
+          "url": "https://alivevulnerable.com/basic/climatic-factor/",
+          "label": "地理ラボ：気候と気候因子（緯度・標高・隔海度など） - 地理ラボ　詳しすぎる高校地理"
+        }
+      ]
     },
     {
       "id": "geography-nov25-climate-008",
@@ -252,7 +294,13 @@ registerQuestionPack({
       "examMaterial": {
         "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
         "section": "地理5問3の関連"
-      }
+      },
+      "references": [
+        {
+          "url": "https://chitonitose.com/geo/geo_lessons_vegetation_soil.html",
+          "label": "ちとにとせ：植生・土壌"
+        }
+      ]
     },
     {
       "id": "geography-nov25-climate-009",
@@ -281,7 +329,13 @@ registerQuestionPack({
       "examMaterial": {
         "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
         "section": "地理5問3の関連"
-      }
+      },
+      "references": [
+        {
+          "url": "https://chitonitose.com/geo/geo_lessons_vegetation_soil.html",
+          "label": "ちとにとせ：植生・土壌"
+        }
+      ]
     },
     {
       "id": "geography-nov25-climate-010",
@@ -310,7 +364,13 @@ registerQuestionPack({
       "examMaterial": {
         "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
         "section": "地理5問3の関連"
-      }
+      },
+      "references": [
+        {
+          "url": "https://chitonitose.com/geo/geo_lessons_vegetation_soil.html",
+          "label": "ちとにとせ：植生・土壌"
+        }
+      ]
     },
     {
       "id": "geography-nov25-climate-011",
@@ -339,7 +399,13 @@ registerQuestionPack({
       "examMaterial": {
         "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
         "section": "地理5問4"
-      }
+      },
+      "references": [
+        {
+          "url": "https://chitonitose.com/geo/geo_lessons_land_ocean.html",
+          "label": "ちとにとせ：陸水と海洋"
+        }
+      ]
     },
     {
       "id": "geography-nov25-climate-012",
@@ -368,7 +434,13 @@ registerQuestionPack({
       "examMaterial": {
         "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
         "section": "地理5問4"
-      }
+      },
+      "references": [
+        {
+          "url": "https://chitonitose.com/geo/geo_lessons_land_ocean.html",
+          "label": "ちとにとせ：陸水と海洋"
+        }
+      ]
     },
     {
       "id": "geography-nov25-climate-013",
@@ -461,7 +533,13 @@ registerQuestionPack({
       "examMaterial": {
         "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
         "section": "地理5問5の関連"
-      }
+      },
+      "references": [
+        {
+          "url": "https://www.geography-lesson.com/atmospheric-circulation/",
+          "label": "高校地理授業動画：【高校地理】大気大循環（雨季と乾季の生じるしくみ）"
+        }
+      ]
     },
     {
       "id": "geography-nov25-climate-016",
@@ -490,7 +568,13 @@ registerQuestionPack({
       "examMaterial": {
         "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
         "section": "地理5問5の関連"
-      }
+      },
+      "references": [
+        {
+          "url": "https://www.geography-lesson.com/atmospheric-circulation/",
+          "label": "高校地理授業動画：【高校地理】大気大循環（雨季と乾季の生じるしくみ）"
+        }
+      ]
     },
     {
       "id": "geography-nov25-climate-017",
@@ -916,7 +1000,13 @@ registerQuestionPack({
       "examMaterial": {
         "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
         "section": "地理5問7の関連"
-      }
+      },
+      "references": [
+        {
+          "url": "https://www.geography-lesson.com/ocean-currents-climate/",
+          "label": "高校地理授業動画：【高校地理】海流と気候（海岸砂漠、エルニーニョ現象など）"
+        }
+      ]
     },
     {
       "id": "geography-nov25-climate-031",

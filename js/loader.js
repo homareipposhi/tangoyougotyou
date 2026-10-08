@@ -57,7 +57,7 @@
       });
       window.SUBJECTS = subjects;
       window.Q_ALL = questions;
-      return load('js/app.js');
+      return load('js/geography-materials.js').then(() => load('js/app.js'));
     })
     .catch(error => {
       failed = true;

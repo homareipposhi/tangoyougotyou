@@ -9,6 +9,7 @@ const files = JSON.parse(manifestCode.match(/\[[\s\S]*\]/)[0]);
 const sources = Object.fromEntries(await Promise.all(files.map(async file => [file, await readFile(file, 'utf8')])));
 const loaderCode = await readFile('js/loader.js', 'utf8');
 const appCode = await readFile('js/app.js', 'utf8');
+const materialsCode = await readFile('js/geography-materials.js', 'utf8');
 const workflowCode = await readFile('.github/workflows/generate-manifest.yml', 'utf8');
 const packs = [];
 const bankContext = vm.createContext({registerQuestionPack: pack => packs.push(pack)});
@@ -51,6 +52,8 @@ function makeApp(initial = {}) {
   class Element {
     constructor(tag) { this.tag=tag; this.children=[]; this.queries=new Map(); this.listeners=new Map(); this.isConnected=tag==='app'; }
     set innerHTML(value) {
+      this.children.forEach(child => connect(child,false));
+      this.children=[];
       if (this.tag === 'app') {
         this.children.forEach(child => connect(child,false));
         this.children=[]; html=[];
@@ -78,6 +81,7 @@ function makeApp(initial = {}) {
     localStorage:{getItem:k => storage.get(k) ?? null, setItem:(k,v) => storage.set(k,v)},
     performance:{now:() => now},
   });
+  vm.runInContext(materialsCode, context, {filename:'js/geography-materials.js'});
   vm.runInContext(appCode, context, {filename:'js/app.js'});
   const run = code => vm.runInContext(code, context);
   return {
@@ -473,8 +477,8 @@ async function makeLoader(fileSources, {timeoutFile} = {}) {
 }
 
 test('loader downloads in parallel, executes in manifest order, builds all subjects, then app', async () => {
-  const loader = await makeLoader({'js/generated-manifest.js':manifestCode, ...sources, 'js/app.js':'window.appLoaded = true;'});
-  assert.deepEqual(loader.executed, ['js/generated-manifest.js', ...files, 'js/app.js']);
+  const loader = await makeLoader({'js/generated-manifest.js':manifestCode, ...sources, 'js/geography-materials.js':materialsCode, 'js/app.js':'window.appLoaded = true;'});
+  assert.deepEqual(loader.executed, ['js/generated-manifest.js', ...files, 'js/geography-materials.js', 'js/app.js']);
   assert.ok(loader.batchSizes.every(count => count === files.length + 1), 'all pack requests start before the first pack executes');
   assert.ok(loader.inserted.every(script => script.async === false && /\?v=\d+$/.test(script.src)));
   assert.equal(loader.context.Q_ALL.length, questions.length);
@@ -489,6 +493,7 @@ test('new nested question pack automatically creates its subject and chapter', a
   const pack = {subject:'new-subject', name:'追加科目', chapters:{1:'追加単元'}, questions:[{id:'new-test', subject:'new-subject',type:'tf',a:true}]};
   const loader = await makeLoader({
     'js/generated-manifest.js':`const MANIFEST = ${JSON.stringify([newFile])};`,
+    'js/geography-materials.js':materialsCode,
     [newFile]:`registerQuestionPack(${JSON.stringify(pack)});`, 'js/app.js':'window.appLoaded=true;',
   });
   assert.equal(loader.context.SUBJECTS['new-subject'].name, '追加科目');
@@ -688,4 +693,42 @@ test('lecture foundation questions have bounded PDF provenance and preserve reco
   app.run("subjectId='earth'; filters.course='地学';");
   assert.ok(!app.value('pool().map(q=>q.id)').includes(q.id));
   assert.ok(!questions.some(q=>q.id==='geography-nov25-energy-024'));
+});
+
+test('geography materials opens all eleven sites and filters article titles', () => {
+  const app=makeApp();
+  app.run("subjectId='geography';view='subject';render();");
+  app.click('教材を読む（11サイト）');
+  assert.equal(app.value('view'),'materials');
+  assert.equal(app.value('window.GEOGRAPHY_LIBRARY.sites.length'),11);
+  assert.equal(app.value('window.GEOGRAPHY_LIBRARY.items.length'),694);
+  for (const site of app.value('window.GEOGRAPHY_LIBRARY.sites')) assert.ok(app.html().includes(site.url));
+  const input=app.nodes().find(node=>node.listeners.has('input'));
+  input.listeners.get('input')({target:{value:'海流'}});
+  const cards=app.nodes().filter(node=>node.isConnected && node.markup?.startsWith('<div class="item">'));
+  assert.ok(cards.length>0);
+  assert.ok(cards.every(node=>node.markup.includes('海流')));
+  input.listeners.get('input')({target:{value:'存在しない教材xyz'}});
+  assert.equal(app.nodes().filter(node=>node.isConnected && node.markup?.startsWith('<div class="item">')).length,0);
+});
+
+test('dialect concentric distribution remains a question and an option with its source after answering', () => {
+  const q=questions.find(q=>q.id==='geography-nov25-maps-012');
+  assert.ok(q.q.includes('方言周圏論'));
+  assert.ok(q.e.includes('柳田国男') && q.e.includes('蝸牛考'));
+  assert.ok(questions.find(q=>q.id==='geography-nov25-maps-014').o.includes('方言周圏論'));
+  const app=makeApp();app.begin(q);
+  assert.ok(!app.html().includes(q.source));
+  app.answer(1000,true,q);
+  assert.ok(app.html().includes(q.source));
+});
+
+test('related teaching references are hidden until answering and deduplicated', () => {
+  const base=questions.find(q=>q.references?.length);
+  const q={...base,source:base.references[0].url,sourceLabel:'教材',references:[...base.references,{url:'javascript:alert(1)',label:'unsafe'}]};
+  const app=makeApp();app.begin(q);
+  assert.ok(!app.html().includes(q.source));
+  app.answer(1000,true,q);
+  assert.equal(app.html().split(q.source).length-1,1);
+  assert.ok(!app.html().includes('javascript:alert'));
 });

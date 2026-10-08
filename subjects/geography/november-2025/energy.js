@@ -211,7 +211,13 @@ registerQuestionPack({
       "examMaterial": {
         "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
         "section": "地理3問2"
-      }
+      },
+      "references": [
+        {
+          "url": "https://chitonitose.com/geo/geo_lessons_energy_resources.html",
+          "label": "ちとにとせ：エネルギー資源"
+        }
+      ]
     },
     {
       "id": "geography-nov25-energy-008",
@@ -272,7 +278,13 @@ registerQuestionPack({
       "examMaterial": {
         "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
         "section": "地理3問2"
-      }
+      },
+      "references": [
+        {
+          "url": "https://chitonitose.com/geo/geo_lessons_energy_resources.html",
+          "label": "ちとにとせ：エネルギー資源"
+        }
+      ]
     },
     {
       "id": "geography-nov25-energy-010",
@@ -333,7 +345,13 @@ registerQuestionPack({
       "examMaterial": {
         "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
         "section": "地理3問2"
-      }
+      },
+      "references": [
+        {
+          "url": "https://chitonitose.com/geo/geo_lessons_energy_resources.html",
+          "label": "ちとにとせ：エネルギー資源"
+        }
+      ]
     },
     {
       "id": "geography-nov25-energy-012",
@@ -394,7 +412,13 @@ registerQuestionPack({
       "examMaterial": {
         "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
         "section": "地理3問2"
-      }
+      },
+      "references": [
+        {
+          "url": "https://chitonitose.com/geo/geo_lessons_energy_resources.html",
+          "label": "ちとにとせ：エネルギー資源"
+        }
+      ]
     },
     {
       "id": "geography-nov25-energy-014",
@@ -457,7 +481,13 @@ registerQuestionPack({
       "examMaterial": {
         "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
         "section": "地理3問3の関連"
-      }
+      },
+      "references": [
+        {
+          "url": "https://chitonitose.com/geo/geo_lessons_energy_resources.html",
+          "label": "ちとにとせ：エネルギー資源"
+        }
+      ]
     },
     {
       "id": "geography-nov25-energy-016",
@@ -487,7 +517,13 @@ registerQuestionPack({
       "examMaterial": {
         "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
         "section": "地理3問3の関連"
-      }
+      },
+      "references": [
+        {
+          "url": "https://chitonitose.com/geo/geo_lessons_energy_resources.html",
+          "label": "ちとにとせ：エネルギー資源"
+        }
+      ]
     },
     {
       "id": "geography-nov25-energy-017",
