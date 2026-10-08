@@ -17,7 +17,7 @@ const app = document.getElementById("app");
 let S = load();
 let view = "home";
 let subjectId = null;
-let filters = {chapters:[], diffs:[], types:[], only:"all", content:"exam", course:"all"};
+let filters = {chapters:[], diffs:[], types:[], only:"all", content:"exam", course:"all", examScope:"all"};
 let advancedOpen = false;
 let size = 10;
 let order = "mix";
@@ -267,7 +267,7 @@ function home(){
       <b>${esc(sub.name)}</b>
       <span>${qs.length}問<br>要復習 ${t.todo} ・ 未着手 ${t.fresh}</span>
     </button>`);
-    b.addEventListener("click",()=>{subjectId=id;filters={chapters:[],diffs:[],types:[],only:"all",content:"exam", course:"all"};advancedOpen=false;view="subject";render();});
+    b.addEventListener("click",()=>{subjectId=id;filters={chapters:[],diffs:[],types:[],only:"all",content:"exam",course:"all",examScope:id==="earth"?"nov2026":"all"};advancedOpen=false;view="subject";render();});
     box.appendChild(b);
   });
   body.appendChild(h(`<p class="empty">科目を選ぶと、単元・難易度・問題形式を絞って演習できます。</p>`));
@@ -285,8 +285,19 @@ function courseMatches(q, course=filters.course){
   const courses=q.courses || (q.subject==="earth" ? ["地学基礎","地学"] : []);
   return courses.includes(course);
 }
+function earthNov2026Matches(q){
+  if(q.subject!=="earth") return false;
+  if(q.studyTarget==="benesse-h2-nov-2026") return true;
+  // The specified earth-science basic lecture PDF: 3–23 and 26–29.
+  const material=q.material;
+  const page=material?.page;
+  return Array.isArray(q.courses) && q.courses.includes("地学基礎") &&
+    typeof material?.title==="string" && material.title.includes("特化講義「地学基礎」") &&
+    Number.isInteger(page) && ((page>=3 && page<=23) || (page>=26 && page<=29));
+}
 function scopedBase(){
   let p=subjectQuestions().filter(q=>courseMatches(q));
+  if(subjectId==="earth" && filters.examScope==="nov2026") p=p.filter(earthNov2026Matches);
   if(subjectId==="physics") p=p.filter(q=>physicsContentMatches(q));
   if(filters.chapters.length) p=p.filter(q=>filters.chapters.includes(q.c));
   if(filters.diffs.length) p=p.filter(q=>filters.diffs.includes(q.d));
@@ -312,7 +323,7 @@ function filterButton(txt,on,fn,disabled=false){
 function subjectView(){
   const sub=currentSubject(), all=subjectQuestions(), base=scopedBase(), t=tally(base), p=pool();
   const physics=subjectId==="physics";
-  const categoryQuestions=all.filter(q=>courseMatches(q) && (!physics || physicsContentMatches(q)));
+  const categoryQuestions=all.filter(q=>courseMatches(q) && (!physics || physicsContentMatches(q)) && (subjectId!=="earth" || filters.examScope!=="nov2026" || earthNov2026Matches(q)));
   const head=h(`<header class="top"><button class="back" type="button">← 科目</button><h1>${esc(sub.name)}</h1><span class="subtle">${all.length}問</span></header>`);
   head.querySelector(".back").addEventListener("click",()=>{view="home";subjectId=null;render();});
   app.appendChild(head);
@@ -341,6 +352,19 @@ function subjectView(){
     });
     panel.appendChild(group);
     panel.appendChild(h(`<p class="subtle">共通する内容は両方の科目に含まれます。</p>`));
+  }
+  if(subjectId==="earth"){
+    const exam=h(`<div class="grp"><span>模試対策</span><div class="opts"></div></div>`);
+    [["nov2026","2026年11月・高2ベネッセ"],["all","全問題"]].forEach(([value,label])=>{
+      exam.querySelector(".opts").appendChild(filterButton(label,filters.examScope===value,()=>{
+        filters.examScope=value;
+        filters.course="all";
+        filters.chapters=[];filters.diffs=[];filters.types=[];filters.only="all";
+        render();
+      }));
+    });
+    panel.appendChild(exam);
+    if(filters.examScope==="nov2026")panel.appendChild(h(`<p class="subtle">必答範囲：地学基礎PDFの3〜23・26〜29ページ＋専門地学「地球の形状」。出題数は単元からさらに絞り込めます。</p>`));
   }
   if(physics){
     const categories=h(`<div class="grp"><span>学習内容</span><div class="opts"></div></div>`);
@@ -536,7 +560,7 @@ function quiz(){
       <div>${ok?"":`あなたの答え：${esc(yourText(q))}<br>`}正解：${esc(answerText(q))}</div>
       <div>${esc(q.e)}</div>${isRta(q)&&lastTiming?`<div class="timing">回答時間 ${formatMs(lastTiming.ms)}秒：${esc(lastTiming.label)}</div>`:""}</div>`);
     if(q.basis) fb.appendChild(h(`<div class="subtle">対応する出題分野：${esc(q.basis)}</div>`));
-    if(q.material) fb.appendChild(h(`<div class="subtle">教材：${esc(q.material.title)} — PDF ${esc(q.material.page)}ページ・${esc(q.material.section)}</div>`));
+    if(q.material) fb.appendChild(h(`<div class="subtle">教材：${esc(q.material.title)} — ${q.material.type==="book"?"教科書":"PDF"} ${esc(q.material.page)}ページ・${esc(q.material.section)}</div>`));
     if(q.examMaterial) fb.appendChild(h(`<div class="subtle">範囲：${esc(q.examMaterial.title)}・${esc(q.examMaterial.section)}</div>`));
     const references=[...(q.source?[{url:q.source,label:q.sourceLabel||"公開入試問題・出題意図"}]:[]),...(q.references||[])];
     const shown=new Set();
