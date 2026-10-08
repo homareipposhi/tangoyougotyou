@@ -399,7 +399,7 @@ function subjectView(){
       }));
     });
     panel.appendChild(group);
-    panel.appendChild(h(`<p class="subtle">共通する内容は両方の科目に含まれます。</p>`));
+    panel.appendChild(h(`<p class="subtle">11月模試の指定範囲を科目別に表示します。全範囲は従来の問題をすべて表示します。</p>`));
   }
   if(physics){
     const categories=h(`<div class="grp"><span>学習内容</span><div class="opts"></div></div>`);
