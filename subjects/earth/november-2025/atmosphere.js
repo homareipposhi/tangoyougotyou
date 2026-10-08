@@ -1,4 +1,4 @@
-/* 高校向け教材の解説を参照した独自短問。設問・図版の転載ではありません。 */
+/* 提供教材の範囲に対応する独自短問。 */
 registerQuestionPack({
   "subject": "earth",
   "name": "地学",
@@ -34,7 +34,16 @@ registerQuestionPack({
       ],
       "source": "https://tigakutasu.com/newtigakukisokyousitu-taikiken/",
       "sourceLabel": "ちがくたす：大気圏",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地学",
+        "section": "地学1問6・問7"
+      },
+      "material": {
+        "title": "特化講義「地学基礎」受講生保存用",
+        "page": 18,
+        "section": "第7講 大気"
+      }
     },
     {
       "id": "earth-nov25-atmosphere-002",
@@ -63,7 +72,16 @@ registerQuestionPack({
       ],
       "source": "https://tigakutasu.com/newtigakukisokyousitu-taikiken/",
       "sourceLabel": "ちがくたす：大気圏",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地学",
+        "section": "地学1問6・問7"
+      },
+      "material": {
+        "title": "特化講義「地学基礎」受講生保存用",
+        "page": 18,
+        "section": "第7講 大気"
+      }
     },
     {
       "id": "earth-nov25-atmosphere-003",
@@ -92,7 +110,16 @@ registerQuestionPack({
       ],
       "source": "https://tigakutasu.com/newtigakukisokyousitu-taikiken/",
       "sourceLabel": "ちがくたす：大気圏",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地学",
+        "section": "地学1問6・問7"
+      },
+      "material": {
+        "title": "特化講義「地学基礎」受講生保存用",
+        "page": 18,
+        "section": "第7講 大気"
+      }
     },
     {
       "id": "earth-nov25-atmosphere-004",
@@ -121,7 +148,16 @@ registerQuestionPack({
       ],
       "source": "https://tigakutasu.com/newtigakukisokyousitu-taikiken/",
       "sourceLabel": "ちがくたす：大気圏",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地学",
+        "section": "地学1問6・問7"
+      },
+      "material": {
+        "title": "特化講義「地学基礎」受講生保存用",
+        "page": 18,
+        "section": "第7講 大気"
+      }
     },
     {
       "id": "earth-nov25-atmosphere-005",
@@ -150,7 +186,16 @@ registerQuestionPack({
       ],
       "source": "https://tigakutasu.com/newtigakukisokyousitu-taikiken/",
       "sourceLabel": "ちがくたす：大気圏",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地学",
+        "section": "地学1問6・問7"
+      },
+      "material": {
+        "title": "特化講義「地学基礎」受講生保存用",
+        "page": 18,
+        "section": "第7講 大気"
+      }
     },
     {
       "id": "earth-nov25-atmosphere-006",
@@ -179,7 +224,16 @@ registerQuestionPack({
       ],
       "source": "https://tigakutasu.com/newtigakukisokyousitu-taikiken/",
       "sourceLabel": "ちがくたす：大気圏",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地学",
+        "section": "地学1問6・問7"
+      },
+      "material": {
+        "title": "特化講義「地学基礎」受講生保存用",
+        "page": 18,
+        "section": "第7講 大気"
+      }
     },
     {
       "id": "earth-nov25-atmosphere-007",
@@ -203,11 +257,21 @@ registerQuestionPack({
       "knowledge": "required",
       "basis": "地学1問6・問7",
       "courses": [
+        "地学基礎",
         "地学"
       ],
       "source": "https://tigakutasu.com/newtigakukisokyousitu-taikiken/",
       "sourceLabel": "ちがくたす：大気圏",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地学",
+        "section": "地学1問6・問7"
+      },
+      "material": {
+        "title": "特化講義「地学基礎」受講生保存用",
+        "page": 18,
+        "section": "第7講 大気"
+      }
     },
     {
       "id": "earth-nov25-atmosphere-008",
@@ -236,7 +300,16 @@ registerQuestionPack({
       ],
       "source": "https://tigakutasu.com/newtigakukisokyousitu-taikiken/",
       "sourceLabel": "ちがくたす：大気圏",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地学",
+        "section": "地学1問8・問9"
+      },
+      "material": {
+        "title": "特化講義「地学基礎」受講生保存用",
+        "page": 18,
+        "section": "第7講 大気"
+      }
     },
     {
       "id": "earth-nov25-atmosphere-009",
@@ -265,7 +338,16 @@ registerQuestionPack({
       ],
       "source": "https://tigakutasu.com/newtigakukisokyousitu-taikiken/",
       "sourceLabel": "ちがくたす：大気圏",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地学",
+        "section": "地学1問8・問9"
+      },
+      "material": {
+        "title": "特化講義「地学基礎」受講生保存用",
+        "page": 18,
+        "section": "第7講 大気"
+      }
     },
     {
       "id": "earth-nov25-atmosphere-010",
@@ -289,11 +371,21 @@ registerQuestionPack({
       "knowledge": "required",
       "basis": "地学1問8・問9",
       "courses": [
+        "地学基礎",
         "地学"
       ],
       "source": "https://tigakutasu.com/newtigakukisokyousitu-taikiken/",
       "sourceLabel": "ちがくたす：大気圏",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地学",
+        "section": "地学1問8・問9"
+      },
+      "material": {
+        "title": "特化講義「地学基礎」受講生保存用",
+        "page": 18,
+        "section": "第7講 大気"
+      }
     },
     {
       "id": "earth-nov25-atmosphere-011",
@@ -317,11 +409,21 @@ registerQuestionPack({
       "knowledge": "required",
       "basis": "地学1問8・問9",
       "courses": [
+        "地学基礎",
         "地学"
       ],
       "source": "https://tigakutasu.com/newtigakukisokyousitu-taikiken/",
       "sourceLabel": "ちがくたす：大気圏",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地学",
+        "section": "地学1問8・問9"
+      },
+      "material": {
+        "title": "特化講義「地学基礎」受講生保存用",
+        "page": 18,
+        "section": "第7講 大気"
+      }
     },
     {
       "id": "earth-nov25-atmosphere-012",
@@ -350,7 +452,16 @@ registerQuestionPack({
       ],
       "source": "https://tigakutasu.com/kisokyousitukumonodekikata/",
       "sourceLabel": "ちがくたす：雲のでき方",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地学",
+        "section": "地学1問10"
+      },
+      "material": {
+        "title": "特化講義「地学基礎」受講生保存用",
+        "page": 19,
+        "section": "第7講 湿度・雲"
+      }
     },
     {
       "id": "earth-nov25-atmosphere-013",
@@ -379,7 +490,16 @@ registerQuestionPack({
       ],
       "source": "https://tigakutasu.com/kisokyousitukumonodekikata/",
       "sourceLabel": "ちがくたす：雲のでき方",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地学",
+        "section": "地学1問10"
+      },
+      "material": {
+        "title": "特化講義「地学基礎」受講生保存用",
+        "page": 19,
+        "section": "第7講 湿度・雲"
+      }
     },
     {
       "id": "earth-nov25-atmosphere-014",
@@ -405,7 +525,16 @@ registerQuestionPack({
       "courses": [
         "地学基礎",
         "地学"
-      ]
+      ],
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地学",
+        "section": "地学1問10"
+      },
+      "material": {
+        "title": "特化講義「地学基礎」受講生保存用",
+        "page": 19,
+        "section": "第7講 湿度・雲"
+      }
     },
     {
       "id": "earth-nov25-atmosphere-015",
@@ -434,7 +563,16 @@ registerQuestionPack({
       ],
       "source": "https://tigakutasu.com/kisokyousitukumonodekikata/",
       "sourceLabel": "ちがくたす：雲のでき方",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地学",
+        "section": "地学1問10"
+      },
+      "material": {
+        "title": "特化講義「地学基礎」受講生保存用",
+        "page": 19,
+        "section": "第7講 湿度・雲"
+      }
     },
     {
       "id": "earth-nov25-atmosphere-016",
@@ -463,7 +601,16 @@ registerQuestionPack({
       ],
       "source": "https://tigakutasu.com/kisokyousitukumonodekikata/",
       "sourceLabel": "ちがくたす：雲のでき方",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地学",
+        "section": "地学1問10"
+      },
+      "material": {
+        "title": "特化講義「地学基礎」受講生保存用",
+        "page": 19,
+        "section": "第7講 湿度・雲"
+      }
     },
     {
       "id": "earth-nov25-atmosphere-017",
@@ -487,8 +634,18 @@ registerQuestionPack({
       "knowledge": "related",
       "basis": "地学1問10の関連",
       "courses": [
+        "地学基礎",
         "地学"
-      ]
+      ],
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地学",
+        "section": "地学1問10の関連"
+      },
+      "material": {
+        "title": "特化講義「地学基礎」受講生保存用",
+        "page": 25,
+        "section": "第9講 フェーン現象"
+      }
     },
     {
       "id": "earth-nov25-atmosphere-018",
@@ -512,8 +669,18 @@ registerQuestionPack({
       "knowledge": "related",
       "basis": "地学1問10の関連",
       "courses": [
+        "地学基礎",
         "地学"
-      ]
+      ],
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地学",
+        "section": "地学1問10の関連"
+      },
+      "material": {
+        "title": "特化講義「地学基礎」受講生保存用",
+        "page": 25,
+        "section": "第9講 フェーン現象"
+      }
     },
     {
       "id": "earth-nov25-atmosphere-019",
@@ -542,7 +709,16 @@ registerQuestionPack({
       ],
       "source": "https://tigakutasu.com/kisokyousitukumonodekikata/",
       "sourceLabel": "ちがくたす：雲のでき方",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地学",
+        "section": "地学1問10の関連"
+      },
+      "material": {
+        "title": "特化講義「地学基礎」受講生保存用",
+        "page": 19,
+        "section": "第7講 湿度・雲"
+      }
     },
     {
       "id": "earth-nov25-atmosphere-020",
@@ -571,7 +747,16 @@ registerQuestionPack({
       ],
       "source": "https://tigakutasu.com/kisokyousitukumonodekikata/",
       "sourceLabel": "ちがくたす：雲のでき方",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地学",
+        "section": "地学1問10の関連"
+      },
+      "material": {
+        "title": "特化講義「地学基礎」受講生保存用",
+        "page": 19,
+        "section": "第7講 湿度・雲"
+      }
     },
     {
       "id": "earth-nov25-atmosphere-021",
@@ -600,7 +785,16 @@ registerQuestionPack({
       ],
       "source": "https://tigakutasu.com/newtigakukisokyousitu-taikiken/",
       "sourceLabel": "ちがくたす：大気圏",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地学",
+        "section": "地学1問6・問7の関連"
+      },
+      "material": {
+        "title": "特化講義「地学基礎」受講生保存用",
+        "page": 18,
+        "section": "第7講 大気"
+      }
     }
   ]
 });

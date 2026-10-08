@@ -1,4 +1,4 @@
-/* 高校向け教材の解説を参照した独自短問。設問・図版の転載ではありません。 */
+/* 提供教材の範囲に対応する独自短問。 */
 registerQuestionPack({
   "subject": "earth",
   "name": "地学",
@@ -34,7 +34,16 @@ registerQuestionPack({
       ],
       "source": "https://tigakutasu.com/tigakukisokyousitu-tikyuunonaka/",
       "sourceLabel": "ちがくたす：地球の中",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地学",
+        "section": "地学1問1・問3・問4"
+      },
+      "material": {
+        "title": "特化講義「地学基礎」受講生保存用",
+        "page": 4,
+        "section": "第1講 地球の内部"
+      }
     },
     {
       "id": "earth-nov25-interior-002",
@@ -63,7 +72,16 @@ registerQuestionPack({
       ],
       "source": "https://tigakutasu.com/tigakukisokyousitu-tikyuunonaka/",
       "sourceLabel": "ちがくたす：地球の中",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地学",
+        "section": "地学1問1・問3・問4"
+      },
+      "material": {
+        "title": "特化講義「地学基礎」受講生保存用",
+        "page": 4,
+        "section": "第1講 地球の内部"
+      }
     },
     {
       "id": "earth-nov25-interior-003",
@@ -92,7 +110,16 @@ registerQuestionPack({
       ],
       "source": "https://tigakutasu.com/tigakukisokyousitu-tikyuunonaka/",
       "sourceLabel": "ちがくたす：地球の中",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地学",
+        "section": "地学1問1・問3・問4"
+      },
+      "material": {
+        "title": "特化講義「地学基礎」受講生保存用",
+        "page": 4,
+        "section": "第1講 地球の内部"
+      }
     },
     {
       "id": "earth-nov25-interior-004",
@@ -121,7 +148,16 @@ registerQuestionPack({
       ],
       "source": "https://tigakutasu.com/tigakukisokyousitu-tikyuunonaka/",
       "sourceLabel": "ちがくたす：地球の中",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地学",
+        "section": "地学1問1・問3・問4"
+      },
+      "material": {
+        "title": "特化講義「地学基礎」受講生保存用",
+        "page": 4,
+        "section": "第1講 地球の内部"
+      }
     },
     {
       "id": "earth-nov25-interior-005",
@@ -150,7 +186,16 @@ registerQuestionPack({
       ],
       "source": "https://tigakutasu.com/tigakukisokyousitu-tikyuunonaka/",
       "sourceLabel": "ちがくたす：地球の中",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地学",
+        "section": "地学1問1・問3・問4"
+      },
+      "material": {
+        "title": "特化講義「地学基礎」受講生保存用",
+        "page": 4,
+        "section": "第1講 地球の内部"
+      }
     },
     {
       "id": "earth-nov25-interior-006",
@@ -179,7 +224,16 @@ registerQuestionPack({
       ],
       "source": "https://tigakutasu.com/tigakukisokyousitu-tikyuunonaka/",
       "sourceLabel": "ちがくたす：地球の中",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地学",
+        "section": "地学1問1・問3・問4"
+      },
+      "material": {
+        "title": "特化講義「地学基礎」受講生保存用",
+        "page": 4,
+        "section": "第1講 地球の内部"
+      }
     },
     {
       "id": "earth-nov25-interior-007",
@@ -203,12 +257,15 @@ registerQuestionPack({
       "knowledge": "required",
       "basis": "地学1問1・問3・問4",
       "courses": [
-        "地学基礎",
         "地学"
       ],
       "source": "https://tigakutasu.com/tigakukisokyousitu-tikyuunonaka/",
       "sourceLabel": "ちがくたす：地球の中",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地学",
+        "section": "地学1問1・問3・問4"
+      }
     },
     {
       "id": "earth-nov25-interior-008",
@@ -237,7 +294,16 @@ registerQuestionPack({
       ],
       "source": "https://tigakutasu.com/newtigakukisokyousitu-puretotekutonikusu/",
       "sourceLabel": "ちがくたす：プレートテクトニクス",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地学",
+        "section": "地学1問1・問3・問4"
+      },
+      "material": {
+        "title": "特化講義「地学基礎」受講生保存用",
+        "page": 5,
+        "section": "第2講 プレート"
+      }
     },
     {
       "id": "earth-nov25-interior-009",
@@ -266,7 +332,16 @@ registerQuestionPack({
       ],
       "source": "https://tigakutasu.com/newtigakukisokyousitu-puretotekutonikusu/",
       "sourceLabel": "ちがくたす：プレートテクトニクス",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地学",
+        "section": "地学1問1・問3・問4"
+      },
+      "material": {
+        "title": "特化講義「地学基礎」受講生保存用",
+        "page": 5,
+        "section": "第2講 プレート"
+      }
     },
     {
       "id": "earth-nov25-interior-010",
@@ -295,7 +370,16 @@ registerQuestionPack({
       ],
       "source": "https://tigakutasu.com/tigakukisokyousitu-tikyuunonaka/",
       "sourceLabel": "ちがくたす：地球の中",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地学",
+        "section": "地学1問1・問3・問4"
+      },
+      "material": {
+        "title": "特化講義「地学基礎」受講生保存用",
+        "page": 4,
+        "section": "第1講 地球の内部"
+      }
     },
     {
       "id": "earth-nov25-interior-011",
@@ -324,7 +408,16 @@ registerQuestionPack({
       ],
       "source": "https://tigakutasu.com/tigakukisokyousitu-tikyuunonaka/",
       "sourceLabel": "ちがくたす：地球の中",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地学",
+        "section": "地学1問3・問4の関連"
+      },
+      "material": {
+        "title": "特化講義「地学基礎」受講生保存用",
+        "page": 4,
+        "section": "第1講 地球の内部"
+      }
     },
     {
       "id": "earth-nov25-interior-012",
@@ -353,7 +446,16 @@ registerQuestionPack({
       ],
       "source": "https://tigakutasu.com/tigakukisokyousitu-tikyuunonaka/",
       "sourceLabel": "ちがくたす：地球の中",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地学",
+        "section": "地学1問3・問4の関連"
+      },
+      "material": {
+        "title": "特化講義「地学基礎」受講生保存用",
+        "page": 4,
+        "section": "第1講 地球の内部"
+      }
     },
     {
       "id": "earth-nov25-interior-013",
@@ -382,7 +484,16 @@ registerQuestionPack({
       ],
       "source": "https://tigakutasu.com/tigakukisokyousitu-tikyuunonaka/",
       "sourceLabel": "ちがくたす：地球の中",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地学",
+        "section": "地学1問3・問4の関連"
+      },
+      "material": {
+        "title": "特化講義「地学基礎」受講生保存用",
+        "page": 4,
+        "section": "第1講 地球の内部"
+      }
     },
     {
       "id": "earth-nov25-interior-014",
@@ -411,7 +522,16 @@ registerQuestionPack({
       ],
       "source": "https://tigakutasu.com/tigakukisokyousitu-tikyuunonaka/",
       "sourceLabel": "ちがくたす：地球の中",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地学",
+        "section": "地学1問3・問4の関連"
+      },
+      "material": {
+        "title": "特化講義「地学基礎」受講生保存用",
+        "page": 4,
+        "section": "第1講 地球の内部"
+      }
     },
     {
       "id": "earth-nov25-interior-015",
@@ -436,7 +556,11 @@ registerQuestionPack({
       "basis": "地学1問2",
       "courses": [
         "地学"
-      ]
+      ],
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地学",
+        "section": "地学1問2"
+      }
     },
     {
       "id": "earth-nov25-interior-016",
@@ -461,7 +585,11 @@ registerQuestionPack({
       "basis": "地学1問2",
       "courses": [
         "地学"
-      ]
+      ],
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地学",
+        "section": "地学1問2"
+      }
     },
     {
       "id": "earth-nov25-interior-017",
@@ -486,7 +614,11 @@ registerQuestionPack({
       "basis": "地学1問2",
       "courses": [
         "地学"
-      ]
+      ],
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地学",
+        "section": "地学1問2"
+      }
     },
     {
       "id": "earth-nov25-interior-018",
@@ -510,12 +642,15 @@ registerQuestionPack({
       "knowledge": "required",
       "basis": "地学1問5",
       "courses": [
-        "地学基礎",
         "地学"
       ],
       "source": "https://tigakutasu.com/tigakukisokyousitu-tikyuunonaka/",
       "sourceLabel": "ちがくたす：地球の中",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地学",
+        "section": "地学1問5"
+      }
     },
     {
       "id": "earth-nov25-interior-019",
@@ -539,12 +674,15 @@ registerQuestionPack({
       "knowledge": "required",
       "basis": "地学1問5",
       "courses": [
-        "地学基礎",
         "地学"
       ],
       "source": "https://tigakutasu.com/tigakukisokyousitu-tikyuunonaka/",
       "sourceLabel": "ちがくたす：地球の中",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地学",
+        "section": "地学1問5"
+      }
     },
     {
       "id": "earth-nov25-interior-020",
@@ -568,12 +706,15 @@ registerQuestionPack({
       "knowledge": "required",
       "basis": "地学1問5",
       "courses": [
-        "地学基礎",
         "地学"
       ],
       "source": "https://tigakutasu.com/tigakukisokyousitu-tikyuunonaka/",
       "sourceLabel": "ちがくたす：地球の中",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地学",
+        "section": "地学1問5"
+      }
     },
     {
       "id": "earth-nov25-interior-021",
@@ -597,12 +738,15 @@ registerQuestionPack({
       "knowledge": "related",
       "basis": "地学1問5の関連",
       "courses": [
-        "地学基礎",
         "地学"
       ],
       "source": "https://tigakutasu.com/tigakukisokyousitu-tikyuunonaka/",
       "sourceLabel": "ちがくたす：地球の中",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地学",
+        "section": "地学1問5の関連"
+      }
     },
     {
       "id": "earth-nov25-interior-022",
@@ -631,7 +775,16 @@ registerQuestionPack({
       ],
       "source": "https://tigakutasu.com/newtigakukisokyousitu-puretotekutonikusu/",
       "sourceLabel": "ちがくたす：プレートテクトニクス",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地学",
+        "section": "地学1問3・問4の関連"
+      },
+      "material": {
+        "title": "特化講義「地学基礎」受講生保存用",
+        "page": 5,
+        "section": "第2講 プレート"
+      }
     }
   ]
 });

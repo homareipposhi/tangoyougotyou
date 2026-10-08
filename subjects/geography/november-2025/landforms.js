@@ -1,4 +1,4 @@
-/* 高校向け教材の解説を参照した独自短問。設問・図版の転載ではありません。 */
+/* 提供教材の範囲に対応する独自短問。 */
 registerQuestionPack({
   "subject": "geography",
   "name": "地理",
@@ -30,7 +30,11 @@ registerQuestionPack({
       "basis": "地理4問1",
       "courses": [
         "地理探究"
-      ]
+      ],
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理4問1"
+      }
     },
     {
       "id": "geography-nov25-landforms-002",
@@ -55,7 +59,11 @@ registerQuestionPack({
       "basis": "地理4問1",
       "courses": [
         "地理探究"
-      ]
+      ],
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理4問1"
+      }
     },
     {
       "id": "geography-nov25-landforms-003",
@@ -80,7 +88,11 @@ registerQuestionPack({
       "basis": "地理4問2",
       "courses": [
         "地理探究"
-      ]
+      ],
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理4問2"
+      }
     },
     {
       "id": "geography-nov25-landforms-004",
@@ -105,7 +117,11 @@ registerQuestionPack({
       "basis": "地理4問2",
       "courses": [
         "地理探究"
-      ]
+      ],
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理4問2"
+      }
     },
     {
       "id": "geography-nov25-landforms-005",
@@ -130,7 +146,11 @@ registerQuestionPack({
       "basis": "地理4問3",
       "courses": [
         "地理探究"
-      ]
+      ],
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理4問3"
+      }
     },
     {
       "id": "geography-nov25-landforms-006",
@@ -155,7 +175,11 @@ registerQuestionPack({
       "basis": "地理4問3",
       "courses": [
         "地理探究"
-      ]
+      ],
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理4問3"
+      }
     },
     {
       "id": "geography-nov25-landforms-007",
@@ -180,7 +204,11 @@ registerQuestionPack({
       "basis": "地理4問4",
       "courses": [
         "地理探究"
-      ]
+      ],
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理4問4"
+      }
     },
     {
       "id": "geography-nov25-landforms-008",
@@ -205,7 +233,11 @@ registerQuestionPack({
       "basis": "地理4問4",
       "courses": [
         "地理探究"
-      ]
+      ],
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理4問4"
+      }
     },
     {
       "id": "geography-nov25-landforms-009",
@@ -230,7 +262,11 @@ registerQuestionPack({
       "basis": "地理4問5",
       "courses": [
         "地理探究"
-      ]
+      ],
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理4問5"
+      }
     },
     {
       "id": "geography-nov25-landforms-010",
@@ -255,7 +291,11 @@ registerQuestionPack({
       "basis": "地理4問5",
       "courses": [
         "地理探究"
-      ]
+      ],
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理4問5"
+      }
     },
     {
       "id": "geography-nov25-landforms-011",
@@ -280,7 +320,11 @@ registerQuestionPack({
       "basis": "地理4問5",
       "courses": [
         "地理探究"
-      ]
+      ],
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理4問5"
+      }
     },
     {
       "id": "geography-nov25-landforms-012",
@@ -305,7 +349,11 @@ registerQuestionPack({
       "basis": "地理4問5",
       "courses": [
         "地理探究"
-      ]
+      ],
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理4問5"
+      }
     },
     {
       "id": "geography-nov25-landforms-013",
@@ -330,7 +378,11 @@ registerQuestionPack({
       "basis": "地理4問6",
       "courses": [
         "地理探究"
-      ]
+      ],
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理4問6"
+      }
     },
     {
       "id": "geography-nov25-landforms-014",
@@ -358,7 +410,11 @@ registerQuestionPack({
       ],
       "source": "https://www.geography-lesson.com/glacial-karst-coral-landforms/",
       "sourceLabel": "高校地理の授業動画：氷河地形・カルスト地形・サンゴ礁",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理4問6"
+      }
     },
     {
       "id": "geography-nov25-landforms-015",
@@ -386,7 +442,11 @@ registerQuestionPack({
       ],
       "source": "https://www.geography-lesson.com/glacial-karst-coral-landforms/",
       "sourceLabel": "高校地理の授業動画：氷河地形・カルスト地形・サンゴ礁",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理4問6"
+      }
     },
     {
       "id": "geography-nov25-landforms-016",
@@ -415,7 +475,11 @@ registerQuestionPack({
       ],
       "source": "https://geo-hs.com/valleyplain/",
       "sourceLabel": "高校地理の部屋：谷底平野・河岸段丘",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理4問7の関連"
+      }
     },
     {
       "id": "geography-nov25-landforms-017",
@@ -444,7 +508,11 @@ registerQuestionPack({
       ],
       "source": "https://geo-hs.com/floodplain/",
       "sourceLabel": "高校地理の部屋：氾濫原",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理4問7の関連"
+      }
     },
     {
       "id": "geography-nov25-landforms-018",
@@ -473,7 +541,11 @@ registerQuestionPack({
       ],
       "source": "https://geo-hs.com/floodplain/",
       "sourceLabel": "高校地理の部屋：氾濫原",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理4問7の関連"
+      }
     },
     {
       "id": "geography-nov25-landforms-019",
@@ -502,7 +574,11 @@ registerQuestionPack({
       ],
       "source": "https://geo-hs.com/alluvialfan/",
       "sourceLabel": "高校地理の部屋：扇状地",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理4問7の関連"
+      }
     },
     {
       "id": "geography-nov25-landforms-020",
@@ -528,7 +604,11 @@ registerQuestionPack({
       "courses": [
         "地理総合",
         "地理探究"
-      ]
+      ],
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理4問7の関連"
+      }
     },
     {
       "id": "geography-nov25-landforms-021",
@@ -554,7 +634,11 @@ registerQuestionPack({
       "courses": [
         "地理総合",
         "地理探究"
-      ]
+      ],
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理4問7の関連"
+      }
     },
     {
       "id": "geography-nov25-landforms-022",
@@ -580,7 +664,11 @@ registerQuestionPack({
       "courses": [
         "地理総合",
         "地理探究"
-      ]
+      ],
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理4問7の関連"
+      }
     },
     {
       "id": "geography-nov25-landforms-023",
@@ -606,7 +694,11 @@ registerQuestionPack({
       "courses": [
         "地理総合",
         "地理探究"
-      ]
+      ],
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理4問7の関連"
+      }
     },
     {
       "id": "geography-nov25-landforms-024",
@@ -634,7 +726,11 @@ registerQuestionPack({
       ],
       "source": "https://geo-hs.com/alluvialfan/",
       "sourceLabel": "高校地理の部屋：扇状地",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理4問7の関連"
+      }
     },
     {
       "id": "geography-nov25-landforms-025",
@@ -662,7 +758,11 @@ registerQuestionPack({
       ],
       "source": "https://geo-hs.com/alluvialfan/",
       "sourceLabel": "高校地理の部屋：扇状地",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理4問7の関連"
+      }
     },
     {
       "id": "geography-nov25-landforms-026",
@@ -691,7 +791,11 @@ registerQuestionPack({
       ],
       "source": "https://geo-hs.com/floodplain/",
       "sourceLabel": "高校地理の部屋：氾濫原",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理4問7の関連"
+      }
     },
     {
       "id": "geography-nov25-landforms-027",
@@ -719,63 +823,11 @@ registerQuestionPack({
       ],
       "source": "https://www.geography-lesson.com/glacial-karst-coral-landforms/",
       "sourceLabel": "高校地理の授業動画：氷河地形・カルスト地形・サンゴ礁",
-      "sourceChecked": "2026-10-07"
-    },
-    {
-      "id": "geography-nov25-landforms-028",
-      "subject": "geography",
-      "c": 4,
-      "s": "教材で深める関連知識",
-      "n": 28,
-      "d": "B",
-      "type": "choice",
-      "q": "U字谷が沈水してできる、湾が細長く奥深い海岸は？",
-      "o": [
-        "フィヨルド",
-        "リアス海岸",
-        "砂州海岸",
-        "隆起サンゴ礁海岸"
-      ],
-      "a": [
-        1
-      ],
-      "e": "氷河が削ったU字谷の沈水がフィヨルド。河川が削った谷の沈水でできるリアス海岸と区別する。",
-      "knowledge": "related",
-      "basis": "地理4の関連",
-      "courses": [
-        "地理探究"
-      ],
-      "source": "https://www.geography-lesson.com/glacial-karst-coral-landforms/",
-      "sourceLabel": "高校地理の授業動画：氷河地形・カルスト地形・サンゴ礁",
-      "sourceChecked": "2026-10-07"
-    },
-    {
-      "id": "geography-nov25-landforms-029",
-      "subject": "geography",
-      "c": 4,
-      "s": "教材で深める関連知識",
-      "n": 29,
-      "d": "B",
-      "type": "choice",
-      "q": "カルスト地形の形成で重要な作用は？",
-      "o": [
-        "石灰岩の溶食",
-        "花こう岩の凝固",
-        "砂礫の扇状の堆積",
-        "海底の玄武岩の噴出"
-      ],
-      "a": [
-        1
-      ],
-      "e": "二酸化炭素を含む水によって石灰岩が溶かされ、凹地や鍾乳洞が形成される。",
-      "knowledge": "related",
-      "basis": "地理4の関連",
-      "courses": [
-        "地理探究"
-      ],
-      "source": "https://www.geography-lesson.com/glacial-karst-coral-landforms/",
-      "sourceLabel": "高校地理の授業動画：氷河地形・カルスト地形・サンゴ礁",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理4問6の関連"
+      }
     }
   ]
 });

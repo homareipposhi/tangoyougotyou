@@ -1,4 +1,4 @@
-/* 高校向け教材の解説を参照した独自短問。設問・図版の転載ではありません。 */
+/* 提供教材の範囲に対応する独自短問。 */
 registerQuestionPack({
   "subject": "geography",
   "name": "地理",
@@ -31,7 +31,11 @@ registerQuestionPack({
       "courses": [
         "地理総合",
         "地理探究"
-      ]
+      ],
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理2問1"
+      }
     },
     {
       "id": "geography-nov25-industry-002",
@@ -57,7 +61,11 @@ registerQuestionPack({
       "courses": [
         "地理総合",
         "地理探究"
-      ]
+      ],
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理2問1"
+      }
     },
     {
       "id": "geography-nov25-industry-003",
@@ -83,7 +91,11 @@ registerQuestionPack({
       "courses": [
         "地理総合",
         "地理探究"
-      ]
+      ],
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理2問1"
+      }
     },
     {
       "id": "geography-nov25-industry-004",
@@ -109,7 +121,11 @@ registerQuestionPack({
       "courses": [
         "地理総合",
         "地理探究"
-      ]
+      ],
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理2問2"
+      }
     },
     {
       "id": "geography-nov25-industry-005",
@@ -135,7 +151,11 @@ registerQuestionPack({
       "courses": [
         "地理総合",
         "地理探究"
-      ]
+      ],
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理2問3"
+      }
     },
     {
       "id": "geography-nov25-industry-006",
@@ -161,7 +181,11 @@ registerQuestionPack({
       "courses": [
         "地理総合",
         "地理探究"
-      ]
+      ],
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理2問3"
+      }
     },
     {
       "id": "geography-nov25-industry-007",
@@ -187,7 +211,11 @@ registerQuestionPack({
       "courses": [
         "地理総合",
         "地理探究"
-      ]
+      ],
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理2問3"
+      }
     },
     {
       "id": "geography-nov25-industry-008",
@@ -213,7 +241,11 @@ registerQuestionPack({
       "courses": [
         "地理総合",
         "地理探究"
-      ]
+      ],
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理2問3"
+      }
     },
     {
       "id": "geography-nov25-industry-009",
@@ -239,7 +271,11 @@ registerQuestionPack({
       "courses": [
         "地理総合",
         "地理探究"
-      ]
+      ],
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理2問3"
+      }
     },
     {
       "id": "geography-nov25-industry-010",
@@ -268,7 +304,11 @@ registerQuestionPack({
       ],
       "source": "https://chitonitose.com/geo/geo_lessons_trade.html",
       "sourceLabel": "ちとにとせ：世界の貿易",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理2問4"
+      }
     },
     {
       "id": "geography-nov25-industry-011",
@@ -294,7 +334,11 @@ registerQuestionPack({
       "courses": [
         "地理総合",
         "地理探究"
-      ]
+      ],
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理2問4"
+      }
     },
     {
       "id": "geography-nov25-industry-012",
@@ -320,7 +364,11 @@ registerQuestionPack({
       "courses": [
         "地理総合",
         "地理探究"
-      ]
+      ],
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理2問5の関連"
+      }
     },
     {
       "id": "geography-nov25-industry-013",
@@ -346,7 +394,11 @@ registerQuestionPack({
       "courses": [
         "地理総合",
         "地理探究"
-      ]
+      ],
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理2問5の関連"
+      }
     },
     {
       "id": "geography-nov25-industry-014",
@@ -372,7 +424,11 @@ registerQuestionPack({
       "courses": [
         "地理総合",
         "地理探究"
-      ]
+      ],
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理2問5の関連"
+      }
     },
     {
       "id": "geography-nov25-industry-015",
@@ -398,7 +454,11 @@ registerQuestionPack({
       "courses": [
         "地理総合",
         "地理探究"
-      ]
+      ],
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理2問5の関連"
+      }
     },
     {
       "id": "geography-nov25-industry-016",
@@ -424,7 +484,11 @@ registerQuestionPack({
       "courses": [
         "地理総合",
         "地理探究"
-      ]
+      ],
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理2問6"
+      }
     },
     {
       "id": "geography-nov25-industry-017",
@@ -450,7 +514,11 @@ registerQuestionPack({
       "courses": [
         "地理総合",
         "地理探究"
-      ]
+      ],
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理2問6"
+      }
     },
     {
       "id": "geography-nov25-industry-018",
@@ -476,7 +544,11 @@ registerQuestionPack({
       "courses": [
         "地理総合",
         "地理探究"
-      ]
+      ],
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理2問6"
+      }
     },
     {
       "id": "geography-nov25-industry-019",
@@ -502,7 +574,11 @@ registerQuestionPack({
       "courses": [
         "地理総合",
         "地理探究"
-      ]
+      ],
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理2問6"
+      }
     },
     {
       "id": "geography-nov25-industry-020",
@@ -528,7 +604,11 @@ registerQuestionPack({
       "courses": [
         "地理総合",
         "地理探究"
-      ]
+      ],
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理2問6"
+      }
     },
     {
       "id": "geography-nov25-industry-021",
@@ -554,7 +634,11 @@ registerQuestionPack({
       "courses": [
         "地理総合",
         "地理探究"
-      ]
+      ],
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理2問7の関連"
+      }
     },
     {
       "id": "geography-nov25-industry-022",
@@ -580,7 +664,11 @@ registerQuestionPack({
       "courses": [
         "地理総合",
         "地理探究"
-      ]
+      ],
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理2問7の関連"
+      }
     },
     {
       "id": "geography-nov25-industry-023",
@@ -606,7 +694,11 @@ registerQuestionPack({
       "courses": [
         "地理総合",
         "地理探究"
-      ]
+      ],
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理2問7の関連"
+      }
     },
     {
       "id": "geography-nov25-industry-024",
@@ -635,7 +727,11 @@ registerQuestionPack({
       ],
       "source": "https://chitonitose.com/geo/geo_lessons_trade.html",
       "sourceLabel": "ちとにとせ：世界の貿易",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理2問4の関連"
+      }
     },
     {
       "id": "geography-nov25-industry-025",
@@ -664,7 +760,11 @@ registerQuestionPack({
       ],
       "source": "https://chitonitose.com/geo/geo_lessons_trade.html",
       "sourceLabel": "ちとにとせ：世界の貿易",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理2問4の関連"
+      }
     }
   ]
 });

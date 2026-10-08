@@ -1,4 +1,4 @@
-/* 高校向け教材の解説を参照した独自短問。設問・図版の転載ではありません。 */
+/* 提供教材の範囲に対応する独自短問。 */
 registerQuestionPack({
   "subject": "earth",
   "name": "地学",
@@ -34,7 +34,16 @@ registerQuestionPack({
       ],
       "source": "https://tigakutasu.com/newtigakukisokyousitu-puretotekutonikusu/",
       "sourceLabel": "ちがくたす：プレートテクトニクス",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地学",
+        "section": "地学2問1・問2"
+      },
+      "material": {
+        "title": "特化講義「地学基礎」受講生保存用",
+        "page": 5,
+        "section": "第2講 プレートの境界"
+      }
     },
     {
       "id": "earth-nov25-tectonics-002",
@@ -63,7 +72,16 @@ registerQuestionPack({
       ],
       "source": "https://tigakutasu.com/newtigakukisokyousitupuretonokyoukai/",
       "sourceLabel": "ちがくたす：プレートの境界",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地学",
+        "section": "地学2問1・問2"
+      },
+      "material": {
+        "title": "特化講義「地学基礎」受講生保存用",
+        "page": 5,
+        "section": "第2講 プレートの境界"
+      }
     },
     {
       "id": "earth-nov25-tectonics-003",
@@ -92,7 +110,16 @@ registerQuestionPack({
       ],
       "source": "https://tigakutasu.com/newtigakukisokyousitupuretonokyoukai/",
       "sourceLabel": "ちがくたす：プレートの境界",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地学",
+        "section": "地学2問1・問2"
+      },
+      "material": {
+        "title": "特化講義「地学基礎」受講生保存用",
+        "page": 5,
+        "section": "第2講 プレートの境界"
+      }
     },
     {
       "id": "earth-nov25-tectonics-004",
@@ -121,7 +148,16 @@ registerQuestionPack({
       ],
       "source": "https://tigakutasu.com/newtigakukisokyousitupuretonokyoukai/",
       "sourceLabel": "ちがくたす：プレートの境界",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地学",
+        "section": "地学2問1・問2"
+      },
+      "material": {
+        "title": "特化講義「地学基礎」受講生保存用",
+        "page": 5,
+        "section": "第2講 プレートの境界"
+      }
     },
     {
       "id": "earth-nov25-tectonics-005",
@@ -150,7 +186,16 @@ registerQuestionPack({
       ],
       "source": "https://tigakutasu.com/newtigakukisokyousitupuretonokyoukai/",
       "sourceLabel": "ちがくたす：プレートの境界",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地学",
+        "section": "地学2問1・問2"
+      },
+      "material": {
+        "title": "特化講義「地学基礎」受講生保存用",
+        "page": 5,
+        "section": "第2講 プレートの境界"
+      }
     },
     {
       "id": "earth-nov25-tectonics-006",
@@ -176,7 +221,16 @@ registerQuestionPack({
       "courses": [
         "地学基礎",
         "地学"
-      ]
+      ],
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地学",
+        "section": "地学2問3・問4"
+      },
+      "material": {
+        "title": "特化講義「地学基礎」受講生保存用",
+        "page": 5,
+        "section": "第2講 プレートの境界"
+      }
     },
     {
       "id": "earth-nov25-tectonics-007",
@@ -202,7 +256,16 @@ registerQuestionPack({
       "courses": [
         "地学基礎",
         "地学"
-      ]
+      ],
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地学",
+        "section": "地学2問3・問4"
+      },
+      "material": {
+        "title": "特化講義「地学基礎」受講生保存用",
+        "page": 5,
+        "section": "第2講 プレートの境界"
+      }
     },
     {
       "id": "earth-nov25-tectonics-008",
@@ -228,7 +291,16 @@ registerQuestionPack({
       "courses": [
         "地学基礎",
         "地学"
-      ]
+      ],
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地学",
+        "section": "地学2問3・問4"
+      },
+      "material": {
+        "title": "特化講義「地学基礎」受講生保存用",
+        "page": 6,
+        "section": "第2講 ホットスポット"
+      }
     },
     {
       "id": "earth-nov25-tectonics-009",
@@ -254,7 +326,16 @@ registerQuestionPack({
       "courses": [
         "地学基礎",
         "地学"
-      ]
+      ],
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地学",
+        "section": "地学2問3・問4"
+      },
+      "material": {
+        "title": "特化講義「地学基礎」受講生保存用",
+        "page": 6,
+        "section": "第2講 ホットスポット"
+      }
     },
     {
       "id": "earth-nov25-tectonics-010",
@@ -280,7 +361,16 @@ registerQuestionPack({
       "courses": [
         "地学基礎",
         "地学"
-      ]
+      ],
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地学",
+        "section": "地学2問3・問4"
+      },
+      "material": {
+        "title": "特化講義「地学基礎」受講生保存用",
+        "page": 6,
+        "section": "第2講 ホットスポット"
+      }
     },
     {
       "id": "earth-nov25-tectonics-011",
@@ -309,7 +399,16 @@ registerQuestionPack({
       ],
       "source": "https://tigakutasu.com/newtigakukisokyousitu-zisin/",
       "sourceLabel": "ちがくたす：地震",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地学",
+        "section": "地学2問5・問6"
+      },
+      "material": {
+        "title": "特化講義「地学基礎」受講生保存用",
+        "page": 8,
+        "section": "第3講 地震波と震源"
+      }
     },
     {
       "id": "earth-nov25-tectonics-012",
@@ -333,11 +432,21 @@ registerQuestionPack({
       "knowledge": "required",
       "basis": "地学2問5・問6",
       "courses": [
+        "地学基礎",
         "地学"
       ],
       "source": "https://tigakutasu.com/newtigakukisokyousitu-zisin/",
       "sourceLabel": "ちがくたす：地震",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地学",
+        "section": "地学2問5・問6"
+      },
+      "material": {
+        "title": "特化講義「地学基礎」受講生保存用",
+        "page": 8,
+        "section": "第3講 地震波と震源"
+      }
     },
     {
       "id": "earth-nov25-tectonics-013",
@@ -361,11 +470,21 @@ registerQuestionPack({
       "knowledge": "required",
       "basis": "地学2問5・問6",
       "courses": [
+        "地学基礎",
         "地学"
       ],
       "source": "https://tigakutasu.com/newtigakukisokyousitu-zisin/",
       "sourceLabel": "ちがくたす：地震",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地学",
+        "section": "地学2問5・問6"
+      },
+      "material": {
+        "title": "特化講義「地学基礎」受講生保存用",
+        "page": 8,
+        "section": "第3講 地震波と震源"
+      }
     },
     {
       "id": "earth-nov25-tectonics-014",
@@ -389,11 +508,21 @@ registerQuestionPack({
       "knowledge": "required",
       "basis": "地学2問5・問6",
       "courses": [
+        "地学基礎",
         "地学"
       ],
       "source": "https://tigakutasu.com/newtigakukisokyousitu-zisin/",
       "sourceLabel": "ちがくたす：地震",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地学",
+        "section": "地学2問5・問6"
+      },
+      "material": {
+        "title": "特化講義「地学基礎」受講生保存用",
+        "page": 8,
+        "section": "第3講 地震波と震源"
+      }
     },
     {
       "id": "earth-nov25-tectonics-015",
@@ -417,11 +546,21 @@ registerQuestionPack({
       "knowledge": "required",
       "basis": "地学2問5・問6",
       "courses": [
+        "地学基礎",
         "地学"
       ],
       "source": "https://tigakutasu.com/newtigakukisokyousitu-zisin/",
       "sourceLabel": "ちがくたす：地震",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地学",
+        "section": "地学2問5・問6"
+      },
+      "material": {
+        "title": "特化講義「地学基礎」受講生保存用",
+        "page": 8,
+        "section": "第3講 地震波と震源"
+      }
     },
     {
       "id": "earth-nov25-tectonics-016",
@@ -445,11 +584,21 @@ registerQuestionPack({
       "knowledge": "required",
       "basis": "地学2問7",
       "courses": [
+        "地学基礎",
         "地学"
       ],
       "source": "https://tigakutasu.com/newtigakukisokyousitu-zisin/",
       "sourceLabel": "ちがくたす：地震",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地学",
+        "section": "地学2問7"
+      },
+      "material": {
+        "title": "特化講義「地学基礎」受講生保存用",
+        "page": 8,
+        "section": "第3講 地震波と震源"
+      }
     },
     {
       "id": "earth-nov25-tectonics-017",
@@ -473,8 +622,18 @@ registerQuestionPack({
       "knowledge": "required",
       "basis": "地学2問7",
       "courses": [
+        "地学基礎",
         "地学"
-      ]
+      ],
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地学",
+        "section": "地学2問7"
+      },
+      "material": {
+        "title": "特化講義「地学基礎」受講生保存用",
+        "page": 8,
+        "section": "第3講 地震波と震源"
+      }
     },
     {
       "id": "earth-nov25-tectonics-018",
@@ -498,8 +657,18 @@ registerQuestionPack({
       "knowledge": "required",
       "basis": "地学2問7",
       "courses": [
+        "地学基礎",
         "地学"
-      ]
+      ],
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地学",
+        "section": "地学2問7"
+      },
+      "material": {
+        "title": "特化講義「地学基礎」受講生保存用",
+        "page": 8,
+        "section": "第3講 地震波と震源"
+      }
     },
     {
       "id": "earth-nov25-tectonics-019",
@@ -523,8 +692,18 @@ registerQuestionPack({
       "knowledge": "required",
       "basis": "地学2問7",
       "courses": [
+        "地学基礎",
         "地学"
-      ]
+      ],
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地学",
+        "section": "地学2問7"
+      },
+      "material": {
+        "title": "特化講義「地学基礎」受講生保存用",
+        "page": 8,
+        "section": "第3講 地震波と震源"
+      }
     },
     {
       "id": "earth-nov25-tectonics-020",
@@ -548,8 +727,18 @@ registerQuestionPack({
       "knowledge": "required",
       "basis": "地学2問7",
       "courses": [
+        "地学基礎",
         "地学"
-      ]
+      ],
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地学",
+        "section": "地学2問7"
+      },
+      "material": {
+        "title": "特化講義「地学基礎」受講生保存用",
+        "page": 8,
+        "section": "第3講 地震波と震源"
+      }
     },
     {
       "id": "earth-nov25-tectonics-021",
@@ -578,7 +767,16 @@ registerQuestionPack({
       ],
       "source": "https://tigakutasu.com/newtigakukisokyousitu-zisin/",
       "sourceLabel": "ちがくたす：地震",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地学",
+        "section": "地学2問5・問6の関連"
+      },
+      "material": {
+        "title": "特化講義「地学基礎」受講生保存用",
+        "page": 8,
+        "section": "第3講 地震波と震源"
+      }
     },
     {
       "id": "earth-nov25-tectonics-022",
@@ -602,11 +800,21 @@ registerQuestionPack({
       "knowledge": "related",
       "basis": "地学2問5・問6の関連",
       "courses": [
+        "地学基礎",
         "地学"
       ],
       "source": "https://tigakutasu.com/newtigakukisokyousitu-zisin/",
       "sourceLabel": "ちがくたす：地震",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地学",
+        "section": "地学2問5・問6の関連"
+      },
+      "material": {
+        "title": "特化講義「地学基礎」受講生保存用",
+        "page": 8,
+        "section": "第3講 地震波と震源"
+      }
     }
   ]
 });

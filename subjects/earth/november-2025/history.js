@@ -1,4 +1,4 @@
-/* 高校向け教材の解説を参照した独自短問。設問・図版の転載ではありません。 */
+/* 提供教材の範囲に対応する独自短問。 */
 registerQuestionPack({
   "subject": "earth",
   "name": "地学",
@@ -29,8 +29,18 @@ registerQuestionPack({
       "knowledge": "required",
       "basis": "地学4問1",
       "courses": [
+        "地学基礎",
         "地学"
-      ]
+      ],
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地学",
+        "section": "地学4問1"
+      },
+      "material": {
+        "title": "特化講義「地学基礎」受講生保存用",
+        "page": 16,
+        "section": "第6講 地球の歴史"
+      }
     },
     {
       "id": "earth-nov25-history-002",
@@ -59,7 +69,16 @@ registerQuestionPack({
       ],
       "source": "https://tigakutasu.com/kisokyousitukenseidai/",
       "sourceLabel": "ちがくたす：顕生代",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地学",
+        "section": "地学4問1"
+      },
+      "material": {
+        "title": "特化講義「地学基礎」受講生保存用",
+        "page": 16,
+        "section": "第6講 地球の歴史"
+      }
     },
     {
       "id": "earth-nov25-history-003",
@@ -83,8 +102,18 @@ registerQuestionPack({
       "knowledge": "required",
       "basis": "地学4問1",
       "courses": [
+        "地学基礎",
         "地学"
-      ]
+      ],
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地学",
+        "section": "地学4問1"
+      },
+      "material": {
+        "title": "特化講義「地学基礎」受講生保存用",
+        "page": 16,
+        "section": "第6講 地球の歴史"
+      }
     },
     {
       "id": "earth-nov25-history-004",
@@ -109,7 +138,11 @@ registerQuestionPack({
       "basis": "地学4問1",
       "courses": [
         "地学"
-      ]
+      ],
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地学",
+        "section": "地学4問1"
+      }
     },
     {
       "id": "earth-nov25-history-005",
@@ -138,7 +171,16 @@ registerQuestionPack({
       ],
       "source": "https://tigakutasu.com/kisokyousitukaseki/",
       "sourceLabel": "ちがくたす：化石",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地学",
+        "section": "地学4問2"
+      },
+      "material": {
+        "title": "特化講義「地学基礎」受講生保存用",
+        "page": 15,
+        "section": "第5講 化石"
+      }
     },
     {
       "id": "earth-nov25-history-006",
@@ -162,12 +204,15 @@ registerQuestionPack({
       "knowledge": "required",
       "basis": "地学4問2",
       "courses": [
-        "地学基礎",
         "地学"
       ],
       "source": "https://tigakutasu.com/kisokyousitukenseidai/",
       "sourceLabel": "ちがくたす：顕生代",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地学",
+        "section": "地学4問2"
+      }
     },
     {
       "id": "earth-nov25-history-007",
@@ -191,12 +236,15 @@ registerQuestionPack({
       "knowledge": "required",
       "basis": "地学4問2",
       "courses": [
-        "地学基礎",
         "地学"
       ],
       "source": "https://tigakutasu.com/kisokyousitukenseidai/",
       "sourceLabel": "ちがくたす：顕生代",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地学",
+        "section": "地学4問2"
+      }
     },
     {
       "id": "earth-nov25-history-008",
@@ -220,9 +268,12 @@ registerQuestionPack({
       "knowledge": "required",
       "basis": "地学4問2",
       "courses": [
-        "地学基礎",
         "地学"
-      ]
+      ],
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地学",
+        "section": "地学4問2"
+      }
     },
     {
       "id": "earth-nov25-history-009",
@@ -251,7 +302,16 @@ registerQuestionPack({
       ],
       "source": "https://tigakutasu.com/kisokyousitukenseidai/",
       "sourceLabel": "ちがくたす：顕生代",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地学",
+        "section": "地学4問2"
+      },
+      "material": {
+        "title": "特化講義「地学基礎」受講生保存用",
+        "page": 17,
+        "section": "第6講 地球史"
+      }
     },
     {
       "id": "earth-nov25-history-010",
@@ -280,7 +340,16 @@ registerQuestionPack({
       ],
       "source": "https://tigakutasu.com/kisokyousitukaseki/",
       "sourceLabel": "ちがくたす：化石",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地学",
+        "section": "地学4問2"
+      },
+      "material": {
+        "title": "特化講義「地学基礎」受講生保存用",
+        "page": 15,
+        "section": "第5講 化石"
+      }
     },
     {
       "id": "earth-nov25-history-011",
@@ -304,9 +373,12 @@ registerQuestionPack({
       "knowledge": "required",
       "basis": "地学4問3・問4",
       "courses": [
-        "地学基礎",
         "地学"
-      ]
+      ],
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地学",
+        "section": "地学4問3・問4"
+      }
     },
     {
       "id": "earth-nov25-history-012",
@@ -330,9 +402,12 @@ registerQuestionPack({
       "knowledge": "required",
       "basis": "地学4問3・問4",
       "courses": [
-        "地学基礎",
         "地学"
-      ]
+      ],
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地学",
+        "section": "地学4問3・問4"
+      }
     },
     {
       "id": "earth-nov25-history-013",
@@ -356,8 +431,18 @@ registerQuestionPack({
       "knowledge": "required",
       "basis": "地学4問3・問4",
       "courses": [
+        "地学基礎",
         "地学"
-      ]
+      ],
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地学",
+        "section": "地学4問3・問4"
+      },
+      "material": {
+        "title": "特化講義「地学基礎」受講生保存用",
+        "page": 16,
+        "section": "第6講 地球の歴史"
+      }
     },
     {
       "id": "earth-nov25-history-014",
@@ -383,7 +468,16 @@ registerQuestionPack({
       "courses": [
         "地学基礎",
         "地学"
-      ]
+      ],
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地学",
+        "section": "地学4問3・問4"
+      },
+      "material": {
+        "title": "特化講義「地学基礎」受講生保存用",
+        "page": 16,
+        "section": "第6講 地球の歴史"
+      }
     },
     {
       "id": "earth-nov25-history-015",
@@ -407,9 +501,12 @@ registerQuestionPack({
       "knowledge": "required",
       "basis": "地学4問3・問4",
       "courses": [
-        "地学基礎",
         "地学"
-      ]
+      ],
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地学",
+        "section": "地学4問3・問4"
+      }
     },
     {
       "id": "earth-nov25-history-016",
@@ -433,9 +530,12 @@ registerQuestionPack({
       "knowledge": "required",
       "basis": "地学4問3・問4",
       "courses": [
-        "地学基礎",
         "地学"
-      ]
+      ],
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地学",
+        "section": "地学4問3・問4"
+      }
     },
     {
       "id": "earth-nov25-history-017",
@@ -464,7 +564,16 @@ registerQuestionPack({
       ],
       "source": "https://tigakutasu.com/kisokyousitukaseki/",
       "sourceLabel": "ちがくたす：化石",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地学",
+        "section": "地学4問2の関連"
+      },
+      "material": {
+        "title": "特化講義「地学基礎」受講生保存用",
+        "page": 15,
+        "section": "第5講 化石"
+      }
     },
     {
       "id": "earth-nov25-history-018",
@@ -493,7 +602,16 @@ registerQuestionPack({
       ],
       "source": "https://tigakutasu.com/kisokyousitukenseidai/",
       "sourceLabel": "ちがくたす：顕生代",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地学",
+        "section": "地学4問1の関連"
+      },
+      "material": {
+        "title": "特化講義「地学基礎」受講生保存用",
+        "page": 17,
+        "section": "第6講 地球史"
+      }
     }
   ]
 });

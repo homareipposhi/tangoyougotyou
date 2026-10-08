@@ -1,4 +1,4 @@
-/* 高校向け教材の解説を参照した独自短問。設問・図版の転載ではありません。 */
+/* 提供教材の範囲に対応する独自短問。 */
 registerQuestionPack({
   "subject": "earth",
   "name": "地学",
@@ -34,7 +34,16 @@ registerQuestionPack({
       ],
       "source": "https://www.s-yamaga.jp/nanimono/uchu/wakusei-01.htm",
       "sourceLabel": "山賀進の教材：惑星",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地学",
+        "section": "地学3問1・問2"
+      },
+      "material": {
+        "title": "特化講義「地学基礎」受講生保存用",
+        "page": 27,
+        "section": "第10講 太陽系の惑星"
+      }
     },
     {
       "id": "earth-nov25-planets-002",
@@ -60,7 +69,16 @@ registerQuestionPack({
       "courses": [
         "地学基礎",
         "地学"
-      ]
+      ],
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地学",
+        "section": "地学3問1・問2"
+      },
+      "material": {
+        "title": "特化講義「地学基礎」受講生保存用",
+        "page": 27,
+        "section": "第10講 太陽系の惑星"
+      }
     },
     {
       "id": "earth-nov25-planets-003",
@@ -85,7 +103,11 @@ registerQuestionPack({
       "basis": "地学3問1・問2",
       "courses": [
         "地学"
-      ]
+      ],
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地学",
+        "section": "地学3問1・問2"
+      }
     },
     {
       "id": "earth-nov25-planets-004",
@@ -111,7 +133,16 @@ registerQuestionPack({
       "courses": [
         "地学基礎",
         "地学"
-      ]
+      ],
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地学",
+        "section": "地学3問1・問2"
+      },
+      "material": {
+        "title": "特化講義「地学基礎」受講生保存用",
+        "page": 27,
+        "section": "第10講 太陽系の惑星"
+      }
     },
     {
       "id": "earth-nov25-planets-005",
@@ -137,7 +168,16 @@ registerQuestionPack({
       "courses": [
         "地学基礎",
         "地学"
-      ]
+      ],
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地学",
+        "section": "地学3問1・問2"
+      },
+      "material": {
+        "title": "特化講義「地学基礎」受講生保存用",
+        "page": 30,
+        "section": "第12講 温室効果"
+      }
     },
     {
       "id": "earth-nov25-planets-006",
@@ -166,7 +206,16 @@ registerQuestionPack({
       ],
       "source": "https://www.s-yamaga.jp/nanimono/uchu/wakusei-01.htm",
       "sourceLabel": "山賀進の教材：惑星",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地学",
+        "section": "地学3問3〜問6"
+      },
+      "material": {
+        "title": "特化講義「地学基礎」受講生保存用",
+        "page": 27,
+        "section": "第10講 太陽系の惑星"
+      }
     },
     {
       "id": "earth-nov25-planets-007",
@@ -190,12 +239,15 @@ registerQuestionPack({
       "knowledge": "required",
       "basis": "地学3問3〜問6",
       "courses": [
-        "地学基礎",
         "地学"
       ],
       "source": "https://www.s-yamaga.jp/nanimono/uchu/wakusei-06.htm",
       "sourceLabel": "山賀進の教材：土星",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地学",
+        "section": "地学3問3〜問6"
+      }
     },
     {
       "id": "earth-nov25-planets-008",
@@ -224,7 +276,16 @@ registerQuestionPack({
       ],
       "source": "https://www.s-yamaga.jp/nanimono/uchu/wakusei-05.htm",
       "sourceLabel": "山賀進の教材：木星",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地学",
+        "section": "地学3問3〜問6"
+      },
+      "material": {
+        "title": "特化講義「地学基礎」受講生保存用",
+        "page": 27,
+        "section": "第10講 太陽系の惑星"
+      }
     },
     {
       "id": "earth-nov25-planets-009",
@@ -248,12 +309,15 @@ registerQuestionPack({
       "knowledge": "required",
       "basis": "地学3問3〜問6",
       "courses": [
-        "地学基礎",
         "地学"
       ],
       "source": "https://www.s-yamaga.jp/nanimono/uchu/wakusei-01.htm",
       "sourceLabel": "山賀進の教材：惑星",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地学",
+        "section": "地学3問3〜問6"
+      }
     },
     {
       "id": "earth-nov25-planets-010",
@@ -277,11 +341,21 @@ registerQuestionPack({
       "knowledge": "required",
       "basis": "地学3問3〜問6",
       "courses": [
+        "地学基礎",
         "地学"
       ],
       "source": "https://www.s-yamaga.jp/nanimono/uchu/wakusei-01.htm",
       "sourceLabel": "山賀進の教材：惑星",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地学",
+        "section": "地学3問3〜問6"
+      },
+      "material": {
+        "title": "特化講義「地学基礎」受講生保存用",
+        "page": 27,
+        "section": "第10講 太陽系の惑星"
+      }
     },
     {
       "id": "earth-nov25-planets-011",
@@ -305,8 +379,18 @@ registerQuestionPack({
       "knowledge": "required",
       "basis": "地学3問3〜問6",
       "courses": [
+        "地学基礎",
         "地学"
-      ]
+      ],
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地学",
+        "section": "地学3問3〜問6"
+      },
+      "material": {
+        "title": "特化講義「地学基礎」受講生保存用",
+        "page": 28,
+        "section": "第10講 太陽系の小天体"
+      }
     },
     {
       "id": "earth-nov25-planets-012",
@@ -330,12 +414,15 @@ registerQuestionPack({
       "knowledge": "required",
       "basis": "地学3問3〜問6",
       "courses": [
-        "地学基礎",
         "地学"
       ],
       "source": "https://www.s-yamaga.jp/nanimono/uchu/wakusei-01.htm",
       "sourceLabel": "山賀進の教材：惑星",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地学",
+        "section": "地学3問3〜問6"
+      }
     },
     {
       "id": "earth-nov25-planets-013",
@@ -364,7 +451,16 @@ registerQuestionPack({
       ],
       "source": "https://www.s-yamaga.jp/nanimono/uchu/wakusei-01.htm",
       "sourceLabel": "山賀進の教材：惑星",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地学",
+        "section": "地学3の関連"
+      },
+      "material": {
+        "title": "特化講義「地学基礎」受講生保存用",
+        "page": 27,
+        "section": "第10講 太陽系の惑星"
+      }
     },
     {
       "id": "earth-nov25-planets-014",
@@ -388,9 +484,12 @@ registerQuestionPack({
       "knowledge": "related",
       "basis": "地学3の関連",
       "courses": [
-        "地学基礎",
         "地学"
-      ]
+      ],
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地学",
+        "section": "地学3の関連"
+      }
     },
     {
       "id": "earth-nov25-planets-015",
@@ -415,35 +514,11 @@ registerQuestionPack({
       "basis": "地学3の関連",
       "courses": [
         "地学"
-      ]
-    },
-    {
-      "id": "earth-nov25-planets-016",
-      "subject": "earth",
-      "c": 8,
-      "s": "教材で深める関連知識",
-      "n": 16,
-      "d": "B",
-      "type": "choice",
-      "q": "内惑星である金星の見かけの位置の特徴は？",
-      "o": [
-        "太陽から大きく離れず、真夜中の南中はしない",
-        "太陽と必ず180°離れる",
-        "毎日真夜中に南中する",
-        "どの季節も一晩中見える"
       ],
-      "a": [
-        1
-      ],
-      "e": "地球より内側の軌道を回るため離角には上限があり、明け方か夕方に見える。",
-      "knowledge": "related",
-      "basis": "地学3の関連",
-      "courses": [
-        "地学"
-      ],
-      "source": "https://www.s-yamaga.jp/nanimono/uchu/wakusei-01.htm",
-      "sourceLabel": "山賀進の教材：惑星",
-      "sourceChecked": "2026-10-07"
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地学",
+        "section": "地学3の関連"
+      }
     },
     {
       "id": "earth-nov25-planets-017",
@@ -472,7 +547,16 @@ registerQuestionPack({
       ],
       "source": "https://www.s-yamaga.jp/nanimono/uchu/wakusei-06.htm",
       "sourceLabel": "山賀進の教材：土星",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地学",
+        "section": "地学3問3〜問6の関連"
+      },
+      "material": {
+        "title": "特化講義「地学基礎」受講生保存用",
+        "page": 27,
+        "section": "第10講 太陽系の惑星"
+      }
     }
   ]
 });

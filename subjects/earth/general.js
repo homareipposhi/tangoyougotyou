@@ -39,13 +39,13 @@ const EARTH_Q = [/* ---------- 地学 ---------- */
    q:"黒潮は日本の南岸付近を流れる暖流である。",a:true,
    e:"黒潮は北太平洋西部を北上する代表的な暖流。"},
 
-  {id:"ear-9",subject:"earth",c:4,s:"恒星",n:9,d:"A",type:"choice",
-   q:"恒星の表面温度が高いほど、一般に何色寄りに見えるか。",
-   o:["赤","青白","緑","黒"],a:[2],
-   e:"高温の恒星ほど青白く、低温の恒星ほど赤く見える。"},
+  {id:"earth-lecture-absolute-magnitude",subject:"earth",c:4,s:"恒星",n:9,d:"A",type:"choice",
+   q:"恒星の絶対等級は、どの距離に置いたときの明るさで定義するか。",
+   o:["1天文単位","10パーセク","1光年","100パーセク"],a:[2],
+   e:"絶対等級は恒星を10パーセクの距離に置いたときの等級。距離による見かけの違いをそろえる。"},
 
   {id:"ear-10",subject:"earth",c:4,s:"太陽系",n:10,d:"A",type:"choice",
    q:"太陽系で最も大きい惑星を選びなさい。",
    o:["地球","木星","土星","海王星"],a:[2],
    e:"太陽系最大の惑星は木星。"}];
-registerQuestionPack({subject:"earth",name:"地学",chapters:{1:"地球",2:"地質・地史",3:"大気・海洋",4:"宇宙"},questions:EARTH_Q});
+registerQuestionPack({subject:"earth",name:"地学",chapters:{1:"地球",2:"地質・地史",3:"大気・海洋",4:"宇宙"},questions:EARTH_Q.map(q=>({...q,courses:["地学基礎"],material:{title:"特化講義「地学基礎」受講生保存用",page:({1:4,2:8,3:5,4:14,5:15,6:18,7:20,8:22,9:29,10:27})[(q.id==="earth-lecture-absolute-magnitude"?9:Number(q.id.split("-")[1]))],section:"講義PDFの基礎事項"}}))});

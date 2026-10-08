@@ -1,4 +1,4 @@
-/* 高校向け教材の解説を参照した独自短問。設問・図版の転載ではありません。 */
+/* 提供教材の範囲に対応する独自短問。 */
 registerQuestionPack({
   "subject": "geography",
   "name": "地理",
@@ -33,7 +33,11 @@ registerQuestionPack({
       ],
       "source": "https://www.geography-lesson.com/climate-elements-factors/",
       "sourceLabel": "高校地理の授業動画：気候要素と気候因子",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理5問1"
+      }
     },
     {
       "id": "geography-nov25-climate-002",
@@ -58,7 +62,11 @@ registerQuestionPack({
       "basis": "地理5問1",
       "courses": [
         "地理探究"
-      ]
+      ],
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理5問1"
+      }
     },
     {
       "id": "geography-nov25-climate-003",
@@ -86,7 +94,11 @@ registerQuestionPack({
       ],
       "source": "https://www.geography-lesson.com/climate-elements-factors/",
       "sourceLabel": "高校地理の授業動画：気候要素と気候因子",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理5問2"
+      }
     },
     {
       "id": "geography-nov25-climate-004",
@@ -114,7 +126,11 @@ registerQuestionPack({
       ],
       "source": "https://www.geography-lesson.com/climate-elements-factors/",
       "sourceLabel": "高校地理の授業動画：気候要素と気候因子",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理5問2"
+      }
     },
     {
       "id": "geography-nov25-climate-005",
@@ -142,7 +158,11 @@ registerQuestionPack({
       ],
       "source": "https://www.geography-lesson.com/climate-elements-factors/",
       "sourceLabel": "高校地理の授業動画：気候要素と気候因子",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理5問2"
+      }
     },
     {
       "id": "geography-nov25-climate-006",
@@ -170,7 +190,11 @@ registerQuestionPack({
       ],
       "source": "https://www.geography-lesson.com/climate-elements-factors/",
       "sourceLabel": "高校地理の授業動画：気候要素と気候因子",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理5問3の関連"
+      }
     },
     {
       "id": "geography-nov25-climate-007",
@@ -195,7 +219,11 @@ registerQuestionPack({
       "basis": "地理5問3の関連",
       "courses": [
         "地理探究"
-      ]
+      ],
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理5問3の関連"
+      }
     },
     {
       "id": "geography-nov25-climate-008",
@@ -220,7 +248,11 @@ registerQuestionPack({
       "basis": "地理5問3の関連",
       "courses": [
         "地理探究"
-      ]
+      ],
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理5問3の関連"
+      }
     },
     {
       "id": "geography-nov25-climate-009",
@@ -245,7 +277,11 @@ registerQuestionPack({
       "basis": "地理5問3の関連",
       "courses": [
         "地理探究"
-      ]
+      ],
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理5問3の関連"
+      }
     },
     {
       "id": "geography-nov25-climate-010",
@@ -270,7 +306,11 @@ registerQuestionPack({
       "basis": "地理5問3の関連",
       "courses": [
         "地理探究"
-      ]
+      ],
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理5問3の関連"
+      }
     },
     {
       "id": "geography-nov25-climate-011",
@@ -295,7 +335,11 @@ registerQuestionPack({
       "basis": "地理5問4",
       "courses": [
         "地理探究"
-      ]
+      ],
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理5問4"
+      }
     },
     {
       "id": "geography-nov25-climate-012",
@@ -320,7 +364,11 @@ registerQuestionPack({
       "basis": "地理5問4",
       "courses": [
         "地理探究"
-      ]
+      ],
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理5問4"
+      }
     },
     {
       "id": "geography-nov25-climate-013",
@@ -348,7 +396,11 @@ registerQuestionPack({
       ],
       "source": "https://www.geography-lesson.com/atmospheric-circulation/",
       "sourceLabel": "高校地理の授業動画：大気大循環",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理5問5の関連"
+      }
     },
     {
       "id": "geography-nov25-climate-014",
@@ -376,7 +428,11 @@ registerQuestionPack({
       ],
       "source": "https://www.geography-lesson.com/atmospheric-circulation/",
       "sourceLabel": "高校地理の授業動画：大気大循環",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理5問5の関連"
+      }
     },
     {
       "id": "geography-nov25-climate-015",
@@ -401,7 +457,11 @@ registerQuestionPack({
       "basis": "地理5問5の関連",
       "courses": [
         "地理探究"
-      ]
+      ],
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理5問5の関連"
+      }
     },
     {
       "id": "geography-nov25-climate-016",
@@ -426,7 +486,11 @@ registerQuestionPack({
       "basis": "地理5問5の関連",
       "courses": [
         "地理探究"
-      ]
+      ],
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理5問5の関連"
+      }
     },
     {
       "id": "geography-nov25-climate-017",
@@ -451,7 +515,11 @@ registerQuestionPack({
       "basis": "地理5問5の関連",
       "courses": [
         "地理探究"
-      ]
+      ],
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理5問5の関連"
+      }
     },
     {
       "id": "geography-nov25-climate-018",
@@ -477,7 +545,11 @@ registerQuestionPack({
       "courses": [
         "地理総合",
         "地理探究"
-      ]
+      ],
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理5問6の関連"
+      }
     },
     {
       "id": "geography-nov25-climate-019",
@@ -503,7 +575,11 @@ registerQuestionPack({
       "courses": [
         "地理総合",
         "地理探究"
-      ]
+      ],
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理5問6の関連"
+      }
     },
     {
       "id": "geography-nov25-climate-020",
@@ -529,7 +605,11 @@ registerQuestionPack({
       "courses": [
         "地理総合",
         "地理探究"
-      ]
+      ],
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理5問6の関連"
+      }
     },
     {
       "id": "geography-nov25-climate-021",
@@ -555,7 +635,11 @@ registerQuestionPack({
       "courses": [
         "地理総合",
         "地理探究"
-      ]
+      ],
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理5問6の関連"
+      }
     },
     {
       "id": "geography-nov25-climate-022",
@@ -581,7 +665,11 @@ registerQuestionPack({
       "courses": [
         "地理総合",
         "地理探究"
-      ]
+      ],
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理5問6の関連"
+      }
     },
     {
       "id": "geography-nov25-climate-023",
@@ -607,7 +695,11 @@ registerQuestionPack({
       "courses": [
         "地理総合",
         "地理探究"
-      ]
+      ],
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理5問6の関連"
+      }
     },
     {
       "id": "geography-nov25-climate-024",
@@ -633,7 +725,11 @@ registerQuestionPack({
       "courses": [
         "地理総合",
         "地理探究"
-      ]
+      ],
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理5問6の関連"
+      }
     },
     {
       "id": "geography-nov25-climate-025",
@@ -659,7 +755,11 @@ registerQuestionPack({
       "courses": [
         "地理総合",
         "地理探究"
-      ]
+      ],
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理5問6の関連"
+      }
     },
     {
       "id": "geography-nov25-climate-026",
@@ -687,7 +787,11 @@ registerQuestionPack({
       ],
       "source": "https://www.geography-lesson.com/ocean-currents-climate/",
       "sourceLabel": "高校地理の授業動画：海流と気候",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理5問7の関連"
+      }
     },
     {
       "id": "geography-nov25-climate-027",
@@ -715,7 +819,11 @@ registerQuestionPack({
       ],
       "source": "https://www.geography-lesson.com/ocean-currents-climate/",
       "sourceLabel": "高校地理の授業動画：海流と気候",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理5問7の関連"
+      }
     },
     {
       "id": "geography-nov25-climate-028",
@@ -743,7 +851,11 @@ registerQuestionPack({
       ],
       "source": "https://www.geography-lesson.com/ocean-currents-climate/",
       "sourceLabel": "高校地理の授業動画：海流と気候",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理5問7の関連"
+      }
     },
     {
       "id": "geography-nov25-climate-029",
@@ -771,7 +883,11 @@ registerQuestionPack({
       ],
       "source": "https://www.geography-lesson.com/ocean-currents-climate/",
       "sourceLabel": "高校地理の授業動画：海流と気候",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理5問7の関連"
+      }
     },
     {
       "id": "geography-nov25-climate-030",
@@ -796,7 +912,11 @@ registerQuestionPack({
       "basis": "地理5問7の関連",
       "courses": [
         "地理探究"
-      ]
+      ],
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理5問7の関連"
+      }
     },
     {
       "id": "geography-nov25-climate-031",
@@ -821,7 +941,11 @@ registerQuestionPack({
       "basis": "地理5問7の関連",
       "courses": [
         "地理探究"
-      ]
+      ],
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理5問7の関連"
+      }
     },
     {
       "id": "geography-nov25-climate-032",
@@ -849,7 +973,11 @@ registerQuestionPack({
       ],
       "source": "https://www.geography-lesson.com/climate-elements-factors/",
       "sourceLabel": "高校地理の授業動画：気候要素と気候因子",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理5問1〜問3の関連"
+      }
     },
     {
       "id": "geography-nov25-climate-033",
@@ -877,7 +1005,11 @@ registerQuestionPack({
       ],
       "source": "https://www.geography-lesson.com/climate-elements-factors/",
       "sourceLabel": "高校地理の授業動画：気候要素と気候因子",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理5問2の関連"
+      }
     },
     {
       "id": "geography-nov25-climate-034",
@@ -905,7 +1037,11 @@ registerQuestionPack({
       ],
       "source": "https://www.geography-lesson.com/atmospheric-circulation/",
       "sourceLabel": "高校地理の授業動画：大気大循環",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理5問7の関連"
+      }
     },
     {
       "id": "geography-nov25-climate-035",
@@ -933,7 +1069,11 @@ registerQuestionPack({
       ],
       "source": "https://www.geography-lesson.com/atmospheric-circulation/",
       "sourceLabel": "高校地理の授業動画：大気大循環",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理5問5の関連"
+      }
     },
     {
       "id": "geography-nov25-climate-036",
@@ -961,7 +1101,11 @@ registerQuestionPack({
       ],
       "source": "https://www.geography-lesson.com/ocean-currents-climate/",
       "sourceLabel": "高校地理の授業動画：海流と気候",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理5問1の関連"
+      }
     },
     {
       "id": "geography-nov25-climate-037",
@@ -989,7 +1133,11 @@ registerQuestionPack({
       ],
       "source": "https://www.geography-lesson.com/ocean-currents-climate/",
       "sourceLabel": "高校地理の授業動画：海流と気候",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理5問7の関連"
+      }
     }
   ]
 });

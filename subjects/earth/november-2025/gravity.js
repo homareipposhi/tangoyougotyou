@@ -1,4 +1,4 @@
-/* 高校向け教材の解説を参照した独自短問。設問・図版の転載ではありません。 */
+/* 提供教材の範囲に対応する独自短問。 */
 registerQuestionPack({
   "subject": "earth",
   "name": "地学",
@@ -33,7 +33,11 @@ registerQuestionPack({
       ],
       "source": "https://www.s-yamaga.jp/nanimono/chikyu/chikyunokatachi-01.htm",
       "sourceLabel": "山賀進の教材：地球の形と大きさ",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地学",
+        "section": "地学5問1・問2"
+      }
     },
     {
       "id": "earth-nov25-gravity-002",
@@ -61,7 +65,11 @@ registerQuestionPack({
       ],
       "source": "https://www.s-yamaga.jp/nanimono/chikyu/chikyunokatachi-01.htm",
       "sourceLabel": "山賀進の教材：地球の形と大きさ",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地学",
+        "section": "地学5問1・問2"
+      }
     },
     {
       "id": "earth-nov25-gravity-003",
@@ -90,7 +98,16 @@ registerQuestionPack({
       ],
       "source": "https://www.s-yamaga.jp/nanimono/chikyu/chikyunokatachi-01.htm",
       "sourceLabel": "山賀進の教材：地球の形と大きさ",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地学",
+        "section": "地学5問1・問2"
+      },
+      "material": {
+        "title": "特化講義「地学基礎」受講生保存用",
+        "page": 3,
+        "section": "第1講 地球の形"
+      }
     },
     {
       "id": "earth-nov25-gravity-004",
@@ -114,11 +131,21 @@ registerQuestionPack({
       "knowledge": "required",
       "basis": "地学5問1・問2",
       "courses": [
+        "地学基礎",
         "地学"
       ],
       "source": "https://www.s-yamaga.jp/nanimono/chikyu/chikyunokatachi-01.htm",
       "sourceLabel": "山賀進の教材：地球の形と大きさ",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地学",
+        "section": "地学5問1・問2"
+      },
+      "material": {
+        "title": "特化講義「地学基礎」受講生保存用",
+        "page": 3,
+        "section": "第1講 地球の形"
+      }
     },
     {
       "id": "earth-nov25-gravity-005",
@@ -142,11 +169,21 @@ registerQuestionPack({
       "knowledge": "required",
       "basis": "地学5問1・問2",
       "courses": [
+        "地学基礎",
         "地学"
       ],
       "source": "https://www.s-yamaga.jp/nanimono/chikyu/chikyunokatachi-01.htm",
       "sourceLabel": "山賀進の教材：地球の形と大きさ",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地学",
+        "section": "地学5問1・問2"
+      },
+      "material": {
+        "title": "特化講義「地学基礎」受講生保存用",
+        "page": 3,
+        "section": "第1講 地球の形"
+      }
     },
     {
       "id": "earth-nov25-gravity-006",
@@ -170,11 +207,21 @@ registerQuestionPack({
       "knowledge": "required",
       "basis": "地学5問1・問2",
       "courses": [
+        "地学基礎",
         "地学"
       ],
       "source": "https://www.s-yamaga.jp/nanimono/chikyu/chikyunokatachi-01.htm",
       "sourceLabel": "山賀進の教材：地球の形と大きさ",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地学",
+        "section": "地学5問1・問2"
+      },
+      "material": {
+        "title": "特化講義「地学基礎」受講生保存用",
+        "page": 3,
+        "section": "第1講 地球の形"
+      }
     },
     {
       "id": "earth-nov25-gravity-007",
@@ -202,7 +249,11 @@ registerQuestionPack({
       ],
       "source": "https://www.s-yamaga.jp/nanimono/chikyu/juryoku-01.htm",
       "sourceLabel": "山賀進の教材：重力（1）",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地学",
+        "section": "地学5問3・問4"
+      }
     },
     {
       "id": "earth-nov25-gravity-008",
@@ -230,7 +281,11 @@ registerQuestionPack({
       ],
       "source": "https://www.s-yamaga.jp/nanimono/chikyu/juryoku-01.htm",
       "sourceLabel": "山賀進の教材：重力（1）",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地学",
+        "section": "地学5問3・問4"
+      }
     },
     {
       "id": "earth-nov25-gravity-009",
@@ -258,7 +313,11 @@ registerQuestionPack({
       ],
       "source": "https://www.s-yamaga.jp/nanimono/chikyu/juryoku-01.htm",
       "sourceLabel": "山賀進の教材：重力（1）",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地学",
+        "section": "地学5問3・問4"
+      }
     },
     {
       "id": "earth-nov25-gravity-010",
@@ -286,7 +345,11 @@ registerQuestionPack({
       ],
       "source": "https://www.s-yamaga.jp/nanimono/chikyu/juryoku-01.htm",
       "sourceLabel": "山賀進の教材：重力（1）",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地学",
+        "section": "地学5問3・問4"
+      }
     },
     {
       "id": "earth-nov25-gravity-011",
@@ -314,7 +377,11 @@ registerQuestionPack({
       ],
       "source": "https://www.s-yamaga.jp/nanimono/chikyu/juryoku-01.htm",
       "sourceLabel": "山賀進の教材：重力（1）",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地学",
+        "section": "地学5問3・問4"
+      }
     },
     {
       "id": "earth-nov25-gravity-012",
@@ -342,7 +409,11 @@ registerQuestionPack({
       ],
       "source": "https://www.s-yamaga.jp/nanimono/chikyu/juryoku-01.htm",
       "sourceLabel": "山賀進の教材：重力（1）",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地学",
+        "section": "地学5問3・問4"
+      }
     },
     {
       "id": "earth-nov25-gravity-013",
@@ -370,7 +441,11 @@ registerQuestionPack({
       ],
       "source": "https://www.s-yamaga.jp/nanimono/chikyu/juryoku-02.htm",
       "sourceLabel": "山賀進の教材：重力（2）",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地学",
+        "section": "地学5問5"
+      }
     },
     {
       "id": "earth-nov25-gravity-014",
@@ -398,7 +473,11 @@ registerQuestionPack({
       ],
       "source": "https://www.s-yamaga.jp/nanimono/chikyu/juryoku-02.htm",
       "sourceLabel": "山賀進の教材：重力（2）",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地学",
+        "section": "地学5問5"
+      }
     },
     {
       "id": "earth-nov25-gravity-015",
@@ -426,7 +505,11 @@ registerQuestionPack({
       ],
       "source": "https://www.s-yamaga.jp/nanimono/chikyu/juryoku-02.htm",
       "sourceLabel": "山賀進の教材：重力（2）",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地学",
+        "section": "地学5問5"
+      }
     },
     {
       "id": "earth-nov25-gravity-016",
@@ -454,7 +537,11 @@ registerQuestionPack({
       ],
       "source": "https://www.s-yamaga.jp/nanimono/chikyu/juryoku-02.htm",
       "sourceLabel": "山賀進の教材：重力（2）",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地学",
+        "section": "地学5問5"
+      }
     },
     {
       "id": "earth-nov25-gravity-017",
@@ -482,7 +569,11 @@ registerQuestionPack({
       ],
       "source": "https://www.s-yamaga.jp/nanimono/chikyu/juryoku-02.htm",
       "sourceLabel": "山賀進の教材：重力（2）",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地学",
+        "section": "地学5問5"
+      }
     },
     {
       "id": "earth-nov25-gravity-018",
@@ -510,7 +601,11 @@ registerQuestionPack({
       ],
       "source": "https://www.s-yamaga.jp/nanimono/chikyu/chikyunokatachi-01.htm",
       "sourceLabel": "山賀進の教材：地球の形と大きさ",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地学",
+        "section": "地学5問1・問2の関連"
+      }
     },
     {
       "id": "earth-nov25-gravity-019",
@@ -538,7 +633,11 @@ registerQuestionPack({
       ],
       "source": "https://www.s-yamaga.jp/nanimono/chikyu/juryoku-01.htm",
       "sourceLabel": "山賀進の教材：重力（1）",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地学",
+        "section": "地学5問3・問4の関連"
+      }
     }
   ]
 });

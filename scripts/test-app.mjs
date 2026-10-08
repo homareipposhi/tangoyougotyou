@@ -513,8 +513,8 @@ for (const failure of ['missing','unregistered','duplicate','unsupported','timeo
 
 test('November geography and earth knowledge is available, filterable, and preserves learning history', () => {
   const imported = questions.filter(q => q.id.includes('-nov25-'));
-  assert.equal(imported.length, 258);
-  for (const [subject, count, chapters] of [['earth',119,[5,6,7,8,9,10]], ['geography',139,[1,2,3,4,5]]]) {
+  assert.equal(imported.length, 250);
+  for (const [subject, count, chapters] of [['earth',118,[5,6,7,8,9,10]], ['geography',132,[1,2,3,4,5]]]) {
     const qs = imported.filter(q => q.subject === subject);
     assert.equal(qs.length, count);
     assert.deepEqual([...new Set(qs.map(q=>q.c))].sort((a,b)=>a-b), chapters);
@@ -644,7 +644,7 @@ test('course filters separate foundation from advanced items and reset incompati
   assert.ok(app.value('pool().every(q=>q.courses.includes("地理総合"))'));
   assert.ok(!app.value('pool().map(q=>q.id)').includes('geography-nov25-climate-003'));
   app.click('地理探究');
-  assert.equal(app.value('pool().length'),139);
+  assert.equal(app.value('pool().length'),132);
 });
 
 test('article provenance is visible after answering without changing learning history', () => {
@@ -667,4 +667,25 @@ test('geography exam references do not contain nonexistent subquestions', () => 
     for(const match of q.basis.matchAll(/問(\d+)/g)) assert.ok(Number(match[1])<=maxima[main],q.id);
     if(q.source) {assert.equal(new URL(q.source).protocol,'https:');assert.ok(q.sourceLabel);}
   }
+});
+
+
+test('lecture foundation questions have bounded PDF provenance and preserve records', () => {
+  const foundation=questions.filter(q=>q.subject==='earth' && q.courses?.includes('地学基礎'));
+  assert.ok(foundation.length>100);
+  for(const q of foundation) {
+    assert.ok(q.material?.title.includes('地学基礎'),q.id);
+    assert.ok(Number.isInteger(q.material.page) && q.material.page>=3 && q.material.page<=32,q.id);
+  }
+  const added=questions.filter(q=>q.id.startsWith('earth-lecture-') && q.id!=='earth-lecture-absolute-magnitude');
+  assert.equal(added.length,52);
+  assert.ok(added.every(q=>q.courses.length===1 && q.courses[0]==='地学基礎'));
+  const app=makeApp({'geography-nov25-landforms-028':{seen:3,wrong:1,last:0}});
+  const q=added[0];app.begin(q);app.answer(1000,true,q);
+  assert.ok(app.html().includes(q.material.title));
+  assert.ok(app.html().includes(`PDF ${q.material.page}ページ`));
+  assert.deepEqual(app.saved()['geography-nov25-landforms-028'],{seen:3,wrong:1,last:0});
+  app.run("subjectId='earth'; filters.course='地学';");
+  assert.ok(!app.value('pool().map(q=>q.id)').includes(q.id));
+  assert.ok(!questions.some(q=>q.id==='geography-nov25-energy-024'));
 });

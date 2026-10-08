@@ -1,4 +1,4 @@
-/* 高校向け教材の解説を参照した独自短問。設問・図版の転載ではありません。 */
+/* 提供教材の範囲に対応する独自短問。 */
 registerQuestionPack({
   "subject": "geography",
   "name": "地理",
@@ -34,7 +34,11 @@ registerQuestionPack({
       ],
       "source": "https://geo-hs.com/thematic_map/",
       "sourceLabel": "高校地理の部屋：主題図と一般図",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理1問1"
+      }
     },
     {
       "id": "geography-nov25-maps-002",
@@ -60,7 +64,11 @@ registerQuestionPack({
       "courses": [
         "地理総合",
         "地理探究"
-      ]
+      ],
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理1問1"
+      }
     },
     {
       "id": "geography-nov25-maps-003",
@@ -86,7 +94,11 @@ registerQuestionPack({
       "courses": [
         "地理総合",
         "地理探究"
-      ]
+      ],
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理1問1"
+      }
     },
     {
       "id": "geography-nov25-maps-004",
@@ -115,7 +127,11 @@ registerQuestionPack({
       ],
       "source": "https://geo-hs.com/thematic_map/",
       "sourceLabel": "高校地理の部屋：主題図と一般図",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理1問1"
+      }
     },
     {
       "id": "geography-nov25-maps-005",
@@ -144,7 +160,11 @@ registerQuestionPack({
       ],
       "source": "https://geo-hs.com/thematic_map/",
       "sourceLabel": "高校地理の部屋：主題図と一般図",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理1問2"
+      }
     },
     {
       "id": "geography-nov25-maps-006",
@@ -173,7 +193,11 @@ registerQuestionPack({
       ],
       "source": "https://geo-hs.com/thematic_map/",
       "sourceLabel": "高校地理の部屋：主題図と一般図",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理1問2"
+      }
     },
     {
       "id": "geography-nov25-maps-007",
@@ -202,7 +226,11 @@ registerQuestionPack({
       ],
       "source": "https://geo-hs.com/thematic_map/",
       "sourceLabel": "高校地理の部屋：主題図と一般図",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理1問2"
+      }
     },
     {
       "id": "geography-nov25-maps-008",
@@ -231,7 +259,11 @@ registerQuestionPack({
       ],
       "source": "https://geo-hs.com/thematic_map/",
       "sourceLabel": "高校地理の部屋：主題図と一般図",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理1問2"
+      }
     },
     {
       "id": "geography-nov25-maps-009",
@@ -260,7 +292,11 @@ registerQuestionPack({
       ],
       "source": "https://chitonitose.com/geo/geo_lessons_projection.html",
       "sourceLabel": "ちとにとせ：地図の図法",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理1問4"
+      }
     },
     {
       "id": "geography-nov25-maps-010",
@@ -289,7 +325,11 @@ registerQuestionPack({
       ],
       "source": "https://chitonitose.com/geo/geo_lessons_projection.html",
       "sourceLabel": "ちとにとせ：地図の図法",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理1問4"
+      }
     },
     {
       "id": "geography-nov25-maps-011",
@@ -318,7 +358,11 @@ registerQuestionPack({
       ],
       "source": "https://chitonitose.com/geo/geo_lessons_projection.html",
       "sourceLabel": "ちとにとせ：地図の図法",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理1問4"
+      }
     },
     {
       "id": "geography-nov25-maps-012",
@@ -344,7 +388,11 @@ registerQuestionPack({
       "courses": [
         "地理総合",
         "地理探究"
-      ]
+      ],
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理1問3"
+      }
     },
     {
       "id": "geography-nov25-maps-013",
@@ -370,7 +418,11 @@ registerQuestionPack({
       "courses": [
         "地理総合",
         "地理探究"
-      ]
+      ],
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理1問5"
+      }
     },
     {
       "id": "geography-nov25-maps-014",
@@ -396,7 +448,11 @@ registerQuestionPack({
       "courses": [
         "地理総合",
         "地理探究"
-      ]
+      ],
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理1問5"
+      }
     },
     {
       "id": "geography-nov25-maps-015",
@@ -422,7 +478,11 @@ registerQuestionPack({
       "courses": [
         "地理総合",
         "地理探究"
-      ]
+      ],
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理1問5"
+      }
     },
     {
       "id": "geography-nov25-maps-016",
@@ -448,7 +508,11 @@ registerQuestionPack({
       "courses": [
         "地理総合",
         "地理探究"
-      ]
+      ],
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理1問5"
+      }
     },
     {
       "id": "geography-nov25-maps-017",
@@ -477,7 +541,11 @@ registerQuestionPack({
       ],
       "source": "https://geo-hs.com/thematic_map/",
       "sourceLabel": "高校地理の部屋：主題図と一般図",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理1の関連"
+      }
     },
     {
       "id": "geography-nov25-maps-018",
@@ -503,7 +571,11 @@ registerQuestionPack({
       "courses": [
         "地理総合",
         "地理探究"
-      ]
+      ],
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理1の関連"
+      }
     },
     {
       "id": "geography-nov25-maps-019",
@@ -529,7 +601,11 @@ registerQuestionPack({
       "courses": [
         "地理総合",
         "地理探究"
-      ]
+      ],
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理1の関連"
+      }
     },
     {
       "id": "geography-nov25-maps-020",
@@ -558,7 +634,11 @@ registerQuestionPack({
       ],
       "source": "https://chitonitose.com/geo/geo_lessons_projection.html",
       "sourceLabel": "ちとにとせ：地図の図法",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理1問4の関連"
+      }
     },
     {
       "id": "geography-nov25-maps-021",
@@ -587,7 +667,11 @@ registerQuestionPack({
       ],
       "source": "https://chitonitose.com/geo/geo_lessons_projection.html",
       "sourceLabel": "ちとにとせ：地図の図法",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理1問2の関連"
+      }
     },
     {
       "id": "geography-nov25-maps-022",
@@ -616,7 +700,11 @@ registerQuestionPack({
       ],
       "source": "https://geo-hs.com/thematic_map/",
       "sourceLabel": "高校地理の部屋：主題図と一般図",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理1問2の関連"
+      }
     },
     {
       "id": "geography-nov25-maps-023",
@@ -645,7 +733,11 @@ registerQuestionPack({
       ],
       "source": "https://geo-hs.com/thematic_map/",
       "sourceLabel": "高校地理の部屋：主題図と一般図",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理1問1の関連"
+      }
     }
   ]
 });

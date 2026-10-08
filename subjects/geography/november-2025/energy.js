@@ -1,4 +1,4 @@
-/* 高校向け教材の解説を参照した独自短問。設問・図版の転載ではありません。 */
+/* 提供教材の範囲に対応する独自短問。 */
 registerQuestionPack({
   "subject": "geography",
   "name": "地理",
@@ -30,7 +30,11 @@ registerQuestionPack({
       "basis": "地理3問1",
       "courses": [
         "地理探究"
-      ]
+      ],
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理3問1"
+      }
     },
     {
       "id": "geography-nov25-energy-002",
@@ -55,7 +59,11 @@ registerQuestionPack({
       "basis": "地理3問1",
       "courses": [
         "地理探究"
-      ]
+      ],
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理3問1"
+      }
     },
     {
       "id": "geography-nov25-energy-003",
@@ -80,7 +88,11 @@ registerQuestionPack({
       "basis": "地理3問1",
       "courses": [
         "地理探究"
-      ]
+      ],
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理3問1"
+      }
     },
     {
       "id": "geography-nov25-energy-004",
@@ -105,7 +117,11 @@ registerQuestionPack({
       "basis": "地理3問1",
       "courses": [
         "地理探究"
-      ]
+      ],
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理3問1"
+      }
     },
     {
       "id": "geography-nov25-energy-005",
@@ -130,7 +146,11 @@ registerQuestionPack({
       "basis": "地理3問1",
       "courses": [
         "地理探究"
-      ]
+      ],
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理3問1"
+      }
     },
     {
       "id": "geography-nov25-energy-006",
@@ -158,7 +178,11 @@ registerQuestionPack({
       ],
       "source": "https://chitonitose.com/geo/geo_lessons_energy_resources.html",
       "sourceLabel": "ちとにとせ：エネルギー資源",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理3問1の関連"
+      }
     },
     {
       "id": "geography-nov25-energy-007",
@@ -183,7 +207,11 @@ registerQuestionPack({
       "basis": "地理3問2",
       "courses": [
         "地理探究"
-      ]
+      ],
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理3問2"
+      }
     },
     {
       "id": "geography-nov25-energy-008",
@@ -211,7 +239,11 @@ registerQuestionPack({
       ],
       "source": "https://chitonitose.com/geo/geo_lessons_energy_resources.html",
       "sourceLabel": "ちとにとせ：エネルギー資源",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理3問2"
+      }
     },
     {
       "id": "geography-nov25-energy-009",
@@ -236,7 +268,11 @@ registerQuestionPack({
       "basis": "地理3問2",
       "courses": [
         "地理探究"
-      ]
+      ],
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理3問2"
+      }
     },
     {
       "id": "geography-nov25-energy-010",
@@ -264,7 +300,11 @@ registerQuestionPack({
       ],
       "source": "https://chitonitose.com/geo/geo_lessons_energy_resources.html",
       "sourceLabel": "ちとにとせ：エネルギー資源",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理3問2"
+      }
     },
     {
       "id": "geography-nov25-energy-011",
@@ -289,7 +329,11 @@ registerQuestionPack({
       "basis": "地理3問2",
       "courses": [
         "地理探究"
-      ]
+      ],
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理3問2"
+      }
     },
     {
       "id": "geography-nov25-energy-012",
@@ -314,7 +358,11 @@ registerQuestionPack({
       "basis": "地理3問2",
       "courses": [
         "地理探究"
-      ]
+      ],
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理3問2"
+      }
     },
     {
       "id": "geography-nov25-energy-013",
@@ -342,7 +390,11 @@ registerQuestionPack({
       ],
       "source": "https://chitonitose.com/geo/geo_lessons_trade.html",
       "sourceLabel": "ちとにとせ：世界の貿易",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理3問2"
+      }
     },
     {
       "id": "geography-nov25-energy-014",
@@ -371,7 +423,11 @@ registerQuestionPack({
       ],
       "source": "https://chitonitose.com/geo/geo_lessons_energy_resources.html",
       "sourceLabel": "ちとにとせ：エネルギー資源",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理3問3の関連"
+      }
     },
     {
       "id": "geography-nov25-energy-015",
@@ -397,7 +453,11 @@ registerQuestionPack({
       "courses": [
         "地理総合",
         "地理探究"
-      ]
+      ],
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理3問3の関連"
+      }
     },
     {
       "id": "geography-nov25-energy-016",
@@ -423,7 +483,11 @@ registerQuestionPack({
       "courses": [
         "地理総合",
         "地理探究"
-      ]
+      ],
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理3問3の関連"
+      }
     },
     {
       "id": "geography-nov25-energy-017",
@@ -452,7 +516,11 @@ registerQuestionPack({
       ],
       "source": "https://chitonitose.com/geo/geo_lessons_energy_resources.html",
       "sourceLabel": "ちとにとせ：エネルギー資源",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理3問3の関連"
+      }
     },
     {
       "id": "geography-nov25-energy-018",
@@ -481,59 +549,11 @@ registerQuestionPack({
       ],
       "source": "https://chitonitose.com/geo/geo_lessons_energy_resources.html",
       "sourceLabel": "ちとにとせ：エネルギー資源",
-      "sourceChecked": "2026-10-07"
-    },
-    {
-      "id": "geography-nov25-energy-019",
-      "subject": "geography",
-      "c": 3,
-      "s": "バイオマスと省エネルギー",
-      "n": 19,
-      "d": "A",
-      "type": "choice",
-      "q": "製造から廃棄までの排出量を評価する考え方は？",
-      "o": [
-        "震源距離の計算",
-        "ライフサイクル評価",
-        "縮尺の拡大",
-        "方言周圏論"
-      ],
-      "a": [
-        2
-      ],
-      "e": "使用時だけでなく資源採取、製造、輸送、処分なども含めて考える。",
-      "knowledge": "required",
-      "basis": "地理3問3の関連",
-      "courses": [
-        "地理総合",
-        "地理探究"
-      ]
-    },
-    {
-      "id": "geography-nov25-energy-020",
-      "subject": "geography",
-      "c": 3,
-      "s": "バイオマスと省エネルギー",
-      "n": 20,
-      "d": "A",
-      "type": "choice",
-      "q": "省エネ製品で使用費用が下がり、使用量が増えて節約効果の一部が失われる現象は？",
-      "o": [
-        "リバウンド効果",
-        "寒流の湧昇",
-        "遠心力",
-        "プレートの沈み込み"
-      ],
-      "a": [
-        1
-      ],
-      "e": "効率改善と実際の総消費量の削減は同じとは限らない。使用量も確認する。",
-      "knowledge": "required",
-      "basis": "地理3問3の関連",
-      "courses": [
-        "地理総合",
-        "地理探究"
-      ]
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理3問3の関連"
+      }
     },
     {
       "id": "geography-nov25-energy-021",
@@ -559,91 +579,11 @@ registerQuestionPack({
       "courses": [
         "地理総合",
         "地理探究"
-      ]
-    },
-    {
-      "id": "geography-nov25-energy-022",
-      "subject": "geography",
-      "c": 3,
-      "s": "教材で深める関連知識",
-      "n": 22,
-      "d": "B",
-      "type": "choice",
-      "q": "水力発電の立地に有利な自然条件は？",
-      "o": [
-        "豊富で安定した流量と落差",
-        "少ない流量と平坦な海岸だけ",
-        "豊富な石炭と強い風だけ",
-        "年間を通じた乾燥と広い砂漠"
       ],
-      "a": [
-        1
-      ],
-      "e": "水の位置エネルギーを利用するため、流量と落差が重要。資源・地形・気候を結びつけて考える。",
-      "knowledge": "related",
-      "basis": "地理3の関連",
-      "courses": [
-        "地理探究"
-      ],
-      "source": "https://chitonitose.com/geo/geo_lessons_energy_resources.html",
-      "sourceLabel": "ちとにとせ：エネルギー資源",
-      "sourceChecked": "2026-10-07"
-    },
-    {
-      "id": "geography-nov25-energy-023",
-      "subject": "geography",
-      "c": 3,
-      "s": "教材で深める関連知識",
-      "n": 23,
-      "d": "B",
-      "type": "choice",
-      "q": "石油への依存を見直す契機となった1970年代の出来事は？",
-      "o": [
-        "石油危機",
-        "産業革命の開始",
-        "大陸移動説の発表",
-        "第一次世界大戦の開始"
-      ],
-      "a": [
-        1
-      ],
-      "e": "価格高騰を受けて天然ガス・石炭・原子力などへの分散が進んだ。時代ごとのエネルギー転換を区別する。",
-      "knowledge": "related",
-      "basis": "地理3問2の関連",
-      "courses": [
-        "地理探究"
-      ],
-      "source": "https://chitonitose.com/geo/geo_lessons_energy_resources.html",
-      "sourceLabel": "ちとにとせ：エネルギー資源",
-      "sourceChecked": "2026-10-07"
-    },
-    {
-      "id": "geography-nov25-energy-024",
-      "subject": "geography",
-      "c": 3,
-      "s": "教材で深める関連知識",
-      "n": 24,
-      "d": "B",
-      "type": "choice",
-      "q": "鉄鋼業で石炭からつくるコークスが主に果たす役割は？",
-      "o": [
-        "燃料と鉄鉱石の還元剤",
-        "鉄鉱石を海上輸送する容器",
-        "鉄鉱石そのものの代替",
-        "製品を冷却する液体"
-      ],
-      "a": [
-        1
-      ],
-      "e": "石炭は発電燃料だけでなく製鉄にも使う。炭田と鉄鉱石の産地・輸送条件は工業立地に関係する。",
-      "knowledge": "related",
-      "basis": "地理3の関連",
-      "courses": [
-        "地理探究"
-      ],
-      "source": "https://chitonitose.com/geo/geo_lessons_energy_resources.html",
-      "sourceLabel": "ちとにとせ：エネルギー資源",
-      "sourceChecked": "2026-10-07"
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理3問3の関連"
+      }
     },
     {
       "id": "geography-nov25-energy-025",
@@ -672,7 +612,11 @@ registerQuestionPack({
       ],
       "source": "https://chitonitose.com/geo/geo_lessons_energy_resources.html",
       "sourceLabel": "ちとにとせ：エネルギー資源",
-      "sourceChecked": "2026-10-07"
+      "sourceChecked": "2026-10-07",
+      "examMaterial": {
+        "title": "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+        "section": "地理3問3の関連"
+      }
     }
   ]
 });

@@ -1,0 +1,225 @@
+{
+  "reason": "2026-10-08 提供模試の範囲外のため出題から除外。学習記録の削除は行わない。",
+  "questions": [
+    {
+      "id": "earth-nov25-planets-016",
+      "subject": "earth",
+      "c": 8,
+      "s": "教材で深める関連知識",
+      "n": 16,
+      "d": "B",
+      "type": "choice",
+      "q": "内惑星である金星の見かけの位置の特徴は？",
+      "o": [
+        "太陽から大きく離れず、真夜中の南中はしない",
+        "太陽と必ず180°離れる",
+        "毎日真夜中に南中する",
+        "どの季節も一晩中見える"
+      ],
+      "a": [
+        1
+      ],
+      "e": "地球より内側の軌道を回るため離角には上限があり、明け方か夕方に見える。",
+      "knowledge": "related",
+      "basis": "地学3の関連",
+      "courses": [
+        "地学"
+      ],
+      "source": "https://www.s-yamaga.jp/nanimono/uchu/wakusei-01.htm",
+      "sourceLabel": "山賀進の教材：惑星",
+      "sourceChecked": "2026-10-07"
+    },
+    {
+      "id": "geography-nov25-energy-019",
+      "subject": "geography",
+      "c": 3,
+      "s": "バイオマスと省エネルギー",
+      "n": 19,
+      "d": "A",
+      "type": "choice",
+      "q": "製造から廃棄までの排出量を評価する考え方は？",
+      "o": [
+        "震源距離の計算",
+        "ライフサイクル評価",
+        "縮尺の拡大",
+        "方言周圏論"
+      ],
+      "a": [
+        2
+      ],
+      "e": "使用時だけでなく資源採取、製造、輸送、処分なども含めて考える。",
+      "knowledge": "required",
+      "basis": "地理3問3の関連",
+      "courses": [
+        "地理総合",
+        "地理探究"
+      ]
+    },
+    {
+      "id": "geography-nov25-energy-020",
+      "subject": "geography",
+      "c": 3,
+      "s": "バイオマスと省エネルギー",
+      "n": 20,
+      "d": "A",
+      "type": "choice",
+      "q": "省エネ製品で使用費用が下がり、使用量が増えて節約効果の一部が失われる現象は？",
+      "o": [
+        "リバウンド効果",
+        "寒流の湧昇",
+        "遠心力",
+        "プレートの沈み込み"
+      ],
+      "a": [
+        1
+      ],
+      "e": "効率改善と実際の総消費量の削減は同じとは限らない。使用量も確認する。",
+      "knowledge": "required",
+      "basis": "地理3問3の関連",
+      "courses": [
+        "地理総合",
+        "地理探究"
+      ]
+    },
+    {
+      "id": "geography-nov25-energy-022",
+      "subject": "geography",
+      "c": 3,
+      "s": "教材で深める関連知識",
+      "n": 22,
+      "d": "B",
+      "type": "choice",
+      "q": "水力発電の立地に有利な自然条件は？",
+      "o": [
+        "豊富で安定した流量と落差",
+        "少ない流量と平坦な海岸だけ",
+        "豊富な石炭と強い風だけ",
+        "年間を通じた乾燥と広い砂漠"
+      ],
+      "a": [
+        1
+      ],
+      "e": "水の位置エネルギーを利用するため、流量と落差が重要。資源・地形・気候を結びつけて考える。",
+      "knowledge": "related",
+      "basis": "地理3の関連",
+      "courses": [
+        "地理探究"
+      ],
+      "source": "https://chitonitose.com/geo/geo_lessons_energy_resources.html",
+      "sourceLabel": "ちとにとせ：エネルギー資源",
+      "sourceChecked": "2026-10-07"
+    },
+    {
+      "id": "geography-nov25-energy-023",
+      "subject": "geography",
+      "c": 3,
+      "s": "教材で深める関連知識",
+      "n": 23,
+      "d": "B",
+      "type": "choice",
+      "q": "石油への依存を見直す契機となった1970年代の出来事は？",
+      "o": [
+        "石油危機",
+        "産業革命の開始",
+        "大陸移動説の発表",
+        "第一次世界大戦の開始"
+      ],
+      "a": [
+        1
+      ],
+      "e": "価格高騰を受けて天然ガス・石炭・原子力などへの分散が進んだ。時代ごとのエネルギー転換を区別する。",
+      "knowledge": "related",
+      "basis": "地理3問2の関連",
+      "courses": [
+        "地理探究"
+      ],
+      "source": "https://chitonitose.com/geo/geo_lessons_energy_resources.html",
+      "sourceLabel": "ちとにとせ：エネルギー資源",
+      "sourceChecked": "2026-10-07"
+    },
+    {
+      "id": "geography-nov25-energy-024",
+      "subject": "geography",
+      "c": 3,
+      "s": "教材で深める関連知識",
+      "n": 24,
+      "d": "B",
+      "type": "choice",
+      "q": "鉄鋼業で石炭からつくるコークスが主に果たす役割は？",
+      "o": [
+        "燃料と鉄鉱石の還元剤",
+        "鉄鉱石を海上輸送する容器",
+        "鉄鉱石そのものの代替",
+        "製品を冷却する液体"
+      ],
+      "a": [
+        1
+      ],
+      "e": "石炭は発電燃料だけでなく製鉄にも使う。炭田と鉄鉱石の産地・輸送条件は工業立地に関係する。",
+      "knowledge": "related",
+      "basis": "地理3の関連",
+      "courses": [
+        "地理探究"
+      ],
+      "source": "https://chitonitose.com/geo/geo_lessons_energy_resources.html",
+      "sourceLabel": "ちとにとせ：エネルギー資源",
+      "sourceChecked": "2026-10-07"
+    },
+    {
+      "id": "geography-nov25-landforms-028",
+      "subject": "geography",
+      "c": 4,
+      "s": "教材で深める関連知識",
+      "n": 28,
+      "d": "B",
+      "type": "choice",
+      "q": "U字谷が沈水してできる、湾が細長く奥深い海岸は？",
+      "o": [
+        "フィヨルド",
+        "リアス海岸",
+        "砂州海岸",
+        "隆起サンゴ礁海岸"
+      ],
+      "a": [
+        1
+      ],
+      "e": "氷河が削ったU字谷の沈水がフィヨルド。河川が削った谷の沈水でできるリアス海岸と区別する。",
+      "knowledge": "related",
+      "basis": "地理4の関連",
+      "courses": [
+        "地理探究"
+      ],
+      "source": "https://www.geography-lesson.com/glacial-karst-coral-landforms/",
+      "sourceLabel": "高校地理の授業動画：氷河地形・カルスト地形・サンゴ礁",
+      "sourceChecked": "2026-10-07"
+    },
+    {
+      "id": "geography-nov25-landforms-029",
+      "subject": "geography",
+      "c": 4,
+      "s": "教材で深める関連知識",
+      "n": 29,
+      "d": "B",
+      "type": "choice",
+      "q": "カルスト地形の形成で重要な作用は？",
+      "o": [
+        "石灰岩の溶食",
+        "花こう岩の凝固",
+        "砂礫の扇状の堆積",
+        "海底の玄武岩の噴出"
+      ],
+      "a": [
+        1
+      ],
+      "e": "二酸化炭素を含む水によって石灰岩が溶かされ、凹地や鍾乳洞が形成される。",
+      "knowledge": "related",
+      "basis": "地理4の関連",
+      "courses": [
+        "地理探究"
+      ],
+      "source": "https://www.geography-lesson.com/glacial-karst-coral-landforms/",
+      "sourceLabel": "高校地理の授業動画：氷河地形・カルスト地形・サンゴ礁",
+      "sourceChecked": "2026-10-07"
+    }
+  ]
+}
