@@ -1,7 +1,7 @@
 {
   "checkedAt": "2026-10-08",
   "note": "本文取得と本文確認を分けて記録。textReviewed=trueは抽出本文の確認で、図版や動画を含む全資料の読了を意味しない。",
-  "catalogueItems": 694,
+  "catalogueItems": 692,
   "retrievedCounts": {
     "lab": 234,
     "shared": 145,

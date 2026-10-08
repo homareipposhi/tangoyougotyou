@@ -701,7 +701,7 @@ test('geography materials opens all eleven sites and filters article titles', ()
   app.click('教材を読む（11サイト）');
   assert.equal(app.value('view'),'materials');
   assert.equal(app.value('window.GEOGRAPHY_LIBRARY.sites.length'),11);
-  assert.equal(app.value('window.GEOGRAPHY_LIBRARY.items.length'),694);
+  assert.equal(app.value('window.GEOGRAPHY_LIBRARY.items.length'),692);
   for (const site of app.value('window.GEOGRAPHY_LIBRARY.sites')) assert.ok(app.html().includes(site.url));
   const input=app.nodes().find(node=>node.listeners.has('input'));
   input.listeners.get('input')({target:{value:'海流'}});

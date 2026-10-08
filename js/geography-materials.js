@@ -1,4 +1,3 @@
-/* 教材への案内。本文や図版の転載は含まない。 */
 window.GEOGRAPHY_LIBRARY = {
   "checkedAt": "2026-10-08",
   "sites": [
@@ -318,13 +317,6 @@ window.GEOGRAPHY_LIBRARY = {
     {
       "site": "lab",
       "siteName": "地理ラボ",
-      "title": "お問い合わせ - 地理ラボ　詳しすぎる高校地理",
-      "url": "https://alivevulnerable.com/basic/contact-form/",
-      "kind": "解説"
-    },
-    {
-      "site": "lab",
-      "siteName": "地理ラボ",
       "title": "お茶の種類と栽培（チャノキ・緑茶と紅茶と烏龍茶の違い） - 地理ラボ　詳しすぎる高校地理",
       "url": "https://alivevulnerable.com/basic/tea/",
       "kind": "解説"
@@ -418,13 +410,6 @@ window.GEOGRAPHY_LIBRARY = {
       "siteName": "地理ラボ",
       "title": "コムギの栽培（冬小麦と春小麦・小麦カレンダー） - 地理ラボ　詳しすぎる高校地理",
       "url": "https://alivevulnerable.com/basic/wheat/",
-      "kind": "解説"
-    },
-    {
-      "site": "lab",
-      "siteName": "地理ラボ",
-      "title": "コンセプト - 地理ラボ　詳しすぎる高校地理",
-      "url": "https://alivevulnerable.com/basic/concept/",
       "kind": "解説"
     },
     {
