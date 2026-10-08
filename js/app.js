@@ -18,7 +18,7 @@ let S = load();
 let view = "home";
 let subjectId = null;
 let filters = {chapters:[], diffs:[], types:[], only:"all", content:"exam", course:"all"};
-let earthExamScope = "nov2026";
+let earthExamScope = "all";
 let advancedOpen = false;
 let size = 10;
 let order = "mix";
@@ -268,7 +268,7 @@ function home(){
       <b>${esc(sub.name)}</b>
       <span>${qs.length}問<br>要復習 ${t.todo} ・ 未着手 ${t.fresh}</span>
     </button>`);
-    b.addEventListener("click",()=>{subjectId=id;filters={chapters:[],diffs:[],types:[],only:"all",content:"exam",course:"all"};earthExamScope="nov2026";advancedOpen=false;view="subject";render();});
+    b.addEventListener("click",()=>{subjectId=id;filters={chapters:[],diffs:[],types:[],only:"all",content:"exam",course:"all"};earthExamScope="all";advancedOpen=false;view="subject";render();});
     box.appendChild(b);
   });
   body.appendChild(h(`<p class="empty">科目を選ぶと、単元・難易度・問題形式を絞って演習できます。</p>`));
