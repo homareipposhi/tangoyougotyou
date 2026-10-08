@@ -285,7 +285,7 @@ function physicsContentMatches(q, content=filters.content){
 function matchesNumberedId(id, prefix, list){
   if(!id.startsWith(prefix)) return false;
   const tail=id.slice(prefix.length);
-  if(!/^\\d+$/.test(tail)) return false;
+  if(!/^\d+$/.test(tail)) return false;
   const n=Number(tail);
   return list.split(",").some(range=>{
     const [min,max=min]=range.split("-").map(Number);
