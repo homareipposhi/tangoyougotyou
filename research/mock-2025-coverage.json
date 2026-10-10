@@ -1,0 +1,1067 @@
+{
+  "checked": "2026-10-10",
+  "sourceExams": [
+    "2025年度 2年11月 総合学力テスト 地理総合・地理探究",
+    "2025年度 2年11月 総合学力テスト 地学"
+  ],
+  "scope": "提供された2025年11月模試の全61問（小問は各行の知識に含む）。科目全体や他年度の模試を網羅したという意味ではない。",
+  "limitations": [
+    "独自短問と解説の知識対応を確認。原図を再現した総合問題ではなく、模試の点数や図表問題の正答を保証しない。",
+    "2026年度パックとは別の照合。既存の問題と学習履歴を削除しない。",
+    "教材サイト全記事の読了を意味しない。"
+  ],
+  "rows": [
+    {
+      "subject": "geography",
+      "main": 1,
+      "question": 1,
+      "topic": "地図の方位・簡略化・交通網",
+      "questionIds": [
+        "geography-nov25-maps-001",
+        "geography-nov25-maps-002",
+        "geography-nov25-maps-003",
+        "geography-nov25-maps-004",
+        "geography-nov25-maps-023"
+      ],
+      "addedQuestionIds": [],
+      "status": "knowledge-mapped"
+    },
+    {
+      "subject": "geography",
+      "main": 1,
+      "question": 2,
+      "topic": "絶対数と割合の地図表現",
+      "questionIds": [
+        "geography-nov25-maps-005",
+        "geography-nov25-maps-006",
+        "geography-nov25-maps-007",
+        "geography-nov25-maps-008",
+        "geography-nov25-maps-021",
+        "geography-nov25-maps-022"
+      ],
+      "addedQuestionIds": [],
+      "status": "knowledge-mapped"
+    },
+    {
+      "subject": "geography",
+      "main": 1,
+      "question": 3,
+      "topic": "方言分布と文化伝播",
+      "questionIds": [
+        "geography-nov25-maps-012"
+      ],
+      "addedQuestionIds": [],
+      "status": "knowledge-mapped"
+    },
+    {
+      "subject": "geography",
+      "main": 1,
+      "question": 4,
+      "topic": "ハブ空港・大圏航路",
+      "questionIds": [
+        "geography-nov25-maps-009",
+        "geography-nov25-maps-010",
+        "geography-nov25-maps-011",
+        "geography-nov25-maps-020",
+        "geography-nov25-audit-001"
+      ],
+      "addedQuestionIds": [
+        "geography-nov25-audit-001"
+      ],
+      "status": "knowledge-mapped"
+    },
+    {
+      "subject": "geography",
+      "main": 1,
+      "question": 5,
+      "topic": "保育施設のGIS立地判断",
+      "questionIds": [
+        "geography-nov25-maps-013",
+        "geography-nov25-maps-014",
+        "geography-nov25-maps-015",
+        "geography-nov25-maps-016",
+        "geography-nov25-audit-002"
+      ],
+      "addedQuestionIds": [
+        "geography-nov25-audit-002"
+      ],
+      "status": "knowledge-mapped"
+    },
+    {
+      "subject": "geography",
+      "main": 2,
+      "question": 1,
+      "topic": "造船所跡と臨海再開発",
+      "questionIds": [
+        "geography-nov25-industry-001",
+        "geography-nov25-industry-002",
+        "geography-nov25-industry-003",
+        "geography-nov25-audit-003"
+      ],
+      "addedQuestionIds": [
+        "geography-nov25-audit-003"
+      ],
+      "status": "knowledge-mapped"
+    },
+    {
+      "subject": "geography",
+      "main": 2,
+      "question": 2,
+      "topic": "道路・住宅地・景観の変化",
+      "questionIds": [
+        "geography-nov25-industry-004",
+        "geography-nov25-audit-004"
+      ],
+      "addedQuestionIds": [
+        "geography-nov25-audit-004"
+      ],
+      "status": "knowledge-mapped"
+    },
+    {
+      "subject": "geography",
+      "main": 2,
+      "question": 3,
+      "topic": "就業構成と地域産業",
+      "questionIds": [
+        "geography-nov25-industry-005",
+        "geography-nov25-industry-006",
+        "geography-nov25-industry-007",
+        "geography-nov25-industry-008",
+        "geography-nov25-industry-009",
+        "geography-nov25-audit-005"
+      ],
+      "addedQuestionIds": [
+        "geography-nov25-audit-005"
+      ],
+      "status": "knowledge-mapped"
+    },
+    {
+      "subject": "geography",
+      "main": 2,
+      "question": 4,
+      "topic": "サービス収支・特許と図の読解",
+      "questionIds": [
+        "geography-nov25-industry-010",
+        "geography-nov25-industry-011",
+        "geography-nov25-industry-024",
+        "geography-nov25-industry-025",
+        "geography-nov25-audit-006",
+        "geography-nov25-audit-007"
+      ],
+      "addedQuestionIds": [
+        "geography-nov25-audit-006",
+        "geography-nov25-audit-007"
+      ],
+      "status": "knowledge-mapped"
+    },
+    {
+      "subject": "geography",
+      "main": 2,
+      "question": 5,
+      "topic": "モバイルマネーと金融アクセス",
+      "questionIds": [
+        "geography-nov25-industry-012",
+        "geography-nov25-industry-013",
+        "geography-nov25-industry-014",
+        "geography-nov25-industry-015",
+        "geography-nov25-audit-008"
+      ],
+      "addedQuestionIds": [
+        "geography-nov25-audit-008"
+      ],
+      "status": "knowledge-mapped"
+    },
+    {
+      "subject": "geography",
+      "main": 2,
+      "question": 6,
+      "topic": "世界農業遺産の三地域",
+      "questionIds": [
+        "geography-nov25-industry-016",
+        "geography-nov25-industry-017",
+        "geography-nov25-industry-018",
+        "geography-nov25-industry-019",
+        "geography-nov25-industry-020",
+        "geography-nov25-audit-009",
+        "geography-nov25-audit-010",
+        "geography-nov25-audit-011"
+      ],
+      "addedQuestionIds": [
+        "geography-nov25-audit-009",
+        "geography-nov25-audit-010",
+        "geography-nov25-audit-011"
+      ],
+      "status": "knowledge-mapped"
+    },
+    {
+      "subject": "geography",
+      "main": 2,
+      "question": 7,
+      "topic": "人口・産業・森林の因果",
+      "questionIds": [
+        "geography-nov25-industry-021",
+        "geography-nov25-industry-022",
+        "geography-nov25-industry-023",
+        "geography-nov25-audit-012"
+      ],
+      "addedQuestionIds": [
+        "geography-nov25-audit-012"
+      ],
+      "status": "knowledge-mapped"
+    },
+    {
+      "subject": "geography",
+      "main": 3,
+      "question": 1,
+      "topic": "総量・人口当たり・GDP当たりの指標",
+      "questionIds": [
+        "geography-nov25-energy-001",
+        "geography-nov25-energy-002",
+        "geography-nov25-energy-003",
+        "geography-nov25-energy-004",
+        "geography-nov25-energy-005",
+        "geography-nov25-energy-006",
+        "geography-nov25-audit-013"
+      ],
+      "addedQuestionIds": [
+        "geography-nov25-audit-013"
+      ],
+      "status": "knowledge-mapped"
+    },
+    {
+      "subject": "geography",
+      "main": 3,
+      "question": 2,
+      "topic": "天然ガス輸送・価格と供給",
+      "questionIds": [
+        "geography-nov25-energy-007",
+        "geography-nov25-energy-008",
+        "geography-nov25-energy-009",
+        "geography-nov25-energy-010",
+        "geography-nov25-energy-011",
+        "geography-nov25-energy-012",
+        "geography-nov25-energy-013"
+      ],
+      "addedQuestionIds": [],
+      "status": "knowledge-mapped"
+    },
+    {
+      "subject": "geography",
+      "main": 3,
+      "question": 3,
+      "topic": "バイオマス・廃棄物と持続性",
+      "questionIds": [
+        "geography-nov25-energy-014",
+        "geography-nov25-energy-015",
+        "geography-nov25-energy-016",
+        "geography-nov25-energy-017",
+        "geography-nov25-energy-018",
+        "geography-nov25-energy-021",
+        "geography-nov25-energy-025",
+        "geography-nov25-audit-014"
+      ],
+      "addedQuestionIds": [
+        "geography-nov25-audit-014"
+      ],
+      "status": "knowledge-mapped"
+    },
+    {
+      "subject": "geography",
+      "main": 4,
+      "question": 1,
+      "topic": "沈み込み・震源・温泉",
+      "questionIds": [
+        "geography-nov25-landforms-001",
+        "geography-nov25-landforms-002"
+      ],
+      "addedQuestionIds": [],
+      "status": "knowledge-mapped"
+    },
+    {
+      "subject": "geography",
+      "main": 4,
+      "question": 2,
+      "topic": "標高別面積と海底地形",
+      "questionIds": [
+        "geography-nov25-landforms-003",
+        "geography-nov25-landforms-004",
+        "geography-nov25-audit-015"
+      ],
+      "addedQuestionIds": [
+        "geography-nov25-audit-015"
+      ],
+      "status": "knowledge-mapped"
+    },
+    {
+      "subject": "geography",
+      "main": 4,
+      "question": 3,
+      "topic": "天山・チベット・ヒマラヤと下流平野",
+      "questionIds": [
+        "geography-nov25-landforms-005",
+        "geography-nov25-landforms-006",
+        "geography-nov25-audit-016",
+        "geography-nov25-audit-017"
+      ],
+      "addedQuestionIds": [
+        "geography-nov25-audit-016",
+        "geography-nov25-audit-017"
+      ],
+      "status": "knowledge-mapped"
+    },
+    {
+      "subject": "geography",
+      "main": 4,
+      "question": 4,
+      "topic": "河川勾配と内陸水運",
+      "questionIds": [
+        "geography-nov25-landforms-007",
+        "geography-nov25-landforms-008"
+      ],
+      "addedQuestionIds": [],
+      "status": "knowledge-mapped"
+    },
+    {
+      "subject": "geography",
+      "main": 4,
+      "question": 5,
+      "topic": "カルデラと火山灰対策",
+      "questionIds": [
+        "geography-nov25-landforms-009",
+        "geography-nov25-landforms-010",
+        "geography-nov25-landforms-011",
+        "geography-nov25-landforms-012"
+      ],
+      "addedQuestionIds": [],
+      "status": "knowledge-mapped"
+    },
+    {
+      "subject": "geography",
+      "main": 4,
+      "question": 6,
+      "topic": "ホットスポットと島の年代",
+      "questionIds": [
+        "geography-nov25-landforms-013",
+        "geography-nov25-landforms-014",
+        "geography-nov25-landforms-015",
+        "geography-nov25-landforms-027"
+      ],
+      "addedQuestionIds": [],
+      "status": "knowledge-mapped"
+    },
+    {
+      "subject": "geography",
+      "main": 4,
+      "question": 7,
+      "topic": "段丘・地形史・水位標",
+      "questionIds": [
+        "geography-nov25-landforms-016",
+        "geography-nov25-landforms-017",
+        "geography-nov25-landforms-018",
+        "geography-nov25-landforms-019",
+        "geography-nov25-landforms-020",
+        "geography-nov25-landforms-021",
+        "geography-nov25-landforms-022",
+        "geography-nov25-landforms-023",
+        "geography-nov25-landforms-024",
+        "geography-nov25-landforms-025",
+        "geography-nov25-landforms-026",
+        "geography-nov25-audit-018",
+        "geography-nov25-audit-019"
+      ],
+      "addedQuestionIds": [
+        "geography-nov25-audit-018",
+        "geography-nov25-audit-019"
+      ],
+      "status": "knowledge-mapped"
+    },
+    {
+      "subject": "geography",
+      "main": 5,
+      "question": 1,
+      "topic": "等温線と気候区分",
+      "questionIds": [
+        "geography-nov25-climate-001",
+        "geography-nov25-climate-002",
+        "geography-nov25-climate-032",
+        "geography-nov25-climate-036",
+        "geography-nov25-audit-020"
+      ],
+      "addedQuestionIds": [
+        "geography-nov25-audit-020"
+      ],
+      "status": "knowledge-mapped"
+    },
+    {
+      "subject": "geography",
+      "main": 5,
+      "question": 2,
+      "topic": "日較差・年較差・乾燥",
+      "questionIds": [
+        "geography-nov25-climate-003",
+        "geography-nov25-climate-004",
+        "geography-nov25-climate-005",
+        "geography-nov25-climate-032",
+        "geography-nov25-climate-033"
+      ],
+      "addedQuestionIds": [],
+      "status": "knowledge-mapped"
+    },
+    {
+      "subject": "geography",
+      "main": 5,
+      "question": 3,
+      "topic": "北米気候と植生・土壌",
+      "questionIds": [
+        "geography-nov25-climate-006",
+        "geography-nov25-climate-007",
+        "geography-nov25-climate-008",
+        "geography-nov25-climate-009",
+        "geography-nov25-climate-010",
+        "geography-nov25-climate-032",
+        "geography-nov25-audit-021",
+        "geography-nov25-audit-022"
+      ],
+      "addedQuestionIds": [
+        "geography-nov25-audit-021",
+        "geography-nov25-audit-022"
+      ],
+      "status": "knowledge-mapped"
+    },
+    {
+      "subject": "geography",
+      "main": 5,
+      "question": 4,
+      "topic": "塩分と蒸発・降水",
+      "questionIds": [
+        "geography-nov25-climate-011",
+        "geography-nov25-climate-012",
+        "geography-nov25-audit-023"
+      ],
+      "addedQuestionIds": [
+        "geography-nov25-audit-023"
+      ],
+      "status": "knowledge-mapped"
+    },
+    {
+      "subject": "geography",
+      "main": 5,
+      "question": 5,
+      "topic": "局地風と台風の時系列",
+      "questionIds": [
+        "geography-nov25-climate-013",
+        "geography-nov25-climate-014",
+        "geography-nov25-climate-015",
+        "geography-nov25-climate-016",
+        "geography-nov25-climate-017",
+        "geography-nov25-climate-035",
+        "geography-nov25-audit-024",
+        "geography-nov25-audit-025"
+      ],
+      "addedQuestionIds": [
+        "geography-nov25-audit-024",
+        "geography-nov25-audit-025"
+      ],
+      "status": "knowledge-mapped"
+    },
+    {
+      "subject": "geography",
+      "main": 5,
+      "question": 6,
+      "topic": "気温の閾値と日数",
+      "questionIds": [
+        "geography-nov25-climate-018",
+        "geography-nov25-climate-019",
+        "geography-nov25-climate-020",
+        "geography-nov25-climate-021",
+        "geography-nov25-climate-022",
+        "geography-nov25-climate-023",
+        "geography-nov25-climate-024",
+        "geography-nov25-climate-025"
+      ],
+      "addedQuestionIds": [],
+      "status": "knowledge-mapped"
+    },
+    {
+      "subject": "geography",
+      "main": 5,
+      "question": 7,
+      "topic": "南米乾燥地・寒流・生物",
+      "questionIds": [
+        "geography-nov25-climate-026",
+        "geography-nov25-climate-027",
+        "geography-nov25-climate-028",
+        "geography-nov25-climate-029",
+        "geography-nov25-climate-030",
+        "geography-nov25-climate-031",
+        "geography-nov25-climate-034",
+        "geography-nov25-climate-037",
+        "geography-nov25-audit-026"
+      ],
+      "addedQuestionIds": [
+        "geography-nov25-audit-026"
+      ],
+      "status": "knowledge-mapped"
+    },
+    {
+      "subject": "earth",
+      "main": 1,
+      "question": 1,
+      "topic": "地殻・核の組成",
+      "questionIds": [
+        "earth-nov25-interior-001",
+        "earth-nov25-interior-002",
+        "earth-nov25-interior-003",
+        "earth-nov25-interior-004",
+        "earth-nov25-interior-005",
+        "earth-nov25-interior-006",
+        "earth-nov25-interior-007",
+        "earth-nov25-interior-008",
+        "earth-nov25-interior-009",
+        "earth-nov25-interior-010"
+      ],
+      "addedQuestionIds": [],
+      "status": "knowledge-mapped"
+    },
+    {
+      "subject": "earth",
+      "main": 1,
+      "question": 2,
+      "topic": "球の体積比",
+      "questionIds": [
+        "earth-nov25-interior-015",
+        "earth-nov25-interior-016",
+        "earth-nov25-interior-017",
+        "earth-nov25-audit-001"
+      ],
+      "addedQuestionIds": [
+        "earth-nov25-audit-001"
+      ],
+      "status": "knowledge-mapped"
+    },
+    {
+      "subject": "earth",
+      "main": 1,
+      "question": 3,
+      "topic": "リソスフェア",
+      "questionIds": [
+        "earth-nov25-interior-001",
+        "earth-nov25-interior-002",
+        "earth-nov25-interior-003",
+        "earth-nov25-interior-004",
+        "earth-nov25-interior-005",
+        "earth-nov25-interior-006",
+        "earth-nov25-interior-007",
+        "earth-nov25-interior-008",
+        "earth-nov25-interior-009",
+        "earth-nov25-interior-010",
+        "earth-nov25-interior-011",
+        "earth-nov25-interior-012",
+        "earth-nov25-interior-013",
+        "earth-nov25-interior-014",
+        "earth-nov25-interior-022"
+      ],
+      "addedQuestionIds": [],
+      "status": "knowledge-mapped"
+    },
+    {
+      "subject": "earth",
+      "main": 1,
+      "question": 4,
+      "topic": "モホ面・層の性質",
+      "questionIds": [
+        "earth-nov25-interior-001",
+        "earth-nov25-interior-002",
+        "earth-nov25-interior-003",
+        "earth-nov25-interior-004",
+        "earth-nov25-interior-005",
+        "earth-nov25-interior-006",
+        "earth-nov25-interior-007",
+        "earth-nov25-interior-008",
+        "earth-nov25-interior-009",
+        "earth-nov25-interior-010",
+        "earth-nov25-interior-011",
+        "earth-nov25-interior-012",
+        "earth-nov25-interior-013",
+        "earth-nov25-interior-014",
+        "earth-nov25-interior-022"
+      ],
+      "addedQuestionIds": [],
+      "status": "knowledge-mapped"
+    },
+    {
+      "subject": "earth",
+      "main": 1,
+      "question": 5,
+      "topic": "固体マントルの対流",
+      "questionIds": [
+        "earth-nov25-interior-018",
+        "earth-nov25-interior-019",
+        "earth-nov25-interior-020",
+        "earth-nov25-interior-021"
+      ],
+      "addedQuestionIds": [],
+      "status": "knowledge-mapped"
+    },
+    {
+      "subject": "earth",
+      "main": 1,
+      "question": 6,
+      "topic": "オゾンと成層圏",
+      "questionIds": [
+        "earth-nov25-atmosphere-001",
+        "earth-nov25-atmosphere-002",
+        "earth-nov25-atmosphere-003",
+        "earth-nov25-atmosphere-004",
+        "earth-nov25-atmosphere-005",
+        "earth-nov25-atmosphere-006",
+        "earth-nov25-atmosphere-007",
+        "earth-nov25-atmosphere-021"
+      ],
+      "addedQuestionIds": [],
+      "status": "knowledge-mapped"
+    },
+    {
+      "subject": "earth",
+      "main": 1,
+      "question": 7,
+      "topic": "大気層と気温変化",
+      "questionIds": [
+        "earth-nov25-atmosphere-001",
+        "earth-nov25-atmosphere-002",
+        "earth-nov25-atmosphere-003",
+        "earth-nov25-atmosphere-004",
+        "earth-nov25-atmosphere-005",
+        "earth-nov25-atmosphere-006",
+        "earth-nov25-atmosphere-007",
+        "earth-nov25-atmosphere-021",
+        "earth-nov25-audit-002"
+      ],
+      "addedQuestionIds": [
+        "earth-nov25-audit-002"
+      ],
+      "status": "knowledge-mapped"
+    },
+    {
+      "subject": "earth",
+      "main": 1,
+      "question": 8,
+      "topic": "気圧と大気質量",
+      "questionIds": [
+        "earth-nov25-atmosphere-008",
+        "earth-nov25-atmosphere-009",
+        "earth-nov25-atmosphere-010",
+        "earth-nov25-atmosphere-011",
+        "earth-nov25-audit-003"
+      ],
+      "addedQuestionIds": [
+        "earth-nov25-audit-003"
+      ],
+      "status": "knowledge-mapped"
+    },
+    {
+      "subject": "earth",
+      "main": 1,
+      "question": 9,
+      "topic": "乾燥空気の組成",
+      "questionIds": [
+        "earth-nov25-atmosphere-008",
+        "earth-nov25-atmosphere-009",
+        "earth-nov25-atmosphere-010",
+        "earth-nov25-atmosphere-011"
+      ],
+      "addedQuestionIds": [],
+      "status": "knowledge-mapped"
+    },
+    {
+      "subject": "earth",
+      "main": 1,
+      "question": 10,
+      "topic": "飽和水蒸気圧・露点・湿度",
+      "questionIds": [
+        "earth-nov25-atmosphere-012",
+        "earth-nov25-atmosphere-013",
+        "earth-nov25-atmosphere-014",
+        "earth-nov25-atmosphere-015",
+        "earth-nov25-atmosphere-016",
+        "earth-nov25-atmosphere-017",
+        "earth-nov25-atmosphere-018",
+        "earth-nov25-atmosphere-019",
+        "earth-nov25-atmosphere-020",
+        "earth-nov25-audit-004"
+      ],
+      "addedQuestionIds": [
+        "earth-nov25-audit-004"
+      ],
+      "status": "knowledge-mapped"
+    },
+    {
+      "subject": "earth",
+      "main": 2,
+      "question": 1,
+      "topic": "プレートテクトニクス",
+      "questionIds": [
+        "earth-nov25-tectonics-001",
+        "earth-nov25-tectonics-002",
+        "earth-nov25-tectonics-003",
+        "earth-nov25-tectonics-004",
+        "earth-nov25-tectonics-005"
+      ],
+      "addedQuestionIds": [],
+      "status": "knowledge-mapped"
+    },
+    {
+      "subject": "earth",
+      "main": 2,
+      "question": 2,
+      "topic": "プレート境界",
+      "questionIds": [
+        "earth-nov25-tectonics-001",
+        "earth-nov25-tectonics-002",
+        "earth-nov25-tectonics-003",
+        "earth-nov25-tectonics-004",
+        "earth-nov25-tectonics-005"
+      ],
+      "addedQuestionIds": [],
+      "status": "knowledge-mapped"
+    },
+    {
+      "subject": "earth",
+      "main": 2,
+      "question": 3,
+      "topic": "海洋底の年代",
+      "questionIds": [
+        "earth-nov25-tectonics-006",
+        "earth-nov25-tectonics-007",
+        "earth-nov25-tectonics-008",
+        "earth-nov25-tectonics-009",
+        "earth-nov25-tectonics-010"
+      ],
+      "addedQuestionIds": [],
+      "status": "knowledge-mapped"
+    },
+    {
+      "subject": "earth",
+      "main": 2,
+      "question": 4,
+      "topic": "ホットスポット",
+      "questionIds": [
+        "earth-nov25-tectonics-006",
+        "earth-nov25-tectonics-007",
+        "earth-nov25-tectonics-008",
+        "earth-nov25-tectonics-009",
+        "earth-nov25-tectonics-010"
+      ],
+      "addedQuestionIds": [],
+      "status": "knowledge-mapped"
+    },
+    {
+      "subject": "earth",
+      "main": 2,
+      "question": 5,
+      "topic": "P波・S波と初期微動",
+      "questionIds": [
+        "earth-nov25-tectonics-011",
+        "earth-nov25-tectonics-012",
+        "earth-nov25-tectonics-013",
+        "earth-nov25-tectonics-014",
+        "earth-nov25-tectonics-015",
+        "earth-nov25-tectonics-021",
+        "earth-nov25-tectonics-022"
+      ],
+      "addedQuestionIds": [],
+      "status": "knowledge-mapped"
+    },
+    {
+      "subject": "earth",
+      "main": 2,
+      "question": 6,
+      "topic": "大森公式の導出",
+      "questionIds": [
+        "earth-nov25-tectonics-011",
+        "earth-nov25-tectonics-012",
+        "earth-nov25-tectonics-013",
+        "earth-nov25-tectonics-014",
+        "earth-nov25-tectonics-015",
+        "earth-nov25-tectonics-021",
+        "earth-nov25-tectonics-022"
+      ],
+      "addedQuestionIds": [],
+      "status": "knowledge-mapped"
+    },
+    {
+      "subject": "earth",
+      "main": 2,
+      "question": 7,
+      "topic": "震源距離と円・深さの幾何",
+      "questionIds": [
+        "earth-nov25-tectonics-016",
+        "earth-nov25-tectonics-017",
+        "earth-nov25-tectonics-018",
+        "earth-nov25-tectonics-019",
+        "earth-nov25-tectonics-020"
+      ],
+      "addedQuestionIds": [],
+      "status": "knowledge-mapped"
+    },
+    {
+      "subject": "earth",
+      "main": 3,
+      "question": 1,
+      "topic": "水星の環境",
+      "questionIds": [
+        "earth-nov25-planets-001",
+        "earth-nov25-planets-002",
+        "earth-nov25-planets-003",
+        "earth-nov25-planets-004",
+        "earth-nov25-planets-005"
+      ],
+      "addedQuestionIds": [],
+      "status": "knowledge-mapped"
+    },
+    {
+      "subject": "earth",
+      "main": 3,
+      "question": 2,
+      "topic": "金星の温室効果",
+      "questionIds": [
+        "earth-nov25-planets-001",
+        "earth-nov25-planets-002",
+        "earth-nov25-planets-003",
+        "earth-nov25-planets-004",
+        "earth-nov25-planets-005"
+      ],
+      "addedQuestionIds": [],
+      "status": "knowledge-mapped"
+    },
+    {
+      "subject": "earth",
+      "main": 3,
+      "question": 3,
+      "topic": "惑星の質量・密度と対数軸",
+      "questionIds": [
+        "earth-nov25-planets-006",
+        "earth-nov25-planets-007",
+        "earth-nov25-planets-008",
+        "earth-nov25-planets-009",
+        "earth-nov25-planets-010",
+        "earth-nov25-planets-011",
+        "earth-nov25-planets-012",
+        "earth-nov25-planets-017",
+        "earth-nov25-audit-005"
+      ],
+      "addedQuestionIds": [
+        "earth-nov25-audit-005"
+      ],
+      "status": "knowledge-mapped"
+    },
+    {
+      "subject": "earth",
+      "main": 3,
+      "question": 4,
+      "topic": "巨大惑星の内部",
+      "questionIds": [
+        "earth-nov25-planets-006",
+        "earth-nov25-planets-007",
+        "earth-nov25-planets-008",
+        "earth-nov25-planets-009",
+        "earth-nov25-planets-010",
+        "earth-nov25-planets-011",
+        "earth-nov25-planets-012",
+        "earth-nov25-planets-017",
+        "earth-nov25-audit-006"
+      ],
+      "addedQuestionIds": [
+        "earth-nov25-audit-006"
+      ],
+      "status": "knowledge-mapped"
+    },
+    {
+      "subject": "earth",
+      "main": 3,
+      "question": 5,
+      "topic": "巨大惑星の自転と大気",
+      "questionIds": [
+        "earth-nov25-planets-006",
+        "earth-nov25-planets-007",
+        "earth-nov25-planets-008",
+        "earth-nov25-planets-009",
+        "earth-nov25-planets-010",
+        "earth-nov25-planets-011",
+        "earth-nov25-planets-012",
+        "earth-nov25-planets-017"
+      ],
+      "addedQuestionIds": [],
+      "status": "knowledge-mapped"
+    },
+    {
+      "subject": "earth",
+      "main": 3,
+      "question": 6,
+      "topic": "太陽系外縁天体",
+      "questionIds": [
+        "earth-nov25-planets-006",
+        "earth-nov25-planets-007",
+        "earth-nov25-planets-008",
+        "earth-nov25-planets-009",
+        "earth-nov25-planets-010",
+        "earth-nov25-planets-011",
+        "earth-nov25-planets-012",
+        "earth-nov25-planets-017"
+      ],
+      "addedQuestionIds": [],
+      "status": "knowledge-mapped"
+    },
+    {
+      "subject": "earth",
+      "main": 4,
+      "question": 1,
+      "topic": "陸上植物の進化",
+      "questionIds": [
+        "earth-nov25-history-001",
+        "earth-nov25-history-002",
+        "earth-nov25-history-003",
+        "earth-nov25-history-004",
+        "earth-nov25-history-018"
+      ],
+      "addedQuestionIds": [],
+      "status": "knowledge-mapped"
+    },
+    {
+      "subject": "earth",
+      "main": 4,
+      "question": 2,
+      "topic": "地質時代・化石・絶滅",
+      "questionIds": [
+        "earth-nov25-history-005",
+        "earth-nov25-history-006",
+        "earth-nov25-history-007",
+        "earth-nov25-history-008",
+        "earth-nov25-history-009",
+        "earth-nov25-history-010",
+        "earth-nov25-history-017",
+        "earth-nov25-audit-007"
+      ],
+      "addedQuestionIds": [
+        "earth-nov25-audit-007"
+      ],
+      "status": "knowledge-mapped"
+    },
+    {
+      "subject": "earth",
+      "main": 4,
+      "question": 3,
+      "topic": "氷期と海面",
+      "questionIds": [
+        "earth-nov25-history-011",
+        "earth-nov25-history-012",
+        "earth-nov25-history-013",
+        "earth-nov25-history-014",
+        "earth-nov25-history-015",
+        "earth-nov25-history-016"
+      ],
+      "addedQuestionIds": [],
+      "status": "knowledge-mapped"
+    },
+    {
+      "subject": "earth",
+      "main": 4,
+      "question": 4,
+      "topic": "人類の出現",
+      "questionIds": [
+        "earth-nov25-history-011",
+        "earth-nov25-history-012",
+        "earth-nov25-history-013",
+        "earth-nov25-history-014",
+        "earth-nov25-history-015",
+        "earth-nov25-history-016"
+      ],
+      "addedQuestionIds": [],
+      "status": "knowledge-mapped"
+    },
+    {
+      "subject": "earth",
+      "main": 5,
+      "question": 1,
+      "topic": "地球楕円体・ジオイド",
+      "questionIds": [
+        "earth-nov25-gravity-001",
+        "earth-nov25-gravity-002",
+        "earth-nov25-gravity-003",
+        "earth-nov25-gravity-004",
+        "earth-nov25-gravity-005",
+        "earth-nov25-gravity-006",
+        "earth-nov25-gravity-018"
+      ],
+      "addedQuestionIds": [],
+      "status": "knowledge-mapped"
+    },
+    {
+      "subject": "earth",
+      "main": 5,
+      "question": 2,
+      "topic": "緯度と子午線の長さ",
+      "questionIds": [
+        "earth-nov25-gravity-001",
+        "earth-nov25-gravity-002",
+        "earth-nov25-gravity-003",
+        "earth-nov25-gravity-004",
+        "earth-nov25-gravity-005",
+        "earth-nov25-gravity-006",
+        "earth-nov25-gravity-018"
+      ],
+      "addedQuestionIds": [],
+      "status": "knowledge-mapped"
+    },
+    {
+      "subject": "earth",
+      "main": 5,
+      "question": 3,
+      "topic": "自転・形状・遠心力",
+      "questionIds": [
+        "earth-nov25-gravity-007",
+        "earth-nov25-gravity-008",
+        "earth-nov25-gravity-009",
+        "earth-nov25-gravity-010",
+        "earth-nov25-gravity-011",
+        "earth-nov25-gravity-012",
+        "earth-nov25-gravity-019"
+      ],
+      "addedQuestionIds": [],
+      "status": "knowledge-mapped"
+    },
+    {
+      "subject": "earth",
+      "main": 5,
+      "question": 4,
+      "topic": "重力の緯度差",
+      "questionIds": [
+        "earth-nov25-gravity-007",
+        "earth-nov25-gravity-008",
+        "earth-nov25-gravity-009",
+        "earth-nov25-gravity-010",
+        "earth-nov25-gravity-011",
+        "earth-nov25-gravity-012",
+        "earth-nov25-gravity-019"
+      ],
+      "addedQuestionIds": [],
+      "status": "knowledge-mapped"
+    },
+    {
+      "subject": "earth",
+      "main": 5,
+      "question": 5,
+      "topic": "重力異常と補正",
+      "questionIds": [
+        "earth-nov25-gravity-013",
+        "earth-nov25-gravity-014",
+        "earth-nov25-gravity-015",
+        "earth-nov25-gravity-016",
+        "earth-nov25-gravity-017"
+      ],
+      "addedQuestionIds": [],
+      "status": "knowledge-mapped"
+    }
+  ]
+}
+

@@ -293,6 +293,7 @@ function matchesNumberedId(id, prefix, list){
   });
 }
 function earthNovemberCourse(q){
+  if(q.id.startsWith("earth-nov25-audit-")) return "地学";
   if(q.studyTarget==="benesse-h2-nov-2026") return "地学";
   const id=q.id;
   if(["ear-1","ear-2","ear-3","ear-6"].includes(id)) return "両方";
@@ -324,6 +325,7 @@ function earthNovemberCourse(q){
 }
 function geographyNovemberCourse(q){
   const id=q.id;
+  if(id.startsWith("geography-nov25-audit-")) return q.c<=3 ? "地理総合" : "地理探究";
   if(q.studyTarget==="benesse-h2-nov-2026-geography") return "地理総合";
   if(id.startsWith("geography-nov25-maps-")) return "地理総合";
   if(id.startsWith("geography-nov25-energy-")) return "地理総合";
@@ -691,3 +693,4 @@ function render(){
   window.scrollTo(0,0);
 }
 render();
+

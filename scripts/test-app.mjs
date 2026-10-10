@@ -3,6 +3,9 @@ import { readFile, readdir } from 'node:fs/promises';
 import vm from 'node:vm';
 import { test } from 'node:test';
 
+
+
+
 // No dependencies or real browser storage: exercise the shipped scripts in isolation.
 const manifestCode = await readFile('js/generated-manifest.js', 'utf8');
 const files = JSON.parse(manifestCode.match(/\[[\s\S]*\]/)[0]);
@@ -25,6 +28,31 @@ const rtaQuestion = questions.find(q => q.subject === 'physics' && q.rta === 're
 const legacyQuestion = questions.find(q => q.subject === 'classics');
 const key = 'multi-study-drill-v1';
 const copy = value => JSON.parse(JSON.stringify(value));
+
+const auditCode = await readFile('research/mock-2025-coverage.json','utf8');
+test('2025 supplied mock audit maps all 61 questions and exposes every supplement in its course', async () => {
+  const audit=JSON.parse(auditCode);
+  const byId=new Map(questions.map(q=>[q.id,q]));
+  assert.equal(audit.rows.length,61);
+  for(const [subject,sizes] of [['geography',[5,7,3,7,7]],['earth',[10,7,6,4,5]]]) {
+    sizes.forEach((size,i)=>assert.deepEqual(audit.rows.filter(r=>r.subject===subject&&r.main===i+1).map(r=>r.question),Array.from({length:size},(_,j)=>j+1)));
+  }
+  const app=makeApp();
+  for(const row of audit.rows) {
+    assert.ok(row.questionIds.length>0);
+    for(const id of row.questionIds) assert.equal(byId.get(id)?.subject,row.subject,id);
+    for(const id of row.addedQuestionIds) {
+      const q=byId.get(id);
+      assert.equal(app.value(`courseMatches(${JSON.stringify(q)},${JSON.stringify(q.courses[0])})`),true,id);
+      assert.equal(q.knowledge,'required');
+      assert.ok(q.e.length>30,q.id);
+    }
+  }
+  const extra=questions.filter(q=>q.id.includes('-nov25-audit-'));
+  assert.equal(extra.length,33);
+  assert.equal(new Set(audit.rows.flatMap(r=>r.addedQuestionIds)).size,33);
+  assert.deepEqual([...new Set(extra.map(q=>q.a[0]))].sort(),[1,2,3,4]);
+});
 
 test('deployment waits for the actual legacy Pages workflow path, not its CLI display name', async () => {
   const script = workflowCode.match(/script: \|\r?\n([\s\S]*?)      - name: Publish tested app/)[1];
@@ -518,8 +546,8 @@ for (const failure of ['missing','unregistered','duplicate','unsupported','timeo
 
 test('November geography and earth knowledge is available, filterable, and preserves learning history', () => {
   const imported = questions.filter(q => q.id.includes('-nov25-'));
-  assert.equal(imported.length, 250);
-  for (const [subject, count, chapters] of [['earth',118,[5,6,7,8,9,10]], ['geography',132,[1,2,3,4,5]]]) {
+  assert.equal(imported.length, 283);
+  for (const [subject, count, chapters] of [['earth',125,[5,6,7,8,9,10]], ['geography',158,[1,2,3,4,5]]]) {
     const qs = imported.filter(q => q.subject === subject);
     assert.equal(qs.length, count);
     assert.deepEqual([...new Set(qs.map(q=>q.c))].sort((a,b)=>a-b), chapters);
@@ -658,12 +686,12 @@ test('course filters separate foundation from advanced items and reset incompati
   assert.ok(app.value('pool().map(q=>q.id)').includes('geography-h2nov26-culture-001'));
   assert.ok(!app.value('pool().map(q=>q.id)').includes('geography-nov25-industry-001'));
   assert.ok(!app.value('pool().map(q=>q.id)').includes('geography-nov25-climate-003'));
-  assert.equal(app.value('pool().length'),57);
+  assert.equal(app.value('pool().length'),71);
   app.click('地理探究');
   assert.ok(app.value('pool().map(q=>q.id)').includes('geography-nov25-landforms-001'));
   assert.ok(app.value('pool().map(q=>q.id)').includes('geography-nov25-climate-003'));
   assert.ok(!app.value('pool().map(q=>q.id)').includes('geography-nov25-energy-001'));
-  assert.equal(app.value('pool().length'),64);
+  assert.equal(app.value('pool().length'),76);
 });
 
 
@@ -681,8 +709,8 @@ test('article provenance is visible after answering without changing learning hi
 
 test('geography exam references do not contain nonexistent subquestions', () => {
   const maxima={1:5,2:7,3:3,4:7,5:7};
-  for(const q of questions.filter(q=>q.subject==='geography')) {
-    assert.ok(q.courses.includes('地理探究'));
+  for(const q of questions.filter(q=>q.subject==='geography' && q.id.includes('-nov25-'))) {
+    assert.ok(q.courses.some(course=>['地理総合','地理探究'].includes(course)));
     const main=Number(q.basis.match(/地理(\d)/)[1]);
     for(const match of q.basis.matchAll(/問(\d+)/g)) assert.ok(Number(match[1])<=maxima[main],q.id);
     if(q.source) {assert.equal(new URL(q.source).protocol,'https:');assert.ok(q.sourceLabel);}
@@ -701,7 +729,7 @@ test('lecture foundation questions have bounded PDF provenance and preserve reco
   assert.equal(added.length,52);
   assert.ok(added.every(q=>q.courses.length===1 && q.courses[0]==='地学基礎'));
   const app=makeApp({'geography-nov25-landforms-028':{seen:3,wrong:1,last:0}});
-  const q=added[0];app.begin(q);app.answer(1000,true,q);
+  const q=added.find(q=>q.id==='earth-lecture-environment-006');app.begin(q);app.answer(1000,true,q);
   assert.ok(app.html().includes(q.material.title));
   assert.ok(app.html().includes(`PDF ${q.material.page}ページ`));
   assert.deepEqual(app.saved()['geography-nov25-landforms-028'],{seen:3,wrong:1,last:0});
@@ -747,3 +775,4 @@ test('related teaching references are hidden until answering and deduplicated', 
   assert.equal(app.html().split(q.source).length-1,1);
   assert.ok(!app.html().includes('javascript:alert'));
 });
+
