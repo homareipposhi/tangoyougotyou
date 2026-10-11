@@ -1,0 +1,418 @@
+{
+  "date": "2026-10-12",
+  "subject": "公共",
+  "questionCount": 222,
+  "sourceImages": [
+    "IMG_2682.jpeg",
+    "IMG_2683.jpeg",
+    "IMG_2684.jpeg",
+    "IMG_2685.jpeg",
+    "IMG_2686.jpeg",
+    "IMG_2687.jpeg",
+    "IMG_2688.jpeg",
+    "IMG_2689.jpeg",
+    "IMG_2690.jpeg",
+    "IMG_2691.jpeg",
+    "IMG_2692.jpeg",
+    "IMG_2693.jpeg",
+    "IMG_2694.jpeg",
+    "IMG_2695.jpeg",
+    "IMG_2696.jpeg",
+    "IMG_2697.jpeg",
+    "IMG_2698.jpeg",
+    "IMG_2699.jpeg",
+    "IMG_2700.jpeg",
+    "IMG_2701.jpeg",
+    "01-IMG_2960.jpeg",
+    "02-IMG_2961.jpeg",
+    "03-IMG_2962.jpeg"
+  ],
+  "scope": "教材項目26〜36（26・27は提供された解答一覧に基づく）とp141 Step2の労働市場・最低賃金モデル。範囲外の公共単元は追加しない。",
+  "method": "写真23枚を目視で確認し、独自の用語・区別・計算問題として再構成。原問題の全文と写真は公開版に転載しない。",
+  "chapters": [
+    {
+      "chapter": 26,
+      "title": "国会のしくみと役割",
+      "count": 11,
+      "material": {
+        "title": "提供された公共教材（写真）",
+        "page": 16,
+        "section": "解答一覧",
+        "type": "photo"
+      },
+      "questionIds": [
+        "public-material-26-001",
+        "public-material-26-002",
+        "public-material-26-003",
+        "public-material-26-004",
+        "public-material-26-005",
+        "public-material-26-006",
+        "public-material-26-007",
+        "public-material-26-008",
+        "public-material-26-009",
+        "public-material-26-010",
+        "public-material-26-011"
+      ]
+    },
+    {
+      "chapter": 27,
+      "title": "内閣と行政機構",
+      "count": 10,
+      "material": {
+        "title": "提供された公共教材（写真）",
+        "page": 16,
+        "section": "解答一覧",
+        "type": "photo"
+      },
+      "questionIds": [
+        "public-material-27-001",
+        "public-material-27-002",
+        "public-material-27-003",
+        "public-material-27-004",
+        "public-material-27-005",
+        "public-material-27-006",
+        "public-material-27-007",
+        "public-material-27-008",
+        "public-material-27-009",
+        "public-material-27-010"
+      ]
+    },
+    {
+      "chapter": 28,
+      "title": "裁判制度と違憲審査",
+      "count": 22,
+      "material": {
+        "title": "提供された公共教材（写真）",
+        "page": 70,
+        "section": "項目28 裁判制度と違憲審査",
+        "type": "photo"
+      },
+      "questionIds": [
+        "public-material-28-001",
+        "public-material-28-002",
+        "public-material-28-003",
+        "public-material-28-004",
+        "public-material-28-005",
+        "public-material-28-006",
+        "public-material-28-007",
+        "public-material-28-008",
+        "public-material-28-009",
+        "public-material-28-010",
+        "public-material-28-011",
+        "public-material-28-012",
+        "public-material-28-013",
+        "public-material-28-014",
+        "public-material-28-015",
+        "public-material-28-016",
+        "public-material-28-017",
+        "public-material-28-018",
+        "public-material-28-019",
+        "public-material-28-020",
+        "public-material-28-021",
+        "public-material-28-022"
+      ]
+    },
+    {
+      "chapter": 29,
+      "title": "司法参加と刑事司法",
+      "count": 21,
+      "material": {
+        "title": "提供された公共教材（写真）",
+        "page": 72,
+        "section": "項目29 司法参加と刑事司法",
+        "type": "photo"
+      },
+      "questionIds": [
+        "public-material-29-001",
+        "public-material-29-002",
+        "public-material-29-003",
+        "public-material-29-004",
+        "public-material-29-005",
+        "public-material-29-006",
+        "public-material-29-007",
+        "public-material-29-008",
+        "public-material-29-009",
+        "public-material-29-010",
+        "public-material-29-011",
+        "public-material-29-012",
+        "public-material-29-013",
+        "public-material-29-014",
+        "public-material-29-015",
+        "public-material-29-016",
+        "public-material-29-017",
+        "public-material-29-018",
+        "public-material-29-019",
+        "public-material-29-020",
+        "public-material-29-021"
+      ]
+    },
+    {
+      "chapter": 30,
+      "title": "選挙と選挙制度",
+      "count": 24,
+      "material": {
+        "title": "提供された公共教材（写真）",
+        "page": 74,
+        "section": "項目30 選挙と選挙制度",
+        "type": "photo"
+      },
+      "questionIds": [
+        "public-material-30-001",
+        "public-material-30-002",
+        "public-material-30-003",
+        "public-material-30-004",
+        "public-material-30-005",
+        "public-material-30-006",
+        "public-material-30-007",
+        "public-material-30-008",
+        "public-material-30-009",
+        "public-material-30-010",
+        "public-material-30-011",
+        "public-material-30-012",
+        "public-material-30-013",
+        "public-material-30-014",
+        "public-material-30-015",
+        "public-material-30-016",
+        "public-material-30-017",
+        "public-material-30-018",
+        "public-material-30-019",
+        "public-material-30-020",
+        "public-material-30-021",
+        "public-material-30-022",
+        "public-material-30-023",
+        "public-material-30-024"
+      ]
+    },
+    {
+      "chapter": 31,
+      "title": "政党の役割",
+      "count": 14,
+      "material": {
+        "title": "提供された公共教材（写真）",
+        "page": 76,
+        "section": "項目31 政党の役割",
+        "type": "photo"
+      },
+      "questionIds": [
+        "public-material-31-001",
+        "public-material-31-002",
+        "public-material-31-003",
+        "public-material-31-004",
+        "public-material-31-005",
+        "public-material-31-006",
+        "public-material-31-007",
+        "public-material-31-008",
+        "public-material-31-009",
+        "public-material-31-010",
+        "public-material-31-011",
+        "public-material-31-012",
+        "public-material-31-013",
+        "public-material-31-014"
+      ]
+    },
+    {
+      "chapter": 32,
+      "title": "地方自治",
+      "count": 20,
+      "material": {
+        "title": "提供された公共教材（写真）",
+        "page": 78,
+        "section": "項目32 地方自治",
+        "type": "photo"
+      },
+      "questionIds": [
+        "public-material-32-001",
+        "public-material-32-002",
+        "public-material-32-003",
+        "public-material-32-004",
+        "public-material-32-005",
+        "public-material-32-006",
+        "public-material-32-007",
+        "public-material-32-008",
+        "public-material-32-009",
+        "public-material-32-010",
+        "public-material-32-011",
+        "public-material-32-012",
+        "public-material-32-013",
+        "public-material-32-014",
+        "public-material-32-015",
+        "public-material-32-016",
+        "public-material-32-017",
+        "public-material-32-018",
+        "public-material-32-019",
+        "public-material-32-020"
+      ]
+    },
+    {
+      "chapter": 33,
+      "title": "世論と政治参加",
+      "count": 12,
+      "material": {
+        "title": "提供された公共教材（写真）",
+        "page": 80,
+        "section": "項目33 世論と政治参加",
+        "type": "photo"
+      },
+      "questionIds": [
+        "public-material-33-001",
+        "public-material-33-002",
+        "public-material-33-003",
+        "public-material-33-004",
+        "public-material-33-005",
+        "public-material-33-006",
+        "public-material-33-007",
+        "public-material-33-008",
+        "public-material-33-009",
+        "public-material-33-010",
+        "public-material-33-011",
+        "public-material-33-012"
+      ]
+    },
+    {
+      "chapter": 34,
+      "title": "経済生活のしくみ",
+      "count": 18,
+      "material": {
+        "title": "提供された公共教材（写真）",
+        "page": 86,
+        "section": "項目34 経済生活のしくみ",
+        "type": "photo"
+      },
+      "questionIds": [
+        "public-material-34-001",
+        "public-material-34-002",
+        "public-material-34-003",
+        "public-material-34-004",
+        "public-material-34-005",
+        "public-material-34-006",
+        "public-material-34-007",
+        "public-material-34-008",
+        "public-material-34-009",
+        "public-material-34-010",
+        "public-material-34-011",
+        "public-material-34-012",
+        "public-material-34-013",
+        "public-material-34-014",
+        "public-material-34-015",
+        "public-material-34-016",
+        "public-material-34-017",
+        "public-material-34-018"
+      ]
+    },
+    {
+      "chapter": 35,
+      "title": "企業の働きと役割",
+      "count": 26,
+      "material": {
+        "title": "提供された公共教材（写真）",
+        "page": 88,
+        "section": "項目35 企業の働きと役割",
+        "type": "photo"
+      },
+      "questionIds": [
+        "public-material-35-001",
+        "public-material-35-002",
+        "public-material-35-003",
+        "public-material-35-004",
+        "public-material-35-005",
+        "public-material-35-006",
+        "public-material-35-007",
+        "public-material-35-008",
+        "public-material-35-009",
+        "public-material-35-010",
+        "public-material-35-011",
+        "public-material-35-012",
+        "public-material-35-013",
+        "public-material-35-014",
+        "public-material-35-015",
+        "public-material-35-016",
+        "public-material-35-017",
+        "public-material-35-018",
+        "public-material-35-019",
+        "public-material-35-020",
+        "public-material-35-021",
+        "public-material-35-022",
+        "public-material-35-023",
+        "public-material-35-024",
+        "public-material-35-025",
+        "public-material-35-026"
+      ]
+    },
+    {
+      "chapter": 36,
+      "title": "市場経済と物価",
+      "count": 36,
+      "material": {
+        "title": "提供された公共教材（写真）",
+        "page": 90,
+        "section": "項目36 市場経済と物価",
+        "type": "photo"
+      },
+      "questionIds": [
+        "public-material-36-001",
+        "public-material-36-002",
+        "public-material-36-003",
+        "public-material-36-004",
+        "public-material-36-005",
+        "public-material-36-006",
+        "public-material-36-007",
+        "public-material-36-008",
+        "public-material-36-009",
+        "public-material-36-010",
+        "public-material-36-011",
+        "public-material-36-012",
+        "public-material-36-013",
+        "public-material-36-014",
+        "public-material-36-015",
+        "public-material-36-016",
+        "public-material-36-017",
+        "public-material-36-018",
+        "public-material-36-019",
+        "public-material-36-020",
+        "public-material-36-021",
+        "public-material-36-022",
+        "public-material-36-023",
+        "public-material-36-024",
+        "public-material-36-025",
+        "public-material-36-026",
+        "public-material-36-027",
+        "public-material-36-028",
+        "public-material-36-029",
+        "public-material-36-030",
+        "public-material-36-031",
+        "public-material-36-032",
+        "public-material-36-033",
+        "public-material-36-034",
+        "public-material-36-035",
+        "public-material-36-036"
+      ]
+    },
+    {
+      "chapter": 37,
+      "title": "需要・供給と最低賃金の計算",
+      "count": 8,
+      "material": {
+        "title": "提供された公共教材（写真）",
+        "page": 141,
+        "section": "Step2解答",
+        "type": "photo"
+      },
+      "questionIds": [
+        "public-material-37-001",
+        "public-material-37-002",
+        "public-material-37-003",
+        "public-material-37-004",
+        "public-material-37-005",
+        "public-material-37-006",
+        "public-material-37-007",
+        "public-material-37-008"
+      ]
+    }
+  ],
+  "notes": [
+    "掲載された議員定数などの数値は教材の掲載値として出題する。",
+    "最低賃金の計算は教材の仮定に沿い、賃金総額だけの比較を政策全体の結論にしない。",
+    "既存科目と既存IDを変更せず、公共用の別IDで学習履歴を保存する。"
+  ]
+}
+

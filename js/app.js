@@ -597,7 +597,7 @@ function quiz(){
       <div>${ok?"":`あなたの答え：${esc(yourText(q))}<br>`}正解：${esc(answerText(q))}</div>
       <div>${esc(q.e)}</div>${isRta(q)&&lastTiming?`<div class="timing">回答時間 ${formatMs(lastTiming.ms)}秒：${esc(lastTiming.label)}</div>`:""}</div>`);
     if(q.basis) fb.appendChild(h(`<div class="subtle">対応する出題分野：${esc(q.basis)}</div>`));
-    if(q.material) fb.appendChild(h(`<div class="subtle">教材：${esc(q.material.title)} — ${q.material.type==="book"?"教科書":"PDF"} ${esc(q.material.page)}ページ・${esc(q.material.section)}</div>`));
+    if(q.material) fb.appendChild(h(`<div class="subtle">教材：${esc(q.material.title)} — ${q.material.type==="photo"?"写真教材":q.material.type==="book"?"教科書":"PDF"} ${esc(q.material.page)}ページ・${esc(q.material.section)}</div>`));
     if(q.examMaterial) fb.appendChild(h(`<div class="subtle">範囲：${esc(q.examMaterial.title)}・${esc(q.examMaterial.section)}</div>`));
     const references=[...(q.source?[{url:q.source,label:q.sourceLabel||"公開入試問題・出題意図"}]:[]),...(q.references||[])];
     const shown=new Set();

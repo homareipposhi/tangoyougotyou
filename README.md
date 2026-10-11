@@ -1,5 +1,7 @@
 # 学習問題集
 
+2026-10-12：提供された公共教材23枚の範囲で「公共」222問・12単元を追加しました。用語、制度の比較、選挙・需要供給・最低賃金モデルの計算を収録し、解答後に解説と教材の参照ページを表示します。[公共の対応範囲](research/public-materials.md)
+
 問題は `subjects/` 以下のJavaScriptファイルだけで追加・編集できます。各ファイルは
 `registerQuestionPack({ subject, name, chapters, questions })` で問題パックを登録します。
 

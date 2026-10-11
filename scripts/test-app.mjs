@@ -766,6 +766,71 @@ test('dialect concentric distribution remains a question and an option with its 
   assert.ok(app.html().includes(q.source));
 });
 
+test('public material adds all twelve bounded chapters and answer-only photo provenance', () => {
+  const qs=questions.filter(q=>q.subject==='public');
+  assert.equal(qs.length,222);
+  assert.deepEqual([...new Set(qs.map(q=>q.c))].sort((a,b)=>a-b),Array.from({length:12},(_,i)=>i+26));
+  assert.equal(subjects.public.name,'公共');
+  for(const q of qs) {
+    assert.ok(q.id.startsWith('public-material-'));
+    assert.equal(q.type,'choice');
+    assert.equal(q.o.length,4);
+    assert.equal(new Set(q.o).size,4);
+    assert.equal(q.a.length,1);
+    assert.ok(q.a[0]>=1 && q.a[0]<=4);
+    assert.equal(q.material.type,'photo');
+    assert.ok([16,70,72,74,76,78,80,86,88,90,141].includes(q.material.page));
+    assert.ok(q.e.length>20,q.id);
+  }
+  const app=makeApp();
+  assert.ok(app.html().includes('<b>公共</b>'));
+  app.run("subjectId='public'; view='subject'; render();");
+  assert.equal(app.value('subjectId'),'public');
+  assert.equal(app.value('pool().length'),222);
+  for(const c of Object.keys(subjects.public.chapters)) {
+    const count=qs.filter(q=>q.c===Number(c)).length;
+    app.click(`${subjects.public.chapters[c]} ${count}`);
+    assert.ok(app.value('pool().every(q=>q.c==='+c+')'));
+    assert.equal(app.value('pool().length'),count);
+    app.click(`${subjects.public.chapters[c]} ${count}`);
+  }
+});
+test('all public answers reveal explanations and preserve old records on reload', () => {
+  const old={[legacyQuestion.id]:{seen:4,wrong:1,last:1}};
+  const app=makeApp(old);
+  const qs=questions.filter(q=>q.subject==='public');
+  for(const q of qs) {
+    app.begin(q);
+    assert.ok(!app.html().includes(q.material.title));
+    app.answer(1200,true,q);
+    assert.ok(app.html().includes(q.e),q.id);
+    assert.ok(app.html().includes('写真教材 '+q.material.page+'ページ'),q.id);
+    assert.deepEqual(app.saved()[q.id],{seen:1,wrong:0,last:1},q.id);
+  }
+  assert.deepEqual(app.saved()[legacyQuestion.id],old[legacyQuestion.id]);
+  const q=qs[0];app.begin(q);app.answer(1200,false,q);
+  app.run("subjectId='public';filters.only='review';");
+  assert.ok(app.value('pool().map(q=>q.id)').includes(q.id));
+  const reloaded=makeApp(app.saved());
+  assert.deepEqual(reloaded.saved()[q.id],{seen:2,wrong:1,last:0});
+  assert.deepEqual(reloaded.saved()[legacyQuestion.id],old[legacyQuestion.id]);
+});
+test('public arithmetic covers vote ratios, seat allocation, and the conditional wage model', () => {
+  const qs=questions.filter(q=>q.subject==='public');
+  const cases=[
+    ['A党600票、B党400票','A党2、B党1'],
+    ['当選者5万票、落選者4万票','80%'],
+    ['A区10万人、B区20万人','2倍'],
+    ['時給1000円で1000人','100万円'],
+    ['時給1100円で800人','88万円'],
+    ['時給900円で800人','72万円']
+  ];
+  for(const [fragment,answer] of cases) {
+    const q=qs.find(q=>q.q.includes(fragment));assert.ok(q,fragment);
+    assert.equal(q.o[q.a[0]-1],answer);
+  }
+  assert.ok(qs.find(q=>q.q.includes('最低賃金政策全体')).o.includes('このモデルの結果だけで、すべての政策効果は判断できない'));
+});
 test('related teaching references are hidden until answering and deduplicated', () => {
   const base=questions.find(q=>q.references?.length);
   const q={...base,source:base.references[0].url,sourceLabel:'教材',references:[...base.references,{url:'javascript:alert(1)',label:'unsafe'}]};

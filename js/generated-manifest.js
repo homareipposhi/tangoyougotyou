@@ -139,5 +139,17 @@ const MANIFEST = [
   "subjects/physics/terms/mechanics.js",
   "subjects/physics/terms/thermodynamics.js",
   "subjects/physics/terms/waves.js",
-  "subjects/physics/units/mechanics.js"
+  "subjects/physics/units/mechanics.js",
+  "subjects/public/provided-materials/chapter-26.js",
+  "subjects/public/provided-materials/chapter-27.js",
+  "subjects/public/provided-materials/chapter-28.js",
+  "subjects/public/provided-materials/chapter-29.js",
+  "subjects/public/provided-materials/chapter-30.js",
+  "subjects/public/provided-materials/chapter-31.js",
+  "subjects/public/provided-materials/chapter-32.js",
+  "subjects/public/provided-materials/chapter-33.js",
+  "subjects/public/provided-materials/chapter-34.js",
+  "subjects/public/provided-materials/chapter-35.js",
+  "subjects/public/provided-materials/chapter-36.js",
+  "subjects/public/provided-materials/chapter-37.js"
 ];
