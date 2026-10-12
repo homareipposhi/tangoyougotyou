@@ -348,15 +348,15 @@ test('single-level content buttons preserve the existing exam/basic partition an
 test('switching content clears old restrictions; selecting the same content keeps them', () => {
   const app=makeApp();
   app.run("subjectId='physics'; view='subject'; render();");
-  app.click('力学');
+  app.click('万有引力 '+app.value('pool().filter(q=>physicsUnitIds(q).includes("gravity")).length'));
   app.run("filters.diffs=['C']; filters.types=['choice']; filters.only='todo'; advancedOpen=true; render();");
   app.click('公式');
   assert.deepEqual(app.value('filters'),{chapters:[],diffs:[],types:[],only:'all',content:'formula',course:'all'});
   assert.equal(app.value('advancedOpen'),false);
-  app.click('力学');
+  app.click('運動の法則 '+app.value('pool().filter(q=>physicsUnitIds(q).includes("forces")).length'));
   app.click('公式');
-  assert.deepEqual(app.value('filters.chapters'),[1]);
-  app.click('全分野');
+  assert.deepEqual(app.value('filters.chapters'),['forces']);
+  app.click('全単元');
   assert.deepEqual(app.value('filters.chapters'),[]);
 });
 
@@ -830,6 +830,37 @@ test('public arithmetic covers vote ratios, seat allocation, and the conditional
     assert.equal(q.o[q.a[0]-1],answer);
   }
   assert.ok(qs.find(q=>q.q.includes('最低賃金政策全体')).o.includes('このモデルの結果だけで、すべての政策効果は判断できない'));
+});
+test('physics uses chapter-level units, covers every question, and retains content/history', () => {
+  const app=makeApp({[rtaQuestion.id]:{seen:3,wrong:1,last:0}});
+  app.run("subjectId='physics'; filters.content='all'; view='subject'; render();");
+  assert.equal(app.value('pool().length'),751);
+  assert.ok(!app.html().includes('全分野'));
+  assert.ok(!app.html().includes('>力学<'));
+  const ids=app.value('PHYSICS_UNITS.map(u=>u.id)');
+  const pdfNames=['剛体に働く力','落体の運動','運動量の保存','円運動','万有引力','単振動','気体の法則','気体の状態変化','波の性質','音波','光波','電場と電位','コンデンサー','電流','電流と磁場','電磁誘導','交流回路','電子と光','原子の構造','原子核'];
+  for(const name of pdfNames) assert.ok(app.value('PHYSICS_UNITS.map(u=>u.name)').includes(name),name);
+  for(const q of questions.filter(q=>q.subject==='physics')) {
+    const tags=app.value(`physicsUnitIds(${JSON.stringify(q)})`);
+    assert.ok(tags.length>0,q.id);
+    assert.ok(tags.every(tag=>ids.includes(tag)),q.id);
+    assert.equal(tags.length,new Set(tags).size,q.id);
+  }
+  for(const id of ids) {
+    app.run(`filters.chapters=[${JSON.stringify(id)}];render();`);
+    const qs=app.value('pool()');
+    assert.ok(qs.every(q=>app.value(`physicsUnitIds(${JSON.stringify(q)})`).includes(id)),id);
+    assert.equal(qs.length,new Set(qs.map(q=>q.id)).size);
+  }
+  app.run("filters.chapters=['gravity','circular'];render();");
+  assert.equal(app.value('pool().length'),new Set(app.value('pool().map(q=>q.id)')).size);
+  const sample=questions.find(q=>q.id==='phy-kyoto23-rec-001');
+  assert.ok(app.value(`physicsUnitIds(${JSON.stringify(sample)})`).includes('gravity'));
+  app.begin(sample);app.answer(1000,true,sample);
+  assert.ok(app.html().includes('万有引力'));
+  assert.deepEqual(app.saved()[rtaQuestion.id],{seen:3,wrong:1,last:0});
+  app.run("subjectId='public';filters.chapters=[30];filters.content='all';render();");
+  assert.ok(app.value('pool().every(q=>q.c===30)'));
 });
 test('related teaching references are hidden until answering and deduplicated', () => {
   const base=questions.find(q=>q.references?.length);

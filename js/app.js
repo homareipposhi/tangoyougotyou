@@ -275,6 +275,49 @@ function home(){
   app.appendChild(body);
 }
 
+// 学習記録のIDと元の大分野cは維持し、物理だけ単元タグで絞り込む。
+// 複合問題は複数単元から選べる。科目全体の問題数は重複させない。
+const PHYSICS_UNITS = [
+  // PDF「章」列の20区分。前半の基礎単元は既存問題を落とさないための補完。
+  {id:"motion",name:"運動の表し方",c:1,re:/速度.*加速度|位置.*時刻|変位|等加速度|dx|ẋ|v\\(t\\)/},
+  {id:"forces",name:"運動の法則",c:1,re:/つり合|釣り合|合力|運動方程式|作用.*反作用|慣性$|滑車|糸が張|抵抗.*落下|終端速度|摩擦|垂直抗力|離れ|接触|たる|ゆる/},
+  {id:"energy",name:"仕事とエネルギー",c:1,re:/仕事|エネルギー|保存力|最高点|最大の高さ|高さ.*速さ/},
+  {id:"fluid",name:"圧力・浮力",c:1,re:/浮力|水圧|液体|水中|水面|液面|圧力|密度|浮い/},
+  {id:"rigid",name:"剛体に働く力",c:1,re:/剛体|モーメント|回転軸|てこ|棒.*支|棒.*つり|重心の位置|質量分布/},
+  {id:"projectile",name:"落体の運動",c:1,re:/放物|水平投射|斜方投射|自由落下|鉛直投げ|相対速度|に対する速度|地面に対して|地面から見|斜めに投げ/},
+  {id:"momentum",name:"運動量の保存",c:1,re:/運動量|力積|衝突|反発係数|外力.*ない|重心.*静止|重心.*動/},
+  {id:"circular",name:"円運動",c:1,re:/円運動|向心|遠心|慣性力|慣性系|回転する座標|円錐振り子|円形リング|最下点|カーブ/},
+  {id:"gravity",name:"万有引力",c:1,re:/万有引力|衛星|惑星|天体|宇宙船|宇宙速度|ケプラー|面積速度|楕円軌道|地球の内部/},
+  {id:"oscillation",name:"単振動",c:1,re:/単振動|振り子|ばね|復元力|振動する物体|振動の周期|振動.*位相/},
+  {id:"heat",name:"熱と温度",c:2,re:/比熱|熱容量|融解|凝固|気化|液体|蒸気|相変化|潜熱|熱平衡/},
+  {id:"gas",name:"気体の法則",c:2,re:/状態方程式|分子|気体.*圧力|圧力.*気体|ピストン|物質量|状態量|気球|風船|気体|空気/},
+  {id:"thermo",name:"気体の状態変化",c:2,re:/内部エネルギー|断熱|等温|定積|等圧|圧縮|膨張|準静的|熱.*仕事|p dV|体積.*変化|エンタルピー|熱機関|熱効率|サイクル|一周期|循環過程/},
+  {id:"wave",name:"波の性質",c:3,re:/波長|波の位相|周期|角振動数|波の変位|媒質|波形|反射|干渉|定常波|重ね|節|腹|位相差|縦波|横波/},
+  {id:"sound",name:"音波",c:3,re:/音|弦|気柱|管|開口端|閉口端|共鳴|うなり|ドップラー|観測者.*動/},
+  {id:"optics",name:"光波",c:3,re:/光|レンズ|屈折|全反射|鏡|焦点|像|プリズム|偏光|回折|スリット|格子|薄膜|光路差/},
+  {id:"electric-field",name:"電場と電位",c:4,re:/電場|電位|クーロン|帯電|静電誘導|接地|導体球|電気力|点電荷|正電荷/},
+  {id:"capacitor",name:"コンデンサー",c:4,re:/コンデンサー|静電容量|電気容量|極板|静電エネルギー|誘電体/},
+  {id:"dc",name:"電流",c:4,re:/抵抗|直流|電源|電池|キルヒホッフ|オーム|ダイオード|電流.*断面|断面.*電荷|断面.*電流|dq/},
+  {id:"magnetic",name:"電流と磁場",c:4,re:/磁場|磁束密度|ローレンツ|電磁力|荷電粒子|ホール|サイクロトロン|磁束とは|面.*磁束/},
+  {id:"induction",name:"電磁誘導",c:4,re:/誘導|磁束.*変化|磁束.*時間|起電力|自己誘導|相互誘導|変圧|導体棒|コイル/},
+  {id:"ac",name:"交流回路",c:4,re:/交流|電気振動|共振|リアクタンス|インピーダンス|周期的に入れ替/},
+  {id:"photon",name:"電子と光",c:5,re:/光子|光電|仕事関数|金属.*光|光.*金属|振動数.*光|ド・ブロイ|物質波|粒子.*波長|電子.*回折|コンプトン|エックス線/},
+  {id:"atom",name:"原子の構造",c:5,re:/励起|電離|準位|原子.*電子|スペクトル|原子の/},
+  {id:"nucleus",name:"原子核",c:5,re:/原子核|同位体|半減期|放射|崩壊|核反応|質量欠損|核数|核が|核を|核の/}
+];
+function physicsUnitIds(q){
+  if(q.subject!=="physics") return [];
+  const text=q.q+" "+(q.type==="choice"?q.a.map(i=>q.o[i-1]).join(" "):"");
+  const candidates=PHYSICS_UNITS.filter(unit=>unit.c===q.c);
+  let units=candidates.filter(unit=>unit.re.test(text)).map(unit=>unit.id);
+  if(!units.length) units=candidates.filter(unit=>unit.re.test(q.e||"")).map(unit=>unit.id);
+  if(!units.length) units=[{1:"forces",2:"gas",3:"wave",4:"dc",5:"atom"}[q.c]];
+  return units;
+}
+function physicsUnitLabel(q){
+  const ids=physicsUnitIds(q);
+  return PHYSICS_UNITS.filter(unit=>ids.includes(unit.id)).map(unit=>unit.name).join("・");
+}
 function physicsContentMatches(q, content=filters.content){
   if(content==="all") return true;
   if(content==="exam") return Boolean(q.exam);
@@ -349,7 +392,9 @@ function courseMatches(q, course=filters.course){
 function scopedBase(){
   let p=subjectQuestions().filter(q=>courseMatches(q));
   if(subjectId==="physics") p=p.filter(q=>physicsContentMatches(q));
-  if(filters.chapters.length) p=p.filter(q=>filters.chapters.includes(q.c));
+  if(filters.chapters.length) p=p.filter(q=>subjectId==="physics"
+    ? physicsUnitIds(q).some(id=>filters.chapters.includes(id))
+    : filters.chapters.includes(q.c));
   if(filters.diffs.length) p=p.filter(q=>filters.diffs.includes(q.d));
   if(filters.types.length) p=p.filter(q=>filters.types.includes(q.type));
   return p;
@@ -414,14 +459,16 @@ function subjectView(){
     });
     panel.appendChild(categories);
   }
-  const ch=h(`<div class="grp"><span>${physics?"分野":"単元"}</span><div class="opts"></div></div>`);
-  if(physics) ch.querySelector(".opts").appendChild(filterButton("全分野",!filters.chapters.length,()=>{filters.chapters=[];render();}));
-  Object.entries(sub.chapters).forEach(([c,name])=>{
-    const n=Number(c), count=categoryQuestions.filter(q=>q.c===n).length;
+  const ch=h(`<div class="grp"><span>単元</span><div class="opts"></div></div>`);
+  if(physics) ch.querySelector(".opts").appendChild(filterButton("全単元",!filters.chapters.length,()=>{filters.chapters=[];render();}));
+  const units=physics ? PHYSICS_UNITS.map(unit=>[unit.id,unit.name]) : Object.entries(sub.chapters);
+  units.forEach(([c,name])=>{
+    const n=physics?c:Number(c), count=categoryQuestions.filter(q=>physics?physicsUnitIds(q).includes(n):q.c===n).length;
     if(!count) return;
-    ch.querySelector(".opts").appendChild(filterButton(physics?name:`${name} ${count}`,filters.chapters.includes(n),()=>{toggle(filters.chapters,n);render();}));
+    ch.querySelector(".opts").appendChild(filterButton(`${name} ${count}`,filters.chapters.includes(n),()=>{toggle(filters.chapters,n);render();}));
   });
   panel.appendChild(ch);
+  if(physics) panel.appendChild(h(`<p class="subtle">複合問題は関連する複数の単元から選べます。単元を複数選んでも同じ問題は重複しません。</p>`));
 
   const advanced=h(`<details class="advanced" ${advancedOpen?"open":""}><summary>詳細設定${filters.diffs.length||filters.types.length||order!=="mix"?"（設定中）":""}</summary><div class="advanced-body"></div></details>`);
   advanced.addEventListener("toggle",()=>{if(advanced.isConnected) advancedOpen=advanced.open;});
@@ -552,7 +599,7 @@ function quiz(){
   app.appendChild(seg);
 
   const tags=h(`<div class="tags"></div>`);
-  tags.appendChild(h(`<span class="tg">${esc(sub.chapters[q.c]||"")}・${esc(q.s)}</span>`));
+  tags.appendChild(h(`<span class="tg">${esc(q.subject==="physics"?physicsUnitLabel(q):(sub.chapters[q.c]||""))}・${esc(q.s)}</span>`));
   tags.appendChild(h(`<span class="tg">難易度 ${esc(q.d)}</span>`));
   tags.appendChild(h(`<span class="tg good">${typeLabel(q.type)}</span>`));
   if(q.courses) tags.appendChild(h(`<span class="tg">${esc(q.courses.join("・"))}</span>`));
