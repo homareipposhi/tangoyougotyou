@@ -862,6 +862,123 @@ test('physics uses chapter-level units, covers every question, and retains conte
   app.run("subjectId='public';filters.chapters=[30];filters.content='all';render();");
   assert.ok(app.value('pool().every(q=>q.c===30)'));
 });
+test('recurrence bank covers 33 units with methods, exercises, conditions and references', () => {
+  const math=questions.filter(q=>q.subject==='math');
+  assert.equal(math.length,99);
+  assert.equal(Object.keys(subjects.math.chapters).length,33);
+  for(let c=1;c<=33;c++) {
+    const unit=math.filter(q=>q.c===c);
+    assert.equal(unit.length,3);
+    assert.deepEqual(unit.map(q=>q.s),['解法の見分け方','演習・一般項','変形と注意点']);
+    for(const q of unit) {
+      assert.ok(q.e.length>30,q.id);
+      assert.equal(q.type,'choice');
+      assert.equal(q.a.length,1);
+      assert.equal(q.references.length,3);
+      assert.ok(q.references.every(r=>r.url.startsWith('https://')));
+      assert.deepEqual(Array.from(q.courses),['数学B']);
+      assert.ok(!q.exam&&!q.rta);
+    }
+  }
+  assert.deepEqual([...new Set(math.map(q=>q.a[0]))].sort(),[1,2,3,4]);
+  assert.equal(questions.filter(q=>q.subject==='physics').length,751);
+  assert.equal(questions.filter(q=>q.subject==='public').length,222);
+});
+
+test('all recurrence exercises reproduce their independent numerical solutions', () => {
+  const factorial=n=>Array.from({length:n},(_,i)=>i+1).reduce((a,b)=>a*b,1);
+  const harmonic=n=>Array.from({length:n},(_,i)=>1/(i+1)).reduce((a,b)=>a+b,0);
+  const fixtures=[
+    // [chapter, displayed answer, initial values, recurrence, closed form]
+    [2,'7−3n',[4],(n,a)=>a.at(-1)-3,n=>7-3*n],
+    [3,'3(−2)^(n−1)',[3],(n,a)=>-2*a.at(-1),n=>3*(-2)**(n-1)],
+    [4,'n²+1',[2],(n,a)=>a.at(-1)+2*n+1,n=>n*n+1],
+    [5,'2−1/n',[1],(n,a)=>a.at(-1)+1/(n*(n+1)),n=>2-1/n],
+    [6,'4×3^(n−1)−2',[2],(n,a)=>3*a.at(-1)+4,n=>4*3**(n-1)-2],
+    [7,'3×2^(n−1)−n−1',[1],(n,a)=>2*a.at(-1)+n,n=>3*2**(n-1)-n-1],
+    [8,'6×2^(n−1)−n²−2n−3',[0],(n,a)=>2*a.at(-1)+n*n,n=>6*2**(n-1)-n*n-2*n-3],
+    [9,'3^n−2^n',[1],(n,a)=>2*a.at(-1)+3**n,n=>3**n-2**n],
+    [10,'n×2^(n−1)',[1],(n,a)=>2*a.at(-1)+2**n,n=>n*2**(n-1)],
+    [11,'2n!',[2],(n,a)=>(n+1)*a.at(-1),n=>2*factorial(n)],
+    [12,'n²',[1],(n,a)=>(n+1)/n*a.at(-1)+n+1,n=>n*n],
+    [13,'n!×(1+Σ[k=1…n−1]1/k)',[1],(n,a)=>(n+1)*a.at(-1)+factorial(n+1)/n,n=>factorial(n)*(1+harmonic(n-1))],
+    [14,'1/(2n−1)',[1],(n,a)=>a.at(-1)/(1+2*a.at(-1)),n=>1/(2*n-1)],
+    [15,'奇数nで1、偶数nで1/2',[1],(n,a)=>a.at(-1)/(3*a.at(-1)-1),n=>n%2?1:0.5],
+    [16,'(8×4^(n−1)+1)/(4×4^(n−1)−1)',[3],(n,a)=>(3*a.at(-1)+2)/(a.at(-1)+2),n=>(8*4**(n-1)+1)/(4*4**(n-1)-1)],
+    [17,'1+2/(n+1)',[2],(n,a)=>(3*a.at(-1)-1)/(a.at(-1)+1),n=>1+2/(n+1)],
+    [18,'2^(2^(n−1))',[2],(n,a)=>a.at(-1)**2,n=>2**(2**(n-1)),5],
+    [20,'√(3n−2)',[1],(n,a)=>Math.sqrt(a.at(-1)**2+3),n=>Math.sqrt(3*n-2)],
+    [21,'2^(n−1)',[1],(n,a)=>a.reduce((s,x)=>s+x,0)+1,n=>2**(n-1)],
+    [22,'n!',[1],(n,a)=>1+a.reduce((s,x,i)=>s+(i+1)*x,0),n=>factorial(n)],
+    [24,'3^n−2^n',[1,5],(n,a)=>5*a.at(-1)-6*a.at(-2),n=>3**n-2**n],
+    [25,'n×2^(n−1)',[1,4],(n,a)=>4*a.at(-1)-4*a.at(-2),n=>n*2**(n-1)],
+    [26,'2^n−n−1',[0,1],(n,a)=>3*a.at(-1)-2*a.at(-2)+1,n=>2**n-n-1],
+    [30,'a₂ₘ₋₁=6^(m−1)、a₂ₘ=2×6^(m−1)',[1],(n,a)=>(n%2?2:3)*a.at(-1),n=>(n%2?1:2)*6**(Math.ceil(n/2)-1)],
+    [31,'1/2+(1/2)^n',[1],(n,a)=>0.5*a.at(-1)+0.25,n=>0.5+0.5**n]
+  ];
+  const answer=c=>{const q=questions.find(q=>q.id===`math-recurrence-${String(c).padStart(2,'0')}-2`);return q.o[q.a[0]-1];};
+  const close=(actual,expected,label)=>assert.ok(Number.isFinite(actual)&&Math.abs(actual-expected)<=1e-10*Math.max(1,Math.abs(expected)),label);
+  for(const [c,text,initial,next,closed,max=10] of fixtures) {
+    assert.equal(answer(c),text,`displayed answer, chapter ${c}`);
+    const terms=[...initial];
+    while(terms.length<max) terms.push(next(terms.length,terms));
+    terms.forEach((value,i)=>close(value,closed(i+1),`chapter ${c}, n=${i+1}`));
+  }
+  const missing=[1,19,23,27,28,29,32,33];
+  assert.equal(new Set([...fixtures.map(x=>x[0]),...missing]).size,33);
+  assert.equal(answer(1),'11');
+  assert.equal(2*(2*2+1)+1,11);
+  const product=[2,2];while(product.length<5)product.push(product.at(-1)*product.at(-2));
+  assert.equal(answer(19),'32');assert.equal(product[4],32);
+  const squareSum=[1];while(squareSum.length<4)squareSum.push(1+squareSum.reduce((s,x)=>s+x*x,0));
+  assert.equal(answer(23),'42');assert.equal(squareSum[3],42);
+  assert.equal(answer(27),'3^(n−1)+1');
+  assert.equal(answer(28),'3^(n−1)');
+  assert.equal(answer(29),'(4^(n−1)+2)/3');
+  let symmetric=[2,0],triangular=[1,1],triple=[1,0,0];
+  for(let n=1;n<=10;n++) {
+    close(symmetric[0],3**(n-1)+1,`symmetric a${n}`);
+    close(symmetric[1],3**(n-1)-1,`symmetric b${n}`);
+    close(triangular[0],3**(n-1),`triangular a${n}`);
+    close(triple[0],(4**(n-1)+2)/3,`triple a${n}`);
+    symmetric=[2*symmetric[0]+symmetric[1],symmetric[0]+2*symmetric[1]];
+    triangular=[2*triangular[0]+triangular[1],3*triangular[1]];
+    triple=triple.map(x=>x+triple.reduce((s,y)=>s+y,0));
+  }
+  assert.equal(answer(32),'8');
+  const counts=[1,2];for(let n=2;n<=10;n++)counts.push(counts[n-1]+counts[n-2]);
+  for(let n=0;n<=10;n++) {
+    const enumerated=Array.from({length:2**n},(_,i)=>n?i.toString(2).padStart(n,'0'):'').filter(s=>!s.includes('11')).length;
+    assert.equal(counts[n],enumerated,`count n=${n}`);
+  }
+  assert.equal(counts[4],8);
+  assert.equal(answer(33),'aₙ₊₁=n²+2n+1=(n+1)²');
+  for(let n=1;n<=20;n++)assert.equal(n*n+2*n+1,(n+1)**2);
+});
+
+test('math units are selectable and progress survives an ordinary answer', () => {
+  const q=questions.find(q=>q.id==='math-recurrence-14-2');
+  const app=makeApp();
+  assert.ok(app.html().includes('<b>数学</b>'));
+  app.run("subjectId='math';view='subject';render();");
+  assert.equal(app.value('pool().length'),99);
+  for(let c=1;c<=33;c++) {
+    const label=`${subjects.math.chapters[c]} 3`;
+    app.click(label);
+    assert.equal(app.value('pool().length'),3);
+    assert.ok(app.value('pool()').every(q=>q.c===c));
+    app.click(label);
+  }
+  app.begin(q);
+  assert.ok(!app.html().includes('山形大学'));
+  app.answer(45000,true,q);
+  assert.ok(app.html().includes('bₙ=1/aₙ'));
+  assert.ok(app.html().includes('山形大学'));
+  assert.deepEqual(app.saved()[q.id],{seen:1,wrong:0,last:1});
+  const restored=makeApp(app.saved());
+  assert.deepEqual(restored.saved()[q.id],app.saved()[q.id]);
+});
+
 test('related teaching references are hidden until answering and deduplicated', () => {
   const base=questions.find(q=>q.references?.length);
   const q={...base,source:base.references[0].url,sourceLabel:'教材',references:[...base.references,{url:'javascript:alert(1)',label:'unsafe'}]};

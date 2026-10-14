@@ -34,6 +34,7 @@ const MANIFEST = [
   "subjects/geography/november-2025/maps.js",
   "subjects/geography/november-2025/scope-audit.js",
   "subjects/german/basic-verbs-200.js",
+  "subjects/math/recurrence/patterns.js",
   "subjects/physics/formulas/atomic.js",
   "subjects/physics/formulas/electromagnetism.js",
   "subjects/physics/formulas/mechanics-more.js",
