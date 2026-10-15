@@ -8,6 +8,12 @@
 GitHub Actions が `subjects/**/*.js` を自動検出し、`js/generated-manifest.js` を更新します。
 新しい科目や単元を追加する際に、HTMLやアプリ本体を編集する必要はありません。
 
+古典には提供された教材PDFから、『徒然草』三十二段28問、『方丈記』18問、
+古文単語20問、徒然草の文学史9問、古文常識42問の四択を追加しました。
+従来の15問は残し、古典は計132問です。単元から作品・単語・文学史・常識を選べます。
+問題文と解説は教材を照合して新しく作成し、元PDFや設問の全文は公開しません。
+資料と問題パックの対応は[古典教材の対応表](research/classics-pdf-audit.md)に記録しています。
+
 問題形式は四択 (`choice`) と○× (`tf`) のみです。物理RTA問題では `rta` に
 `formula`、`unit`、`symbol`、`term`、`recognition` を指定できます。
 生物は提供された `biology_biomes_question_packs.zip` の5パックを

@@ -168,6 +168,63 @@ test('all four existing subjects, German directions, and 87 included university-
   assert.ok(questions.every(q => q.type === 'choice' || q.type === 'tf'));
 });
 
+test('supplied classical PDFs become five original packs without disturbing the legacy bank', () => {
+  const expected = {
+    'classical-culture.js':42,
+    'hojoki.js':18,
+    'tsurezuregusa-32.js':28,
+    'tsurezuregusa-literature.js':9,
+    'vocabulary-tests.js':20,
+  };
+  const additions = files.filter(file => file.startsWith('subjects/classics/') && file !== 'subjects/classics/general.js');
+  assert.deepEqual(additions, Object.keys(expected).map(name => `subjects/classics/${name}`).sort());
+  for (const [name,count] of Object.entries(expected)) {
+    const registered = [];
+    vm.runInNewContext(sources[`subjects/classics/${name}`], {registerQuestionPack:pack => registered.push(pack)});
+    assert.equal(registered.length,1,name);
+    assert.equal(registered[0].name,'古典');
+    assert.equal(registered[0].subject,'classics');
+    assert.equal(registered[0].questions.length,count,name);
+  }
+  const classics = questions.filter(q => q.subject === 'classics');
+  assert.equal(classics.length,132);
+  assert.equal(classics.filter(q => /^cla-\d+$/.test(q.id)).length,15);
+  for (const chapter of [1,6,7,8,9]) assert.ok(subjects.classics.chapters[chapter]);
+  const newQuestions=classics.filter(q => !/^cla-\d+$/.test(q.id));
+  for (const q of newQuestions) {
+    assert.equal(q.type,'choice');
+    assert.equal(q.o.length,4);
+    assert.equal(new Set(q.o).size,4);
+    assert.equal(q.a.length,1);
+    assert.ok(q.a[0]>=1 && q.a[0]<=4);
+    assert.ok(q.q && q.e && q.s && subjects.classics.chapters[q.c]);
+    assert.ok(!q.rta && !q.exam);
+    assert.ok(!q.q.includes(q.o[q.a[0]-1]),`answer leaks into prompt: ${q.id}`);
+  }
+});
+
+test('classics chapters filter and all new explanations appear while old history remains', () => {
+  const old = {'cla-1':{seen:3,wrong:1,last:0},'phy-1':{seen:2,wrong:0,last:1}};
+  const app=makeApp(old);
+  app.run("subjectId='classics'; view='subject'; render();");
+  assert.equal(app.value('pool().length'),132);
+  for (const chapter of [1,6,7,8,9]) {
+    const qs=questions.filter(q=>q.subject==='classics' && q.c===chapter);
+    const label=`${subjects.classics.chapters[chapter]} ${qs.length}`;
+    app.click(label);
+    assert.equal(app.value('pool().length'),qs.length);
+    assert.ok(app.value('pool()').every(q=>q.c===chapter));
+    app.click(label);
+  }
+  for (const q of questions.filter(q=>q.subject==='classics' && !/^cla-\d+$/.test(q.id))) {
+    app.begin(q); app.answer(2000,true,q);
+    assert.deepEqual(app.saved()[q.id],{seen:1,wrong:0,last:1});
+    assert.ok(app.html().includes(q.e),q.id);
+    assert.ok(!app.html().includes('回答時間'),q.id);
+  }
+  for(const [id,record] of Object.entries(old)) assert.deepEqual(app.saved()[id],record);
+});
+
 test('biology import contains all six supplied packs and the hormone chapter', () => {
   const expected = {'vegetation.js':28, 'production.js':32, 'succession.js':30, 'world-biomes.js':32, 'japan-biomes.js':29, 'hormones.js':42};
   const biologyFiles = files.filter(file => file.startsWith('subjects/biology/'));
