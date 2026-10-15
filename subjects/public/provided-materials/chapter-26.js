@@ -1,407 +1,392 @@
-/* 写真教材に沿って独自に作成した公共の四択。教材の問題全文の転載ではない。 */
+/* 用語当てを理解・比較・具体例の設問へ改訂。教材の問題全文の転載ではない。 */
 registerQuestionPack({
   "subject": "public",
   "name": "公共",
   "chapters": {
     "26": "国会のしくみと役割"
   },
-  "knowledgeSource": "提供された公共教材23枚の掲載範囲に沿った独自短問。本文・TRY・解答の知識を整理。",
+  "knowledgeSource": "提供写真教材の掲載範囲から、用語名だけの暗記を減らして再構成した理解・比較・具体例・計算の独自問題。",
   "questions": [
     {
-      "id": "public-material-26-001",
+      "id": "public-understanding-26-001",
       "subject": "public",
       "c": 26,
       "s": "国会のしくみと役割",
       "n": 1,
       "d": "A",
       "type": "choice",
-      "q": "法律の制定、予算の議決などを担う国の機関。これに当てはまる語は？",
+      "q": "国会と内閣の役割の組合せとして正しいものは？",
       "o": [
-        "衆議院の優越",
-        "国政調査権",
-        "国会",
-        "二院制"
+        "国会も内閣も裁判だけを行う",
+        "国会は内閣の決定を公布するだけである",
+        "国会は法律を制定し、内閣は行政を担う",
+        "国会は行政を担い、内閣は法律を制定する"
       ],
       "a": [
         3
       ],
-      "e": "国会：国権の最高機関で、国の唯一の立法機関とされる。行政権を担う内閣と区別する。",
+      "e": "立法と行政を区別する。内閣も法案を提出できるが、法律の制定には国会の議決が必要。",
       "courses": [
         "公共"
       ],
       "knowledge": "required",
+      "assessment": "understanding",
+      "revision": 2,
       "material": {
         "title": "提供された公共教材（写真）",
         "page": 16,
-        "section": "解答一覧",
+        "section": "項目26：理解問題として再構成",
         "type": "photo"
       },
       "references": [
         {
-          "url": "https://www.shugiin.go.jp/Internet/itdb_annai.nsf/html/statics/shiryo/dl-constitution.htm",
+          "url": "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/dl-constitution.htm",
           "label": "衆議院：日本国憲法"
         }
       ]
     },
     {
-      "id": "public-material-26-002",
+      "id": "public-understanding-26-002",
       "subject": "public",
       "c": 26,
       "s": "国会のしくみと役割",
       "n": 2,
       "d": "A",
       "type": "choice",
-      "q": "衆議院と参議院という二つの議院を置くしくみ。これに当てはまる語は？",
+      "q": "衆議院と参議院の二つの議院で審議することには、どのような意義がある？",
       "o": [
-        "議員立法",
-        "委任立法",
-        "弾劾裁判所",
-        "二院制"
+        "すべての法案を必ず全会一致にする",
+        "行政を二つの内閣に分割する",
+        "裁判の回数を必ず二回にする",
+        "異なる構成の議院で検討し、慎重な審議を図る"
       ],
       "a": [
         4
       ],
-      "e": "二院制：異なる構成の議院で審議する。日本の国会は一院だけではない。",
+      "e": "二院制には一方の議院の判断をもう一方が検討する役割がある。同時に、意見が異なると決定に時間がかかることもある。",
       "courses": [
         "公共"
       ],
       "knowledge": "required",
+      "assessment": "understanding",
+      "revision": 2,
       "material": {
         "title": "提供された公共教材（写真）",
         "page": 16,
-        "section": "解答一覧",
+        "section": "項目26：理解問題として再構成",
         "type": "photo"
       },
       "references": [
         {
-          "url": "https://www.shugiin.go.jp/Internet/itdb_annai.nsf/html/statics/shiryo/dl-constitution.htm",
+          "url": "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/dl-constitution.htm",
           "label": "衆議院：日本国憲法"
         }
       ]
     },
     {
-      "id": "public-material-26-003",
+      "id": "public-understanding-26-003",
       "subject": "public",
       "c": 26,
       "s": "国会のしくみと役割",
       "n": 3,
       "d": "A",
       "type": "choice",
-      "q": "両院の議決が異なる場合などに、一方の議院の意思を優先するしくみ。これに当てはまる語は？",
+      "q": "法律案を衆議院が可決し、参議院が否決した。衆議院が再び可決して法律を成立させる条件は？",
       "o": [
-        "衆議院の優越",
-        "特別会",
-        "内閣不信任決議",
-        "発言・表決の免責"
+        "出席議員の3分の2以上の賛成",
+        "出席議員の過半数の賛成",
+        "参議院議員全員の辞職",
+        "内閣総理大臣の単独の署名"
       ],
       "a": [
         1
       ],
-      "e": "衆議院の優越：衆議院は任期が短く解散もあるため、比較的直近の民意を反映しやすい。すべての案件で無条件に優先するわけではない。",
+      "e": "法律案の再議決には衆議院の出席議員の3分の2以上が必要。予算などの扱いとは区別する。",
       "courses": [
         "公共"
       ],
       "knowledge": "required",
+      "assessment": "understanding",
+      "revision": 2,
       "material": {
         "title": "提供された公共教材（写真）",
         "page": 16,
-        "section": "解答一覧",
+        "section": "項目26：理解問題として再構成",
         "type": "photo"
       },
       "references": [
         {
-          "url": "https://www.shugiin.go.jp/Internet/itdb_annai.nsf/html/statics/shiryo/dl-constitution.htm",
+          "url": "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/dl-constitution.htm",
           "label": "衆議院：日本国憲法"
         }
       ]
     },
     {
-      "id": "public-material-26-004",
+      "id": "public-understanding-26-004",
       "subject": "public",
       "c": 26,
       "s": "国会のしくみと役割",
       "n": 4,
       "d": "A",
       "type": "choice",
-      "q": "議院が国の政治について調べ、証人や記録を求める権限。これに当てはまる語は？",
+      "q": "予算について衆参の議決が異なり、両院協議会でも一致しなかった。憲法上、どちらの議決が国会の議決となる？",
       "o": [
-        "衆議院の優越",
-        "国政調査権",
-        "国会",
-        "二院制"
+        "最高裁判所の議決",
+        "衆議院の議決",
+        "参議院の議決",
+        "内閣の議決"
       ],
       "a": [
         2
       ],
-      "e": "国政調査権：立法や行政監視に必要な調査を行う。裁判所の違憲審査権とは異なる。",
+      "e": "予算は法律案と異なり、この場合は衆議院の議決が国会の議決になる。案件によって優越の仕組みが異なる。",
       "courses": [
         "公共"
       ],
       "knowledge": "required",
+      "assessment": "understanding",
+      "revision": 2,
       "material": {
         "title": "提供された公共教材（写真）",
         "page": 16,
-        "section": "解答一覧",
+        "section": "項目26：理解問題として再構成",
         "type": "photo"
       },
       "references": [
         {
-          "url": "https://www.shugiin.go.jp/Internet/itdb_annai.nsf/html/statics/shiryo/dl-constitution.htm",
+          "url": "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/dl-constitution.htm",
           "label": "衆議院：日本国憲法"
         }
       ]
     },
     {
-      "id": "public-material-26-005",
+      "id": "public-understanding-26-005",
       "subject": "public",
       "c": 26,
       "s": "国会のしくみと役割",
       "n": 5,
       "d": "A",
       "type": "choice",
-      "q": "国会議員が法案を提出して成立を目指すこと。これに当てはまる語は？",
+      "q": "国会が行政の不正の疑いを調べるため、証人の出頭や記録の提出を求める。この権限の役割は？",
       "o": [
-        "委任立法",
-        "弾劾裁判所",
-        "議員立法",
-        "国政調査権"
+        "裁判所の判決を取り消す",
+        "内閣に代わってすべての行政事務を行う",
+        "行政などを調査し、国会による監視に役立てる",
+        "証人をその場で有罪にする"
       ],
       "a": [
         3
       ],
-      "e": "議員立法：内閣提出法案だけでなく、議員提出法案も国会で審議される。",
+      "e": "国政調査権は審議・監視に必要な調査を行う権限。有罪・無罪を判断する裁判とは異なる。",
       "courses": [
         "公共"
       ],
       "knowledge": "required",
+      "assessment": "understanding",
+      "revision": 2,
       "material": {
         "title": "提供された公共教材（写真）",
         "page": 16,
-        "section": "解答一覧",
+        "section": "項目26：理解問題として再構成",
         "type": "photo"
       },
       "references": [
         {
-          "url": "https://www.shugiin.go.jp/Internet/itdb_annai.nsf/html/statics/shiryo/dl-constitution.htm",
+          "url": "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/dl-constitution.htm",
           "label": "衆議院：日本国憲法"
         }
       ]
     },
     {
-      "id": "public-material-26-006",
+      "id": "public-understanding-26-006",
       "subject": "public",
       "c": 26,
       "s": "国会のしくみと役割",
       "n": 6,
-      "d": "A",
+      "d": "B",
       "type": "choice",
-      "q": "法律の委任に基づき、行政機関が具体的な内容を政令などで定めること。これに当てはまる語は？",
+      "q": "法律案の提出者について正しい説明は？",
       "o": [
-        "特別会",
-        "内閣不信任決議",
-        "発言・表決の免責",
-        "委任立法"
+        "国会議員は提出できず、内閣だけが提出できる",
+        "内閣は提出できず、裁判所だけが提出できる",
+        "天皇だけが提出できる",
+        "国会議員も内閣も法律案を提出できる"
       ],
       "a": [
         4
       ],
-      "e": "委任立法：行政が自由に法律を置き換える制度ではない。国会が法律で委任した範囲が前提となる。",
+      "e": "議員提出の法案と内閣提出の法案がある。提出することと、国会が議決して制定することを分けて理解する。",
       "courses": [
         "公共"
       ],
       "knowledge": "required",
+      "assessment": "understanding",
+      "revision": 2,
       "material": {
         "title": "提供された公共教材（写真）",
         "page": 16,
-        "section": "解答一覧",
+        "section": "項目26：理解問題として再構成",
         "type": "photo"
       },
       "references": [
         {
-          "url": "https://www.shugiin.go.jp/Internet/itdb_annai.nsf/html/statics/shiryo/dl-constitution.htm",
+          "url": "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/dl-constitution.htm",
           "label": "衆議院：日本国憲法"
         }
       ]
     },
     {
-      "id": "public-material-26-007",
+      "id": "public-understanding-26-007",
       "subject": "public",
       "c": 26,
       "s": "国会のしくみと役割",
       "n": 7,
-      "d": "A",
+      "d": "B",
       "type": "choice",
-      "q": "国会に置かれ、裁判官の罷免を審理する機関。これに当てはまる語は？",
+      "q": "法律が細かな技術的基準を政令に委ねる場合、内閣はどう扱うべきか？",
       "o": [
-        "弾劾裁判所",
-        "国会",
-        "二院制",
-        "衆議院の優越"
+        "法律による委任の範囲内で具体的な基準を定める",
+        "法律と矛盾する基準を自由に定める",
+        "国会の権限をすべて廃止する",
+        "政令で憲法を自由に変更する"
       ],
       "a": [
         1
       ],
-      "e": "弾劾裁判所：両議院の議員から構成される。一般の刑事裁判を行う裁判所ではない。",
+      "e": "細部を行政に委ねても、行政が法律を無視してよいわけではない。委任の範囲と上位の法に従う。",
       "courses": [
         "公共"
       ],
       "knowledge": "required",
+      "assessment": "understanding",
+      "revision": 2,
       "material": {
         "title": "提供された公共教材（写真）",
         "page": 16,
-        "section": "解答一覧",
+        "section": "項目26：理解問題として再構成",
         "type": "photo"
       },
       "references": [
         {
-          "url": "https://www.shugiin.go.jp/Internet/itdb_annai.nsf/html/statics/shiryo/dl-constitution.htm",
+          "url": "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/dl-constitution.htm",
           "label": "衆議院：日本国憲法"
         }
       ]
     },
     {
-      "id": "public-material-26-008",
+      "id": "public-understanding-26-008",
       "subject": "public",
       "c": 26,
       "s": "国会のしくみと役割",
       "n": 8,
-      "d": "A",
+      "d": "B",
       "type": "choice",
-      "q": "衆議院解散後の総選挙に伴って召集される国会。これに当てはまる語は？",
+      "q": "裁判官に重大な非行があり、罷免の可否を審理する場合、国会に設けられた機関が扱う。この仕組みの説明は？",
       "o": [
-        "委任立法",
-        "特別会",
-        "国政調査権",
-        "議員立法"
+        "有権者が下級裁判官を毎年全員審査する",
+        "司法の独立を踏まえ、特別の手続で裁判官の罷免を審理する",
+        "内閣が判決に不満なら裁判官を自由に罷免する",
+        "国会がすべての裁判の判決を書き換える"
       ],
       "a": [
         2
       ],
-      "e": "特別会：特別国会ともいう。総選挙から30日以内に召集し、内閣総理大臣の指名などを行う。",
+      "e": "国会の弾劾裁判所による罷免手続がある。個別の判決への政治的な不満で自由に罷免できる制度ではない。",
       "courses": [
         "公共"
       ],
       "knowledge": "required",
+      "assessment": "understanding",
+      "revision": 2,
       "material": {
         "title": "提供された公共教材（写真）",
         "page": 16,
-        "section": "解答一覧",
+        "section": "項目26：理解問題として再構成",
         "type": "photo"
       },
       "references": [
         {
-          "url": "https://www.shugiin.go.jp/Internet/itdb_annai.nsf/html/statics/shiryo/dl-constitution.htm",
+          "url": "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/dl-constitution.htm",
           "label": "衆議院：日本国憲法"
         }
       ]
     },
     {
-      "id": "public-material-26-009",
+      "id": "public-understanding-26-009",
       "subject": "public",
       "c": 26,
       "s": "国会のしくみと役割",
       "n": 9,
-      "d": "A",
+      "d": "B",
       "type": "choice",
-      "q": "衆議院が内閣を信任しない意思を示す決議。これに当てはまる語は？",
+      "q": "衆議院で内閣不信任決議が可決された。内閣がとるべき憲法上の対応は？",
       "o": [
-        "特別会",
-        "発言・表決の免責",
-        "内閣不信任決議",
-        "弾劾裁判所"
+        "決議を無効と宣言して任期を続ける",
+        "最高裁判所を解散する",
+        "10日以内に衆議院を解散しなければ総辞職する",
+        "参議院だけを解散する"
       ],
       "a": [
         3
       ],
-      "e": "内閣不信任決議：可決時、内閣は10日以内に衆議院を解散しない限り総辞職する。",
+      "e": "内閣は国会の信任を基礎とする。憲法69条は衆議院の解散か内閣総辞職を求める。",
       "courses": [
         "公共"
       ],
       "knowledge": "required",
+      "assessment": "understanding",
+      "revision": 2,
       "material": {
         "title": "提供された公共教材（写真）",
         "page": 16,
-        "section": "解答一覧",
+        "section": "項目26：理解問題として再構成",
         "type": "photo"
       },
       "references": [
         {
-          "url": "https://www.shugiin.go.jp/Internet/itdb_annai.nsf/html/statics/shiryo/dl-constitution.htm",
+          "url": "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/dl-constitution.htm",
           "label": "衆議院：日本国憲法"
         }
       ]
     },
     {
-      "id": "public-material-26-010",
+      "id": "public-understanding-26-010",
       "subject": "public",
       "c": 26,
       "s": "国会のしくみと役割",
       "n": 10,
-      "d": "A",
-      "type": "choice",
-      "q": "国会議員が議院内で行った演説・討論・表決について院外で責任を問われない保障。これに当てはまる語は？",
-      "o": [
-        "国会",
-        "二院制",
-        "衆議院の優越",
-        "発言・表決の免責"
-      ],
-      "a": [
-        4
-      ],
-      "e": "発言・表決の免責：憲法51条の保障。議員のすべての私生活上の行為まで免責されるわけではない。",
-      "courses": [
-        "公共"
-      ],
-      "knowledge": "required",
-      "material": {
-        "title": "提供された公共教材（写真）",
-        "page": 16,
-        "section": "解答一覧",
-        "type": "photo"
-      },
-      "references": [
-        {
-          "url": "https://www.shugiin.go.jp/Internet/itdb_annai.nsf/html/statics/shiryo/dl-constitution.htm",
-          "label": "衆議院：日本国憲法"
-        }
-      ]
-    },
-    {
-      "id": "public-material-26-011",
-      "subject": "public",
-      "c": 26,
-      "s": "任期",
-      "n": 11,
       "d": "B",
       "type": "choice",
-      "q": "教材の国会の説明で、衆議院と参議院の任期の組合せは？",
+      "q": "衆議院と参議院の任期・解散について正しい説明は？",
       "o": [
-        "6年／4年",
-        "ともに4年",
-        "ともに6年",
-        "4年／6年"
+        "両院とも任期6年で解散がある",
+        "両院とも任期4年で解散がない",
+        "参議院だけに解散がある",
+        "衆議院は任期4年で解散があり、参議院は任期6年で解散がない"
       ],
       "a": [
         4
       ],
-      "e": "衆議院は4年で解散もある。参議院は6年で、3年ごとに半数を改選し、解散はない。",
+      "e": "衆議院は解散で任期が短くなることがある。参議院は3年ごとに半数を改選し、継続性をもつ。",
       "courses": [
         "公共"
       ],
       "knowledge": "required",
+      "assessment": "understanding",
+      "revision": 2,
       "material": {
         "title": "提供された公共教材（写真）",
         "page": 16,
-        "section": "解答一覧",
+        "section": "項目26：理解問題として再構成",
         "type": "photo"
       },
       "references": [
         {
-          "url": "https://www.shugiin.go.jp/Internet/itdb_annai.nsf/html/statics/shiryo/dl-constitution.htm",
+          "url": "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/dl-constitution.htm",
           "label": "衆議院：日本国憲法"
         }
       ]
     }
   ]
 });
+

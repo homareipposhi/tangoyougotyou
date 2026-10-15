@@ -766,13 +766,16 @@ test('dialect concentric distribution remains a question and an option with its 
   assert.ok(app.html().includes(q.source));
 });
 
-test('public material adds all twelve bounded chapters and answer-only photo provenance', () => {
+test('public understanding revision keeps twelve bounded chapters and answer-only provenance', () => {
   const qs=questions.filter(q=>q.subject==='public');
-  assert.equal(qs.length,222);
+  assert.equal(qs.length,120);
   assert.deepEqual([...new Set(qs.map(q=>q.c))].sort((a,b)=>a-b),Array.from({length:12},(_,i)=>i+26));
   assert.equal(subjects.public.name,'公共');
   for(const q of qs) {
-    assert.ok(q.id.startsWith('public-material-'));
+    assert.ok(q.id.startsWith('public-understanding-'));
+    assert.equal(q.assessment,'understanding');
+    assert.equal(q.revision,2);
+    assert.ok(!/これに当てはまる語|用語名|教材の|教材掲載|前問|上の表/.test(q.q),q.id);
     assert.equal(q.type,'choice');
     assert.equal(q.o.length,4);
     assert.equal(new Set(q.o).size,4);
@@ -786,7 +789,7 @@ test('public material adds all twelve bounded chapters and answer-only photo pro
   assert.ok(app.html().includes('<b>公共</b>'));
   app.run("subjectId='public'; view='subject'; render();");
   assert.equal(app.value('subjectId'),'public');
-  assert.equal(app.value('pool().length'),222);
+  assert.equal(app.value('pool().length'),120);
   for(const c of Object.keys(subjects.public.chapters)) {
     const count=qs.filter(q=>q.c===Number(c)).length;
     app.click(`${subjects.public.chapters[c]} ${count}`);
@@ -815,6 +818,25 @@ test('all public answers reveal explanations and preserve old records on reload'
   assert.deepEqual(reloaded.saved()[q.id],{seen:2,wrong:1,last:0});
   assert.deepEqual(reloaded.saved()[legacyQuestion.id],old[legacyQuestion.id]);
 });
+test('rewritten public items test distinctions and do not inherit old term-quiz mastery', () => {
+  const qs=questions.filter(q=>q.subject==='public');
+  const cases=[
+    ['非営利である','利益の分配を目的とせず、活動のために収入を得ることはできる'],
+    ['有限責任について','会社の債務のために出資額を超えて追加負担する責任は負わない']
+  ];
+  for(const [fragment,answer] of cases) {
+    const q=qs.find(q=>q.q.includes(fragment));assert.ok(q,fragment);
+    assert.equal(q.o[q.a[0]-1],answer);
+  }
+  assert.ok(qs.every(q=>!['三割自治','イニシアティブ','トラスト','メセナ','フィランソロピー','付随的違憲審査制','コングロマリット'].includes(q.o[q.a[0]-1])));
+  const old={'public-material-36-001':{seen:8,wrong:0,last:1},[legacyQuestion.id]:{seen:2,wrong:1,last:0}};
+  const app=makeApp(old);app.run("subjectId='public';filters.only='unseen';");
+  assert.equal(app.value('pool().length'),120);
+  app.begin(qs[0]);app.answer(1200,true,qs[0]);
+  assert.deepEqual(app.saved()['public-material-36-001'],old['public-material-36-001']);
+  assert.deepEqual(app.saved()[legacyQuestion.id],old[legacyQuestion.id]);
+});
+
 test('public arithmetic covers vote ratios, seat allocation, and the conditional wage model', () => {
   const qs=questions.filter(q=>q.subject==='public');
   const cases=[
@@ -882,7 +904,7 @@ test('recurrence bank covers 33 units with methods, exercises, conditions and re
   }
   assert.deepEqual([...new Set(math.map(q=>q.a[0]))].sort(),[1,2,3,4]);
   assert.equal(questions.filter(q=>q.subject==='physics').length,751);
-  assert.equal(questions.filter(q=>q.subject==='public').length,222);
+  assert.equal(questions.filter(q=>q.subject==='public').length,120);
 });
 
 test('all recurrence exercises reproduce their independent numerical solutions', () => {

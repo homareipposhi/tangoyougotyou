@@ -1,653 +1,400 @@
-/* 写真教材に沿って独自に作成した公共の四択。教材の問題全文の転載ではない。 */
+/* 用語当てを理解・比較・具体例の設問へ改訂。教材の問題全文の転載ではない。 */
 registerQuestionPack({
   "subject": "public",
   "name": "公共",
   "chapters": {
-    "29": "司法参加と刑事司法"
+    "29": "刑事手続と市民の参加"
   },
-  "knowledgeSource": "提供された公共教材23枚の掲載範囲に沿った独自短問。本文・TRY・解答の知識を整理。",
+  "knowledgeSource": "提供写真教材の掲載範囲から、用語名だけの暗記を減らして再構成した理解・比較・具体例・計算の独自問題。",
   "questions": [
     {
-      "id": "public-material-29-001",
+      "id": "public-understanding-29-001",
       "subject": "public",
       "c": 29,
-      "s": "司法参加と刑事司法",
+      "s": "刑事手続と市民の参加",
       "n": 1,
       "d": "A",
       "type": "choice",
-      "q": "法曹の養成を目的とする専門職大学院。これに当てはまる語は？",
+      "q": "刑事裁判で、検察側が犯罪の成立を証明できなかった。原則としてどう扱うべきか？",
       "o": [
-        "公判前整理手続",
-        "法科大学院",
-        "法テラス",
-        "ADR"
+        "裁判官の印象だけで刑罰を決める",
+        "有罪と認定せず、無罪とする",
+        "被告人が無実を証明できなければ有罪とする",
+        "世論の多数決だけで有罪とする"
       ],
       "a": [
         2
       ],
-      "e": "法科大学院：裁判官・検察官・弁護士などの法曹養成のしくみ。一般の裁判所とは異なる。",
+      "e": "無罪の推定を踏まえ、犯罪事実の立証責任は検察側にある。疑いだけで有罪にしてはならない。",
       "courses": [
         "公共"
       ],
       "knowledge": "required",
+      "assessment": "understanding",
+      "revision": 2,
       "material": {
         "title": "提供された公共教材（写真）",
         "page": 72,
-        "section": "項目29 司法参加と刑事司法",
+        "section": "項目29：理解問題として再構成",
         "type": "photo"
-      }
+      },
+      "references": [
+        {
+          "url": "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/dl-constitution.htm",
+          "label": "衆議院：日本国憲法"
+        }
+      ]
     },
     {
-      "id": "public-material-29-002",
+      "id": "public-understanding-29-002",
       "subject": "public",
       "c": 29,
-      "s": "司法参加と刑事司法",
+      "s": "刑事手続と市民の参加",
       "n": 2,
       "d": "A",
       "type": "choice",
-      "q": "法的トラブルの相談案内や民事法律扶助などを行う機関の通称。これに当てはまる語は？",
+      "q": "行為をした時点では犯罪でなかったのに、後から作られた法律で処罰することが問題なのはなぜか？",
       "o": [
-        "裁判員制度",
-        "陪審制",
-        "法テラス",
-        "被害者参加制度"
+        "刑罰はすべて私人が決める",
+        "行為時の法律には意味がない",
+        "何が犯罪になるかを事前に予測できなくなる",
+        "法律は過去にしか適用できない"
       ],
       "a": [
         3
       ],
-      "e": "法テラス：日本司法支援センター。一定の要件で弁護士費用の立替えなども行う。",
+      "e": "犯罪と刑罰を事前に法律で定め、後の法律で遡って処罰することを禁じる。法による予測可能性を守る。",
       "courses": [
         "公共"
       ],
       "knowledge": "required",
+      "assessment": "understanding",
+      "revision": 2,
       "material": {
         "title": "提供された公共教材（写真）",
         "page": 72,
-        "section": "項目29 司法参加と刑事司法",
+        "section": "項目29：理解問題として再構成",
         "type": "photo"
-      }
+      },
+      "references": [
+        {
+          "url": "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/dl-constitution.htm",
+          "label": "衆議院：日本国憲法"
+        }
+      ]
     },
     {
-      "id": "public-material-29-003",
+      "id": "public-understanding-29-003",
       "subject": "public",
       "c": 29,
-      "s": "司法参加と刑事司法",
+      "s": "刑事手続と市民の参加",
       "n": 3,
       "d": "A",
       "type": "choice",
-      "q": "訴訟によらず、第三者が関与して紛争解決を図る手続の総称。これに当てはまる語は？",
+      "q": "警察の逮捕・捜索に原則として裁判官の令状を必要とする目的は？",
       "o": [
-        "参審制",
-        "検察審査会",
-        "罪刑法定主義",
-        "ADR"
+        "警察が自由に捜索できるようにする",
+        "捜査結果を国会の多数決で決める",
+        "すべての逮捕を不可能にする",
+        "強制捜査を司法がチェックし、人権を守る"
       ],
       "a": [
         4
       ],
-      "e": "ADR：裁判外紛争解決手続。調停・仲裁などがあり、すべてが裁判所による判決ではない。",
+      "e": "令状主義は強制捜査を制限する。現行犯逮捕などの例外もあるため、「必ず令状がいる」とはしない。",
       "courses": [
         "公共"
       ],
       "knowledge": "required",
+      "assessment": "understanding",
+      "revision": 2,
       "material": {
         "title": "提供された公共教材（写真）",
         "page": 72,
-        "section": "項目29 司法参加と刑事司法",
+        "section": "項目29：理解問題として再構成",
         "type": "photo"
-      }
+      },
+      "references": [
+        {
+          "url": "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/dl-constitution.htm",
+          "label": "衆議院：日本国憲法"
+        }
+      ]
     },
     {
-      "id": "public-material-29-004",
+      "id": "public-understanding-29-004",
       "subject": "public",
       "c": 29,
-      "s": "司法参加と刑事司法",
+      "s": "刑事手続と市民の参加",
       "n": 4,
       "d": "A",
       "type": "choice",
-      "q": "刑事裁判の公判前に争点や証拠を整理し、審理計画を定める手続。これに当てはまる語は？",
+      "q": "拷問による自白や、自白しか証拠のない有罪認定を制限する目的は？",
       "o": [
-        "公判前整理手続",
-        "遡及処罰の禁止",
-        "一事不再理",
-        "令状主義"
+        "虚偽の自白や人権侵害による誤判を防ぐ",
+        "自白なら内容を確認せず有罪にする",
+        "証拠の調査をすべて禁止する",
+        "被告人には証言する義務しか認めない"
       ],
       "a": [
         1
       ],
-      "e": "公判前整理手続：裁判官・検察官・弁護人が関与する。判決後に裁判をやり直す再審とは異なる。",
+      "e": "自白は常に信用できるとは限らない。証拠制限は適正な手続と事実認定の両方を守る。",
       "courses": [
         "公共"
       ],
       "knowledge": "required",
+      "assessment": "understanding",
+      "revision": 2,
       "material": {
         "title": "提供された公共教材（写真）",
         "page": 72,
-        "section": "項目29 司法参加と刑事司法",
+        "section": "項目29：理解問題として再構成",
         "type": "photo"
-      }
+      },
+      "references": [
+        {
+          "url": "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/dl-constitution.htm",
+          "label": "衆議院：日本国憲法"
+        }
+      ]
     },
     {
-      "id": "public-material-29-005",
+      "id": "public-understanding-29-005",
       "subject": "public",
       "c": 29,
-      "s": "司法参加と刑事司法",
+      "s": "刑事手続と市民の参加",
       "n": 5,
       "d": "A",
       "type": "choice",
-      "q": "一定の刑事事件で、被害者等が公判へ参加して質問や意見陳述などを行う制度。これに当てはまる語は？",
+      "q": "裁判員制度で、裁判員と裁判官はどのように裁判に関わる？",
       "o": [
-        "再審",
-        "被害者参加制度",
-        "自白の証拠制限",
-        "無罪の推定"
+        "裁判員が検察官として起訴する",
+        "一定の重大な刑事事件を共同で審理し、判断する",
+        "裁判員だけで法律を制定する",
+        "裁判官を使わずすべての民事事件を裁く"
       ],
       "a": [
         2
       ],
-      "e": "被害者参加制度：裁判員として有罪・無罪を評決する制度とは異なる。",
+      "e": "市民と職業裁判官が共同で判断する。すべての事件に適用されるわけではない。",
       "courses": [
         "公共"
       ],
       "knowledge": "required",
+      "assessment": "understanding",
+      "revision": 2,
       "material": {
         "title": "提供された公共教材（写真）",
         "page": 72,
-        "section": "項目29 司法参加と刑事司法",
+        "section": "項目29：理解問題として再構成",
         "type": "photo"
-      }
+      },
+      "references": [
+        {
+          "url": "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/dl-constitution.htm",
+          "label": "衆議院：日本国憲法"
+        },
+        {
+          "url": "https://www.courts.go.jp/saibanin/introduction/work_and_role/index.html",
+          "label": "裁判所：裁判員の仕事や役割"
+        }
+      ]
     },
     {
-      "id": "public-material-29-006",
+      "id": "public-understanding-29-006",
       "subject": "public",
       "c": 29,
-      "s": "司法参加と刑事司法",
+      "s": "刑事手続と市民の参加",
       "n": 6,
-      "d": "A",
-      "type": "choice",
-      "q": "選ばれた市民が裁判官とともに一定の重大な刑事事件を審理する制度。これに当てはまる語は？",
-      "o": [
-        "法テラス",
-        "ADR",
-        "裁判員制度",
-        "法科大学院"
-      ],
-      "a": [
-        3
-      ],
-      "e": "裁判員制度：2009年開始。地方裁判所の第一審で有罪・無罪や量刑の判断に参加する。",
-      "courses": [
-        "公共"
-      ],
-      "knowledge": "required",
-      "material": {
-        "title": "提供された公共教材（写真）",
-        "page": 72,
-        "section": "項目29 司法参加と刑事司法",
-        "type": "photo"
-      }
-    },
-    {
-      "id": "public-material-29-007",
-      "subject": "public",
-      "c": 29,
-      "s": "司法参加と刑事司法",
-      "n": 7,
-      "d": "A",
-      "type": "choice",
-      "q": "市民が職業裁判官とは独立して事実認定などを行う制度。これに当てはまる語は？",
-      "o": [
-        "公判前整理手続",
-        "被害者参加制度",
-        "裁判員制度",
-        "陪審制"
-      ],
-      "a": [
-        4
-      ],
-      "e": "陪審制：教材ではアメリカの制度として、裁判官と一緒に審理する制度と対比する。",
-      "courses": [
-        "公共"
-      ],
-      "knowledge": "required",
-      "material": {
-        "title": "提供された公共教材（写真）",
-        "page": 72,
-        "section": "項目29 司法参加と刑事司法",
-        "type": "photo"
-      }
-    },
-    {
-      "id": "public-material-29-008",
-      "subject": "public",
-      "c": 29,
-      "s": "司法参加と刑事司法",
-      "n": 8,
-      "d": "A",
-      "type": "choice",
-      "q": "市民が職業裁判官と共同で裁判に参加する制度。これに当てはまる語は？",
-      "o": [
-        "参審制",
-        "陪審制",
-        "検察審査会",
-        "罪刑法定主義"
-      ],
-      "a": [
-        1
-      ],
-      "e": "参審制：教材ではドイツ・フランスの例を扱う。市民だけで評決する陪審制と区別する。",
-      "courses": [
-        "公共"
-      ],
-      "knowledge": "required",
-      "material": {
-        "title": "提供された公共教材（写真）",
-        "page": 72,
-        "section": "項目29 司法参加と刑事司法",
-        "type": "photo"
-      }
-    },
-    {
-      "id": "public-material-29-009",
-      "subject": "public",
-      "c": 29,
-      "s": "司法参加と刑事司法",
-      "n": 9,
-      "d": "A",
-      "type": "choice",
-      "q": "検察官の不起訴処分などを市民が審査する機関。これに当てはまる語は？",
-      "o": [
-        "令状主義",
-        "検察審査会",
-        "遡及処罰の禁止",
-        "一事不再理"
-      ],
-      "a": [
-        2
-      ],
-      "e": "検察審査会：裁判員制度とは役割が異なる。一定の手続を経た起訴議決は強制起訴につながる。",
-      "courses": [
-        "公共"
-      ],
-      "knowledge": "required",
-      "material": {
-        "title": "提供された公共教材（写真）",
-        "page": 72,
-        "section": "項目29 司法参加と刑事司法",
-        "type": "photo"
-      }
-    },
-    {
-      "id": "public-material-29-010",
-      "subject": "public",
-      "c": 29,
-      "s": "司法参加と刑事司法",
-      "n": 10,
-      "d": "A",
-      "type": "choice",
-      "q": "犯罪と刑罰をあらかじめ法律で定めておく原則。これに当てはまる語は？",
-      "o": [
-        "無罪の推定",
-        "再審",
-        "罪刑法定主義",
-        "自白の証拠制限"
-      ],
-      "a": [
-        3
-      ],
-      "e": "罪刑法定主義：国家が後から恣意的に処罰することを防ぐ。",
-      "courses": [
-        "公共"
-      ],
-      "knowledge": "required",
-      "material": {
-        "title": "提供された公共教材（写真）",
-        "page": 72,
-        "section": "項目29 司法参加と刑事司法",
-        "type": "photo"
-      }
-    },
-    {
-      "id": "public-material-29-011",
-      "subject": "public",
-      "c": 29,
-      "s": "司法参加と刑事司法",
-      "n": 11,
-      "d": "A",
-      "type": "choice",
-      "q": "行為当時に適法だった行為を、後の法律によって処罰しない原則。これに当てはまる語は？",
-      "o": [
-        "法科大学院",
-        "法テラス",
-        "ADR",
-        "遡及処罰の禁止"
-      ],
-      "a": [
-        4
-      ],
-      "e": "遡及処罰の禁止：憲法39条の保障。法律を後から変えて過去の行為を犯罪にすることを防ぐ。",
-      "courses": [
-        "公共"
-      ],
-      "knowledge": "required",
-      "material": {
-        "title": "提供された公共教材（写真）",
-        "page": 72,
-        "section": "項目29 司法参加と刑事司法",
-        "type": "photo"
-      }
-    },
-    {
-      "id": "public-material-29-012",
-      "subject": "public",
-      "c": 29,
-      "s": "司法参加と刑事司法",
-      "n": 12,
-      "d": "A",
-      "type": "choice",
-      "q": "同一の犯罪について、重ねて刑事責任を問われない原則。これに当てはまる語は？",
-      "o": [
-        "一事不再理",
-        "公判前整理手続",
-        "被害者参加制度",
-        "裁判員制度"
-      ],
-      "a": [
-        1
-      ],
-      "e": "一事不再理：単に控訴や上告ができないという意味ではない。",
-      "courses": [
-        "公共"
-      ],
-      "knowledge": "required",
-      "material": {
-        "title": "提供された公共教材（写真）",
-        "page": 72,
-        "section": "項目29 司法参加と刑事司法",
-        "type": "photo"
-      }
-    },
-    {
-      "id": "public-material-29-013",
-      "subject": "public",
-      "c": 29,
-      "s": "司法参加と刑事司法",
-      "n": 13,
-      "d": "A",
-      "type": "choice",
-      "q": "逮捕や捜索などには原則として裁判官の令状を必要とする原則。これに当てはまる語は？",
-      "o": [
-        "検察審査会",
-        "令状主義",
-        "陪審制",
-        "参審制"
-      ],
-      "a": [
-        2
-      ],
-      "e": "令状主義：現行犯逮捕などの例外がある。すべて例外なく令状が必要という選択肢に注意する。",
-      "courses": [
-        "公共"
-      ],
-      "knowledge": "required",
-      "material": {
-        "title": "提供された公共教材（写真）",
-        "page": 72,
-        "section": "項目29 司法参加と刑事司法",
-        "type": "photo"
-      }
-    },
-    {
-      "id": "public-material-29-014",
-      "subject": "public",
-      "c": 29,
-      "s": "司法参加と刑事司法",
-      "n": 14,
-      "d": "A",
-      "type": "choice",
-      "q": "強制などによる自白や、自白だけによる有罪認定を制限する原則。これに当てはまる語は？",
-      "o": [
-        "遡及処罰の禁止",
-        "一事不再理",
-        "自白の証拠制限",
-        "罪刑法定主義"
-      ],
-      "a": [
-        3
-      ],
-      "e": "自白の証拠制限：不当な長期拘禁などで得た自白は証拠とできない。本人に不利益な唯一の証拠が自白の場合も有罪にできない。",
-      "courses": [
-        "公共"
-      ],
-      "knowledge": "required",
-      "material": {
-        "title": "提供された公共教材（写真）",
-        "page": 72,
-        "section": "項目29 司法参加と刑事司法",
-        "type": "photo"
-      }
-    },
-    {
-      "id": "public-material-29-015",
-      "subject": "public",
-      "c": 29,
-      "s": "司法参加と刑事司法",
-      "n": 15,
-      "d": "A",
-      "type": "choice",
-      "q": "有罪が確定するまでは無罪として扱う原則。これに当てはまる語は？",
-      "o": [
-        "令状主義",
-        "自白の証拠制限",
-        "再審",
-        "無罪の推定"
-      ],
-      "a": [
-        4
-      ],
-      "e": "無罪の推定：疑われたことや起訴されたことだけで、有罪が確定したとみなさない。",
-      "courses": [
-        "公共"
-      ],
-      "knowledge": "required",
-      "material": {
-        "title": "提供された公共教材（写真）",
-        "page": 72,
-        "section": "項目29 司法参加と刑事司法",
-        "type": "photo"
-      }
-    },
-    {
-      "id": "public-material-29-016",
-      "subject": "public",
-      "c": 29,
-      "s": "司法参加と刑事司法",
-      "n": 16,
-      "d": "A",
-      "type": "choice",
-      "q": "確定した裁判について、法律で定める理由により審理をやり直す手続。これに当てはまる語は？",
-      "o": [
-        "再審",
-        "法科大学院",
-        "法テラス",
-        "ADR"
-      ],
-      "a": [
-        1
-      ],
-      "e": "再審：新たな証拠などによる救済のしくみ。通常の控訴と区別する。",
-      "courses": [
-        "公共"
-      ],
-      "knowledge": "required",
-      "material": {
-        "title": "提供された公共教材（写真）",
-        "page": 72,
-        "section": "項目29 司法参加と刑事司法",
-        "type": "photo"
-      }
-    },
-    {
-      "id": "public-material-29-017",
-      "subject": "public",
-      "c": 29,
-      "s": "裁判員の評決",
-      "n": 17,
       "d": "B",
       "type": "choice",
-      "q": "裁判員裁判で有罪とする多数意見に、裁判官が一人も賛成していない。どう判断する？",
+      "q": "裁判員裁判で、有罪を支持する人数が多くても裁判官が一人も賛成していない。どう判断する？",
       "o": [
-        "被害者が賛成すれば有罪",
+        "裁判官の賛成は常に不要である",
+        "内閣の賛成があれば必ず有罪になる",
         "人数だけで有罪にはできない",
-        "裁判員が多数なら必ず有罪",
-        "裁判官の意見は一切不要"
-      ],
-      "a": [
-        2
-      ],
-      "e": "被告人に不利な判断には、多数意見に裁判官一人以上が含まれる必要がある。単に票数だけを数えない。",
-      "courses": [
-        "公共"
-      ],
-      "knowledge": "required",
-      "material": {
-        "title": "提供された公共教材（写真）",
-        "page": 72,
-        "section": "項目29 司法参加と刑事司法",
-        "type": "photo"
-      },
-      "references": [
-        {
-          "url": "https://www.courts.go.jp/saibanin/introduction/qa/index.html",
-          "label": "裁判所：裁判員制度Q&A"
-        }
-      ]
-    },
-    {
-      "id": "public-material-29-018",
-      "subject": "public",
-      "c": 29,
-      "s": "裁判員の構成",
-      "n": 18,
-      "d": "B",
-      "type": "choice",
-      "q": "裁判員裁判の原則的な構成は？",
-      "o": [
-        "裁判員9人だけ",
-        "裁判官1人だけ",
-        "裁判員6人と裁判官3人",
-        "裁判員3人と裁判官6人"
+        "裁判員の数だけで有罪にできる"
       ],
       "a": [
         3
       ],
-      "e": "原則は裁判員6人・裁判官3人。法律上の例外もあるので、すべての事件で必ず同じ構成と断定しない。",
+      "e": "被告人に不利な判断には、裁判官と裁判員の双方の意見を含む多数意見が必要。単純な人数の多数決ではない。",
       "courses": [
         "公共"
       ],
       "knowledge": "required",
+      "assessment": "understanding",
+      "revision": 2,
       "material": {
         "title": "提供された公共教材（写真）",
         "page": 72,
-        "section": "項目29 司法参加と刑事司法",
+        "section": "項目29：理解問題として再構成",
         "type": "photo"
       },
       "references": [
         {
-          "url": "https://www.courts.go.jp/saibanin/introduction/qa/index.html",
-          "label": "裁判所：裁判員制度Q&A"
+          "url": "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/dl-constitution.htm",
+          "label": "衆議院：日本国憲法"
+        },
+        {
+          "url": "https://www.courts.go.jp/saibanin/introduction/work_and_role/index.html",
+          "label": "裁判所：裁判員の仕事や役割"
         }
       ]
     },
     {
-      "id": "public-material-29-019",
+      "id": "public-understanding-29-007",
       "subject": "public",
       "c": 29,
-      "s": "民事の原則",
-      "n": 19,
+      "s": "刑事手続と市民の参加",
+      "n": 7,
       "d": "B",
       "type": "choice",
-      "q": "当事者が契約するかどうかや内容を原則として自分たちで決める考え方は？",
+      "q": "検察官の不起訴処分について市民が審査する仕組みの意義は？",
       "o": [
-        "一事不再理",
-        "令状主義",
-        "罪刑法定主義",
-        "契約自由の原則"
+        "市民が裁判所の有罪判決を直接出す",
+        "国会が検察官の代わりに刑罰を科す",
+        "不起訴処分をすべて自動的に有罪に変える",
+        "検察の判断に民意を反映し、適切さを確認する"
       ],
       "a": [
         4
       ],
-      "e": "民事の原則。契約の自由にも強行法規や公序良俗などによる制限があり、何でも有効という意味ではない。",
+      "e": "検察審査会は不起訴処分などを審査する。起訴するかと、裁判で有罪とするかは異なる判断。",
       "courses": [
         "公共"
       ],
       "knowledge": "required",
+      "assessment": "understanding",
+      "revision": 2,
       "material": {
         "title": "提供された公共教材（写真）",
         "page": 72,
-        "section": "項目29 司法参加と刑事司法",
+        "section": "項目29：理解問題として再構成",
         "type": "photo"
-      }
+      },
+      "references": [
+        {
+          "url": "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/dl-constitution.htm",
+          "label": "衆議院：日本国憲法"
+        }
+      ]
     },
     {
-      "id": "public-material-29-020",
+      "id": "public-understanding-29-008",
       "subject": "public",
       "c": 29,
-      "s": "民事の原則",
-      "n": 20,
+      "s": "刑事手続と市民の参加",
+      "n": 8,
       "d": "B",
       "type": "choice",
-      "q": "自分の所有物を自由に使用・収益・処分できることを基本とする考え方は？",
+      "q": "契約トラブルで、第三者を交えた調停・仲裁などにより解決を図る利点として適切なのは？",
       "o": [
-        "所有権絶対の原則",
-        "秘密投票",
-        "無罪の推定",
-        "国民審査"
+        "訴訟以外にも事情に合う紛争解決の道を設けられる",
+        "必ず当事者双方が望む結果になる",
+        "どんな合意も法律より優先する",
+        "裁判を受ける権利がすべて消える"
       ],
       "a": [
         1
       ],
-      "e": "契約自由とは対象が異なる。現代では所有権にも公共の福祉や法律による制約がある。",
+      "e": "裁判外の紛争解決は手続の選択肢を広げる。制度ごとの違いがあり、すべてが必ず成功するわけではない。",
       "courses": [
         "公共"
       ],
       "knowledge": "required",
+      "assessment": "understanding",
+      "revision": 2,
       "material": {
         "title": "提供された公共教材（写真）",
         "page": 72,
-        "section": "項目29 司法参加と刑事司法",
+        "section": "項目29：理解問題として再構成",
         "type": "photo"
-      }
+      },
+      "references": [
+        {
+          "url": "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/dl-constitution.htm",
+          "label": "衆議院：日本国憲法"
+        }
+      ]
     },
     {
-      "id": "public-material-29-021",
+      "id": "public-understanding-29-009",
       "subject": "public",
       "c": 29,
-      "s": "民事の原則",
-      "n": 21,
+      "s": "刑事手続と市民の参加",
+      "n": 9,
       "d": "B",
       "type": "choice",
-      "q": "損害賠償責任について、原則として故意や過失を根拠にする考え方は？",
+      "q": "一定の刑事事件で被害者が質問や意見陳述を行える制度は、何を目的とする？",
       "o": [
-        "三審制",
-        "過失責任の原則",
-        "非拘束名簿式",
-        "普通選挙"
+        "被告人の防御権をすべてなくす",
+        "被害者の立場や意見を刑事手続に反映させる",
+        "被害者が単独で刑罰を決める",
+        "被害者が裁判官を必ず兼ねる"
       ],
       "a": [
         2
       ],
-      "e": "教材の民事問題の誤選択肢を理解するための知識。すべての制度で無過失責任が否定されるわけではない。",
+      "e": "被害者参加制度は手続への参加を認める。刑罰の決定は裁判所が行い、被告人の権利も保障される。",
       "courses": [
         "公共"
       ],
       "knowledge": "required",
+      "assessment": "understanding",
+      "revision": 2,
       "material": {
         "title": "提供された公共教材（写真）",
         "page": 72,
-        "section": "項目29 司法参加と刑事司法",
+        "section": "項目29：理解問題として再構成",
         "type": "photo"
-      }
+      },
+      "references": [
+        {
+          "url": "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/dl-constitution.htm",
+          "label": "衆議院：日本国憲法"
+        }
+      ]
+    },
+    {
+      "id": "public-understanding-29-010",
+      "subject": "public",
+      "c": 29,
+      "s": "刑事手続と市民の参加",
+      "n": 10,
+      "d": "B",
+      "type": "choice",
+      "q": "確定した有罪判決の後、無罪につながる新しい証拠が見つかった。法律の要件を満たす場合に審理をやり直す意義は？",
+      "o": [
+        "初回の裁判をすべて省略する",
+        "新しい証拠の検討を禁じる",
+        "誤った有罪判決による被害を救済する",
+        "同じ事件を理由なく何度でも処罰する"
+      ],
+      "a": [
+        3
+      ],
+      "e": "再審は確定判決の誤りを是正する特別の手続。判決の確定と誤判の救済を両立させる。",
+      "courses": [
+        "公共"
+      ],
+      "knowledge": "required",
+      "assessment": "understanding",
+      "revision": 2,
+      "material": {
+        "title": "提供された公共教材（写真）",
+        "page": 72,
+        "section": "項目29：理解問題として再構成",
+        "type": "photo"
+      },
+      "references": [
+        {
+          "url": "https://www.shugiin.go.jp/internet/itdb_annai.nsf/html/statics/shiryo/dl-constitution.htm",
+          "label": "衆議院：日本国憲法"
+        }
+      ]
     }
   ]
 });
+
