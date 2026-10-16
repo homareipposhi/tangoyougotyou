@@ -15,6 +15,7 @@ const MANIFEST = [
   "subjects/earth/benesse-2026/geomagnetism-extended.js",
   "subjects/earth/benesse-2026/geomagnetism.js",
   "subjects/earth/benesse-2026/shape-gravity.js",
+  "subjects/earth/earth-activity-photos.js",
   "subjects/earth/earth-overview-photos.js",
   "subjects/earth/general.js",
   "subjects/earth/lecture/circulation.js",
