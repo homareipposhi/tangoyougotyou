@@ -732,6 +732,7 @@ test('course filters separate foundation from advanced items and reset incompati
   assert.ok(app.value('pool().map(q=>q.id)').includes('earth-nov25-gravity-014'));
   assert.ok(app.value('pool().map(q=>q.id)').includes('earth-lecture-ocean-001'));
   assert.ok(app.value('pool().map(q=>q.id)').includes('earth-h2nov26-geomag-ext-043'));
+  assert.ok(app.value('pool().map(q=>q.id)').includes('earth-overview-photo-028'));
   assert.ok(!app.value('pool().map(q=>q.id)').includes('earth-lecture-environment-006'));
   assert.ok(!app.value('pool().map(q=>q.id)').includes('earth-lecture-weather-006'));
   app.run("subjectId='geography'; filters.chapters=[4]; filters.diffs=['A']; view='subject'; render();");
@@ -749,6 +750,19 @@ test('course filters separate foundation from advanced items and reset incompati
   assert.ok(app.value('pool().map(q=>q.id)').includes('geography-nov25-climate-003'));
   assert.ok(!app.value('pool().map(q=>q.id)').includes('geography-nov25-energy-001'));
   assert.equal(app.value('pool().length'),76);
+});
+
+test('earth overview photo questions keep page references and stay in the advanced course', () => {
+  const added=questions.filter(q=>q.id.startsWith('earth-overview-photo-'));
+  assert.equal(added.length,28);
+  assert.deepEqual([...new Set(added.map(q=>q.material.page))].sort(),[2,3,4,5]);
+  assert.ok(added.every(q=>q.material.type==='photo' && q.material.title.includes('地球の概観')));
+  const app=makeApp();
+  assert.ok(added.every(q=>app.value(`courseMatches(${JSON.stringify(q)},"地学")`)));
+  assert.ok(added.every(q=>!app.value(`courseMatches(${JSON.stringify(q)},"地学基礎")`)));
+  app.begin(added[0]);
+  app.answer(1000,true,added[0]);
+  assert.ok(app.html().includes('写真教材 2ページ'));
 });
 
 

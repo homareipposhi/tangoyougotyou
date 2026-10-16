@@ -338,6 +338,7 @@ function matchesNumberedId(id, prefix, list){
 function earthNovemberCourse(q){
   if(q.id.startsWith("earth-nov25-audit-")) return "地学";
   if(q.studyTarget==="benesse-h2-nov-2026") return "地学";
+  if(q.id.startsWith("earth-overview-photo-")) return "地学";
   const id=q.id;
   if(["ear-1","ear-2","ear-3","ear-6"].includes(id)) return "両方";
   if(["ear-4","ear-5","ear-7","ear-8","ear-10"].includes(id)) return "地学";
