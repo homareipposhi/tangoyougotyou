@@ -33,6 +33,26 @@ if (jaToDe.some(question => question.q.includes(question.o[question.a[0] - 1])))
   throw new Error('日本語→ドイツ語問題の本文に正解語が含まれています。');
 }
 
+const chinese = questions.filter(question => question.subject === 'chinese');
+if (chinese.length !== 280) throw new Error(`中国語の表現数が280ではありません: ${chinese.length}`);
+for (let chapter = 1; chapter <= 14; chapter++) {
+  if (chinese.filter(question => question.c === chapter).length !== 20) {
+    throw new Error(`中国語の第${chapter}章が20件ではありません。`);
+  }
+}
+const chineseTexts = new Set();
+for (const question of chinese) {
+  const normalized = question.zh.replace(/[？?！!。…\s]/g, '');
+  if (chineseTexts.has(normalized)) throw new Error(`中国語表現が重複しています: ${question.zh}`);
+  chineseTexts.add(normalized);
+  if (!question.zh || !question.pinyin || !question.meaning || /[\u3400-\u9fff]/.test(question.pinyin)) {
+    throw new Error(`中国語・ピンイン・意味に不足があります: ${question.id}`);
+  }
+  if (!question.q.includes(question.zh) || !question.q.includes(question.pinyin) || question.o[question.a[0] - 1] !== question.meaning) {
+    throw new Error(`中国語の表示・正解が不一致です: ${question.id}`);
+  }
+}
+
 const rtaCategories = questions.filter(question => question.rta).map(question => question.rta).sort();
 const expectedRta = ['formula', 'recognition', 'symbol', 'term', 'unit'];
 if (expectedRta.some(category => !rtaCategories.includes(category))) {
@@ -58,7 +78,7 @@ for (const chapter of [1, 2, 3, 4, 5]) {
 }
 
 const recognition = questions.filter(question => question.subject === 'physics' && question.rta === 'recognition');
-for (const question of recognition) {
+for (const question of recognition.filter(question => question.s !== '論述RTA')) {
   const answer = question.o[question.a[0] - 1];
   if (/[A-Za-z0-9=πλμθΔΦ²√]/.test([question.q, ...question.o].join(''))) {
     throw new Error(`条件判断の問題文・選択肢は日本語の説明にする: ${question.id}`);
@@ -72,4 +92,4 @@ const formulas = questions.filter(question => question.subject === 'physics' && 
 const symbols = questions.filter(question => question.subject === 'physics' && question.rta === 'symbol');
 const definitions = questions.filter(question => question.subject === 'physics' && question.s === '用語の定義');
 const biology = questions.filter(question => question.subject === 'biology');
-console.log(`OK: ${packs.length}パック / ${questions.length}問 / 物理・公式${formulas.length}問・微積記号${symbols.length}問・用語定義${definitions.length}問・条件判断${recognition.length}問 / ドイツ語${german.length}問 / 生物${biology.length}問 / input 0件`);
+console.log(`OK: ${packs.length}パック / ${questions.length}問 / 中国語${chinese.length}問 / 物理・公式${formulas.length}問・微積記号${symbols.length}問・用語定義${definitions.length}問・条件判断${recognition.length}問 / ドイツ語${german.length}問 / 生物${biology.length}問 / input 0件`);

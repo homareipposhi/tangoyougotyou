@@ -168,6 +168,23 @@ test('all four existing subjects, German directions, and 87 included university-
   assert.ok(questions.every(q => q.type === 'choice' || q.type === 'tf'));
 });
 
+test('Chinese expressions are available by chapter with pinyin and meanings', () => {
+  const app = makeApp();
+  const chinese = questions.filter(q => q.subject === 'chinese');
+  assert.equal(chinese.length, 280);
+  assert.equal(Object.keys(subjects.chinese.chapters).length, 14);
+  app.run("subjectId='chinese'; view='subject'; render();");
+  assert.equal(app.value('pool().length'), 280);
+  app.run('filters.chapters=[4]; render();');
+  assert.equal(app.value('pool().length'), 20);
+  const sample = chinese.find(q => q.zh === '服了！');
+  app.begin(sample);
+  assert.ok(app.html().includes(sample.zh));
+  assert.ok(app.html().includes(sample.pinyin));
+  app.answer(1000, true, sample);
+  assert.ok(app.html().includes(sample.meaning));
+});
+
 test('supplied classical PDFs become five original packs without disturbing the legacy bank', () => {
   const expected = {
     'classical-culture.js':42,
@@ -391,7 +408,7 @@ test('legacy physics questions and the two-level selector are removed; all conte
 test('single-level content buttons preserve the existing exam/basic partition and exact counts', () => {
   const app=makeApp();
   app.run("subjectId='physics'; view='subject'; render();");
-  const groups=[['公式',21],['単位',1],['微積の記号',15],['用語・定義',31],['基礎の条件判断',17],['過去問の条件判断',666],['全内容',751]];
+  const groups=[['公式',21],['単位',1],['微積の記号',15],['用語・定義',31],['基礎の条件判断',32],['過去問の条件判断',666],['全内容',766]];
   for(const [label,count] of groups){
     app.click(label);
     assert.equal(app.value('pool().length'),count,label);
@@ -941,7 +958,7 @@ test('public arithmetic covers vote ratios, seat allocation, and the conditional
 test('physics uses chapter-level units, covers every question, and retains content/history', () => {
   const app=makeApp({[rtaQuestion.id]:{seen:3,wrong:1,last:0}});
   app.run("subjectId='physics'; filters.content='all'; view='subject'; render();");
-  assert.equal(app.value('pool().length'),751);
+  assert.equal(app.value('pool().length'),766);
   assert.ok(!app.html().includes('全分野'));
   assert.ok(!app.html().includes('>力学<'));
   const ids=app.value('PHYSICS_UNITS.map(u=>u.id)');
@@ -988,7 +1005,7 @@ test('recurrence bank covers 33 units with methods, exercises, conditions and re
     }
   }
   assert.deepEqual([...new Set(math.map(q=>q.a[0]))].sort(),[1,2,3,4]);
-  assert.equal(questions.filter(q=>q.subject==='physics').length,751);
+  assert.equal(questions.filter(q=>q.subject==='physics').length,766);
   assert.equal(questions.filter(q=>q.subject==='public').length,120);
 });
 

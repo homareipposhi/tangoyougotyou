@@ -6,6 +6,7 @@ const MANIFEST = [
   "subjects/biology/succession.js",
   "subjects/biology/vegetation.js",
   "subjects/biology/world-biomes.js",
+  "subjects/chinese/daily-colloquial.js",
   "subjects/classics/classical-culture.js",
   "subjects/classics/general.js",
   "subjects/classics/hojoki.js",
