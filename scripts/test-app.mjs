@@ -651,22 +651,43 @@ test('November geography and earth knowledge is available, filterable, and prese
   }
 });
 
-function driveHarness({records={},remote=null,stored={},authorizeError=null}={}) {
+function driveHarness({records={},remote=null,stored={},dailyState={},authorizeError=null,tokenSeconds=3600,nowStart=0}={}) {
   const scope='https://www.googleapis.com/auth/drive.appdata';
   const app=makeApp(); const create=app.run('createDriveHistory');
-  let now=0, local=records, cloud=remote, syncState=stored, failure=0;
-  const requests=[], reports=[]; let beforePatch=null;
-  const authorize=async ()=>{if(authorizeError) throw new Error(authorizeError);return {access_token:'memory-only-token',expires_in:3600,scope};};
+  let now=nowStart, local=records, cloud=remote, syncState=stored, daily=copy(dailyState), failure=0, nextBackupId=1;
+  let remoteModifiedTime=new Date(now).toISOString();
+  const requests=[], reports=[], preserved=[], backupFiles=new Map(); let beforePatch=null, failBackup=false;
+  const authorize=async ()=>{if(authorizeError) throw new Error(authorizeError);return {access_token:'memory-only-token',expires_in:tokenSeconds,scope};};
   const response=(status,data)=>({ok:status>=200&&status<300,status,json:async()=>data,text:async()=>typeof data==='string'?data:JSON.stringify(data)});
-  const drive=create({authorize,clock:()=>now,readLocal:()=>local,applyRemote:data=>{local=copy(data);},notify:state=>reports.push(copy(state)),readSyncState:()=>syncState,writeSyncState:state=>{syncState=copy(state);},fetcher:async(url,options)=>{
+  const drive=create({authorize,clock:()=>now,readLocal:()=>local,applyRemote:data=>{local=copy(data);},preserveLocal:data=>preserved.push(copy(data)),notify:state=>reports.push(copy(state)),readSyncState:()=>syncState,writeSyncState:state=>{syncState=copy(state);},readDailyState:()=>daily,writeDailyState:state=>{daily=copy(state);},fetcher:async(url,options)=>{
     requests.push({url,...options});
     if(failure) {const status=failure;failure=0;return response(status,{});}
-    if(url.includes('alt=media')) return response(200,cloud);
-    if(options.method==='PATCH') {if(beforePatch) await beforePatch();cloud=options.body;return response(200,{id:'drive-file'});}
-    if(options.method==='POST') {const body=options.body;cloud=body.slice(body.indexOf('{"format":"study-history"'),body.lastIndexOf('\r\n--'));return response(200,{id:'drive-file'});}
-    return response(200,{files:cloud===null?[]:[{id:'drive-file'}]});
+    const parsed=new URL(url), id=parsed.pathname.split('/').at(-1);
+    if(parsed.searchParams.get('alt')==='media') return id==='drive-file' ? response(200,cloud)
+      : backupFiles.has(id) ? response(200,backupFiles.get(id).content) : response(404,{});
+    if(options.method==='PATCH') {if(beforePatch) await beforePatch();cloud=options.body;remoteModifiedTime=new Date(now).toISOString();return response(200,{id:'drive-file'});}
+    if(options.method==='POST') {
+      const body=options.body;
+      const metadata=JSON.parse(body.match(/\r\n\r\n(\{[^\r\n]+\})\r\n--study_history_boundary/)[1]);
+      const marker='\r\nContent-Type: application/json\r\n\r\n';
+      const content=body.slice(body.indexOf(marker)+marker.length,body.lastIndexOf('\r\n--'));
+      if(metadata.name==='study-history-v1.json') {cloud=content;remoteModifiedTime=new Date(now).toISOString();return response(200,{id:'drive-file'});}
+      if(failBackup) {failBackup=false;return response(503,{});}
+      const backupId=`backup-${nextBackupId++}`;
+      backupFiles.set(backupId,{name:metadata.name,content});
+      return response(200,{id:backupId});
+    }
+    if(options.method==='DELETE') {backupFiles.delete(id);return response(204,'');}
+    const main=cloud===null?[]:[{id:'drive-file',name:'study-history-v1.json',modifiedTime:remoteModifiedTime}];
+    const q=parsed.searchParams.get('q') || '';
+    const files=q.includes("name = 'study-history-v1.json'") ? main
+      : [...main,...[...backupFiles].map(([backupId,file])=>({id:backupId,name:file.name,modifiedTime:remoteModifiedTime}))];
+    return response(200,{files});
   }});
-  return {drive,requests,reports,cloud:()=>cloud,local:()=>local,stored:()=>syncState,setLocal:data=>{local=data;},setRemote:data=>{cloud=data;},expire:()=>{now=4000000;},fail:status=>{failure=status;},delayPatch:fn=>{beforePatch=fn;}};
+  return {drive,requests,reports,preserved,cloud:()=>cloud,local:()=>local,stored:()=>syncState,daily:()=>daily,
+    backups:()=>[...backupFiles.values()].map(file=>({name:file.name,records:JSON.parse(file.content).records})),
+    setLocal:data=>{local=data;},setRemote:data=>{cloud=data;remoteModifiedTime=new Date(now).toISOString();},
+    advance:ms=>{now+=ms;},expire:()=>{now=4000000;},fail:status=>{failure=status;},failNextBackup:()=>{failBackup=true;},delayPatch:fn=>{beforePatch=fn;}};
 }
 const drivePayload=records=>JSON.stringify({format:'study-history',version:1,records});
 
@@ -732,6 +753,77 @@ test('a reloaded pending copy reconnects only to its unchanged remote baseline',
   const conflict=driveHarness({records,remote:drivePayload({other:{seen:1,wrong:0,last:1}}),stored:{pending:true,fileId:'drive-file',baseline}});
   await conflict.drive.connect('client-id');assert.deepEqual(conflict.local(),records);
   assert.equal(conflict.drive.state.connected,false);
+});
+
+test('JST midnight keeps exactly three dated Drive backups and can restore one',async()=>{
+  const h=driveHarness({tokenSeconds:10*24*3600});
+  await h.drive.connect('client-id');
+  for(let n=1;n<=4;n++) {
+    h.setLocal({one:{seen:n,wrong:0,last:1}});await h.drive.changed();
+    h.advance(86400000);await h.drive.snapshotEndedDay();
+  }
+  assert.deepEqual([...h.drive.state.backups],['1970-01-04','1970-01-03','1970-01-02']);
+  assert.equal(h.backups().length,3);
+  assert.equal(h.backups().find(b=>b.name.includes('1970-01-02')).records.one.seen,2);
+  h.setLocal({one:{seen:5,wrong:0,last:1}});await h.drive.changed();
+  await h.drive.restoreBackup('1970-01-02');
+  assert.equal(h.local().one.seen,2);
+  assert.equal(JSON.parse(h.cloud()).records.one.seen,2);
+  assert.equal(h.preserved.at(-1).one.seen,5);
+});
+
+test('midnight preserves a local snapshot when Google token expired and uploads on reconnect',async()=>{
+  const h=driveHarness();await h.drive.connect('client-id');
+  h.setLocal({one:{seen:1,wrong:0,last:1}});await h.drive.changed();
+  h.advance(86400000);await h.drive.snapshotEndedDay();
+  assert.equal(h.drive.state.connected,false);
+  assert.equal(h.drive.state.pending,true);
+  assert.equal(JSON.parse(h.daily().snapshots['1970-01-01']).records.one.seen,1);
+  await h.drive.connect('client-id');
+  assert.equal(h.backups().find(b=>b.name.includes('1970-01-01')).records.one.seen,1);
+  assert.equal(h.drive.state.pending,false);
+});
+
+test('a dated local backup can be restored while Drive is disconnected',async()=>{
+  const h=driveHarness();await h.drive.connect('client-id');
+  h.setLocal({one:{seen:1,wrong:0,last:1}});await h.drive.changed();
+  h.advance(86400000);await h.drive.snapshotEndedDay();
+  h.setLocal({one:{seen:2,wrong:0,last:1}});await h.drive.changed();
+  await h.drive.restoreLocalBackup('1970-01-01');
+  assert.equal(h.local().one.seen,1);
+  assert.equal(h.preserved.at(-1).one.seen,2);
+  assert.equal(h.drive.state.pending,true);
+});
+
+test('midnight backup never writes over another device’s changed Drive history',async()=>{
+  const h=driveHarness({tokenSeconds:3*24*3600});await h.drive.connect('client-id');
+  h.setLocal({one:{seen:1,wrong:0,last:1}});await h.drive.changed();
+  const remote=drivePayload({other:{seen:2,wrong:0,last:1}});
+  h.setRemote(remote);h.advance(86400000);await h.drive.snapshotEndedDay();
+  assert.equal(h.cloud(),remote);
+  assert.equal(h.backups().length,0);
+  assert.equal(h.drive.state.connected,false);
+  assert.equal(h.drive.state.pending,true);
+});
+
+test('reopening after three closed nights retains three local daily snapshots',()=>{
+  const records={one:{seen:3,wrong:0,last:1}};
+  const old={day:'1970-01-01',lastText:drivePayload(records),snapshots:{}};
+  const h=driveHarness({records,dailyState:old,nowStart:4*86400000});
+  assert.deepEqual(Object.keys(h.daily().snapshots).sort(),['1970-01-02','1970-01-03','1970-01-04']);
+  assert.equal(h.drive.state.pending,true);
+});
+
+test('first Drive connection keeps conflicting local records until an explicit restore choice',async()=>{
+  const local={local:{seen:1,wrong:0,last:1}}, remote={remote:{seen:1,wrong:0,last:1}};
+  const h=driveHarness({records:local,remote:drivePayload(remote)});
+  await h.drive.connect('client-id');
+  assert.deepEqual(h.local(),local);
+  assert.deepEqual(JSON.parse(h.cloud()).records,remote);
+  assert.equal(h.drive.state.connected,false);
+  await h.drive.connect('client-id',true);
+  assert.deepEqual(h.local(),remote);
+  assert.deepEqual(h.preserved.at(-1),local);
 });
 
 

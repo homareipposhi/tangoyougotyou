@@ -37,14 +37,42 @@ function save(){
 // Google access tokens stay in memory. Only the public client ID is remembered.
 const DRIVE_CLIENT_ID = "95228930762-4pbom5l5sh2hij2d0grfqso7i34vgfkg.apps.googleusercontent.com";
 const DRIVE_CONFIG_KEY = "multi-study-drive-client-v1";
-function createDriveHistory({fetcher, authorize, readLocal, applyRemote, notify, readSyncState = () => ({}), writeSyncState = () => {}, clock = () => Date.now()}) {
+function createDriveHistory({fetcher, authorize, readLocal, applyRemote, preserveLocal = () => {}, notify, readSyncState = () => ({}), writeSyncState = () => {}, readDailyState = () => ({}), writeDailyState = () => {}, clock = () => Date.now()}) {
   const scope = 'https://www.googleapis.com/auth/drive.appdata';
   const filename = 'study-history-v1.json';
-  const stored = readSyncState();
-  let token = '', expires = 0, fileId = stored.fileId || '', baseline = stored.baseline || '', ready = false;
-  let busy = false, dirty = Boolean(stored.pending), running = null, generation = 0;
-  const persist = () => writeSyncState({fileId,baseline,pending:dirty});
-  const report = message => notify({message, connected:ready, busy, pending:dirty});
+  const backupPrefix = 'study-history-backup-';
+  const dayMs = 86400000;
+  const stored = readSyncState() || {};
+  let token = '', expires = 0, fileId = stored.fileId || '', baseline = stored.baseline || '';
+  let baselineDay = stored.baselineDay || '', ready = false, backups = [];
+  let busy = false, dirty = Boolean(stored.pending), running = null, backupRun = null, generation = 0;
+  const day = time => new Date(time + 9*3600000).toISOString().slice(0,10);
+  const today = () => day(clock());
+  const cutoff = () => day(clock() - 3*dayMs);
+  const persist = () => writeSyncState({fileId,baseline,baselineDay,pending:dirty});
+  const savedDaily = readDailyState();
+  const daily = savedDaily && typeof savedDaily==='object' && !Array.isArray(savedDaily) ? savedDaily : {};
+  if (typeof daily.day !== 'string' || !/^\d{4}-\d{2}-\d{2}$/.test(daily.day) || daily.day > today()) daily.day = today();
+  if (typeof daily.lastText !== 'string' || daily.lastText.length > 2000000) daily.lastText = JSON.stringify({format:'study-history',version:1,records:readLocal()});
+  if (!daily.snapshots || typeof daily.snapshots !== 'object' || Array.isArray(daily.snapshots)) daily.snapshots = {};
+  function rememberLocal() {
+    if (daily.day < today()) {
+      if (daily.lastText.length <= 2000000) {
+        for (let date = daily.day < cutoff() ? cutoff() : daily.day; date < today(); date = new Date(Date.parse(date+'T00:00:00Z')+dayMs).toISOString().slice(0,10)) daily.snapshots[date] = daily.lastText;
+      }
+      daily.day = today();
+      dirty = true;
+    }
+    for (const date of Object.keys(daily.snapshots)) if (!/^\d{4}-\d{2}-\d{2}$/.test(date) || date < cutoff() || date >= today() || typeof daily.snapshots[date] !== 'string' || daily.snapshots[date].length > 2000000) delete daily.snapshots[date];
+    daily.lastText = encode(readLocal());
+    writeDailyState(daily);
+    persist();
+  }
+  // A closed tab cannot execute at midnight. On its next opening, the last
+  // saved record is the final record for that ended day.
+  const backupDates = () => [...new Set(backups.filter(file => file.date >= cutoff() && file.date < today()).map(file => file.date))].sort().reverse();
+  const localBackupDates = () => Object.keys(daily.snapshots).filter(date => date >= cutoff() && date < today()).sort().reverse();
+  const report = message => notify({message, connected:ready, busy, pending:dirty, backups:backupDates(), localBackups:localBackupDates()});
   const encode = records => JSON.stringify({format:'study-history',version:1,records});
   function decode(text) {
     if (text.length > 2000000) throw new Error('Driveの履歴ファイルが大きすぎます。');
@@ -55,6 +83,9 @@ function createDriveHistory({fetcher, authorize, readLocal, applyRemote, notify,
     }
     return data.records;
   }
+  try { decode(daily.lastText); } catch(e) { daily.lastText = encode(readLocal()); }
+  for (const [date,text] of Object.entries(daily.snapshots)) try { decode(text); } catch(e) { delete daily.snapshots[date]; }
+  rememberLocal();
   async function api(path, init = {}) {
     if (!token || clock() >= expires) {
       ready = false;
@@ -73,51 +104,98 @@ function createDriveHistory({fetcher, authorize, readLocal, applyRemote, notify,
     return response;
   }
   async function findFile() {
-    const query = new URLSearchParams({spaces:'appDataFolder',q:`name = '${filename}' and trashed = false`,fields:'files(id),nextPageToken',pageSize:'100'});
+    const query = new URLSearchParams({spaces:'appDataFolder',q:`name = '${filename}' and trashed = false`,fields:'files(id,modifiedTime),nextPageToken',pageSize:'100'});
     const result = await (await api('drive/v3/files?'+query)).json();
     if (result.nextPageToken || result.files.length > 1) throw new Error('同名の履歴が複数あります。上書きせず停止しました。');
-    return result.files[0]?.id || '';
+    return result.files[0] || null;
   }
-  async function download() { return (await api(`drive/v3/files/${encodeURIComponent(fileId)}?alt=media`)).text(); }
+  async function listBackups() {
+    const files = [];
+    let nextPageToken = '';
+    do {
+      const query = new URLSearchParams({spaces:'appDataFolder',q:'trashed = false',fields:'nextPageToken,files(id,name,modifiedTime)',pageSize:'1000'});
+      if (nextPageToken) query.set('pageToken',nextPageToken);
+      const result = await (await api('drive/v3/files?'+query)).json();
+      files.push(...(result.files || []));
+      nextPageToken = result.nextPageToken || '';
+    } while (nextPageToken);
+    return files.filter(file => file.id && /^study-history-backup-\d{4}-\d{2}-\d{2}\.json$/.test(file.name))
+      .map(file => ({id:file.id,date:file.name.slice(backupPrefix.length,-5)}));
+  }
+  async function download(id = fileId) { return (await api(`drive/v3/files/${encodeURIComponent(id)}?alt=media`)).text(); }
+  async function createFile(name,text) {
+    const boundary = 'study_history_boundary';
+    const metadata = JSON.stringify({name,parents:['appDataFolder'],mimeType:'application/json'});
+    const body = `--${boundary}\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n${metadata}\r\n--${boundary}\r\nContent-Type: application/json\r\n\r\n${text}\r\n--${boundary}--`;
+    const result = await (await api('upload/drive/v3/files?uploadType=multipart&fields=id', {method:'POST',headers:{'Content-Type':'multipart/related; boundary='+boundary},body})).json();
+    if (!result.id) throw new Error('Driveの保存結果を確認できませんでした。再接続してください。');
+    return result.id;
+  }
   async function upload(text) {
     if (fileId) {
       await api(`upload/drive/v3/files/${encodeURIComponent(fileId)}?uploadType=media`, {method:'PATCH',headers:{'Content-Type':'application/json'},body:text});
     } else {
       // Check again before creation: another device may have created the first file.
       if (await findFile()) throw new Error('Driveに新しい履歴があります。再接続して読み込んでください。');
-      const boundary = 'study_history_boundary';
-      const metadata = JSON.stringify({name:filename,parents:['appDataFolder'],mimeType:'application/json'});
-      const body = `--${boundary}\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n${metadata}\r\n--${boundary}\r\nContent-Type: application/json\r\n\r\n${text}\r\n--${boundary}--`;
-      const result = await (await api('upload/drive/v3/files?uploadType=multipart&fields=id', {method:'POST',headers:{'Content-Type':'multipart/related; boundary='+boundary},body})).json();
-      if (!result.id) throw new Error('Driveの保存結果を確認できませんでした。再接続してください。');
-      fileId = result.id;
+      fileId = await createFile(filename,text);
+    }
+  }
+  async function ensureBackup(date,text) {
+    if (!text || date < cutoff() || date >= today()) return;
+    if (backups.some(file => file.date === date)) return;
+    backups = await listBackups();
+    if (backups.some(file => file.date === date)) return;
+    const id = await createFile(`${backupPrefix}${date}.json`,text);
+    backups.push({id,date});
+  }
+  async function uploadLocalBackups() {
+    for (const date of Object.keys(daily.snapshots).sort()) await ensureBackup(date,daily.snapshots[date]);
+  }
+  async function pruneBackups() {
+    for (const file of backups.filter(file => file.date < cutoff())) {
+      await api(`drive/v3/files/${encodeURIComponent(file.id)}`,{method:'DELETE'});
+      backups = backups.filter(item => item.id !== file.id);
     }
   }
   async function connect(clientId, useDrive = false) {
     if (busy) return;
+    rememberLocal();
     busy = true; ready = false; report('Googleに接続しています。');
     const startGeneration = generation, previousFileId = fileId;
     try {
       const result = await authorize(clientId, scope);
       if (!result.access_token || !Number.isFinite(Number(result.expires_in)) || Number(result.expires_in)<=30 || !result.scope?.split(' ').includes(scope)) throw new Error('履歴保存へのアクセスが許可されませんでした。');
       token = result.access_token; expires = clock() + Number(result.expires_in)*1000 - 30000;
-      fileId = await findFile();
+      const found = await findFile();
+      fileId = found?.id || '';
       if (fileId) {
         const text = await download(); const records = decode(text);
         if (startGeneration !== generation) throw new Error('接続中に回答が追加されました。端末の履歴を保持して読み込みを停止しました。');
+        const local = readLocal();
         if (dirty && !useDrive) {
           if(previousFileId !== fileId || baseline !== text) throw new Error('端末とDriveの両方に変更があります。端末の履歴を保持して停止しました。');
-        } else { applyRemote(records); dirty=false; }
+        } else if (!useDrive && previousFileId !== fileId && Object.keys(local).length && JSON.stringify(local) !== JSON.stringify(records)) {
+          dirty = true; persist();
+          throw new Error('端末とDriveに異なる履歴があります。端末の履歴を保持して停止しました。');
+        } else {
+          if (useDrive) preserveLocal(local);
+          applyRemote(records); dirty=false; rememberLocal();
+        }
+        baselineDay = previousFileId === fileId && baseline === text && baselineDay ? baselineDay
+          : found.modifiedTime ? day(Date.parse(found.modifiedTime)) : today();
         baseline = text; persist();
-      } else baseline = '';
+      } else { baseline = ''; baselineDay = ''; }
+      backups = await listBackups();
       ready = true; busy = false;
       report(fileId ? 'Driveの履歴を読み込みました。回答後に自動保存します。' : 'Driveに接続しました。履歴を保存しています。');
       if (!fileId || dirty) { dirty=true; persist(); await flush(); }
+      else await snapshotEndedDay();
     } catch (error) {
       token = ''; ready = false; busy = false; report(error.message || 'Googleへの接続に失敗しました。');
     }
   }
   function changed() {
+    rememberLocal();
     generation++; dirty = true; persist();
     if (ready) return flush();
     report('この端末に保存しました。Driveへ保存するには接続してください。');
@@ -125,6 +203,7 @@ function createDriveHistory({fetcher, authorize, readLocal, applyRemote, notify,
   }
   function flush() {
     if (running) return running;
+    if (backupRun) return backupRun.then(flush);
     if (!ready || !dirty) return Promise.resolve();
     busy = true; report('Driveに保存しています。');
     let failure = '';
@@ -133,19 +212,78 @@ function createDriveHistory({fetcher, authorize, readLocal, applyRemote, notify,
         while (dirty && ready) {
           const currentGeneration = generation;
           const text = encode(readLocal());
+          if (text.length > 2000000) throw new Error('履歴が大きすぎるためDriveへ保存できません。端末の履歴は残っています。');
           if (fileId && await download() !== baseline) {
             ready = false;
             throw new Error('Driveの履歴が別の端末で変更されています。この端末の履歴を保持して保存を停止しました。');
           }
+          await uploadLocalBackups();
+          if (fileId && baselineDay && baselineDay < today()) await ensureBackup(baselineDay,baseline);
+          const savedDay = today();
           await upload(text); baseline = text;
+          baselineDay = savedDay;
           if (generation === currentGeneration) dirty = false;
           persist();
         }
+        await pruneBackups();
         report('Driveに保存しました。');
       } catch (error) { failure = error.message || 'Driveに保存できませんでした。'; }
       finally { busy = false; running = null; }
     })().finally(() => report(failure || (dirty ? 'Driveに未保存の履歴があります。再試行してください。' : 'Driveに保存しました。')));
     return running;
+  }
+  function snapshotEndedDay() {
+    rememberLocal();
+    if (backupRun) return backupRun;
+    backupRun = (async () => {
+      if (running) await running;
+      if (!ready) { report('この端末に日次バックアップを保存しました。Googleに再接続するとDriveへ送ります。'); return; }
+      busy = true; report('日次バックアップを確認しています。');
+      let message = '直近3日分のバックアップを確認しました。';
+      try {
+        if (fileId && await download() !== baseline) {
+          ready = false;
+          throw new Error('Driveの履歴が別の端末で変更されています。この端末のバックアップを保持して保存を停止しました。');
+        }
+        await uploadLocalBackups();
+        if (fileId && baselineDay && baselineDay < today()) await ensureBackup(baselineDay,baseline);
+        await pruneBackups();
+      } catch (error) { dirty = true; persist(); message = error.message || '日次バックアップを作成できませんでした。'; }
+      finally { busy = false; report(message); }
+    })().finally(() => { backupRun = null; });
+    return backupRun.then(() => dirty && ready ? flush() : undefined);
+  }
+  async function restoreBackup(date) {
+    if (busy || !ready || dirty) return;
+    busy = true; report(`${date}のバックアップを読み込んでいます。`);
+    try {
+      const backup = backups.find(file => file.date === date && date >= cutoff() && date < today());
+      if (!backup) throw new Error('選んだバックアップが見つかりません。再接続してください。');
+      if (await download() !== baseline) {
+        ready = false;
+        throw new Error('Driveの履歴が別の端末で変更されています。復元せず停止しました。');
+      }
+      const records = decode(await download(backup.id));
+      preserveLocal(readLocal());
+      applyRemote(records);
+      rememberLocal();
+      generation++; dirty = true; persist();
+      busy = false; report(`${date}の履歴を復元し、Driveに保存しています。`);
+      await flush();
+    } catch (error) { busy = false; report(error.message || 'バックアップを復元できませんでした。'); }
+  }
+  function restoreLocalBackup(date) {
+    if (busy) return Promise.resolve();
+    try {
+      if (!localBackupDates().includes(date)) throw new Error('選んだ端末バックアップが見つかりません。');
+      const records = decode(daily.snapshots[date]);
+      preserveLocal(readLocal());
+      applyRemote(records);
+      rememberLocal();
+      generation++; dirty = true; persist();
+      report(`${date}の端末バックアップを復元しました。Driveへの保存を確認してください。`);
+      return ready ? flush() : Promise.resolve();
+    } catch(error) { report(error.message || '端末バックアップを復元できませんでした。'); return Promise.resolve(); }
   }
   function disconnect() {
     if (busy) return;
@@ -153,7 +291,7 @@ function createDriveHistory({fetcher, authorize, readLocal, applyRemote, notify,
     // Keep the local record, including unsaved changes.
     report('Driveとの接続を終了しました。');
   }
-  return {connect,changed,flush,disconnect,get state(){return {connected:ready,busy,pending:dirty};}};
+  return {connect,changed,flush,snapshotEndedDay,restoreBackup,restoreLocalBackup,disconnect,get state(){return {connected:ready,busy,pending:dirty,backups:backupDates(),localBackups:localBackupDates()};}};
 }
 let driveStatus = {message:'Google Driveは未接続です。',connected:false,busy:false,pending:false};
 let driveSdkPromise = null, driveSdkReady = false, driveSdkError = false;
@@ -177,8 +315,11 @@ const driveHistory = createDriveHistory({
   }),
   readSyncState:()=>{try{return JSON.parse(localStorage.getItem('multi-study-drive-sync-v1')) || {};}catch(e){return {};}},
   writeSyncState:state=>{try{localStorage.setItem('multi-study-drive-sync-v1',JSON.stringify(state));}catch(e){}},
+  readDailyState:()=>{try{return JSON.parse(localStorage.getItem('multi-study-drive-daily-v1')) || {};}catch(e){return {}; }},
+  writeDailyState:state=>{try{localStorage.setItem('multi-study-drive-daily-v1',JSON.stringify(state));}catch(e){}},
   readLocal:()=>S,
-  applyRemote:records=>{S=records; try{localStorage.setItem(KEY,JSON.stringify(S));}catch(e){}},
+  applyRemote:records=>{localStorage.setItem(KEY,JSON.stringify(records)); S=records;},
+  preserveLocal:records=>localStorage.setItem('multi-study-before-drive-restore-v1',JSON.stringify(records)),
   notify:state=>{
     driveStatus=state;
     const element=document.getElementById('drive-status');
@@ -188,11 +329,17 @@ const driveHistory = createDriveHistory({
 });
 Object.assign(driveStatus,driveHistory.state);
 if(driveStatus.pending) driveStatus.message='Driveに未保存の履歴がこの端末にあります。Googleに接続してください。';
+function scheduleDriveMidnight() {
+  if (typeof setTimeout !== 'function') return;
+  const dayMs=86400000, delay=dayMs-((Date.now()+9*3600000)%dayMs)+1000;
+  setTimeout(()=>driveHistory.snapshotEndedDay().finally(scheduleDriveMidnight),delay);
+}
+scheduleDriveMidnight();
 function driveClientId() {
   try{return DRIVE_CLIENT_ID || localStorage.getItem(DRIVE_CONFIG_KEY) || '';}catch(e){return DRIVE_CLIENT_ID;}
 }
 function drivePanel() {
-  const panel=h(`<section class="panel"><h2>Google Driveに履歴を保存</h2><p id="drive-status" role="status">${esc(driveStatus.message)}</p><div class="opts"></div><p class="subtle">接続中は回答後に自動保存します。次回もGoogleに接続して履歴を読み込みます。</p></section>`);
+  const panel=h(`<section class="panel"><h2>Google Driveに履歴を保存</h2><p id="drive-status" role="status">${esc(driveStatus.message)}</p><div class="opts"></div><p class="subtle">接続中は回答後に自動保存します。日本時間の毎日24:00にその日の履歴を端末へ控え、接続中はDriveにも保存します。画面を閉じていた場合やGoogleの認証が切れていた場合は、次に開いて接続したときDriveへ送ります。直近3日分を残します。</p></section>`);
   const buttons=panel.querySelector('.opts');
   const clientId=driveClientId();
   if(!clientId) {
@@ -215,12 +362,23 @@ function drivePanel() {
       buttons.appendChild(filterButton('接続を終了',false,()=>driveHistory.disconnect(),driveStatus.busy||driveStatus.pending));
     }
     if(driveStatus.pending && !driveStatus.connected) buttons.appendChild(filterButton('Driveの履歴を使う',false,()=>{
-      if(window.confirm('この端末の未保存履歴に代えて、Driveの履歴を読み込みますか？')) {
-        try{localStorage.setItem('multi-study-before-drive-restore-v1',JSON.stringify(S));}catch(e){}
-        driveHistory.connect(clientId,true);
-      }
+      if(window.confirm('この端末の未保存履歴に代えて、Driveの履歴を読み込みますか？ 置き換える前の履歴は端末に退避します。')) driveHistory.connect(clientId,true);
     },driveStatus.busy||!driveSdkReady));
     if(!DRIVE_CLIENT_ID && !driveStatus.connected) buttons.appendChild(filterButton('接続設定を変更',false,()=>{try{localStorage.removeItem(DRIVE_CONFIG_KEY);}catch(e){}render();},driveStatus.busy));
+  }
+  {
+    const backups=h(`<div class="grp"><span>日次バックアップ（日本時間・直近3日分）</span><div class="opts"></div></div>`);
+    const backupButtons=backups.querySelector('.opts');
+    for(const date of driveStatus.localBackups || []) backupButtons.appendChild(filterButton(`${date} の端末履歴を復元`,false,()=>{
+      if(window.confirm(`${date} 24:00時点の端末履歴に戻しますか？ 現在の履歴は先に退避します。`)) driveHistory.restoreLocalBackup(date);
+    },driveStatus.busy));
+    if(driveStatus.connected) {
+      for(const date of driveStatus.backups || []) backupButtons.appendChild(filterButton(`${date} のDrive履歴を復元`,false,()=>{
+      if(window.confirm(`${date} 24:00時点の履歴に戻しますか？ 現在の端末履歴は先に退避します。`)) driveHistory.restoreBackup(date);
+      },driveStatus.busy||driveStatus.pending));
+    }
+    if(!driveStatus.backups?.length && !driveStatus.localBackups?.length) backups.appendChild(h(`<p class="subtle">バックアップはまだありません。日付が変わった後、必要ならGoogleに再接続してください。</p>`));
+    panel.appendChild(backups);
   }
   return panel;
 }
