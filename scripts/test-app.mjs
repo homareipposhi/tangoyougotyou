@@ -755,6 +755,62 @@ test('a reloaded pending copy reconnects only to its unchanged remote baseline',
   assert.equal(conflict.drive.state.connected,false);
 });
 
+test('download button creates a dated JSON save containing current learning records',()=>{
+  const records={one:{seen:2,wrong:1,last:0,lastMs:2400}};
+  const app=makeApp(records);
+  app.run(`globalThis.Blob=class {constructor(parts,options){globalThis.savedBlob={text:parts.join(''),type:options.type};}};
+    globalThis.URL={createObjectURL:()=> 'blob:save',revokeObjectURL:()=>{}};
+    document.body={appendChild:()=>{}};
+    document.createElement=()=>({click(){globalThis.clickedSave=this.download;},remove(){}});
+    globalThis.setTimeout=()=>{};`);
+  app.click('セーブデータをダウンロード');
+  const data=app.value('JSON.parse(savedBlob.text)');
+  assert.equal(data.format,'multi-study-save');
+  assert.equal(data.version,1);
+  assert.deepEqual(data.records,records);
+  assert.equal(app.value('savedBlob.type'),'application/json;charset=utf-8');
+  assert.match(app.value('clickedSave'),/^study-save-\d{4}-\d{2}-\d{2}-\d{6}\.json$/);
+});
+
+test('manual file backup is visible while optional Drive controls stay collapsed',()=>{
+  const app=makeApp();
+  assert.ok(app.html().includes('セーブデータをダウンロード'));
+  assert.ok(app.html().includes('Google Drive連携（任意）'));
+  assert.ok(!app.html().includes('直近3日分のバックアップ'));
+  app.toggleDetails(true);
+  assert.ok(app.html().includes('Google Driveに履歴を保存'));
+});
+
+test('importing a downloaded save restores records and preserves the previous copy',async()=>{
+  const previous={old:{seen:3,wrong:1,last:0}};
+  const restored={new:{seen:1,wrong:0,last:1}};
+  const app=makeApp(previous);
+  const text=app.run(`makeSaveData(${JSON.stringify(restored)},0)`);
+  app.run('window.confirm=()=>true');
+  const input=app.nodes().find(node=>node.tag==='input' && node.markup.includes('type="file"'));
+  assert.ok(input);
+  const event={target:{files:[{size:text.length,text:async()=>text}],value:'save.json'}};
+  await input.listeners.get('change')(event);
+  assert.deepEqual(app.saved(),restored);
+  assert.deepEqual(JSON.parse(app.value("localStorage.getItem('multi-study-before-file-restore-v1')")),previous);
+  assert.equal(event.target.value,'');
+});
+
+test('invalid save files and cancelled restores leave learning records unchanged',async()=>{
+  const records={keep:{seen:1,wrong:0,last:1}};
+  const app=makeApp(records);
+  const input=app.nodes().find(node=>node.tag==='input' && node.markup.includes('type="file"'));
+  const invalid='{"format":"multi-study-save","version":1,"records":{"__proto__":{"seen":1,"wrong":0,"last":1}}}';
+  await input.listeners.get('change')({target:{files:[{size:invalid.length,text:async()=>invalid}],value:'bad.json'}});
+  assert.deepEqual(app.saved(),records);
+  assert.ok(app.html().includes('セーブデータ'));
+  app.run('window.confirm=()=>false');
+  const other=app.run(`makeSaveData({other:{seen:1,wrong:0,last:1}},0)`);
+  const latest=app.nodes().find(node=>node.tag==='input' && node.markup.includes('type="file"'));
+  await latest.listeners.get('change')({target:{files:[{size:other.length,text:async()=>other}],value:'other.json'}});
+  assert.deepEqual(app.saved(),records);
+});
+
 test('JST midnight keeps exactly three dated Drive backups and can restore one',async()=>{
   const h=driveHarness({tokenSeconds:10*24*3600});
   await h.drive.connect('client-id');

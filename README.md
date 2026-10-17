@@ -72,7 +72,9 @@ OpenStax University Physics も照合しています。
 旧帝大7校・旧東工大・神戸大の物理個別試験の公開先は
 [過去問索引](research/physics-past-exams.md)に記録しています。
 
-ホームにGoogle Driveの履歴保存を追加しました。接続中は回答後にアプリ専用領域へ
+ホームの「セーブデータ」から学習履歴をJSONファイルとしてダウンロードできます。
+ファイルからの復元にも対応し、復元前の履歴は端末に退避します。
+Google Drive連携は任意の項目として折りたたみ表示にしました。接続中は回答後にアプリ専用領域へ
 自動保存し、次回の接続時に読み込みます。[初回設定](research/google-drive-setup.md)で
 Google CloudのOAuthクライアントIDとDrive APIの設定を確認できます。
 日本時間の毎日24:00に履歴を端末に控え、接続可能ならDriveにも保存します。

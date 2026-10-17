@@ -16,6 +16,7 @@ const GEOGRAPHY_MATERIALS = [
 const app = document.getElementById("app");
 let S = load();
 let view = "home";
+let driveOptionsOpen = false;
 let subjectId = null;
 let filters = {chapters:[], diffs:[], types:[], only:"all", content:"exam", course:"all"};
 let advancedOpen = false;
@@ -33,6 +34,74 @@ function load(){
 function save(){
   try { localStorage.setItem(KEY, JSON.stringify(S)); } catch(e){}
   driveHistory.changed();
+}
+const SAVE_FORMAT = 'multi-study-save';
+const SAVE_VERSION = 1;
+const SAVE_LIMIT = 10000000;
+let saveStatus = 'この端末の学習履歴をファイルに保存できます。';
+function makeSaveData(records = S, now = Date.now()) {
+  return JSON.stringify({format:SAVE_FORMAT,version:SAVE_VERSION,exportedAt:new Date(now).toISOString(),records},null,2);
+}
+function parseSaveData(text) {
+  if (typeof text !== 'string' || text.length > SAVE_LIMIT) throw new Error('セーブファイルが大きすぎます。');
+  let data;
+  try { data=JSON.parse(text); } catch(e) { throw new Error('JSON形式のセーブファイルを読み込めません。'); }
+  if (data?.format !== SAVE_FORMAT || data.version !== SAVE_VERSION || !data.records || typeof data.records !== 'object' || Array.isArray(data.records)) throw new Error('このアプリのセーブファイルではありません。');
+  for (const [id,record] of Object.entries(data.records)) {
+    if (['__proto__','constructor','prototype'].includes(id) || !record || typeof record !== 'object' || Array.isArray(record) || !Number.isFinite(record.seen) || record.seen < 0 || !Number.isFinite(record.wrong) || record.wrong < 0 || ![0,1].includes(record.last)) throw new Error('読み込めない学習記録があります。');
+  }
+  return data.records;
+}
+function saveFilename(now = Date.now()) {
+  const japan = new Date(now + 9*3600000).toISOString().slice(0,19).replace('T','-').replace(/:/g,'');
+  return `study-save-${japan}.json`;
+}
+function downloadSaveData() {
+  const text=makeSaveData();
+  const url=URL.createObjectURL(new Blob([text],{type:'application/json;charset=utf-8'}));
+  const link=document.createElement('a');
+  link.href=url; link.download=saveFilename();
+  document.body.appendChild(link);
+  link.click(); link.remove();
+  setTimeout(()=>URL.revokeObjectURL(url),60000);
+  saveStatus='セーブデータをダウンロードしました。';
+  const status=document.getElementById('save-status');
+  if(status) status.textContent=saveStatus;
+}
+function restoreSaveData(text) {
+  const records=parseSaveData(text);
+  localStorage.setItem('multi-study-before-file-restore-v1',JSON.stringify(S));
+  localStorage.setItem(KEY,JSON.stringify(records));
+  S=records;
+  driveHistory.changed();
+  saveStatus='ファイルから学習履歴を復元しました。';
+  render();
+  return Object.keys(records).length;
+}
+function saveFilePanel() {
+  const panel=h(`<section class="panel"><h2>セーブデータ</h2><p id="save-status" role="status">${esc(saveStatus)}</p><div class="opts"></div><p class="subtle">ダウンロードしたJSONファイルを保管しておくと、別の端末でも学習履歴を復元できます。</p></section>`);
+  const download=h(`<button type="button" class="cta">セーブデータをダウンロード</button>`);
+  download.addEventListener('click',downloadSaveData);
+  panel.querySelector('.opts').appendChild(download);
+  panel.appendChild(h(`<label for="save-file" class="save-file-label">保存済みファイルから復元</label>`));
+  const input=h(`<input id="save-file" type="file" accept=".json,application/json" aria-label="セーブファイルから復元">`);
+  input.addEventListener('change',async event=>{
+    const file=event.target.files?.[0];
+    if(!file) return;
+    try {
+      if(file.size>SAVE_LIMIT) throw new Error('セーブファイルが大きすぎます。');
+      const text=await file.text();
+      const records=parseSaveData(text);
+      if(!window.confirm(`${Object.keys(records).length}件の学習履歴をファイルから復元しますか？ 現在の履歴は端末に退避します。Drive接続中はDriveにも保存されます。`)) return;
+      restoreSaveData(text);
+    } catch(error) {
+      saveStatus=error.message || 'セーブファイルを読み込めませんでした。';
+      const status=document.getElementById('save-status');
+      if(status) status.textContent=saveStatus;
+    } finally { event.target.value=''; }
+  });
+  panel.appendChild(input);
+  return panel;
 }
 // Google access tokens stay in memory. Only the public client ID is remembered.
 const DRIVE_CLIENT_ID = "95228930762-4pbom5l5sh2hij2d0grfqso7i34vgfkg.apps.googleusercontent.com";
@@ -328,7 +397,10 @@ const driveHistory = createDriveHistory({
   },
 });
 Object.assign(driveStatus,driveHistory.state);
-if(driveStatus.pending) driveStatus.message='Driveに未保存の履歴がこの端末にあります。Googleに接続してください。';
+if(driveStatus.pending) {
+  driveStatus.message='Driveに未保存の履歴がこの端末にあります。Googleに接続してください。';
+  try { driveOptionsOpen=Boolean(JSON.parse(localStorage.getItem('multi-study-drive-sync-v1')).fileId); } catch(e){}
+}
 function scheduleDriveMidnight() {
   if (typeof setTimeout !== 'function') return;
   const dayMs=86400000, delay=dayMs-((Date.now()+9*3600000)%dayMs)+1000;
@@ -429,7 +501,16 @@ function home(){
     box.appendChild(b);
   });
   body.appendChild(h(`<p class="empty">科目を選ぶと、単元・難易度・問題形式を絞って演習できます。</p>`));
-  body.appendChild(drivePanel());
+  body.appendChild(saveFilePanel());
+  const driveOptions=h(`<details class="drive-options"${driveOptionsOpen?' open':''}><summary>Google Drive連携（任意）</summary></details>`);
+  driveOptionsOpen=driveOptions.open;
+  let drivePanelLoaded=false;
+  if(driveOptionsOpen){driveOptions.appendChild(drivePanel());drivePanelLoaded=true;}
+  driveOptions.addEventListener('toggle',()=>{
+    driveOptionsOpen=driveOptions.open;
+    if(driveOptionsOpen && !drivePanelLoaded){driveOptions.appendChild(drivePanel());drivePanelLoaded=true;}
+  });
+  body.appendChild(driveOptions);
   app.appendChild(body);
 }
 
